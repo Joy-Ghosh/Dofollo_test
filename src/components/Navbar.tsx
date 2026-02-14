@@ -20,7 +20,7 @@ export default function Navbar() {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto bg-[#0A2E22]/60 backdrop-blur-lg border border-white/5 rounded-full px-6 py-3 shadow-lg">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 cursor-pointer group">
+        <Link to="/" className="flex items-center gap-1 cursor-pointer group">
           <img src={logo} alt="Dofollo" className="w-8 h-8 rounded-lg object-contain group-hover:rotate-12 transition-transform" />
           <span className="text-xl font-bold tracking-tight text-white">
             Dofollo<span className="text-[#E1F28F]">.ai</span>
@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Nav Links */}
         <div className="hidden md:flex items-center gap-2">
           <Link to="/features" className={getNavLinkClass('/features')}>Features</Link>
-          <Link to="/tools" className={getNavLinkClass('/tools')}>Tools</Link>
+
           <a href="#" className={getNavLinkClass('/pricing')}>Pricing</a>
 
           <div className="group relative">

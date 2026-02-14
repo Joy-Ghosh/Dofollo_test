@@ -9,22 +9,22 @@ export default function ImpactSection() {
     ];
 
     return (
-        <section className="py-24 bg-[#f5ffef] text-[#0A2E22]">
+        <section className="py-24 bg-[#0A2E22] text-[#f5ffef] bg-noise">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#045C4E]/10 border border-[#045C4E]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#E1F28F] font-bold text-xs uppercase tracking-wider mb-6">
                         Proven Results
                     </div>
-                    <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 tracking-tight text-[#0A2E22]">
-                        Real Results, Measured in <span className="text-[#045C4E]">Growth</span>
+                    <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 tracking-tight text-[#f5ffef]">
+                        Real Results, Measured in <span className="text-[#E1F28F]">Growth</span>
                     </h2>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                     {metrics.map((m, i) => (
-                        <div key={i} className="p-8 bg-white rounded-2xl border border-[#0A2E22]/5 shadow-sm hover:shadow-lg transition-all text-center group">
-                            <div className="text-5xl lg:text-6xl font-extrabold text-[#045C4E] mb-2 group-hover:scale-110 transition-transform duration-300">{m.value}</div>
-                            <div className="text-sm font-bold tracking-wide uppercase text-[#0A2E22]/60">{m.label}</div>
+                        <div key={i} className="p-8 bg-white/5 rounded-2xl border border-white/10 shadow-sm hover:shadow-lg transition-all text-center group backdrop-blur-sm hover:bg-white/10">
+                            <div className="text-5xl lg:text-6xl font-extrabold text-[#E1F28F] mb-2 group-hover:scale-110 transition-transform duration-300">{m.value}</div>
+                            <div className="text-sm font-bold tracking-wide uppercase text-[#f5ffef]/60">{m.label}</div>
                         </div>
                     ))}
                 </div>

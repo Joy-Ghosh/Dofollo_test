@@ -10,7 +10,7 @@ import FeatureGrid from '../components/home/FeatureGrid';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import IntegrationsSection from '../components/home/IntegrationsSection';
 import UseCaseSection from '../components/home/UseCaseSection';
-import ComparisonTable from '../components/home/ComparisonTable';
+import InternalLinkingVisualizer from '../components/home/InternalLinkingVisualizer';
 import PricingPreview from '../components/home/PricingPreview';
 import FAQSection from '../components/home/FAQSection';
 import FinalCTA from '../components/FinalCTA';
@@ -20,16 +20,16 @@ export default function Home() {
     return (
         <div className="w-full min-h-screen bg-[#0A2E22] overflow-x-hidden">
             <Hero />
-            <ProductShowcase />
             <ProblemSection />
-            <CompetitorAnalysis />
+            <ProductShowcase />
             <WorkflowSection />
-            <FeatureGrid />
+            <InternalLinkingVisualizer />
+            <CompetitorAnalysis />
             <ImpactSection />
             <TestimonialsSection />
+            <FeatureGrid />
             <IntegrationsSection />
             <UseCaseSection />
-            <ComparisonTable />
             <PricingPreview />
             <FAQSection />
             <FinalCTA />

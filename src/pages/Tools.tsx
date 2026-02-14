@@ -254,7 +254,7 @@ export default function Tools() {
             </section>
 
             {/* Sticky Quick Nav & Search Container */}
-            <div className={`sticky top-0 z-30 transition-all duration-300 -mt-24 ${scrolled
+            <div className={`sticky top-28 z-30 transition-all duration-300 -mt-24 ${scrolled
                 ? "bg-[#F5FFEF]/90 backdrop-blur-xl border-b border-[#0A2E22]/5 shadow-sm py-2"
                 : "bg-transparent border-transparent py-4"
                 }`}>
