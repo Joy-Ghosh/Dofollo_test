@@ -6,6 +6,12 @@ import logo from '../assets/logo.png';
 export default function Navbar() {
   const location = useLocation();
 
+  const [isResourcesOpen, setIsResourcesOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsResourcesOpen(false);
+  }, [location.pathname]);
+
   const getNavLinkClass = (path: string) => {
     const isActive = location.pathname === path;
     return `px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${isActive
@@ -33,17 +39,24 @@ export default function Navbar() {
 
           <a href="#" className={getNavLinkClass('/pricing')}>Pricing</a>
 
-          <div className="group relative">
-            <button className={`flex items-center gap-1 cursor-pointer group ${getNavLinkClass('/resources')}`}>
+          <div
+            className="relative"
+            onMouseEnter={() => setIsResourcesOpen(true)}
+            onMouseLeave={() => setIsResourcesOpen(false)}
+          >
+            <button
+              className={`flex items-center gap-1 cursor-pointer ${getNavLinkClass('/resources')}`}
+              onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+            >
               <span>Resources</span>
-              <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300 opacity-70" />
+              <ChevronDown className={`w-3 h-3 transition-transform duration-300 opacity-70 ${isResourcesOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {/* Dropdown Menu */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-[#0A2E22] border border-white/10 rounded-xl shadow-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100 flex flex-col p-1.5 focus-within:opacity-100 focus-within:visible focus-within:scale-100">
+            <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-[#0A2E22] border border-white/10 rounded-xl shadow-xl overflow-hidden transition-all duration-300 transform origin-top flex flex-col p-1.5 ${isResourcesOpen ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-95'}`}>
               <a href="#" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">Docs</a>
               <a href="#" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">Blog</a>
-              <a href="#" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">Support</a>
+              <Link to="/support" className="px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">Support</Link>
             </div>
           </div>
         </div>

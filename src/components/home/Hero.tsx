@@ -138,7 +138,7 @@ export default function Hero() {
                         <span className="relative inline-block mx-1">
                           <span className="bg-[#E1F28F]/20 text-[#E1F28F] border-b border-[#E1F28F] px-1 cursor-pointer font-medium whitespace-nowrap">link equity</span>
                           {/* Tooltip Simulation - Dark Green Theme */}
-                          <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 bg-[#0D201F] text-white p-2.5 rounded-lg shadow-[0_15px_35px_-5px_rgba(0,60,45,0.4)] z-20 border border-[#E1F28F]/30 animate-fade-in-up ring-1 ring-[#E1F28F]/20">
+                          <div className="absolute left-[10%] -translate-x-1/2 bottom-full mb-2 w-48 bg-[#0D201F] text-white p-2.5 rounded-lg shadow-[0_15px_35px_-5px_rgba(0,60,45,0.4)] z-20 border border-[#E1F28F]/30 animate-fade-in-up ring-1 ring-[#E1F28F]/20">
                             <div className="flex items-center justify-between text-[10px] mb-1 opacity-90">
                               <span className="font-bold text-[#E1F28F]">AI SUGGESTION</span>
                               <span className="font-mono">98% MATCH</span>
@@ -163,7 +163,7 @@ export default function Hero() {
                   </div>
 
                   {/* Sidebar (AI Panel) */}
-                  <div className="w-40 border-l border-white/5 bg-black/10 p-3 hidden sm:block backdrop-blur-sm">
+                  <div className="w-40 border-l border-white/5 bg-black/10 p-3 pt-20 hidden sm:block backdrop-blur-sm">
                     <div className="flex items-center gap-2 mb-4 text-xs font-bold text-emerald-100/70">
                       <Network className="w-3.5 h-3.5 text-[#E1F28F]" />
                       Link Graph
@@ -199,7 +199,7 @@ export default function Hero() {
 
               {/* CARD 1: AI Intelligence Proof (Top Right) */}
               {/* Improvements: Stronger green accents, emerald tinted border glow, less grey */}
-              <div className="absolute -top-6 -right-10 z-30 animate-float-delayed hidden sm:block">
+              <div className="absolute -top-16 -right-10 z-30 animate-float-delayed hidden sm:block">
                 <div className="bg-[#0D261F]/90 backdrop-blur-xl p-4 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-56 ring-1 ring-white/10 relative overflow-hidden transition-colors">
                   <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
                   <div className="flex items-center gap-2 mb-3 border-b border-white/5 pb-2 relative z-10">

@@ -19,7 +19,7 @@ export default function Footer() {
     };
 
     const mainLinks = {
-        product: ["Get Started", "Pricing", "Features", "Tools", "Resources"],
+        product: ["Get Started", "Pricing", "Features", "Resources"],
         company: ["About", "Blog", "Docs", "Support", "Partner"],
         legal: ["Privacy", "Terms", "Agency", "Contact"] // Added a few implicit ones to balance
     };
@@ -133,10 +133,17 @@ export default function Footer() {
                             <ul className="space-y-4">
                                 {mainLinks.company.map(link => (
                                     <li key={link}>
-                                        <a href="#" className="text-[#f5ffef]/60 hover:text-[#E1F28F] transition-colors flex items-center gap-2 group">
-                                            <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#E1F28F]" />
-                                            {link}
-                                        </a>
+                                        {link === "Support" ? (
+                                            <Link to="/support" className="text-[#f5ffef]/60 hover:text-[#E1F28F] transition-colors flex items-center gap-2 group">
+                                                <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#E1F28F]" />
+                                                {link}
+                                            </Link>
+                                        ) : (
+                                            <a href="#" className="text-[#f5ffef]/60 hover:text-[#E1F28F] transition-colors flex items-center gap-2 group">
+                                                <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#E1F28F]" />
+                                                {link}
+                                            </a>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

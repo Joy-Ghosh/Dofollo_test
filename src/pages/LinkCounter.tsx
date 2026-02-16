@@ -5,6 +5,9 @@ import Footer from '../components/Footer';
 
 export default function LinkCounter() {
     const [url, setUrl] = useState("");
+    const [activeTab, setActiveTab] = useState<'url' | 'compare'>('url');
+    const [compareUrl1, setCompareUrl1] = useState("");
+    const [compareUrl2, setCompareUrl2] = useState("");
     const [analyzing, setAnalyzing] = useState(false);
 
     // Placeholder function for analysis
@@ -16,7 +19,12 @@ export default function LinkCounter() {
     };
 
     const handleClear = () => {
-        setUrl("");
+        if (activeTab === 'url') {
+            setUrl("");
+        } else {
+            setCompareUrl1("");
+            setCompareUrl2("");
+        }
     };
 
     // FAQ Data
@@ -70,37 +78,37 @@ export default function LinkCounter() {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
-        <div className="min-h-screen bg-[#F5FFEF] flex flex-col font-sans text-[#0A2E22]">
+        <div className="min-h-screen bg-[#F5FFEF] flex flex-col gap-10 font-sans text-[#0A2E22]">
 
             {/* --- Hero Section --- */}
-            <section className="pt-32 pb-20 relative overflow-hidden">
+            <section className="pt-32 pb-20 relative overflow-hidden bg-[#0A2E22]">
                 {/* Background Elements */}
-                <div className="absolute inset-0 bg-[#F5FFEF] pointer-events-none [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
-                    <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#E1F28F]/40 blur-[120px]" />
-                    <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#045C4E]/5 blur-[100px]" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(10,46,34,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(10,46,34,0.03)_1px,transparent_1px)] bg-[size:64px_64px] opacity-60" />
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#E1F28F]/10 blur-[120px]" />
+                    <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#E1F28F]/5 blur-[100px]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(225,242,143,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(225,242,143,0.03)_1px,transparent_1px)] bg-[size:64px_64px] opacity-30" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     {/* Breadcrumbs */}
-                    <div className="flex items-center justify-center gap-2 text-sm text-[#0A2E22]/60 mb-8 font-medium">
-                        <Link to="/" className="hover:text-[#045C4E] transition-colors">Home</Link>
-                        <ChevronRight className="w-4 h-4 text-[#0A2E22]/40" />
-                        <Link to="/tools" className="hover:text-[#045C4E] transition-colors">Tools</Link>
-                        <ChevronRight className="w-4 h-4 text-[#0A2E22]/40" />
-                        <span className="text-[#045C4E] bg-[#045C4E]/5 px-2 py-0.5 rounded-md">Link Counter Tool</span>
+                    <div className="flex items-center justify-center gap-2 text-sm text-white/40 mb-8 font-medium">
+                        <Link to="/" className="hover:text-[#E1F28F] transition-colors">Home</Link>
+                        <ChevronRight className="w-4 h-4 text-white/20" />
+                        <Link to="/tools" className="hover:text-[#E1F28F] transition-colors">Tools</Link>
+                        <ChevronRight className="w-4 h-4 text-white/20" />
+                        <span className="text-[#E1F28F] bg-[#E1F28F]/10 px-2 py-0.5 rounded-md">Link Counter Tool</span>
                     </div>
 
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#045C4E]/5 border border-[#045C4E]/10 text-[#045C4E] text-xs font-bold uppercase tracking-wider mb-6">
-                        <span className="w-2 h-2 rounded-full bg-[#045C4E] animate-pulse"></span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E1F28F]/10 border border-[#E1F28F]/20 text-[#E1F28F] text-xs font-bold uppercase tracking-wider mb-6">
+                        <span className="w-2 h-2 rounded-full bg-[#E1F28F] animate-pulse"></span>
                         Free to use • No registration required
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-[#0A2E22]">
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white max-w-4xl mx-auto">
                         Link Counter Tool
                     </h1>
 
-                    <p className="text-lg md:text-xl text-[#0A2E22]/70 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
                         Use our link counter to easily check link counts and understand internal and external links with a simple and clear counter link tool.
                     </p>
                 </div>
@@ -118,29 +126,72 @@ export default function LinkCounter() {
 
                             {/* Toolbar */}
                             <div className="flex border-b border-[#0A2E22]/5 bg-[#F5FFEF]/50">
-                                <button className="px-6 py-4 text-sm font-bold text-[#045C4E] border-b-2 border-[#045C4E] bg-white">
+                                <button
+                                    onClick={() => setActiveTab('url')}
+                                    className={`px-6 py-4 text-sm font-bold transition-all ${activeTab === 'url'
+                                        ? "text-[#045C4E] border-b-2 border-[#045C4E] bg-white"
+                                        : "text-[#0A2E22]/60 hover:text-[#045C4E] hover:bg-[#E1F28F]/10"
+                                        }`}
+                                >
                                     URL
                                 </button>
-                                <button className="px-6 py-4 text-sm font-bold text-[#0A2E22]/60 hover:text-[#045C4E] hover:bg-[#E1F28F]/10 transition-colors">
+                                <button
+                                    onClick={() => setActiveTab('compare')}
+                                    className={`px-6 py-4 text-sm font-bold transition-all ${activeTab === 'compare'
+                                        ? "text-[#045C4E] border-b-2 border-[#045C4E] bg-white"
+                                        : "text-[#0A2E22]/60 hover:text-[#045C4E] hover:bg-[#E1F28F]/10"
+                                        }`}
+                                >
                                     Compare
                                 </button>
                             </div>
 
                             <div className="p-8">
                                 <form onSubmit={handleAnalyze} className="space-y-6">
-                                    <div className="relative group">
-                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                            <Globe className="h-5 w-5 text-[#0A2E22]/40 group-focus-within:text-[#045C4E] transition-colors" />
+                                    {activeTab === 'url' ? (
+                                        <div className="relative group">
+                                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                <Globe className="h-5 w-5 text-[#0A2E22]/40 group-focus-within:text-[#045C4E] transition-colors" />
+                                            </div>
+                                            <input
+                                                type="url"
+                                                value={url}
+                                                onChange={(e) => setUrl(e.target.value)}
+                                                placeholder="Enter a URL to analyze..."
+                                                className="block w-full pl-12 pr-4 py-4 bg-[#FFFFFF] border border-[#0A2E22]/10 rounded-xl text-[#0A2E22] placeholder-[#0A2E22]/60 focus:ring-2 focus:ring-[#045C4E]/20 focus:border-[#045C4E] transition-all outline-none"
+                                                required
+                                            />
                                         </div>
-                                        <input
-                                            type="url"
-                                            value={url}
-                                            onChange={(e) => setUrl(e.target.value)}
-                                            placeholder="Enter a URL to analyze..."
-                                            className="block w-full pl-12 pr-4 py-4 bg-[#F5FFEF] border border-[#0A2E22]/10 rounded-xl text-[#0A2E22] placeholder-[#0A2E22]/40 focus:ring-2 focus:ring-[#045C4E]/20 focus:border-[#045C4E] transition-all outline-none"
-                                            required
-                                        />
-                                    </div>
+                                    ) : (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="relative group">
+                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                    <Globe className="h-5 w-5 text-[#0A2E22]/40 group-focus-within:text-[#045C4E] transition-colors" />
+                                                </div>
+                                                <input
+                                                    type="url"
+                                                    value={compareUrl1}
+                                                    onChange={(e) => setCompareUrl1(e.target.value)}
+                                                    placeholder="First URL to compare..."
+                                                    className="block w-full pl-12 pr-4 py-4 bg-[#FFFFFF] border border-[#0A2E22]/10 rounded-xl text-[#0A2E22] placeholder-[#0A2E22]/60 focus:ring-2 focus:ring-[#045C4E]/20 focus:border-[#045C4E] transition-all outline-none"
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="relative group">
+                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                    <Globe className="h-5 w-5 text-[#0A2E22]/40 group-focus-within:text-[#045C4E] transition-colors" />
+                                                </div>
+                                                <input
+                                                    type="url"
+                                                    value={compareUrl2}
+                                                    onChange={(e) => setCompareUrl2(e.target.value)}
+                                                    placeholder="Second URL to compare..."
+                                                    className="block w-full pl-12 pr-4 py-4 bg-[#FFFFFF] border border-[#0A2E22]/10 rounded-xl text-[#0A2E22] placeholder-[#0A2E22]/60 focus:ring-2 focus:ring-[#045C4E]/20 focus:border-[#045C4E] transition-all outline-none"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
 
                                     <div className="flex items-center gap-4">
                                         <button
@@ -150,7 +201,7 @@ export default function LinkCounter() {
                                             {analyzing ? (
                                                 <>Analyzing<span className="animate-pulse">...</span></>
                                             ) : (
-                                                <>Analyze <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                                                <>{activeTab === 'compare' ? 'Compare URLs' : 'Analyze'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
                                             )}
                                         </button>
                                         <button
