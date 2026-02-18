@@ -1,0 +1,87 @@
+{
+    "hero": {
+        "badge": "About Us",
+        "title_first": "Built to Fix",
+        "title_highlight": "Internal Linking",
+        "description": "We are on a mission to help content creators and businesses scale their SEO through intelligent, automated internal linking."
+    },
+    "mission": {
+        "badge": "Our Mission",
+        "title": "Why We Built Dofollo",
+        "subtitle": "About Dofollo",
+        "description": "Scale your software operations through a custom engineering team. Meet the demand of your company's operations with a high-performing nearshore team skilled.",
+        "image": "/assets/img/bg-img/28.jpg",
+        "points": [
+            "Improve internal links without touching content",
+            "AI-driven decisions based on relevance",
+            "Designed for scale, stability"
+        ]
+    },
+    "story": {
+        "badge": "Our Story",
+        "title": "Driven by Innovation",
+        "description": "Our mission is simple yet profound: to empower businesses with cutting-edge CRM solutions that drive growth and enhance customer satisfaction. We operate on core values of innovation, integrity, and customer-centricity.",
+        "aiToolDescription": "Our AI-powered tool analyzes your internal linking strategy and suggests the best opportunities to improve your website's SEO performance.",
+        "highlights": [
+            "Context-aware AI system",
+            "SEO-safe internal linking",
+            "Built for growing websites",
+            "One-click review and publish"
+        ],
+        "stats": [
+            {
+                "number": "500k+",
+                "label": "Pages Analyzed"
+            },
+            {
+                "number": "200+",
+                "label": "Internal Click Signals"
+            },
+            {
+                "number": "500+",
+                "label": "Opportunities Unlocked"
+            },
+            {
+                "number": "5m",
+                "label": "Setup Time"
+            }
+        ]
+    },
+    "team": {
+        "badge": "Our Team",
+        "title": "Meet the Dream Team",
+        "description": "The passionate individuals creating smarter tools for SEO success.",
+        "members": [
+            {
+                "id": 1,
+                "name": "Abhishek Guha Roy",
+                "role": "CEO",
+                "image": "/assets/img/bg-img/112.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Akash Karmakar",
+                "role": "Frontend Developer",
+                "image": "/assets/img/bg-img/113.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Joy Ghosh",
+                "role": "Quality Assurance Specialist",
+                "image": "/assets/img/bg-img/114.jpg"
+            },
+            {
+                "id": 4,
+                "name": "Sonju Ghosh",
+                "role": "SEO Executive",
+                "image": "/assets/img/bg-img/115.jpg"
+            },
+            {
+                "id": 5,
+                "name": "Palash Ghosh",
+                "role": "SEO Executive",
+                "image": "/assets/img/bg-img/116.jpg"
+            }
+        ]
+    }
+}

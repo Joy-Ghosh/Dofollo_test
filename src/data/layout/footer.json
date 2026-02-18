@@ -59,7 +59,8 @@
             "links": [
                 {
                     "label": "About",
-                    "href": "#"
+                    "href": "/about",
+                    "isRouterLink": true
                 },
                 {
                     "label": "Blog",

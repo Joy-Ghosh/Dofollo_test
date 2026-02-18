@@ -7,7 +7,7 @@ import LinkCounter from './pages/Tools/LinkCounter';
 import KeywordDensityChecker from './pages/Tools/KeywordDensityChecker';
 import Tools from './pages/Tools/index';
 import Support from './pages/Support';
-import Docs from './pages/Docs/index';
+import About from './pages/About';
 import DocPage from './pages/Docs/DocPage';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -19,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
           <Route path="features" element={<Features />} />
           <Route path="tools" element={<Tools />} />
 
