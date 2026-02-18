@@ -90,29 +90,50 @@ export default function Tools() {
     return (
         <div className="min-h-screen bg-[#051A14]">
             {/* Hero Section */}
-            <div className="relative pt-32 pb-20 px-6 overflow-hidden">
-                {/* Background Glow */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E1F28F]/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="relative pt-32 pb-20 px-6 overflow-hidden bg-[#0A2E22]">
+                {/* Background Noise Texture */}
+                <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none" />
+
+                {/* Background Elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                    {/* Central Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-[#E1F28F]/10 rounded-full blur-[130px]" />
+
+                    {/* Secondary corner glows */}
+                    <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#045C4E]/20 rounded-full blur-[100px]" />
+                    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/5 rounded-full blur-[100px]" />
+
+                    {/* Grid Texture */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
+
+                    {/* Floating Particles */}
+                    <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 rounded-full bg-[#E1F28F]/40 animate-pulse" style={{ animationDelay: '0s' }} />
+                    <div className="absolute top-[35%] left-[8%] w-1 h-1 rounded-full bg-[#E1F28F]/20 animate-pulse" style={{ animationDelay: '0.8s' }} />
+                    <div className="absolute top-[60%] left-[12%] w-1.5 h-1.5 rounded-full bg-[#045C4E]/60 animate-pulse" style={{ animationDelay: '1.5s' }} />
+                    <div className="absolute top-[15%] right-[18%] w-1 h-1 rounded-full bg-[#E1F28F]/30 animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    <div className="absolute top-[45%] right-[10%] w-1.5 h-1.5 rounded-full bg-[#E1F28F]/20 animate-pulse" style={{ animationDelay: '1.2s' }} />
+                    <div className="absolute top-[70%] right-[15%] w-1 h-1 rounded-full bg-[#045C4E]/50 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E1F28F]/10 border border-[#E1F28F]/20 text-[#E1F28F] shadow-[0_0_10px_-5px_#E1F28F] backdrop-blur-sm">
                         <span className="w-2 h-2 rounded-full bg-[#E1F28F] animate-pulse" />
-                        <span className="text-xs font-medium text-[#E1F28F] tracking-wide uppercase">{categoriesData.hero.badge}</span>
+                        <span className="text-xs font-bold text-[#E1F28F] tracking-widest uppercase">{categoriesData.hero.badge}</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg">
                         {categoriesData.hero.title_first} <span className="text-[#E1F28F]">{categoriesData.hero.title_highlight}</span>
                     </h1>
 
-                    <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
                         {categoriesData.hero.description}
                     </p>
 
                     {/* Search Bar */}
                     <div className="max-w-md mx-auto relative group mb-8">
                         <div className="absolute inset-0 bg-[#E1F28F]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative flex items-center bg-[#0A2E22] border border-white/10 rounded-full px-4 py-3 shadow-xl focus-within:border-[#E1F28F]/50 transition-colors">
-                            <Search className="w-5 h-5 text-white/40 mr-3" />
+                        <div className="relative flex items-center bg-[#051A14]/60 border border-white/10 rounded-full px-5 py-3.5 shadow-xl focus-within:border-[#E1F28F]/50 focus-within:shadow-[0_0_20px_-5px_#E1F28F40] transition-all duration-300 backdrop-blur-sm">
+                            <Search className="w-5 h-5 text-white/40 mr-3 flex-shrink-0" />
                             <input
                                 type="text"
                                 placeholder="Search for a tool..."
@@ -132,13 +153,16 @@ export default function Tools() {
                                     const element = document.getElementById(category.title.toLowerCase().replace(/\s+/g, '-'));
                                     element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                 }}
-                                className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:border-[#E1F28F]/30 transition-all duration-300"
+                                className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-white/70 hover:text-[#E1F28F] hover:bg-[#E1F28F]/10 hover:border-[#E1F28F]/30 transition-all duration-300"
                             >
                                 {category.title}
                             </button>
                         ))}
                     </div>
                 </div>
+
+                {/* Bottom fade blend into tools grid */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#051A14] pointer-events-none" />
             </div>
 
             {/* Tools Grid */}
