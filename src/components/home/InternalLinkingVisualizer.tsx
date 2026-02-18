@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Link as LinkIcon, Globe, FileText, LayoutTemplate, Box, ArrowUpRight } from 'lucide-react';
+import homeData from '../../data/pages/home.json';
 
 const InternalLinkingVisualizer = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -7,19 +8,13 @@ const InternalLinkingVisualizer = () => {
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
-    // Data Structure
+    const { visualizer_section } = homeData;
+
+    // Data Structure constructed from JSON
     const data = {
-        center: { id: 'center', label: "Homepage", type: "hub" },
-        inbound: [
-            { id: 'in-1', label: "Blog Post: SEO Tips", type: "blog" },
-            { id: 'in-2', label: "Support: How-to Guide", type: "support" },
-            { id: 'in-3', label: "Category: Marketing", type: "category" }
-        ],
-        outbound: [
-            { id: 'out-1', label: "Service: Audit", type: "service" },
-            { id: 'out-2', label: "Landing Page: eBook", type: "landing" },
-            { id: 'out-3', label: "Product: Pro Plan", type: "product" }
-        ]
+        center: { id: 'center', label: visualizer_section.center_label, type: "hub" },
+        inbound: visualizer_section.inbound_nodes,
+        outbound: visualizer_section.outbound_nodes
     };
 
     // Calculate paths on mount and resize
@@ -100,9 +95,9 @@ const InternalLinkingVisualizer = () => {
 
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-[#E1F28F] font-bold tracking-wider uppercase text-sm mb-2 block">Visualizing Architecture</span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Internal Linking Logic</h2>
-                    <p className="text-white/60 max-w-2xl mx-auto">See how authority flows through your site structure with intelligent linking.</p>
+                    <span className="text-[#E1F28F] font-bold tracking-wider uppercase text-sm mb-2 block">{visualizer_section.badge}</span>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{visualizer_section.title}</h2>
+                    <p className="text-white/60 max-w-2xl mx-auto">{visualizer_section.description}</p>
                 </div>
 
                 {/* Visualization Container */}
@@ -169,8 +164,8 @@ const InternalLinkingVisualizer = () => {
                         {/* Mobile Vertical Line */}
                         <div className="absolute left-8 top-10 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#E1F28F]/20 to-[#E1F28F]/20 lg:hidden -z-10"></div>
 
-                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4 lg:hidden">Link Sources</div>
-                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4 hidden lg:block">Link Sources</div>
+                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4 lg:hidden">{visualizer_section.inbound_title}</div>
+                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4 hidden lg:block">{visualizer_section.inbound_title}</div>
                         {data.inbound.map((node) => (
                             <div
                                 key={node.id}
@@ -206,7 +201,7 @@ const InternalLinkingVisualizer = () => {
                                 {getIcon(data.center.type)}
                             </div>
                             <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{data.center.label}</h3>
-                            <p className="text-white/50 text-sm">Central Authority Hub</p>
+                            <p className="text-white/50 text-sm">{visualizer_section.center_sublabel}</p>
 
                             {/* Connection Points */}
                             <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#E1F28F] rounded-full hidden lg:block shadow-[0_0_10px_#E1F28F]" />
@@ -219,7 +214,7 @@ const InternalLinkingVisualizer = () => {
                         {/* Mobile Vertical Line */}
                         <div className="absolute left-8 top-0 bottom-10 w-0.5 bg-gradient-to-b from-[#E1F28F]/20 via-[#E1F28F]/20 to-transparent lg:hidden -z-10"></div>
 
-                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4">Link Targets</div>
+                        <div className="text-white/40 text-xs uppercase font-bold tracking-widest text-center mb-2 lg:mb-4">{visualizer_section.outbound_title}</div>
                         {data.outbound.map((node) => (
                             <div
                                 key={node.id}
@@ -245,5 +240,4 @@ const InternalLinkingVisualizer = () => {
         </section>
     );
 };
-
 export default InternalLinkingVisualizer;

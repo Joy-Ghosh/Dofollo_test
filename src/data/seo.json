@@ -1,0 +1,96 @@
+{
+    "pages": {
+        "home": {
+            "title": "Dofollo | AI-Powered Internal Linking Tool for SEO",
+            "description": "Boost your SEO with Dofollo's AI-powered internal linking tool. Automate link building, improve site structure, and rank higher on Google.",
+            "keywords": "internal linking tool, seo automation, link building software, site structure optimization, seo tools",
+            "ogTitle": "Dofollo - AI-Powered Internal Linking for Better Rankings",
+            "ogDescription": "Automate your internal linking strategy with Dofollo. Improve crawlability and boost your SEO rankings effortlessly.",
+            "ogImage": "/images/og-home.jpg",
+            "ogUrl": "https://dofollo.ai",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Dofollo - AI Internal Linking Tool",
+            "twitterDescription": "Boost your SEO with AI-powered internal linking. Try Dofollo today.",
+            "twitterImage": "/images/twitter-home.jpg",
+            "canonical": "https://dofollo.ai",
+            "robots": "index, follow"
+        },
+        "features": {
+            "title": "Features | Powerful SEO & Internal Linking Features - Dofollo",
+            "description": "Explore Dofollo's powerful features: AI link suggestions, competitor analysis, broken link checker, and automated internal linking to supercharge your SEO.",
+            "keywords": "seo features, internal linking automation, competitor analysis seo, broken link checker, link management",
+            "ogTitle": "Dofollo Features - Powerful SEO Automation",
+            "ogDescription": "Discover how Dofollo's AI features can transform your website's internal linking structure and SEO performance.",
+            "ogImage": "/images/og-features.jpg",
+            "ogUrl": "https://dofollo.ai/features",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Dofollo Features - SEO Automation Tools",
+            "twitterDescription": "From AI suggestions to competitor analysis, see what Dofollo can do for your SEO.",
+            "twitterImage": "/images/twitter-features.jpg",
+            "canonical": "https://dofollo.ai/features",
+            "robots": "index, follow"
+        },
+        "tools": {
+            "title": "Free SEO Tools | Optimize Your Website with Dofollo",
+            "description": "Access a suite of free SEO tools including Link Counter, Keyword Density Checker, and more to analyze and improve your website's performance.",
+            "keywords": "free seo tools, link counter, keyword density checker, seo analysis, webmaster tools",
+            "ogTitle": "Free SEO Tools by Dofollo",
+            "ogDescription": "Use our collection of free SEO tools to analyze and optimize your website's content and structure.",
+            "ogImage": "/images/og-tools.jpg",
+            "ogUrl": "https://dofollo.ai/tools",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Free SEO Tools - Dofollo",
+            "twitterDescription": "Free SEO tools to help you rank higher. Check out our Link Counter and Keyword Density Checker.",
+            "twitterImage": "/images/twitter-tools.jpg",
+            "canonical": "https://dofollo.ai/tools",
+            "robots": "index, follow"
+        },
+        "support": {
+            "title": "Support | Dofollo Help Center & Contact",
+            "description": "Need help with Dofollo? Visit our support page to contact us, view documentation, or find answers to frequently asked questions.",
+            "keywords": "dofollo support, contact dofollo, seo help, customer support",
+            "ogTitle": "Dofollo Support - We're Here to Help",
+            "ogDescription": "Get in touch with the Dofollo team for support, feedback, or inquiries.",
+            "ogImage": "/images/og-support.jpg",
+            "ogUrl": "https://dofollo.ai/support",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Dofollo Support",
+            "twitterDescription": "Need assistance? Contact the Dofollo support team.",
+            "twitterImage": "/images/twitter-support.jpg",
+            "canonical": "https://dofollo.ai/support",
+            "robots": "index, follow"
+        }
+    },
+    "tools": {
+        "link-counter": {
+            "title": "Free Link Counter Tool | Count Website Links Instantly",
+            "description": "Count all internal and external links on your website with our free Link Counter tool. Analyze your website's link structure instantly. No registration required.",
+            "keywords": "link counter, count links, internal links, external links, link analysis tool, website link checker, free link counter",
+            "ogTitle": "Link Counter Tool - Count Website Links Free",
+            "ogDescription": "Free online link counter tool to count all internal and external links on your website instantly.",
+            "ogImage": "/images/og-tools-link-counter.jpg",
+            "ogUrl": "https://dofollo.ai/tools/link-counter",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Free Link Counter Tool",
+            "twitterDescription": "Count all links on your website instantly with our free Link Counter tool.",
+            "twitterImage": "/images/twitter-tools-link-counter.jpg",
+            "canonical": "https://dofollo.ai/tools/link-counter",
+            "robots": "index, follow"
+        },
+        "keyword-density": {
+            "title": "Free Keyword Density Checker | SEO Content Analysis Tool",
+            "description": "Check the keyword density of your content with our free Keyword Density Checker. Avoid keyword stuffing and optimize your on-page SEO effectively.",
+            "keywords": "keyword density checker, keyword usage, seo content analysis, keyword stuffing checker, on-page seo tool",
+            "ogTitle": "Keyword Density Checker - Free SEO Tool",
+            "ogDescription": "Analyze your content for optimal keyword usage with our free Keyword Density Checker. Improve your rankings today.",
+            "ogImage": "/images/og-tools-keyword-density.jpg",
+            "ogUrl": "https://dofollo.ai/tools/keyword-density",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Free Keyword Density Checker",
+            "twitterDescription": "Prevent keyword stuffing and optimize your content with our free analysis tool.",
+            "twitterImage": "/images/twitter-tools-keyword-density.jpg",
+            "canonical": "https://dofollo.ai/tools/keyword-density",
+            "robots": "index, follow"
+        }
+    }
+}

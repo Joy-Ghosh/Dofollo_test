@@ -1,0 +1,403 @@
+{
+    "categories": [
+        {
+            "id": "website-overview",
+            "title": "Website Overview",
+            "items": [
+                {
+                    "id": "website-overview",
+                    "title": "Website Overview",
+                    "summary": "The Website Overview section lists all your website\u2019s pages along with key linking metrics. This view helps you assess how well your pages are connect...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "3 min",
+                    "tags": [
+                        "Guide",
+                        "Website Overview"
+                    ],
+                    "content": "## Website Overview Introduction\n\nThe Website Overview section lists all your website\u2019s pages along with key linking metrics. This view helps you assess how well your pages are connected internally and externally, as well as identify new opportunities for internal linking.\n\n## Incoming Links\n\nThis shows how many internal links across your site point to each page. Pages with more incoming links are better connected, which helps improve crawlability, distribute page authority, boost search visibility, and enhance user navigation.\n\n## Outgoing Links\n\nThe Outgoing Links column shows the number of internal links each page contains that point to other pages within your website. These links help distribute authority across your site and improve content discoverability. External links to other domains are tracked separately.\n\n## External Links\n\nThe External Links column shows how many links on each page point to external domains outside your website. High-quality external links help signal credibility and relevance when they lead to trusted sources, and can improve your site\u2019s authority in the eyes of search engines.\n\n## Opportunities\n\nThe Opportunities column shows the total number of internal link opportunities Dofollo\u2019s AI has identified for each page based on contextual relevance. These suggestions include incoming and outgoing link ideas, focused on strengthening internal structure and boosting SEO visibility.\n\n## Start Link Planning\n\nThe Start Link Planning option opens the Plan Your Page view for the selected page. It shows all AI-suggested internal link opportunities, along with recommended anchor texts and contextual match scores. Use this panel to manage and publish internal links.\n\n## Rescan\n\nThe Rescan option lets you manually update a page\u2019s data after making changes, especially to content or internal links. While Dofollo updates pages automatically over time, rescanning ensures your new changes are reflected immediately in link suggestions.\n\n## Open in a New Tab\n\nThe Open in a New Tab option opens the source page (the page from which a link is being suggested) in a new browser tab. Use this when you need to manually view the content before deciding whether to place the internal link.\n\n## Search and Filters\n\nThe Search bar lets you quickly locate any page by its URL, especially useful for large sites. You can use Orphan and Broken filters to instantly view pages with no internal links or pages with link issues that need fixing.\n\n## List View\n\nThe List View displays all your pages in a structured table format with columns for internal links, external links, opportunities, and actions. This default view provides comprehensive data at a glance.\n\n## Radial View\n\nThe Radial View visualizes your website\u2019s internal link structure in a hierarchical graph. It helps you understand how pages are connected at a glance and is useful for spotting isolated pages or weak internal linking. You can Ctrl-Click on any node to open its Page Level View.\n\n## Radial View Settings\n\nRadial View settings let you customize how the site structure is displayed. You can set Max Node Count to control how many pages are shown per layer in the graph, helping avoid visual clutter on large sites.\n\n## Exclude Parameters\n\nExclude Parameters allows you to hide pages based on URL patterns, such as /tags or /search, that aren\u2019t meaningful for internal linking. This keeps the graph focused on pages important to link structure."
+                }
+            ],
+            "group": "Core Features"
+        },
+        {
+            "id": "getting-started",
+            "title": "Getting Started",
+            "items": [
+                {
+                    "id": "getting-started-with-dofollo",
+                    "title": "Getting Started with Dofollo",
+                    "summary": "Click the \u201cGet Started\u201d button at the top-right corner of dofollo.ai. You can continue using your email address, Google, or Facebook. If you\u2019re a new ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "2 min",
+                    "tags": [
+                        "Guide",
+                        "Getting Started"
+                    ],
+                    "content": "## Step 1: Sign Up or Sign In\n\nClick the \u201cGet Started\u201d button at the top-right corner of dofollo.ai. You can continue using your email address, Google, or Facebook. If you\u2019re a new user, this will create your account. If you\u2019re a returning user, it will log you in \u2014 no password required. You\u2019ll receive a 6-digit OTP via email for verification.\n\n## Step 2: Verify Your Email\n\nAfter signing up, you\u2019ll receive a 6-digit OTP (One-Time Password) in your inbox. Enter this code to complete the verification process. This helps secure your account and activate access to Dofollo\u2019s dashboard.\n\n## Step 3: Add Your First Website\n\nAfter email verification, if you haven\u2019t added any websites yet, you\u2019ll be automatically redirected to the Add Website page. Enter your website URL and click Submit to begin the scan.\n\n## Step 4: AI-Powered Scanning Begins\n\nDofollo\u2019s AI will now scan all pages of your website to discover existing internal and external links, identify contextual internal link suggestions, detect orphaned pages and broken links, and evaluate how well your pages are interconnected.\n\n## Step 5: View Your Dashboard\n\nOnce scanning is complete, your dashboard gives you a complete overview of your website\u2019s internal linking performance. You\u2019ll see total number of pages, internal links, and external links, AI-powered link opportunities, broken links and orphan pages (if any), and trending pages with high linking potential. Pro Tip: Connect Google Search Console to unlock advanced AI suggestions based on real traffic data.\n\n## Viewing and Managing AI Link Opportunities\n\nAfter scanning, you\u2019ll see the \u201cTotal Opportunity Found\u201d box showing the total internal link suggestions identified across all website pages. These suggestions are contextually generated to help strengthen internal linking without manual effort.\n\n## Step 6: View Opportunities by Page\n\nGo to the Website Overview section to see internal link opportunities for each page. You\u2019ll see columns for URL, Incoming Links, Outgoing Links, External Links, and Opportunities. Next to each page, quick-access tools allow you to start link planning, rescan, or open the live page in a new tab. You can also open a Page-Level View for detailed link insights.\n\n## Step 7: Open the Planning Panel\n\nClick the opportunity number next to any page in the Website Overview to open its Planning view. Here you\u2019ll find incoming and outgoing link suggestions, suggested anchor text, contextual match score (%), and tabs for existing and planned links. Use the Create Link button to export or publish links.\n\n## Step 8: WordPress Integration (One-Time Setup)\n\nWhen you click \u201cCreate Link\u201d for the first time on a WordPress site, you\u2019ll be prompted to complete the WordPress integration by entering your WordPress admin credentials securely. Once integrated, your site will be connected to Dofollo permanently.\n\n## Step 9: Publishing a Link (WordPress Only)\n\nAfter integration, clicking \u201cCreate Link\u201d opens the source page and shows the recommended anchor text. Review or edit the anchor text as needed, then click Publish to instantly insert the internal link into your content."
+                }
+            ],
+            "group": "Getting Started"
+        },
+        {
+            "id": "dashboard",
+            "title": "Dashboard",
+            "items": [
+                {
+                    "id": "dashboard",
+                    "title": "Dashboard",
+                    "summary": "This shows how many unique, crawlable pages Dofollo has scanned from your website. It includes only pages that are publicly accessible, return valid s...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Dashboard"
+                    ],
+                    "content": "## Total Pages\n\nThis shows how many unique, crawlable pages Dofollo has scanned from your website. It includes only pages that are publicly accessible, return valid status codes, and aren\u2019t blocked by robots.txt, redirects, or login walls. More pages means more internal link opportunities and better SEO potential.\n\n## Total Internal Links\n\nThis metric displays the total number of internal links \u2014 links from one page on your domain to another. Internal links are key for improving site crawlability, SEO structure, and user navigation.\n\n## Total External Links\n\nThis shows the total number of outgoing links from your website to other domains. External links can boost credibility when they point to trusted, relevant sites, and help with user reference and authority building.\n\n## Total Opportunity Found\n\nThis shows the total number of internal link opportunities identified by Dofollo\u2019s AI across all pages of your website. Each opportunity is a chance to strengthen your internal link structure and boost SEO.\n\n## Trending Pages\n\nThis section highlights the top-performing pages on your site based on organic traffic and engagement, pulled directly from Google Search Console if connected. Use this to prioritize link building on pages that are already gaining traction.\n\n## Internal vs External Link Trends\n\nThis view displays the overall proportion of internal links versus external links. It also helps you track how your linking strategy evolves over time as your site grows, using visual charts and trend graphs.\n\n## Recent Activity\n\nThe Recent Activity section logs your latest actions in Dofollo such as link insertions, deletions, rescans, and site updates. This helps you monitor changes, workflow activity, and stay updated on what\u2019s happening across your site."
+                }
+            ],
+            "group": "Core Features"
+        },
+        {
+            "id": "pagelevel-view",
+            "title": "Page Level View",
+            "items": [
+                {
+                    "id": "pagelevel-view",
+                    "title": "Page Level View",
+                    "summary": "The Page Level View gives you a detailed visual breakdown of all the internal and external links connected to a specific page. It helps you understand...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "2 min",
+                    "tags": [
+                        "Guide",
+                        "Page Level View"
+                    ],
+                    "content": "## Page Level View Overview\n\nThe Page Level View gives you a detailed visual breakdown of all the internal and external links connected to a specific page. It helps you understand how much link authority the page receives, where it passes authority, and what additional internal linking opportunities exist.\n\n## Incoming Links\n\nThe Incoming Links section shows how many internal links from other pages on your website point to the current page. This includes a count of total inbound links and a visual map of source pages. Incoming links help distribute authority, improve crawlability, and assist search engines in discovering important content.\n\n## Outgoing Links\n\nThe Outgoing Links section shows how many links from the current page point to other pages within your website as well as external domains. It includes a count of total outbound links and a visual breakdown of internal and external links. Proper outgoing links improve content discoverability and user experience.\n\n## External Links\n\nThe External Links section shows how many links from the current page point to domains outside your website. External links can support your content by referencing trusted sources and improve credibility when used appropriately.\n\n## Lite Version Toggle\n\nThe Lite Version toggle switches to a simplified view of the graph with fewer visual elements and faster loading. This is useful for pages with large numbers of links or slower connections, giving you quicker access without the full graphic complexity.\n\n## Hide Navigation Links Toggle\n\nThe Hide Navigation Links toggle filters out structural links such as headers, footers, and menu navigation that aren\u2019t SEO-relevant. It is enabled by default to focus on meaningful contextual links, but you can turn it off if you want to see all link types.\n\n## List View\n\nThe List View option displays all links on the selected page \u2014 including incoming, outgoing, and external \u2014 in a clean, scrollable table format. This view is helpful for quickly reviewing link details like destination URLs, link types, and anchor texts when the graph view becomes visually complex.\n\n## AI Suggestions\n\nThe AI Suggestions panel shows internal linking opportunities that Dofollo\u2019s AI detects based on the content and context of the page. These suggestions include potential internal links with contextual relevance scores and help uncover linking opportunities you might otherwise miss.\n\n## Plan With AI\n\nThe Plan With AI button allows you to take action on the internal linking suggestions shown in AI Suggestions. When you click it, you\u2019ll see a list of internal link opportunities with recommended source content blocks and match scores. You can then publish these links (WordPress only), save them as drafts, or export them for manual use."
+                }
+            ],
+            "group": "Core Features"
+        },
+        {
+            "id": "planning-page",
+            "title": "Planning Page",
+            "items": [
+                {
+                    "id": "planning-page",
+                    "title": "Planning Page",
+                    "summary": "The Planning Page helps you manage and organize internal link opportunities for a selected page. It is divided into multiple tabs that show AI suggest...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "2 min",
+                    "tags": [
+                        "Guide",
+                        "Planning Page"
+                    ],
+                    "content": "## Planning Page Overview\n\nThe Planning Page helps you manage and organize internal link opportunities for a selected page. It is divided into multiple tabs that show AI suggestions, planned links, and existing links, along with controls to create, publish, delete, or save link suggestions.\n\n## AI Suggestions\n\nThis tab displays AI-generated internal linking opportunities for the selected page. There are sub-tabs for Incoming and Outgoing suggestions that help you identify where links can be added contextually to improve SEO.\n\n## Your Plan\n\nThe Your Plan tab shows all the links you\u2019ve saved as planned but not yet published. It helps queue up link recommendations for later review, bulk export, or eventual publishing.\n\n## Existing Pages\n\nThe Existing Pages tab lists all current internal links related to the selected page. It includes two sub-tabs for Incoming and Outgoing links that show what is already in place before adding new ones.\n\n## Create Link Button\n\nThe Create Link button lets you act on a suggested internal link. For WordPress sites, clicking opens the donor page where you can select anchor text and publish the link. For non-WordPress sites, it saves the suggestion as a draft for later manual implementation.\n\n## Deletion Mode\n\nThe Deletion Mode toggle allows you to remove existing internal links from the selected page. Once enabled, you can delete both incoming and outgoing links directly in the Existing Pages tab to clean up outdated or irrelevant connections.\n\n## Publishing Links\n\nAfter selecting the appropriate anchor text in the Create Link flow (WordPress only), click the Publish Link button to insert the internal link directly on your live website. This final step completes the internal link placement process when your site is integrated with WordPress.\n\n## Save for Later\n\nThe Save for Later option lets you store link suggestions without immediate publishing. On WordPress sites, it saves them as drafts in the Your Plan tab. On non-WordPress sites, it queues them for export so you can manually implement them later.\n\n## Planning Page Header\n\nThe Planning Page header shows key fields like Suggested URL, Recommended Section, and Match Percentage. Suggested URL is where the link will originate or point to, Recommended Section indicates the content area for placement, and Match % shows how contextually relevant the suggestion is."
+                }
+            ],
+            "group": "Link Management"
+        },
+        {
+            "id": "planned-links",
+            "title": "Planned Links",
+            "items": [
+                {
+                    "id": "planned-links",
+                    "title": "Planned Links",
+                    "summary": "The Planned Links section within the Dofollo dashboard shows all the internal links you have saved as drafts for future placement. It helps you track ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Planned Links"
+                    ],
+                    "content": "## Planned Links Overview\n\nThe Planned Links section within the Dofollo dashboard shows all the internal links you have saved as drafts for future placement. It helps you track and manage links that have been planned but not yet published or exported.\n\n## Tabs: All, Recent, and Stale\n\nThere are three tabs in the Planned Links view: All, Recent, and Stale. The All tab displays all saved link plans. Recent shows pages with newly updated link plans. Stale lists link plans that haven\u2019t been updated in a while and may need review or action.\n\n## Search by URL\n\nUse the Search by URL feature to quickly locate a specific page within your planned links list by typing in the page\u2019s URL. This is useful for large sites with many planned link entries.\n\n## Page List\n\nThe Page List section displays each page for which you have saved planned links. It shows the page URL, the date the link suggestion was last modified, and action buttons to manage that plan. Clicking a page URL opens its planning panel for deeper review.\n\n## Deleting Draft Links\n\nYou can delete any planned (draft) internal link that hasn\u2019t been published yet. Using the Delete icon next to the saved link removes the unpublished suggestion from your planned queue without affecting live pages on your website.\n\n## Plan New Page\n\nThe Plan New Page option opens a pop-up where you can enter the URL of a target page you want to plan links for. Submitting the URL takes you to the Page Level View so you can explore and save new internal link opportunities for that page."
+                }
+            ],
+            "group": "Link Management"
+        },
+        {
+            "id": "scan-new-page",
+            "title": "Scan New Page",
+            "items": [
+                {
+                    "id": "scan-new-page",
+                    "title": "Scan New Page",
+                    "summary": "The Scan New Page feature allows you to manually trigger the scanning of a newly published or updated page so that it gets included in Dofollo\u2019s analy...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Scan New Page"
+                    ],
+                    "content": "## Scan New Page Overview\n\nThe Scan New Page feature allows you to manually trigger the scanning of a newly published or updated page so that it gets included in Dofollo\u2019s analysis immediately rather than waiting for automatic detection.\n\n## How It Works\n\nWhen you use this feature, a pop-up appears where you can enter the URL of the page you want to scan. Once submitted, Dofollo will immediately begin scanning the page to detect internal link opportunities.\n\n## Automatic Detection\n\nDofollo automatically detects and scans new pages over time during its regular site analysis. However, if you want a specific page to be included right away, using Scan New Page ensures the page is analyzed without waiting."
+                }
+            ],
+            "group": "Core Features"
+        },
+        {
+            "id": "settings-configuration",
+            "title": "Settings & Configuration",
+            "items": [
+                {
+                    "id": "settings-configuration",
+                    "title": "Settings & Configuration",
+                    "summary": "Customize how the Dofollo dashboard appears and behaves based on your preferences. In this section, you can manage your profile details and personaliz...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Settings & Configuration"
+                    ],
+                    "content": "## Overview\n\nCustomize how the Dofollo dashboard appears and behaves based on your preferences. In this section, you can manage your profile details and personalize your dashboard experience for improved navigation and workflow.\n\n## Profile\n\nThe Profile section lets you view and manage your personal account details. You can access it by clicking your user icon in the top-right corner of the dashboard and selecting Profile from the dropdown. Here you can update your name, email address, location (if set), subscription plan, and account status.\n\n## Settings\n\nIn the Settings area, you can find options to personalize how the Dofollo dashboard looks and works. These options help improve usability and make it easier to navigate the interface, especially on large websites.\n\n## Dark & Light Mode\n\nUse the Dark & Light Mode toggle to switch between light and dark themes. This lets you optimize visibility and reduce eye strain based on your environment and preference.\n\n## Direction\n\nThe Direction setting allows you to choose whether the sidebar menu appears on the left or the right side of your screen. This helps align the dashboard layout with your preferred workflow and reading pattern.\n\n## Layout Options\n\nChoose between a compact or spacious layout for the dashboard interface. The compact view tightens spacing for more information at a glance, while the spacious view increases padding for better readability.\n\n## Stretch View\n\nThe Stretch View setting lets you adjust the workspace spacing so that panels and visuals appear more spread out. This is useful when viewing link visualizations or working with detailed graphs for better clarity.\n\n## Fullscreen Mode\n\nEnable Fullscreen Mode to expand the interface for a distraction-free experience. This hides browser chrome and maximizes the workspace, ideal when you are reviewing link recommendations or analyzing site structure."
+                }
+            ],
+            "group": "Configuration"
+        },
+        {
+            "id": "connect-wordpress",
+            "title": "Connect WordPress",
+            "items": [
+                {
+                    "id": "connect-wordpress",
+                    "title": "Connect WordPress",
+                    "summary": "The Connect WordPress feature links your WordPress site with Dofollo so that you can publish internal links directly from the Dofollo dashboard. This ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Connect WordPress"
+                    ],
+                    "content": "## Connect WordPress Overview\n\nThe Connect WordPress feature links your WordPress site with Dofollo so that you can publish internal links directly from the Dofollo dashboard. This connection is required only once and remains active for future link publishing actions.\n\n## When the Connect Popup Appears\n\nThe Connect Your Website pop-up appears when you try to publish an internal link from Dofollo but haven\u2019t yet completed the WordPress integration. You can follow the steps in the pop-up to connect your site and enable direct publishing.\n\n## Benefits of Connecting WordPress\n\nConnecting WordPress with Dofollo provides several benefits: it links your WordPress backend with the Dofollo dashboard, enables direct publishing of internal links, and eliminates the need to manually open your WordPress admin to add links. Once connected, you can apply AI-recommended links instantly, saving time and making the link building workflow easier\u2014especially for larger sites.\n\n## Using Dofollo Without WordPress Integration\n\nEven if you don\u2019t integrate WordPress, you can still view internal link suggestions within Dofollo. However, direct publishing of those links to your live site won\u2019t be possible until WordPress is connected."
+                }
+            ],
+            "group": "Integrations"
+        },
+        {
+            "id": "connect-gsc",
+            "title": "Connect Google Search Console",
+            "items": [
+                {
+                    "id": "connect-gsc",
+                    "title": "Connect GSC",
+                    "summary": "The Connect GSC feature lets you link your Google Search Console account with Dofollo to unlock real organic search data within the Dofollo dashboard....",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Connect Google Search Console"
+                    ],
+                    "content": "## Connect GSC Overview\n\nThe Connect GSC feature lets you link your Google Search Console account with Dofollo to unlock real organic search data within the Dofollo dashboard. By connecting GSC, Dofollo can use actual search performance metrics to enhance internal link suggestions and SEO insights.\n\n## Why Connect Google Search Console?\n\nConnecting GSC to Dofollo helps the AI leverage real traffic and performance data from Google Search Console. This allows Dofollo to identify pages with genuine organic engagement and tailor internal link suggestions based on pages that are already performing well in search results.\n\n## Benefits of GSC Integration\n\nWhen you link Google Search Console with Dofollo, you gain access to actual search metrics such as clicks, impressions, and positions. This improves the relevance and impact of internal link recommendations, especially for pages that are already gaining traction, helping you distribute link equity more strategically.\n\n## How to Connect GSC\n\nTo connect Google Search Console, navigate to the Integrations section in your Dofollo dashboard and select \"Connect GSC\". You will be prompted to sign in to your Google account and grant Dofollo permission to access your Search Console property data. Once authenticated, your Search Console account will be linked and data will begin synchronizing.\n\n## Used in AI Suggestions\n\nOnce GSC is connected, Dofollo can include real GSC traffic and performance signals when generating AI internal link suggestions. This helps identify underlinked pages with high potential and prioritizes links that improve search visibility based on real traffic patterns."
+                }
+            ],
+            "group": "Integrations"
+        },
+        {
+            "id": "why-you-need-rabbitloader",
+            "title": "Why You Need RabbitLoader",
+            "items": [
+                {
+                    "id": "why-you-need-rabbitloader",
+                    "title": "Why You Need RabbitLoader",
+                    "summary": "Dofollo focuses on internal link structure and SEO strategy, but page speed and technical performance directly impact how well your content ranks. Rab...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Why You Need RabbitLoader"
+                    ],
+                    "content": "## Overview\n\nDofollo focuses on internal link structure and SEO strategy, but page speed and technical performance directly impact how well your content ranks. RabbitLoader improves site performance metrics that search engines and users care about, such as Core Web Vitals and page load speed.\n\n## Core Web Vitals Improvements\n\nRabbitLoader helps improve Core Web Vitals metrics, including metrics related to loading performance and visual stability. Better Core Web Vitals can contribute to improved search ranking and a smoother user experience.\n\n## Pagespeed Insights Score\n\nUsing RabbitLoader can boost your Pagespeed Insights score on both mobile and desktop. Higher performance scores often correlate with better SEO performance and increased visibility in search results.\n\n## Load Time and Rendering Speed\n\nRabbitLoader optimizes how quickly pages load and render for visitors. Faster page load times reduce bounce rates, increase engagement, and improve the likelihood that users stay on your site.\n\n## Improved User Experience\n\nImproved performance through RabbitLoader enhances the user experience, especially on mobile devices. Users are more likely to engage with content and navigate through pages when performance is fast and seamless.\n\n## Combined Benefits with Dofollo\n\nBy using both Dofollo for internal link strategy and RabbitLoader for speed optimization together, you improve both content strategy and technical performance, giving your site a stronger chance to rank higher in search results and retain visitors."
+                }
+            ],
+            "group": "Integrations"
+        },
+        {
+            "id": "what-is-dofollo",
+            "title": "What is Dofollo?",
+            "items": [
+                {
+                    "id": "what-is-dofollo",
+                    "title": "What is Dofollo?",
+                    "summary": "Dofollo is an AI-powered internal link management tool designed to help website owners discover, optimize, and manage internal links across their webs...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "What is Dofollo?"
+                    ],
+                    "content": "## Overview\n\nDofollo is an AI-powered internal link management tool designed to help website owners discover, optimize, and manage internal links across their websites. It uses advanced AI algorithms to identify contextually relevant link opportunities that might otherwise remain hidden deep within your content.\n\n## Key Features and Capabilities\n\nDofollo analyzes your site\u2019s internal link structure to find opportunities for linking and strengthening your SEO. On supported platforms like WordPress and WooCommerce, it even lets you place or remove internal links directly from the Dofollo dashboard. The tool helps improve crawlability, link authority distribution, and organic search visibility by optimizing internal links with AI precision.\n\n## Benefits of AI-Powered Linking\n\nBy leveraging AI, Dofollo can uncover contextual internal link opportunities that manual methods or basic plugins often miss. The AI considers relevance between content pages and suggests high-impact links. This helps enhance content discoverability, retain users longer, and improve SEO performance.\n\n## Platform Support\n\nDofollo works across all websites regardless of the platform, but it offers deeper integration with platforms like WordPress and WooCommerce. When integrated with WordPress, users can publish, update, or delete internal links directly from the dashboard without switching to the website\u2019s backend.\n\n## Who It\u2019s For\n\nDofollo is useful for website owners, SEO professionals, and digital marketers who want to improve organic rankings with a strong internal linking strategy. It\u2019s especially helpful for large websites, agency workflows, or sites with complex content structures where manual internal linking would be time-consuming."
+                }
+            ],
+            "group": "Introduction"
+        },
+        {
+            "id": "why-use-dofollo",
+            "title": "Why Use Dofollo?",
+            "items": [
+                {
+                    "id": "why-use-dofollo",
+                    "title": "Why Use Dofollo?",
+                    "summary": "Dofollo is an AI-powered internal linking tool built to help you grow traffic and improve rankings \u2014 no matter what platform your website runs on. It ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Why Use Dofollo?"
+                    ],
+                    "content": "## Overview\n\nDofollo is an AI-powered internal linking tool built to help you grow traffic and improve rankings \u2014 no matter what platform your website runs on. It combines powerful AI suggestions with a central dashboard to make internal link management smarter and faster.\n\n## AI-Driven Internal Link Discovery\n\nDofollo\u2019s AI scans your entire website to uncover contextual internal link opportunities hidden across your content. These suggestions work across all platforms, and on WordPress/WooCommerce you can place or delete links directly from the Dofollo dashboard.\n\n## Smart AI-Powered Suggestions\n\nLink suggestions are ranked based on contextual relevance. Dofollo integrates with Google Search Console to identify pages with real organic traffic and tailor internal link distribution to improve SEO impact.\n\n## Detect Orphan Pages & Broken Links\n\nDofollo highlights orphan pages \u2014 pages not linked anywhere on your site \u2014 as well as broken links. These issues can hurt SEO, and Dofollo helps identify and resolve them efficiently.\n\n## Analyze Competitor Link Strategies\n\nGet insights into how top-ranking websites structure their internal links. Dofollo\u2019s AI analyzes competitor strategies to help you adapt and improve your own internal linking approach.\n\n## Improve Search Rankings with Better Link Structures\n\nInternal links help search engines discover and prioritize content. Dofollo ensures your site\u2019s link structure supports stronger rankings and better crawlability by maximizing meaningful internal linking opportunities.\n\n## Save Hours Managing Large or Multiple Sites\n\nDofollo eliminates the need to manually open each page to manage links. Especially useful for large websites or agencies, it centralizes link management to save time at scale."
+                }
+            ],
+            "group": "Introduction"
+        },
+        {
+            "id": "adding-team-members",
+            "title": "Adding Team Members",
+            "items": [
+                {
+                    "id": "adding-team-members",
+                    "title": "Adding Team Members",
+                    "summary": "The Team Members section displays all team members currently involved in your project. From here, you can invite new members and manage team access....",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Adding Team Members"
+                    ],
+                    "content": "## Overview\n\nThe Team Members section displays all team members currently involved in your project. From here, you can invite new members and manage team access.\n\n## Step 1: Invite Member\n\nTo add a new member to your project, click on the \u201cInvite Member\u201d button located in the top-right corner of the screen. This starts the process to invite a collaborator to your Dofollo project.\n\n## Step 2: Enter Email and Role\n\nAfter clicking \u201cInvite Member\u201d, you will be prompted to fill in the email address of the person you want to invite, along with the role they should have \u2014 either \u201cmember\u201d or \u201cmanager\u201d.\n\n## Step 3: Select Role\n\nIn this step, choose the appropriate role for the invited user. The role determines the level of access they have within your project.\n\n## Step 4: Send Invitation\n\nAfter entering the email and selecting the role, send the invitation. The invited team member will receive an email which they must accept to gain access to your project."
+                }
+            ],
+            "group": "Team Management"
+        },
+        {
+            "id": "deleting-team-members",
+            "title": "Deleting Team Members",
+            "items": [
+                {
+                    "id": "deleting-team-members",
+                    "title": "Deleting Team Members",
+                    "summary": "To delete or remove any team member from your project, go to your Team Members section in the Dofollo dashboard. Here you can see all current members ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Deleting Team Members"
+                    ],
+                    "content": "## Overview\n\nTo delete or remove any team member from your project, go to your Team Members section in the Dofollo dashboard. Here you can see all current members associated with your project, along with options to manage access.\n\n## Removing a Team Member\n\nFind the team member you want to remove in the Team Members list and click the \"Delete\" button next to their name. This will immediately remove their access from your project in Dofollo.\n\n## Confirmation\n\nAfter clicking the \"Delete\" button, the team member will be removed from the list and will no longer have access to your Dofollo project. There is no effect on other team members or settings unless explicitly changed."
+                }
+            ],
+            "group": "Team Management"
+        },
+        {
+            "id": "troubleshooting-login-issues",
+            "title": "Troubleshooting Login Issues",
+            "items": [
+                {
+                    "id": "troubleshooting-login-issues",
+                    "title": "Troubleshooting Login Issues",
+                    "summary": "If you\u2019re having trouble logging into your Dofollo account, this guide helps you resolve common login issues quickly and easily....",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Troubleshooting Login Issues"
+                    ],
+                    "content": "## Overview\n\nIf you\u2019re having trouble logging into your Dofollo account, this guide helps you resolve common login issues quickly and easily.\n\n## Forgot Password\n\nIf you forgot your password, use the \u201cRecover Password\u201d option on the login page to reset it. When you request a password reset, Dofollo will send a verification code to your registered email address to help you reset your old password and regain access to your account.\n\n## Email Verification Issues\n\nIf you are not receiving the verification code via email, check your spam or junk folder first. Ensure that you entered the correct email address associated with your Dofollo account. If the code still doesn\u2019t arrive, try resending it or contact support for further assistance.\n\n## Incorrect Credentials\n\nMake sure you are using the right login method (email, Google, or Facebook) and that the credentials match the ones you used to sign up. If you recently changed your email, use that updated email address to request a new login verification code.\n\n## Contact Support\n\nIf none of the above steps resolve your login issue, you can create a support ticket for help. Visit the Dofollo Support page at https://dofollo.ai/support and describe the issue clearly so the support team can assist you promptly."
+                }
+            ],
+            "group": "Support"
+        },
+        {
+            "id": "find-your-website",
+            "title": "Find Your Website",
+            "items": [
+                {
+                    "id": "find-your-website",
+                    "title": "Find Your Website",
+                    "summary": "After logging in successfully, you will be redirected to your Dofollo dashboard. From the dashboard, you can view the list of all websites (projects) ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Find Your Website"
+                    ],
+                    "content": "## Overview\n\nAfter logging in successfully, you will be redirected to your Dofollo dashboard. From the dashboard, you can view the list of all websites (projects) associated with your account. This allows you to quickly find and switch between your websites.\n\n## Using the Dashboard to Find Your Website\n\nOnce you\u2019re on the dashboard, your websites are listed in a table or selection list. You can scroll through this list to locate a specific project or use the interface tools to navigate easily among multiple websites.\n\n## Add New Website Option\n\nIf you don\u2019t see the website you\u2019re looking for, you can use the \u201cAdd New Website\u201d option from the top dropdown. This lets you add another project by entering its URL and starting a new scan immediately."
+                }
+            ],
+            "group": "Configuration"
+        },
+        {
+            "id": "add-new-website-to-dofollo",
+            "title": "Add a New Website to Dofollo",
+            "items": [
+                {
+                    "id": "add-a-new-website-to-dofollo",
+                    "title": "Add a New Website to Dofollo",
+                    "summary": "To begin using Dofollo, you need to add at least one website to your dashboard so that Dofollo can scan and analyze its internal and external links....",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Add a New Website to Dofollo"
+                    ],
+                    "content": "## Overview\n\nTo begin using Dofollo, you need to add at least one website to your dashboard so that Dofollo can scan and analyze its internal and external links.\n\n## After Signup\n\nAfter signing up and completing the login process, enter your website\u2019s URL in the provided input box and click the \u201cSubmit\u201d button to start scanning your website immediately.\n\n## Adding Additional Websites\n\nIf you already have an account and existing projects, you can add another website by clicking the \u201cAdd\u201d button from your dashboard. This lets you manage multiple websites under the same Dofollo account.\n\n## Toggle Between Projects\n\nOnce you\u2019ve added multiple websites, you can switch between your different projects easily from the dashboard by using the project selector or toggle interface."
+                }
+            ],
+            "group": "Resources"
+        },
+        {
+            "id": "select-anchor-text",
+            "title": "Select Anchor Text",
+            "items": [
+                {
+                    "id": "select-anchor-text",
+                    "title": "Select Anchor Text",
+                    "summary": "The Select Anchor Text function helps you choose the specific anchor text you want to use for your internal link on the selected page. Choosing releva...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Select Anchor Text"
+                    ],
+                    "content": "## Overview\n\nThe Select Anchor Text function helps you choose the specific anchor text you want to use for your internal link on the selected page. Choosing relevant anchor text manually ensures maximum SEO benefit and improves the clarity and effectiveness of your link placement.\n\n## Why Selecting Anchor Text Matters\n\nAnchor text is the visible, clickable text in a hyperlink that tells users and search engines what the linked page is about. Good anchor text improves navigation, provides context, and can positively influence search engine understanding of the content relationship when used strategically.\n\n## Anchor Text Best Practices\n\nWhen selecting anchor text, choose phrases that clearly describe the linked page\u2019s content, avoid generic text like \u201cclick here,\u201d and prefer descriptive terms that match the context of the link. This enhances user experience and helps search engines interpret the page relationship more accurately.\n\n## Role in Internal Linking Strategy\n\nChoosing appropriate anchor text is essential for internal linking strategies because it reinforces page relevance and hierarchy. Strategic anchor text helps distribute link authority across your site and improves overall SEO performance."
+                }
+            ],
+            "group": "Link Management"
+        },
+        {
+            "id": "publish-link",
+            "title": "Publish Link",
+            "items": [
+                {
+                    "id": "publish-link",
+                    "title": "Publish Link",
+                    "summary": "The Publish Link feature acts as the final confirmation step to add your internal link \u2014 whether incoming or outgoing \u2014 to the selected page. Once you...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Publish Link"
+                    ],
+                    "content": "## Overview\n\nThe Publish Link feature acts as the final confirmation step to add your internal link \u2014 whether incoming or outgoing \u2014 to the selected page. Once you are satisfied with the anchor text and placement, clicking Publish inserts the link into the page\u2019s content.\n\n## When to Use Publish Link\n\nUse the Publish Link option after reviewing the AI-suggested internal link, ensuring the anchor text is appropriate and contextually relevant to both the source and destination pages. This ensures the link adds SEO value and improves navigability.\n\n## Requirements\n\nTo successfully publish an internal link directly from Dofollo, your website must be integrated with WordPress. Without WordPress integration, you won\u2019t be able to insert the link automatically and will need to export the link details for manual implementation.\n\n## What Happens on Publish\n\nWhen you click Publish, Dofollo pushes the link into your live content on WordPress, adding the selected anchor text and updating the page structure. This saves time compared to manually editing each page in your CMS.\n\n## Manual Alternative (Non-WordPress Sites)\n\nIf your site is not connected to WordPress, you can still use Dofollo\u2019s link suggestions by exporting them in CSV or other formats. Then manually add the internal links within your CMS using the recommended anchor text and source/destination details."
+                }
+            ],
+            "group": "Link Management"
+        },
+        {
+            "id": "create-ticket",
+            "title": "Create Ticket",
+            "items": [
+                {
+                    "id": "create-ticket",
+                    "title": "Create Ticket",
+                    "summary": "If you need help or run into any issues while using Dofollo, you can create a support ticket to get assistance from the Dofollo support team. This is ...",
+                    "lastUpdated": "2024-03-20",
+                    "readTime": "1 min",
+                    "tags": [
+                        "Guide",
+                        "Create Ticket"
+                    ],
+                    "content": "## Overview\n\nIf you need help or run into any issues while using Dofollo, you can create a support ticket to get assistance from the Dofollo support team. This is the primary way to report problems or ask questions that aren\u2019t answered in the documentation.\n\n## How to Create a Ticket\n\nTo create a support ticket, visit the Dofollo Support page at https://dofollo.ai/support and fill out the support form with your query or problem. Provide clear details about your issue so the support team can understand and assist you efficiently.\n\n## Response Time\n\nAfter submitting your ticket, the Dofollo support team will review it and respond to you via email. Support replies are typically sent within 24 hours on working days."
+                }
+            ],
+            "group": "Support"
+        }
+    ]
+}

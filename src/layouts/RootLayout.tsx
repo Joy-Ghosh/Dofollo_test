@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function RootLayout() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A2E22] text-[#f5ffef] font-sans">
+        <div className="flex flex-col min-h-screen bg-[#0A2E22] text-white font-sans">
             <Navbar />
 
             <main className="flex-grow">

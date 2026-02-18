@@ -1,0 +1,66 @@
+{
+    "metadata": {
+        "title": "Support | Dofollo",
+        "description": "Contact support or find answers to your questions."
+    },
+    "hero": {
+        "badge": "We're here to help",
+        "title": "Contact Support",
+        "description": "Have a question or need assistance? Reach out to our team and we'll get back to you as soon as possible."
+    },
+    "contact_info": {
+        "title": "Get in Touch",
+        "description": "Whether you have a question about features, pricing, or need technical support, our team is ready to answer all your questions.",
+        "email_support": {
+            "title": "Email Support",
+            "description": "Our friendly team is here to help.",
+            "email": "help@dofollo.ai"
+        },
+        "help_center": {
+            "title": "Help Center",
+            "description": "Browse our documentation and FAQs.",
+            "link_label": "Visit Help Center",
+            "link_url": "#"
+        },
+        "partner_cta": {
+            "title": "Partner with us",
+            "description": "Interested in a partnership or enterprise solution? We'd love to hear from you.",
+            "button_label": "Contact Sales"
+        }
+    },
+    "contact_form": {
+        "title": "Send us a message",
+        "description": "Fill out the form below and we'll get back to you shortly.",
+        "success_title": "Message Sent!",
+        "success_message_prefix": "Thank you for contacting us. We represent received your message and will respond to",
+        "success_message_suffix": "as soon as possible.",
+        "retry_label": "Send another message",
+        "fields": {
+            "name": {
+                "label": "Full Name",
+                "placeholder": "John Doe"
+            },
+            "email": {
+                "label": "Email Address",
+                "placeholder": "john@example.com"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "Select a subject",
+                "options": [
+                    "General Inquiry",
+                    "Technical Support",
+                    "Billing",
+                    "Partnership",
+                    "Other"
+                ]
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "How can we help you today?"
+            },
+            "submit_button": "Send Message",
+            "submitting_button": "Sending..."
+        }
+    }
+}

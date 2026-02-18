@@ -1,6 +1,9 @@
 import React from 'react';
+import homeData from '../../data/pages/home.json';
 
 export default function ProductShowcase() {
+    const { product_showcase } = homeData;
+
     return (
         <section id="product-showcase" className="py-24 bg-[#0A2E22] relative overflow-hidden bg-noise">
             {/* Background Gradients - Adjusted for smoother blend */}
@@ -9,11 +12,11 @@ export default function ProductShowcase() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl lg:text-5xl font-extrabold text-[#f5ffef] mb-6 tracking-tight">
-                        Analyze, Optimize, and <span className="text-[#E1F28F]">Dominate</span>
+                    <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                        {product_showcase.heading_first} <span className="text-[#E1F28F]">{product_showcase.heading_highlight}</span>
                     </h2>
-                    <p className="text-[#f5ffef]/80 text-lg lg:text-xl leading-relaxed">
-                        A complete suite of tools to visualize your site architecture and uncover hidden SEO potential.
+                    <p className="text-white/80 text-lg lg:text-xl leading-relaxed">
+                        {product_showcase.description}
                     </p>
                 </div>
 

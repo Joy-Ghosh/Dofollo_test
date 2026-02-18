@@ -3,7 +3,7 @@ import { Check, X } from 'lucide-react';
 
 export default function ComparisonTable() {
     return (
-        <section className="py-24 bg-[#0A2E22] bg-noise text-[#f5ffef]">
+        <section className="py-24 bg-[#0A2E22] bg-noise text-white">
             <div className="container mx-auto px-6 max-w-5xl">
                 <h2 className="text-3xl lg:text-5xl font-extrabold text-center mb-16 tracking-tight">
                     Manual Linking vs. <span className="text-[#E1F28F]">Dofollo</span>

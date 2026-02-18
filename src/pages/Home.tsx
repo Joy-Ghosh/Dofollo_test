@@ -15,10 +15,13 @@ import PricingPreview from '../components/home/PricingPreview';
 import FAQSection from '../components/home/FAQSection';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import seoData from '../data/seo.json';
 
 export default function Home() {
     return (
         <div className="w-full min-h-screen bg-[#0A2E22] overflow-x-hidden">
+            <SEO {...seoData.pages.home} />
             <Hero />
             <ProblemSection />
             <ProductShowcase />

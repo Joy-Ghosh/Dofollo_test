@@ -1,8 +1,11 @@
 import React from 'react';
+import homeData from '../../data/pages/home.json';
 
 export default function CompetitorAnalysis() {
+    const { competitor_analysis } = homeData;
+
     return (
-        <section className="py-24 bg-[#f5ffef] text-[#0A2E22] relative overflow-hidden">
+        <section className="py-24 bg-white text-[#0A2E22] relative overflow-hidden">
             {/* Ambient Lighting */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -18,17 +21,17 @@ export default function CompetitorAnalysis() {
                             <div className="flex items-center justify-between mb-8">
                                 <h3 className="text-[#0A2E22] font-bold flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-[#045C4E] animate-pulse" />
-                                    Competitor Gap Analysis
+                                    {competitor_analysis.visual_title}
                                 </h3>
                                 <div className="text-xs font-mono text-[#045C4E] bg-[#045C4E]/10 px-3 py-1 rounded-full border border-[#045C4E]/20">
-                                    LIVE TRACKING
+                                    {competitor_analysis.visual_badge}
                                 </div>
                             </div>
 
                             {/* Chart / Data Rows */}
                             <div className="space-y-4 font-mono text-sm">
                                 {/* Competitor 1 */}
-                                <div className="p-4 rounded-xl bg-[#f5ffef] border border-[#0A2E22]/5 hover:bg-[#045C4E]/5 transition-colors cursor-pointer group/row">
+                                <div className="p-4 rounded-xl bg-[#0A2E22]/5 border border-[#0A2E22]/5 hover:bg-[#045C4E]/5 transition-colors cursor-pointer group/row">
                                     <div className="flex justify-between items-center mb-3">
                                         <div className="flex items-center gap-3">
                                             <div className="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-600 flex items-center justify-center font-bold">A</div>
@@ -46,7 +49,7 @@ export default function CompetitorAnalysis() {
                                 </div>
 
                                 {/* Competitor 2 */}
-                                <div className="p-4 rounded-xl bg-[#f5ffef] border border-[#0A2E22]/5 hover:bg-[#045C4E]/5 transition-colors cursor-pointer group/row">
+                                <div className="p-4 rounded-xl bg-[#0A2E22]/5 border border-[#0A2E22]/5 hover:bg-[#045C4E]/5 transition-colors cursor-pointer group/row">
                                     <div className="flex justify-between items-center mb-3">
                                         <div className="flex items-center gap-3">
                                             <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 flex items-center justify-center font-bold">S</div>
@@ -72,7 +75,7 @@ export default function CompetitorAnalysis() {
                                         </div>
                                         <span className="text-[#E1F28F] text-xs flex items-center gap-1">
                                             <span className="w-1.5 h-1.5 rounded-full bg-[#E1F28F]" />
-                                            Active
+                                            glink.io
                                         </span>
                                     </div>
                                     <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -91,16 +94,16 @@ export default function CompetitorAnalysis() {
                     <div className="order-1 lg:order-2">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#045C4E]/5 border border-[#045C4E]/10 text-[#045C4E] text-xs font-bold uppercase tracking-wider mb-6">
                             <span className="w-2 h-2 rounded-full bg-[#045C4E] animate-pulse"></span>
-                            Market Intelligence
+                            {competitor_analysis.badge}
                         </div>
                         <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight text-[#0A2E22]">
-                            Outperform Competitors <br /><span className="text-[#045C4E]">With AI Intelligence</span>
+                            {competitor_analysis.heading_first} <br /><span className="text-[#045C4E]">{competitor_analysis.heading_highlight}</span>
                         </h2>
                         <p className="text-lg text-[#0A2E22]/70 mb-8 leading-relaxed">
-                            See exactly where your competitors are linking and find the gaps they missed. Steal their strategy in seconds with our advanced link graph visualization.
+                            {competitor_analysis.description}
                         </p>
                         <button className="group relative inline-flex items-center gap-2 text-[#045C4E] font-bold pb-1 overflow-hidden">
-                            <span className="relative z-10 transition-colors group-hover:text-[#0A2E22]">Explore Competitor Tools</span>
+                            <span className="relative z-10 transition-colors group-hover:text-[#0A2E22]">{competitor_analysis.cta}</span>
                             <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#045C4E] transition-all duration-300 group-hover:w-full group-hover:bg-[#0A2E22]"></span>
                         </button>
                     </div>

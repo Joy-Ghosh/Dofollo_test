@@ -1,0 +1,238 @@
+{
+    "hero": {
+        "badge": "Free Tools Directory",
+        "title_first": "Powerful Tools for",
+        "title_highlight": "SEO & Growth",
+        "description": "A comprehensive collection of free SEO, analytics, and intelligence tools to help you optimize your digital presence."
+    },
+    "categories": [
+        {
+            "title": "SEO Tools",
+            "icon": "Search",
+            "tools": [
+                {
+                    "name": "Link Counter Tool",
+                    "description": "Use our link counter to easily check link counts and understand internal and external links with a simple and clear counter link tool.",
+                    "icon": "LinkIcon",
+                    "badge": "Popular",
+                    "link": "/tools/link-counter"
+                },
+                {
+                    "name": "Keyword Density Checker Tool",
+                    "description": "Use a keyword density checker to check keyword density easily and improve content balance with a simple and clear tool.",
+                    "icon": "Hash",
+                    "link": "/tools/keyword-density"
+                },
+                {
+                    "name": "Domain Authority Checker Tool",
+                    "description": "Check domain authority instantly using our domain authority checker free tool powered by Moz metrics.",
+                    "icon": "Shield",
+                    "badge": "Popular",
+                    "link": "#"
+                },
+                {
+                    "name": "AI Content Detector Tool",
+                    "description": "Accurately detect AI-generated text from ChatGPT, GPT-4, Claude, and Gemini with our advanced AI checking tool.",
+                    "icon": "Sparkles",
+                    "badge": "New",
+                    "link": "#"
+                },
+                {
+                    "name": "Plagiarism Checker Tool",
+                    "description": "Use our plagiarism checker to detect duplicate content and ensure originality with a simple, fast, and accurate plagiarism detector.",
+                    "icon": "FileText",
+                    "link": "#"
+                },
+                {
+                    "name": "Backlink Analyzer",
+                    "description": "Analyze backlinks for any domain.",
+                    "icon": "LinkIcon",
+                    "link": "#"
+                },
+                {
+                    "name": "Bulk URL Opener Tool",
+                    "description": "Open multiple URLs simultaneously in new tabs to boost productivity.",
+                    "icon": "ExternalLink",
+                    "badge": "New",
+                    "link": "#"
+                }
+            ]
+        },
+        {
+            "title": "Readability Tools",
+            "icon": "AlignLeft",
+            "tools": [
+                {
+                    "name": "Readability Checker Tool",
+                    "description": "Analyze your text complexity with multiple proven readability formulas in one place.",
+                    "icon": "Eye",
+                    "badge": "Popular",
+                    "link": "#"
+                },
+                {
+                    "name": "Flesch Reading Ease Calculator",
+                    "description": "Measure how easy your content is to read on a scale of 0-100.",
+                    "icon": "FileText",
+                    "link": "#"
+                },
+                {
+                    "name": "Flesch-Kincaid Grade Level Calculator",
+                    "description": "Find out the education level needed to understand your writing.",
+                    "icon": "GraduationCap",
+                    "link": "#"
+                },
+                {
+                    "name": "Gunning Fog Index Calculator",
+                    "description": "Estimate the years of formal education required to read your text.",
+                    "icon": "AlignLeft",
+                    "link": "#"
+                },
+                {
+                    "name": "SMOG Index Calculator",
+                    "description": "A gold standard for healthcare and technical readability.",
+                    "icon": "Activity",
+                    "link": "#"
+                },
+                {
+                    "name": "Automated Readability Index (ARI)",
+                    "description": "Determine the grade level needed to comprehend your text.",
+                    "icon": "Calculator",
+                    "link": "#"
+                },
+                {
+                    "name": "Coleman-Liau Index Calculator",
+                    "description": "A readability formula that relies on characters instead of syllables.",
+                    "icon": "Type",
+                    "link": "#"
+                },
+                {
+                    "name": "Dale-Chall Readability Calculator",
+                    "description": "Measures difficulty based on a list of 3,000 familiar words.",
+                    "icon": "BookOpen",
+                    "link": "#"
+                },
+                {
+                    "name": "LIX Readability Calculator",
+                    "description": "A simple readability measure suitable for many languages.",
+                    "icon": "Languages",
+                    "link": "#"
+                },
+                {
+                    "name": "RIX Readability Calculator",
+                    "description": "A simplified complexity ratio based on long words per sentence.",
+                    "icon": "Divide",
+                    "link": "#"
+                }
+            ]
+        },
+        {
+            "title": "Analytics Tools",
+            "icon": "BarChart3",
+            "tools": [
+                {
+                    "name": "SEO ROI Calculator",
+                    "description": "Calculate your monthly SEO return on investment and measure the financial impact of your search optimization efforts.",
+                    "icon": "Activity",
+                    "badge": "Pro",
+                    "link": "#"
+                },
+                {
+                    "name": "Enterprise SEO ROI Calculator",
+                    "description": "Calculate your SEO return on investment and measure the true impact of your enterprise SEO campaigns.",
+                    "icon": "TrendingUp",
+                    "link": "#"
+                },
+                {
+                    "name": "Conversion Rate Calculator Tool",
+                    "description": "Calculate conversion rates for websites, sales, and retail stores to track success.",
+                    "icon": "Zap",
+                    "badge": "New",
+                    "link": "#"
+                },
+                {
+                    "name": "Password Generator Tool",
+                    "description": "Use our password generator free tool to generate password safely with a random password generator for strong and secure access.",
+                    "icon": "Lock",
+                    "link": "#"
+                }
+            ]
+        },
+        {
+            "title": "IP Intelligence",
+            "icon": "Globe",
+            "tools": [
+                {
+                    "name": "DNS Lookup Tool",
+                    "description": "Use our DNS lookup tool to find DNS records easily and perform quick dns server lookup with clear and accurate results.",
+                    "icon": "Globe2",
+                    "link": "#"
+                },
+                {
+                    "name": "CNAME Checker Tool",
+                    "description": "Check Canonical Name (CNAME) records to verify domain aliases and forwarding configurations.",
+                    "icon": "Search",
+                    "link": "#"
+                },
+                {
+                    "name": "MX Lookup Tool",
+                    "description": "Use our MX lookup tool to lookup MX records easily and check email server settings with accurate and clear MX record data.",
+                    "icon": "Mail",
+                    "link": "#"
+                },
+                {
+                    "name": "SPF Record Lookup",
+                    "description": "Check SPF records to improve email deliverability.",
+                    "icon": "ShieldCheck",
+                    "link": "#"
+                },
+                {
+                    "name": "NS Lookup Tool",
+                    "description": "Find the authoritative name servers for any domain with our fast and reliable NS lookup tool.",
+                    "icon": "Server",
+                    "link": "#"
+                },
+                {
+                    "name": "TXT Records Checker Tool",
+                    "description": "Instantly retrieve and verify all DNS TXT records associated with a domain.",
+                    "icon": "FileText",
+                    "link": "#"
+                },
+                {
+                    "name": "SSL Certificate Lookup",
+                    "description": "Check SSL certificate details, validity, and chain status for any domain.",
+                    "icon": "Lock",
+                    "link": "#"
+                },
+                {
+                    "name": "SSL Details Lookup",
+                    "description": "Deep dive into SSL certificates.",
+                    "icon": "Search",
+                    "link": "#"
+                },
+                {
+                    "name": "IP Address Lookup Tool",
+                    "description": "Use our IP address lookup to find IP location details quickly with a simple ip lookup tool and clear, accurate results.",
+                    "icon": "MapPin",
+                    "link": "#"
+                },
+                {
+                    "name": "IP Geolocation",
+                    "description": "Find the geographical location of an IP address.",
+                    "icon": "Globe",
+                    "link": "#"
+                },
+                {
+                    "name": "IP Intelligence Tool",
+                    "description": "Analyze any IP address for location, network, and security threats.",
+                    "icon": "ShieldAlert",
+                    "badge": "Pro",
+                    "link": "#"
+                }
+            ]
+        }
+    ],
+    "no_results": {
+        "title": "No tools found",
+        "description": "Try searching for something else."
+    }
+}

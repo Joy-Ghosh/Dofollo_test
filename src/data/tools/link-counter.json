@@ -1,0 +1,191 @@
+{
+    "hero": {
+        "badge": "Free to use • No registration required",
+        "title": "Link Counter Tool",
+        "description": "Use our link counter to easily check link counts and understand internal and external links with a simple and clear counter link tool."
+    },
+    "tabs": {
+        "url_label": "Single URL Analysis",
+        "compare_label": "Compare Two URLs"
+    },
+    "input_section": {
+        "url_mode": {
+            "label": "Target Website",
+            "placeholder": "Enter URL (e.g. https://dofollo.ai)",
+            "security_note": "Secure analysis over HTTPS",
+            "button_label": "Start Free Analysis"
+        },
+        "compare_mode": {
+            "vs_badge": "VS",
+            "url_1_label": "Your URL",
+            "url_1_placeholder": "https://...",
+            "url_2_label": "Competitor URL",
+            "url_2_placeholder": "https://...",
+            "button_label": "Analyze & Compare"
+        },
+        "clear_label": "Reset Form",
+        "processing_label": "Processing..."
+    },
+    "analysis_cards": {
+        "title": "Understanding Website Link Count",
+        "description": "Link counts show total internal and external links on a page. Understanding these metrics is key to a healthy site structure.",
+        "cards": [
+            {
+                "type": "good",
+                "badge": "Good Health",
+                "title": "Total Links",
+                "description": "Shows total links found on a page including internal and external."
+            },
+            {
+                "type": "warning",
+                "badge": "Warning",
+                "title": "Link Distribution",
+                "description": "Separates internal and external links for clear site structure review."
+            },
+            {
+                "type": "critical",
+                "badge": "Critical",
+                "title": "Unique Links",
+                "description": "Counts unique links to help reduce duplicates and improve crawling."
+            }
+        ]
+    },
+    "about_section": {
+        "title": "About This Tool",
+        "content": [
+            {
+                "subtitle": "Count Website Links Easily",
+                "text": "Our link counter helps you quickly and clearly count links on any webpage. This counter link tool shows total internal and external link counts in one place."
+            },
+            {
+                "text": "Use this link counts tool to review page structure, manage internal links, and improve website navigation using simple and easy-to-read data."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Why It Matters",
+        "items": [
+            {
+                "id": 1,
+                "title": "SEO Planning",
+                "description": "Helps understand internal and external link counts for SEO planning. Supports site audits."
+            },
+            {
+                "id": 2,
+                "title": "Improve Crawl Flow",
+                "description": "Improves crawl flow using clear link counts and structure data. Assists content optimization."
+            },
+            {
+                "id": 3,
+                "title": "Site Audits",
+                "description": "Supports site audits by identifying excessive or missing page links. Track improvements."
+            },
+            {
+                "id": 4,
+                "title": "Content Optimization",
+                "description": "Assists content optimization through proper internal linking analysis. Monitor changes."
+            }
+        ]
+    },
+    "improve_section": {
+        "title": "Improve SEO Using Link Counter",
+        "steps": [
+            {
+                "num": 1,
+                "title": "Enter Page URL",
+                "desc": "Enter your page URL to start counting links using the link counter tool online easily."
+            },
+            {
+                "num": 2,
+                "title": "Review Link Data",
+                "desc": "Review internal and external counter link results to understand page structure clearly for SEO improvement."
+            },
+            {
+                "num": 3,
+                "title": "Optimize Link Structure",
+                "desc": "Use link counts data to fix broken links and improve internal linking for better crawling."
+            }
+        ]
+    },
+    "faq_section": {
+        "title": "Frequently Asked Questions",
+        "items": [
+            {
+                "question": "What is a link counter?",
+                "answer": "A link counter is a tool that scans a webpage and counts all the hyperlinks present on it. It categorizes them into internal links (pointing to the same domain) and external links (pointing to other domains)."
+            },
+            {
+                "question": "Why should I use a link counter?",
+                "answer": "Counting links helps in auditing your on-page SEO. Too many links can dilute your page authority, while too few might affect user navigation. It also helps identify broken links or excessive external linking."
+            },
+            {
+                "question": "How does the tool count links?",
+                "answer": "The tool crawls the HTML source code of the provided URL, identifying all anchor tags (<a>) and classifying them based on their href attributes."
+            },
+            {
+                "question": "What is a counter link tool used for?",
+                "answer": "It is used for SEO audits, competitive analysis, checking link health, and ensuring a balanced internal linking structure."
+            },
+            {
+                "question": "Can this tool count internal and external links?",
+                "answer": "Yes, our tool automatically separates and counts both internal links (within your domain) and external links (pointing to other websites)."
+            },
+            {
+                "question": "Does the tool count external and outbound links?",
+                "answer": "Yes, 'external' and 'outbound' links are terms often used interchangeably. The tool counts any link pointing to a different domain."
+            },
+            {
+                "question": "Is this link counter free to use?",
+                "answer": "Yes, this tool is completely free to use with no hidden costs or registration requirements."
+            },
+            {
+                "question": "Why is counting links important for SEO?",
+                "answer": "Search engines use links to crawl and understand your site. A balanced link count ensures efficient crawling and prevents 'link juice' dilution."
+            },
+            {
+                "question": "Can I use this tool for long pages?",
+                "answer": "Absolutely. The tool is designed to handle pages of any length and can process hundreds of links efficiently."
+            },
+            {
+                "question": "Does the tool store my data?",
+                "answer": "No, we do not store the URLs you analyze or the results. All unique analysis happens in real-time."
+            },
+            {
+                "question": "What can I do with link count results?",
+                "answer": "You can use the results to optimize your crawl budget, fix broken links, remove excessive external links, and improve your internal linking strategy."
+            }
+        ]
+    },
+    "sidebar": {
+        "recommended_tools": {
+            "title": "Recommended Tools",
+            "items": [
+                {
+                    "name": "Keyword Density",
+                    "icon": "BarChart3",
+                    "description": "Check keyword usage",
+                    "link": "/tools/keyword-density"
+                },
+                {
+                    "name": "Readability Score",
+                    "icon": "FileText",
+                    "description": "Optimize content clarity",
+                    "link": "#"
+                },
+                {
+                    "name": "AI Detector",
+                    "icon": "Shield",
+                    "description": "Verify content authenticity",
+                    "link": "#"
+                }
+            ],
+            "view_all_label": "View All Tools"
+        },
+        "promo": {
+            "badge": "PRO FEATURE",
+            "title": "Unlock Full Analysis",
+            "description": "Get detailed reports on broken links, redirect chains, and more.",
+            "button_label": "Upgrade to Pro"
+        }
+    }
+}

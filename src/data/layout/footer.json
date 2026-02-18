@@ -1,0 +1,277 @@
+{
+    "brand": {
+        "logo": {
+            "src": "../assets/logo.png",
+            "alt": "Dofollo",
+            "text": "Dofollo",
+            "highlight": ".ai",
+            "link": "/"
+        },
+        "description": "AI-powered internal linking tool that helps you discover, optimize, and manage internal links across your website for better SEO rankings.",
+        "socials": [
+            {
+                "name": "Facebook",
+                "icon": "Facebook",
+                "href": "https://www.facebook.com/people/Dofollo/61557583197586/"
+            },
+            {
+                "name": "Instagram",
+                "icon": "Instagram",
+                "href": "https://www.instagram.com/dofollo_/"
+            },
+            {
+                "name": "Twitter",
+                "icon": "Twitter",
+                "href": "https://x.com/Dofollohq"
+            },
+            {
+                "name": "Pinterest",
+                "icon": "Pinterest",
+                "href": "https://in.pinterest.com/dofollohq/"
+            }
+        ]
+    },
+    "columns": [
+        {
+            "title": "Product",
+            "links": [
+                {
+                    "label": "Get Started",
+                    "href": "#"
+                },
+                {
+                    "label": "Pricing",
+                    "href": "#"
+                },
+                {
+                    "label": "Features",
+                    "href": "/features",
+                    "isRouterLink": true
+                },
+                {
+                    "label": "Resources",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Company",
+            "links": [
+                {
+                    "label": "About",
+                    "href": "#"
+                },
+                {
+                    "label": "Blog",
+                    "href": "#"
+                },
+                {
+                    "label": "Docs",
+                    "href": "/docs",
+                    "isRouterLink": true
+                },
+                {
+                    "label": "Support",
+                    "href": "/support",
+                    "isRouterLink": true
+                },
+                {
+                    "label": "Partner",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Support",
+            "links": [
+                {
+                    "label": "Privacy",
+                    "href": "#"
+                },
+                {
+                    "label": "Terms",
+                    "href": "#"
+                },
+                {
+                    "label": "Agency",
+                    "href": "#"
+                },
+                {
+                    "label": "Contact",
+                    "href": "#"
+                }
+            ]
+        }
+    ],
+    "directories": {
+        "main_toggle": {
+            "button_label": "Free Tools Directory",
+            "view_all_label": "View all tools",
+            "view_all_link": "/tools"
+        },
+        "sections": {
+            "seo": {
+                "title": "SEO Tools",
+                "items": [
+                    {
+                        "label": "Link Counter",
+                        "href": "/tools/link-counter"
+                    },
+                    {
+                        "label": "Keyword Density Checker",
+                        "href": "/tools/keyword-density"
+                    },
+                    {
+                        "label": "Domain Authority Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "AI Content Detector",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Plagiarism Checker",
+                        "href": "#"
+                    }
+                ]
+            },
+            "analytics": {
+                "title": "Analytics Tools",
+                "items": [
+                    {
+                        "label": "SEO ROI Calculator",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Enterprise SEO ROI Calculator",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Conversion Rate Calculator",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Password Generator",
+                        "href": "#"
+                    }
+                ]
+            },
+            "ip": {
+                "title": "IP Intelligence",
+                "items": [
+                    {
+                        "label": "DNS Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "CNAME Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "MX Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "SPF Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "NS Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "TXT Record Checker",
+                        "href": "#"
+                    }
+                ]
+            },
+            "readability": {
+                "title": "Readability Tools",
+                "items": [
+                    {
+                        "label": "Readability Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Flesch Reading Ease",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Flesch-Kincaid Grade",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Gunning Fog Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "SMOG Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Readability Analysis",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Automated Readability Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Coleman-Liau Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Dale-Chall Readability",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Lix Readability Score",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Rix Text Complexity",
+                        "href": "#"
+                    }
+                ]
+            },
+            "more": {
+                "title": "More Tools",
+                "items": [
+                    {
+                        "label": "SSL Certificate Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "IP Address Lookup",
+                        "href": "#"
+                    },
+                    {
+                        "label": "IP Geolocation",
+                        "href": "#"
+                    },
+                    {
+                        "label": "IP Intelligence",
+                        "href": "#"
+                    }
+                ]
+            }
+        }
+    },
+    "bottom_bar": {
+        "copyright": "© 2026 Dofollo Inc. All rights reserved.",
+        "links": [
+            {
+                "label": "Privacy Policy",
+                "href": "#"
+            },
+            {
+                "label": "Terms of Service",
+                "href": "#"
+            },
+            {
+                "label": "Sitemap",
+                "href": "#"
+            }
+        ]
+    }
+}

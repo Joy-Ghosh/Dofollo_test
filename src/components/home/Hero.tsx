@@ -1,7 +1,10 @@
 import React from 'react';
-import { ArrowUpRight, PlayCircle, Zap, Star, Link as LinkIcon, FileText, CheckCircle2, TrendingUp, Search, Network } from 'lucide-react';
+import { ArrowUpRight, PlayCircle, Zap, Star, Link as LinkIcon, Network, FileText, TrendingUp, CheckCircle2 } from 'lucide-react';
+import homeData from '../../data/pages/home.json';
 
 export default function Hero() {
+  const { hero } = homeData;
+
   return (
     <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-32 pb-20 bg-noise">
       {/* 
@@ -29,47 +32,47 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1F28F] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E1F28F]"></span>
               </span>
-              <span className="text-xs font-bold text-[#f5ffef] tracking-wide uppercase">AI-Powered SEO V2.0</span>
+              <span className="text-xs font-bold text-white tracking-wide uppercase">{hero.badge}</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer overflow-hidden pointer-events-none" />
             </div>
 
             {/* H1 Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tight text-[#f5ffef] mb-8 drop-shadow-2xl">
-              Build Smart <br />
+            <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tight text-white mb-8 drop-shadow-2xl">
+              {hero.title_first} <br />
               <span className="relative inline-block">
                 {/* Highlight */}
                 <span className="font-serif italic text-[#E1F28F] relative z-10">
-                  Internal Links
+                  {hero.title_highlight}
                 </span>
                 {/* Subtle glow behind highlight */}
                 <span className="absolute inset-0 bg-[#E1F28F]/20 blur-2xl -z-10 block rounded-full transform scale-110"></span>
               </span>
               <br />
-              Faster Than Ever.
+              {hero.title_last}
             </h1>
 
             {/* Paragraph */}
-            <p className="text-lg sm:text-xl text-[#fbffde] font-medium leading-relaxed max-w-xl mb-10 opacity-80">
-              Stop manually interlinking. Dofollo AI scans your content, finds relevant opportunities, and inserts optimized links automatically.
+            <p className="text-lg sm:text-xl text-[#E1F28F] font-medium leading-relaxed max-w-xl mb-10 opacity-80">
+              {hero.description}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
               {/* Primary Button - High Contrast Lime */}
               <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-8 h-14 rounded-2xl text-base font-extrabold shadow-[0_0_20px_-5px_rgba(225,242,143,0.3)] hover:shadow-[0_0_30px_-5px_rgba(225,242,143,0.5)] hover:scale-[1.02] transition-all duration-300 overflow-hidden">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10">Start Free Trial</span>
+                <span className="relative z-10">{hero.primary_cta}</span>
                 <ArrowUpRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </button>
 
               {/* Secondary Button - Glass with Active Icon */}
               <button
                 onClick={() => document.getElementById('product-showcase')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 h-14 rounded-2xl text-base font-semibold text-[#F5FFEF] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#E1F28F]/30 transition-all backdrop-blur-md shadow-lg hover:shadow-[#E1F28F]/10"
+                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 h-14 rounded-2xl text-base font-semibold text-white bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#E1F28F]/30 transition-all backdrop-blur-md shadow-lg hover:shadow-[#E1F28F]/10"
               >
                 <div className="w-8 h-8 rounded-full bg-[#E1F28F]/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E1F28F] group-hover:text-[#0A2E22] transition-all duration-300">
                   <PlayCircle className="w-4 h-4 fill-current transition-colors" />
                 </div>
-                See How It Works
+                {hero.secondary_cta}
               </button>
             </div>
 
@@ -82,14 +85,14 @@ export default function Hero() {
                   </div>
                 ))}
                 <div className="w-10 h-10 rounded-full border-2 border-[#0A2E22] bg-[#045C4E] flex items-center justify-center text-[10px] font-bold text-white">
-                  2k+
+                  {hero.trust_count}
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-1 mb-1">
                   {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-[#E1F28F] text-[#E1F28F]" />)}
                 </div>
-                <p className="text-sm text-[#F0FFF8]/60">Loved by SEO pros worldwide</p>
+                <p className="text-sm text-[#F0FFF8]/60">{hero.trust_text}</p>
               </div>
             </div>
           </div>

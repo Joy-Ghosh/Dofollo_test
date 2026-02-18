@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-interface FeatureSectionProps {
+export interface FeatureSectionProps {
     id: string;
     theme: 'light' | 'dark';
     alignment: 'left' | 'right';
@@ -12,7 +12,7 @@ interface FeatureSectionProps {
     visual: React.ReactNode;
 }
 
-export default function FeatureSection({
+const FeatureSection: React.FC<FeatureSectionProps> = ({
     id,
     theme,
     alignment,
@@ -21,14 +21,14 @@ export default function FeatureSection({
     description,
     bullets,
     visual,
-}: FeatureSectionProps) {
+}) => {
     const isDark = theme === 'dark';
     const isLeft = alignment === 'left';
 
     return (
         <section
             id={id}
-            className={`py-24 relative overflow-hidden ${isDark ? 'bg-[#0A2E22] text-[#f5ffef]' : 'bg-[#f5ffef] text-[#0A2E22]'
+            className={`py-24 relative overflow-hidden ${isDark ? 'bg-[#0A2E22] text-white' : 'bg-white text-[#0A2E22]'
                 }`}
         >
             {/* Background Patterns */}
@@ -44,8 +44,8 @@ export default function FeatureSection({
                     {/* Text Column */}
                     <div className={`${isLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                         <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-bold uppercase tracking-wider mb-6 ${isDark
-                                ? 'bg-white/5 border-white/10 text-[#E1F28F]'
-                                : 'bg-[#0A2E22]/5 border-[#0A2E22]/10 text-[#045C4E]'
+                            ? 'bg-white/5 border-white/10 text-[#E1F28F]'
+                            : 'bg-[#0A2E22]/5 border-[#0A2E22]/10 text-[#045C4E]'
                             }`}>
                             <span className={`w-2 h-2 rounded-full ${isDark ? 'bg-[#E1F28F]' : 'bg-[#045C4E]'}`}></span>
                             {badge}
@@ -55,7 +55,7 @@ export default function FeatureSection({
                             {title}
                         </h2>
 
-                        <p className={`text-lg mb-8 leading-relaxed ${isDark ? 'text-[#f5ffef]/70' : 'text-[#0A2E22]/70'}`}>
+                        <p className={`text-lg mb-8 leading-relaxed ${isDark ? 'text-white/70' : 'text-[#0A2E22]/70'}`}>
                             {description}
                         </p>
 
@@ -63,7 +63,7 @@ export default function FeatureSection({
                             {bullets.map((bullet, i) => (
                                 <li key={i} className="flex items-start gap-3">
                                     <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${isDark ? 'text-[#E1F28F]' : 'text-[#045C4E]'}`} />
-                                    <span className={`text-base font-medium ${isDark ? 'text-[#f5ffef]/90' : 'text-[#0A2E22]/80'}`}>
+                                    <span className={`text-base font-medium ${isDark ? 'text-white/90' : 'text-[#0A2E22]/80'}`}>
                                         {bullet}
                                     </span>
                                 </li>
@@ -71,8 +71,8 @@ export default function FeatureSection({
                         </ul>
 
                         <button className={`group flex items-center gap-2 font-bold pb-1 border-b-2 transition-all ${isDark
-                                ? 'text-[#E1F28F] border-[#E1F28F] hover:text-white hover:border-white'
-                                : 'text-[#0A2E22] border-[#0A2E22] hover:text-[#045C4E] hover:border-[#045C4E]'
+                            ? 'text-[#E1F28F] border-[#E1F28F] hover:text-white hover:border-white'
+                            : 'text-[#0A2E22] border-[#0A2E22] hover:text-[#045C4E] hover:border-[#045C4E]'
                             }`}>
                             Explore Capability
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -87,8 +87,8 @@ export default function FeatureSection({
                             }`} />
 
                         <div className={`rounded-3xl border shadow-xl overflow-hidden relative group hover:-translate-y-2 transition-transform duration-500 ${isDark
-                                ? 'bg-[#0D261F] border-white/10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)]'
-                                : 'bg-white border-[#0A2E22]/10 shadow-[0_20px_50px_-10px_rgba(10,46,34,0.1)]'
+                            ? 'bg-[#0D261F] border-white/10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)]'
+                            : 'bg-white border-[#0A2E22]/10 shadow-[0_20px_50px_-10px_rgba(10,46,34,0.1)]'
                             }`}>
                             {visual}
                         </div>
@@ -99,3 +99,4 @@ export default function FeatureSection({
         </section>
     );
 }
+export default FeatureSection;

@@ -1,0 +1,174 @@
+{
+    "metadata": {
+        "title": "Keyword Density Checker | Dofollo Tools",
+        "description": "Check keyword density of any webpage."
+    },
+    "hero": {
+        "badge": "Free to use • No registration required",
+        "title": "Keyword Density Checker Tool",
+        "description": "Use a keyword density checker to check keyword density easily and improve content balance with a simple and clear tool."
+    },
+    "input_section": {
+        "label": "URL",
+        "placeholder": "Enter a URL to analyze...",
+        "security_note": "Secure analysis over HTTPS",
+        "button_label": "Analyze",
+        "button_processing_label": "Processing...",
+        "clear_label": "Clear"
+    },
+    "analysis_cards": {
+        "title": "Understanding Keyword Density Data",
+        "description": "Keyword density shows how often a keyword appears in content.",
+        "cards": [
+            {
+                "type": "good",
+                "title": "Keyword Count",
+                "description": "Shows total keyword usage count within selected content text."
+            },
+            {
+                "type": "warning",
+                "title": "Density Rate",
+                "description": "Displays keyword percentage compared to total word count."
+            },
+            {
+                "type": "critical",
+                "title": "SEO Balance",
+                "description": "Helps maintain natural keyword use for search engines."
+            }
+        ]
+    },
+    "about_section": {
+        "title": "About This Tool",
+        "content": [
+            {
+                "subtitle": "Check Keyword Density Online",
+                "text": "A keyword density checker tool helps you check keyword density for any webpage or text. This keyword density check tool shows how often keywords appear in content."
+            },
+            {
+                "text": "Use this check keyword density tool to improve content quality, avoid overuse, and maintain natural keyword balance for better SEO performance."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Why It Matters",
+        "items": [
+            {
+                "id": 1,
+                "title": "Content Readability",
+                "description": "Helps balance keywords properly for better content readability and rankings. Prevents keyword overuse that may affect content quality negatively."
+            },
+            {
+                "id": 2,
+                "title": "SEO Friendly Content",
+                "description": "Supports writing SEO friendly content using keyword density checker tools. Improves on page optimization through accurate keyword density analysis."
+            },
+            {
+                "id": 3,
+                "title": "Avoid Penalties",
+                "description": "Prevents keyword overuse that may affect content quality negatively. Maintain natural keyword balance for better search engine performance."
+            },
+            {
+                "id": 4,
+                "title": "Track Performance",
+                "description": "Improves on page optimization through accurate keyword density analysis. Monitor changes over time to ensure SEO health."
+            }
+        ]
+    },
+    "improve_section": {
+        "title": "Improve SEO Using Keyword Density",
+        "steps": [
+            {
+                "num": 1,
+                "title": "Paste Content Text",
+                "desc": "Add your content into the keyword density tool checker to analyze keyword usage."
+            },
+            {
+                "num": 2,
+                "title": "Review Density Report",
+                "desc": "Check keyword density percentages to understand keyword placement and balance."
+            },
+            {
+                "num": 3,
+                "title": "Optimize Content Keywords",
+                "desc": "Adjust keyword usage based on keywords density checker tool insights."
+            }
+        ]
+    },
+    "faq_section": {
+        "title": "Frequently Asked Questions",
+        "items": [
+            {
+                "question": "What is a keyword density checker?",
+                "answer": "A keyword density checker shows how often a word or phrase appears in your text. It helps you understand if your content is balanced and SEO-friendly."
+            },
+            {
+                "question": "Why should I use a keyword density checker tool?",
+                "answer": "It helps balance keywords properly for better content readability and rankings, preventing keyword overuse that may affect content quality negatively."
+            },
+            {
+                "question": "How does a keyword density check work?",
+                "answer": "The tool scans your content and calculates the percentage of times a specific keyword appears relative to the total word count."
+            },
+            {
+                "question": "Can I check keyword density for any text?",
+                "answer": "Yes, you can check density for any webpage URL or by pasting text content directly into the tool."
+            },
+            {
+                "question": "Is this keyword density checker free?",
+                "answer": "Yes, this tool is completely free to use with no hidden costs or registration requirements."
+            },
+            {
+                "question": "What is an ideal keyword density?",
+                "answer": "While there's no perfect number, most SEO experts recommend a keyword density between 1-2% to avoid keyword stuffing penalties."
+            },
+            {
+                "question": "Can keyword density checker tools handle multiple keywords?",
+                "answer": "Yes, our tool can analyze the density of multiple keywords and phrases simultaneously."
+            },
+            {
+                "question": "Does using a keyword density checker help SEO?",
+                "answer": "Yes, maintaining a natural keyword balance improves readability and relevance, which are key factors for search engine rankings."
+            },
+            {
+                "question": "Can I use this keyword density tool checker for my website content?",
+                "answer": "Absolutely. It's designed to help optimize website content, blog posts, and articles for better SEO performance."
+            },
+            {
+                "question": "Is my content safe when I use keyword density check?",
+                "answer": "Yes, we do not store your content or analysis data. All processing happens securely in real-time."
+            }
+        ]
+    },
+    "sidebar": {
+        "recommended_tools": {
+            "title": "Recommended Tools",
+            "items": [
+                {
+                    "name": "Link Counter",
+                    "description": "Check link usage",
+                    "link": "/tools/link-counter",
+                    "icon": "LinkIcon"
+                },
+                {
+                    "name": "Readability Score",
+                    "description": "Optimize content clarity",
+                    "link": "#",
+                    "icon": "FileText"
+                },
+                {
+                    "name": "AI Detector",
+                    "description": "Verify content authenticity",
+                    "link": "#",
+                    "icon": "Shield"
+                }
+            ],
+            "view_all_label": "View All Tools"
+        },
+        "promo": {
+            "badge": "PRO FEATURE",
+            "title": "Unlock Full Analysis",
+            "description": "Get detailed reports on broken links, redirect chains, and more.",
+            "button_label": "Upgrade to Pro"
+        }
+    }
+}

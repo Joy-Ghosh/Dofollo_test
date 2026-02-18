@@ -1,0 +1,46 @@
+{
+    "logo": {
+        "src": "../assets/logo.png",
+        "alt": "Dofollo",
+        "text": "Dofollo",
+        "highlight": ".ai",
+        "link": "/"
+    },
+    "links": [
+        {
+            "label": "Features",
+            "link": "/features",
+            "type": "link"
+        },
+        {
+            "label": "Pricing",
+            "link": "#",
+            "type": "anchor"
+        },
+        {
+            "label": "Resources",
+            "type": "dropdown",
+            "items": [
+                {
+                    "label": "Docs",
+                    "link": "/docs",
+                    "type": "link"
+                },
+                {
+                    "label": "Blog",
+                    "link": "#",
+                    "type": "anchor"
+                },
+                {
+                    "label": "Support",
+                    "link": "/support",
+                    "type": "link"
+                }
+            ]
+        }
+    ],
+    "cta": {
+        "label": "Get Started",
+        "link": "#"
+    }
+}
