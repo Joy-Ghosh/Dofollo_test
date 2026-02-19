@@ -1,6 +1,7 @@
 import React from 'react';
 import { Scan, Sparkles, Link, ArrowRight } from 'lucide-react';
 import homeData from '../../data/pages/home.json';
+import ScrollReveal from '../ScrollReveal';
 
 const iconMap: { [key: string]: React.ElementType } = {
     Scan,
@@ -18,30 +19,37 @@ export default function WorkflowSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Content & Timeline */}
-                    <div>
-                        <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider">
-                            <span className="w-2 h-2 rounded-full bg-[#045C4E]"></span>
-                            {workflow_section.badge}
-                        </div>
-                        <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A2E22] mb-6 leading-tight tracking-tight">
-                            {workflow_section.heading_first} <br />in <span className="text-[#045C4E]">{workflow_section.heading_highlight}</span>
-                        </h2>
-                        <p className="text-lg text-[#0A2E22]/70 mb-12 max-w-lg leading-relaxed">
-                            {workflow_section.description}
-                        </p>
+                    <div className="lg:pl-0">
+                        <ScrollReveal variant="slide-left" className="mb-12">
+                            <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider">
+                                <span className="w-2 h-2 rounded-full bg-[#045C4E]"></span>
+                                {workflow_section.badge}
+                            </div>
+                            <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0A2E22] mb-6 leading-tight tracking-tight">
+                                {workflow_section.heading_first} <br />in <span className="text-[#045C4E]">{workflow_section.heading_highlight}</span>
+                            </h2>
+                            <p className="text-lg text-[#0A2E22]/70 max-w-lg leading-relaxed">
+                                {workflow_section.description}
+                            </p>
+                        </ScrollReveal>
 
                         <div className="space-y-0 relative">
                             {steps.map((item, i) => {
                                 const Icon = iconMap[item.icon] || Scan;
                                 return (
-                                    <div key={i} className="relative pl-24 pb-16 last:pb-0 group">
+                                    <ScrollReveal
+                                        key={i}
+                                        variant="fade-up"
+                                        delay={0.2 + (i * 0.1)}
+                                        className="relative pl-20 md:pl-24 pb-16 last:pb-0 group"
+                                    >
                                         {/* Connecting Line */}
                                         {i !== steps.length - 1 && (
-                                            <div className="absolute left-[35px] top-16 bottom-0 w-px bg-gradient-to-b from-[#0A2E22]/10 to-transparent border-l border-dashed border-[#0A2E22]/20" />
+                                            <div className="absolute left-[30px] md:left-[35px] top-16 bottom-0 w-px bg-gradient-to-b from-[#0A2E22]/10 to-transparent border-l border-dashed border-[#0A2E22]/20" />
                                         )}
 
                                         {/* Icon Box */}
-                                        <div className="absolute left-0 top-0 w-[70px] h-[70px] bg-white border border-[#0A2E22]/10 rounded-2xl flex items-center justify-center shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] group-hover:scale-105 group-hover:bg-[#0A2E22] group-hover:border-[#0A2E22] transition-all duration-300 z-10">
+                                        <div className="absolute left-0 top-0 w-[60px] h-[60px] md:w-[70px] md:h-[70px] bg-white border border-[#0A2E22]/10 rounded-2xl flex items-center justify-center shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] group-hover:scale-105 group-hover:bg-[#0A2E22] group-hover:border-[#0A2E22] transition-all duration-300 z-10">
                                             <Icon className="w-8 h-8 text-[#045C4E] group-hover:text-[#E1F28F] transition-colors duration-300" />
                                             {/* Number Badge */}
                                             <div className="absolute -top-3 -right-3 bg-[#E1F28F] text-[#0A2E22] text-xs font-bold px-2 py-1 rounded-lg border-2 border-white shadow-sm transform group-hover:rotate-12 transition-transform">
@@ -56,14 +64,14 @@ export default function WorkflowSection() {
                                                 {item.description}
                                             </p>
                                         </div>
-                                    </div>
+                                    </ScrollReveal>
                                 );
                             })}
                         </div>
                     </div>
 
                     {/* Right Column: Visual Card */}
-                    <div className="relative lg:pl-10">
+                    <ScrollReveal variant="slide-right" className="relative lg:pl-10">
                         {/* Background Blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[#E1F28F]/10 rounded-full blur-[80px] -z-10 mix-blend-multiply" />
 
@@ -159,7 +167,7 @@ export default function WorkflowSection() {
 
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                 </div>
             </div>

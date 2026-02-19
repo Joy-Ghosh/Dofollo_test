@@ -163,7 +163,7 @@ export default function Blog() {
 
 
             {/* ───── Featured Post ───── */}
-            <section className="bg-white pt-32 pb-16">
+            <section className="bg-white pt-24 md:pt-32 pb-16">
                 <div className="container mx-auto px-6 max-w-7xl">
 
                     {/* Section header — matches reference image */}

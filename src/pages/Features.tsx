@@ -239,7 +239,7 @@ export default function Features() {
             />
 
             {/* 2. Quick Nav */}
-            <div className="sticky top-0 z-40 bg-[#0A2E22]/80 backdrop-blur-md border-b border-white/5">
+            <div className="sticky top-20 md:top-24 z-40 bg-[#0A2E22]/80 backdrop-blur-md border-b border-white/5">
                 <div className="container mx-auto px-6 overflow-x-auto no-scrollbar">
                     <div className="flex items-center justify-center gap-8 py-4 min-w-max">
                         {navigation.map((item) => (

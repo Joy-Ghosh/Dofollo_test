@@ -27,6 +27,22 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Rolling Marquee Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 1.5rem));
+    /* Move by 100% + gap */
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

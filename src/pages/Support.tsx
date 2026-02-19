@@ -48,7 +48,7 @@ export default function Support() {
                 description={hero.description}
             />
 
-            <main className="flex-grow container mx-auto px-6 py-20">
+            <main className="flex-grow container mx-auto px-6 py-12 md:py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
 
                     {/* Left Column: Contact Info */}
@@ -104,7 +104,7 @@ export default function Support() {
                     </div>
 
                     {/* Right Column: Contact Form */}
-                    <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-[#0A2E22]/5 relative overflow-hidden">
+                    <div className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-[#0A2E22]/5 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#045C4E] to-[#E1F28F]"></div>
 
                         <div className="mb-8">

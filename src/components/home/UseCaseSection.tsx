@@ -15,7 +15,7 @@ export default function UseCaseSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                     {use_case_section.cards.map((card, i) => (
-                        <div key={i} className={`p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group border ${card.theme === 'dark' ? 'bg-white/5 backdrop-blur-sm border-white/10 text-white' : 'bg-white text-[#0A2E22] border-transparent hover:border-[#045C4E]/30'}`}>
+                        <div key={i} className={`p-6 md:p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group border ${card.theme === 'dark' ? 'bg-white/5 backdrop-blur-sm border-white/10 text-white' : 'bg-white text-[#0A2E22] border-transparent hover:border-[#045C4E]/30'}`}>
                             {card.theme === 'dark' ? (
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#E1F28F]/10 rounded-full blur-[80px] group-hover:bg-[#E1F28F]/20 transition-all"></div>
                             ) : (

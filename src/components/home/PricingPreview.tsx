@@ -53,7 +53,7 @@ export default function PricingPreview() {
                             <div
                                 key={index}
                                 className={`relative rounded-3xl p-8 text-left transition-all duration-300 hover:shadow-xl flex flex-col h-full border ${plan.highlight
-                                    ? 'bg-[#0A2E22] text-white border-[#0A2E22] shadow-2xl scale-105 z-10'
+                                    ? 'bg-[#0A2E22] text-white border-[#0A2E22] shadow-2xl md:scale-105 z-10'
                                     : 'bg-white text-[#0A2E22] border-[#0A2E22]/10 hover:border-[#045C4E]/30'
                                     }`}
                             >

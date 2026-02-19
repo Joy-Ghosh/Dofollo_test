@@ -6,7 +6,7 @@ export default function Hero() {
   const { hero } = homeData;
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-32 pb-20 bg-noise">
+    <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-24 md:pt-32 pb-20 bg-noise">
       {/* 
         Background Atmosphere 
         Creating a deep, rich environment for the light text to pop.
@@ -107,7 +107,7 @@ export default function Hero() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[#39BD83]/15 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />
 
             {/* 3D Container */}
-            <div className="relative w-full max-w-2xl transform rotate-y-[-12deg] rotate-x-[5deg] hover:rotate-0 transition-transform duration-700 ease-out preserve-3d">
+            <div className="relative w-full max-w-2xl transform lg:rotate-y-[-12deg] lg:rotate-x-[5deg] hover:rotate-0 transition-transform duration-700 ease-out preserve-3d">
 
               {/* Main Visual: Mock Content Editor */}
               {/* Improvements: Reduced blue saturation (more green/slate), added emerald shadow glow, subtle background gradient */}

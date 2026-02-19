@@ -8,7 +8,7 @@ interface CompactHeroProps {
 
 export default function CompactHero({ badge, title, description }: CompactHeroProps) {
     return (
-        <section className="pt-32 pb-20 relative overflow-hidden bg-[#0A2E22]">
+        <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden bg-[#0A2E22]">
             {/* Background Texture & Noise */}
             <div className="absolute inset-0 bg-noise opacity-50 pointer-events-none" />
 

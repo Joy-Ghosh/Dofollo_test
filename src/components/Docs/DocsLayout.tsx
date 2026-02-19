@@ -22,7 +22,7 @@ const DocsLayout: React.FC<DocsLayoutProps> = ({ children, toc }) => {
             <div className="fixed top-0 left-0 right-0 h-24 bg-[#0A2E22] z-40" />
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden fixed top-24 left-4 z-30">
+            <div className="md:hidden fixed top-28 left-4 z-30">
                 <button
                     onClick={() => setIsSidebarOpen(true)}
                     className="p-2 bg-[#0A2E22]/80 backdrop-blur border border-white/10 rounded-lg text-white shadow-lg hover:bg-white/5 transition-colors"

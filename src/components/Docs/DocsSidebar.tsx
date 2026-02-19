@@ -60,7 +60,7 @@ const DocsSidebar: React.FC<DocsSidebarProps> = ({ isOpen, onClose }) => {
 
     // Mobile classes vs Desktop classes
     const sidebarClasses = isOpen
-        ? "fixed inset-y-0 left-0 z-50 w-64 bg-[#0A2E22] border-r border-white/10 shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-0"
+        ? "fixed inset-y-0 left-0 z-50 w-64 bg-[#0A2E22] border-r border-white/10 shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-0 overflow-y-auto"
         : "w-64 lg:w-72 hidden md:block border-r border-[#0A2E22]/10 h-[calc(100vh-6rem)] sticky top-24 overflow-y-auto bg-[#0A2E22] text-white [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#E1F28F]/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-[#E1F28F]";
 
     const groups = ["Introduction", "Getting Started", "Core Features", "Link Management", "Integrations", "Configuration", "Team Management", "Support"];
