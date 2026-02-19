@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Features from './pages/Features';
+import Agency from './pages/Agency';
 import LinkCounter from './pages/Tools/LinkCounter';
 import KeywordDensityChecker from './pages/Tools/KeywordDensityChecker';
 import Tools from './pages/Tools/index';
@@ -25,6 +26,7 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="features" element={<Features />} />
+          <Route path="agency" element={<Agency />} />
           <Route path="tools" element={<Tools />} />
 
           <Route path="tools/link-counter" element={<LinkCounter />} />

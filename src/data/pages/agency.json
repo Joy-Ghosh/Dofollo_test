@@ -1,0 +1,107 @@
+{
+    "hero": {
+        "badge": "Agency Partner",
+        "title": "Scalable SEO Infrastructure for High-Growth Agencies",
+        "description": "Standardize your internal linking strategy across 100+ client sites. Eliminate manual audits, automate implementation, and prove ROI with white-label reporting."
+    },
+    "trust": {
+        "text": "TRUSTED BY 400+ LEADING SEO AGENCIES"
+    },
+    "sections": [
+        {
+            "id": "multi-site-management",
+            "theme": "dark",
+            "alignment": "right",
+            "badge": "Centralized Control",
+            "title": "Manage All Clients from One Dashboard",
+            "description": "Stop juggling spreadsheets and multiple logins. Get a bird’s-eye view of every client's internal linking health, pending suggestions, and performance metrics in a single unified interface.",
+            "bullets": [
+                "Single Sign-On for all client projects",
+                "Role-based access for your team members",
+                "Global health scores at a glance",
+                "Bulk action capabilities"
+            ]
+        },
+        {
+            "id": "white-label-reports",
+            "theme": "light",
+            "alignment": "left",
+            "badge": "Client Reporting",
+            "title": "Automated White-Label Reporting",
+            "description": "Impress your clients with professional, data-driven reports that show exactly how your internal linking work is improving their site structure and crawl depth. Fully customizable with your agency branding.",
+            "bullets": [
+                "Custom logo and color branding",
+                "Automated scheduling (Weekly/Monthly)",
+                "Link value & ROI calculation",
+                "PDF and shareable link formats"
+            ]
+        },
+        {
+            "id": "team-collaboration",
+            "theme": "dark",
+            "alignment": "right",
+            "badge": "Team Workflow",
+            "title": "Seamless Team Collaboration",
+            "description": "Empower your team to work faster. Assign specific projects to team members, leave notes on link suggestions, and track implementation progress in real-time.",
+            "bullets": [
+                "Granular permission settings",
+                "Activity logs and audit trails",
+                "Internal commenting system",
+                "Task assignment and tracking"
+            ]
+        }
+    ],
+    "value_summary": {
+        "title": "Why Agencies Choose Dofollo",
+        "subtitle": "Built to solve the specific challenges of scaling SEO services.",
+        "items": [
+            {
+                "title": "Reduce Man-Hours",
+                "desc": "Cut internal linking time by 80% with AI automation."
+            },
+            {
+                "title": "Increase Margins",
+                "desc": "Lower fulfillment costs while delivering better results."
+            },
+            {
+                "title": "Standardize Quality",
+                "desc": "Ensure every client gets the same high-quality linking structure."
+            },
+            {
+                "title": "Retain Clients",
+                "desc": "Show clear, quantifiable progress with transparent reporting."
+            }
+        ]
+    },
+    "testimonials": {
+        "quote": "Dofollo transformed how we handle site structure. We used to spend 10 hours per client on internal linking audits. Now it takes 15 minutes. It's a no-brainer for any serious SEO agency.",
+        "author": "Sarah Jenkins",
+        "role": "Director of SEO, GrowthSpike Agency"
+    },
+    "faq": {
+        "title": "Agency",
+        "title_highlight": "FAQ",
+        "items": [
+            {
+                "question": "Do you offer bulk pricing for agencies?",
+                "answer": "Yes! We offer tiered pricing plans specifically designed for agencies managing high volumes of websites. Contact our sales team for a custom quote tailored to your scale."
+            },
+            {
+                "question": "Can I white-label the dashboard for my clients?",
+                "answer": "Absolutely. Our Agency Plan includes full white-label capabilities, allowing you to present the dashboard and reports with your own branding, logo, and domain."
+            },
+            {
+                "question": "Is there a limit to the number of team members?",
+                "answer": "Our Agency plans come with unlimited team seats so you can invite your entire SEO content and technical teams without extra costs."
+            },
+            {
+                "question": "How do you handle client data security?",
+                "answer": "We take security seriously. Each client's data is isolated, and we use enterprise-grade encryption. We are GDPR compliant and can sign DPAs upon request."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Ready to Scale Your Agency?",
+        "description": "Join top agencies using Dofollo to streamline operations and boost client results."
+    }
+}

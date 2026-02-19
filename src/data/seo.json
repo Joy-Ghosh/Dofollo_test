@@ -59,6 +59,21 @@
             "twitterImage": "/images/twitter-support.jpg",
             "canonical": "https://dofollo.ai/support",
             "robots": "index, follow"
+        },
+        "agency": {
+            "title": "Agency | SEO Tools for Agencies - Dofollo",
+            "description": "Scale your agency with Dofollo's SEO tools. Manage multiple clients, automate internal linking, and generate white-label reports.",
+            "keywords": "seo for agencies, white label seo tools, agency seo software, client management seo, internal linking for agencies",
+            "ogTitle": "Dofollo for Agencies - Scale Your SEO Services",
+            "ogDescription": "Manage all your clients' SEO from one dashboard. Automate internal linking and save hours of manual work.",
+            "ogImage": "/images/og-agency.jpg",
+            "ogUrl": "https://dofollo.ai/agency",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Dofollo for Agencies",
+            "twitterDescription": "The ultimate SEO tool for agencies. Manage, automate, and report with ease.",
+            "twitterImage": "/images/twitter-agency.jpg",
+            "canonical": "https://dofollo.ai/agency",
+            "robots": "index, follow"
         }
     },
     "tools": {
