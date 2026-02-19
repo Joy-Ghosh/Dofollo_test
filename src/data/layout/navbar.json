@@ -28,8 +28,8 @@
                 },
                 {
                     "label": "Blog",
-                    "link": "#",
-                    "type": "anchor"
+                    "link": "/blog",
+                    "type": "link"
                 },
                 {
                     "label": "Support",

@@ -14,6 +14,7 @@ interface SEOProps {
     twitterImage?: string;
     canonical?: string;
     robots?: string;
+    ogType?: string;
 }
 
 // React 19 supports native metadata hoisting
@@ -25,6 +26,7 @@ export default function SEO({
     ogDescription,
     ogImage,
     ogUrl,
+    ogType = 'website',
     twitterCard,
     twitterTitle,
     twitterDescription,
@@ -42,7 +44,7 @@ export default function SEO({
             {canonical && <link rel="canonical" href={canonical} />}
 
             {/* Open Graph / Facebook */}
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={ogType} />
             {ogTitle && <meta property="og:title" content={ogTitle} />}
             {ogDescription && <meta property="og:description" content={ogDescription} />}
             {ogImage && <meta property="og:image" content={ogImage} />}

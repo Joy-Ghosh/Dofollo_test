@@ -8,6 +8,8 @@ import KeywordDensityChecker from './pages/Tools/KeywordDensityChecker';
 import Tools from './pages/Tools/index';
 import Support from './pages/Support';
 import About from './pages/About';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import DocPage from './pages/Docs/DocPage';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -20,6 +22,8 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="features" element={<Features />} />
           <Route path="tools" element={<Tools />} />
 

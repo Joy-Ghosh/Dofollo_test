@@ -64,16 +64,12 @@
                 },
                 {
                     "label": "Blog",
-                    "href": "#"
+                    "href": "/blog",
+                    "isRouterLink": true
                 },
                 {
                     "label": "Docs",
                     "href": "/docs",
-                    "isRouterLink": true
-                },
-                {
-                    "label": "Support",
-                    "href": "/support",
                     "isRouterLink": true
                 },
                 {
@@ -98,8 +94,9 @@
                     "href": "#"
                 },
                 {
-                    "label": "Contact",
-                    "href": "#"
+                    "label": "Support",
+                    "href": "/support",
+                    "isRouterLink": true
                 }
             ]
         }
