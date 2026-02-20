@@ -93,7 +93,7 @@ const InternalLinkingVisualizer = () => {
             {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-20 pointer-events-none"></div>
 
-            <div className="container mx-auto px-6 max-w-7xl relative z-10">
+ <div className="container mx-auto max-w-7xl relative z-10">
                 <div className="text-center mb-16">
                     <span className="text-[#E1F28F] font-bold tracking-wider uppercase text-sm mb-2 block">{visualizer_section.badge}</span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{visualizer_section.title}</h2>

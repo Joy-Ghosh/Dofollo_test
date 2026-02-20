@@ -15,7 +15,7 @@ export default function StorySection() {
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 {/* Header */}
                 <ScrollReveal variant="fade-up" className="max-w-3xl mx-auto text-center mb-20">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 text-[#E1F28F] text-xs font-bold uppercase tracking-wider rounded-full mb-6 backdrop-blur-sm">

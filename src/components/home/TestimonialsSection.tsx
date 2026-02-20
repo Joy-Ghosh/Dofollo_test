@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
 
     return (
         <section className="py-24 bg-white text-[#0A2E22] overflow-hidden">
-            <div className="container mx-auto px-6">
+ <div className="container mx-auto ">
                 <ScrollReveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider mb-4">

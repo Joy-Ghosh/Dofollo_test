@@ -10,7 +10,7 @@ export default function MissionSection() {
         <section className="py-24 bg-white text-[#0A2E22] overflow-hidden relative">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Content */}

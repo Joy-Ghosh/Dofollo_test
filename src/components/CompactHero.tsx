@@ -40,7 +40,7 @@ export default function CompactHero({ badge, title, description, stats }: Compac
                 />
             ))}
 
-            <div className="container mx-auto px-6 relative z-10 text-center">
+ <div className="container mx-auto relative z-10 text-center">
                 {/* Badge */}
                 <ScrollReveal variant="fade-up">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E1F28F]/10 border border-[#E1F28F]/20 text-[#E1F28F] text-xs font-bold uppercase tracking-wider mb-8 shadow-[0_0_15px_-5px_#E1F28F] backdrop-blur-sm">

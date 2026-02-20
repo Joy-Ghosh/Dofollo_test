@@ -47,7 +47,7 @@ export default function Support() {
                 description={hero.description}
             />
 
-            <main className="flex-grow container mx-auto px-6 py-16 md:py-24">
+ <main className="flex-grow container mx-auto py-16 md:py-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
                     {/* Left Column: Contact Info */}

@@ -74,7 +74,7 @@ export default function BlogPost() {
                 {/* Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E1F28F]/5 rounded-full blur-[100px] pointer-events-none" />
 
-                <div className="container mx-auto px-6 relative z-10 max-w-4xl text-center">
+ <div className="container mx-auto relative z-10 max-w-4xl text-center">
                     <div className="flex flex-col items-center gap-6">
                         <Link to="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-[#E1F28F] transition-colors text-sm font-medium mb-4">
                             <ChevronLeft size={16} /> Back to Blog
@@ -101,7 +101,7 @@ export default function BlogPost() {
             </header>
 
             {/* Main Content */}
-            <main className="container mx-auto px-6 py-12 md:py-20">
+ <main className="container mx-auto py-12 md:py-20">
                 <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
 
                     {/* Article Body */}

@@ -27,7 +27,7 @@ export default function PricingPreview() {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#045C4E]/10 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto px-6 text-center relative z-10">
+ <div className="container mx-auto text-center relative z-10">
                 <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 tracking-tight text-[#0A2E22]">
                     {pricing_section.heading_first} <span className="text-[#045C4E]">{pricing_section.heading_highlight}</span>
                 </h2>

@@ -2,10 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+}
+
 /* ============================================================
    GLOBAL CURSOR — Magnetic dot + ring
    ============================================================ */
-*, *::before, *::after { cursor: none !important; }
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
 
 .cursor-dot {
   position: fixed;
@@ -69,8 +95,13 @@
    MARQUEE / SCROLL
    ============================================================ */
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - 1.5rem)); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 1.5rem));
+  }
 }
 
 .animate-scroll {
@@ -80,17 +111,37 @@
 /* ============================================================
    CUSTOM SCROLLBAR
    ============================================================ */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #0a2e22b4; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #0a2e22; }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a2e22b4;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a2e22;
+}
 
 /* ============================================================
    FADE IN UP (entry animation)
    ============================================================ */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in-up {
@@ -101,8 +152,13 @@
    SHINE / SHIMMER SWEEP
    ============================================================ */
 @keyframes shine {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(100%); }
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .animate-shine {
@@ -110,16 +166,28 @@
 }
 
 @keyframes shimmer {
-  0%   { left: -100%; }
-  100% { left: 200%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
 
 /* ============================================================
    BREATHING PULSE GLOW (for CTA buttons)
    ============================================================ */
 @keyframes breathe {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 242, 143, 0); }
-  50%       { box-shadow: 0 0 40px 12px rgba(225, 242, 143, 0.25); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 242, 143, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 40px 12px rgba(225, 242, 143, 0.25);
+  }
 }
 
 .animate-breathe {
@@ -130,50 +198,100 @@
    FLOATING CARDS
    ============================================================ */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes float-delayed {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.animate-float        { animation: float 6s ease-in-out infinite; }
-.animate-float-delayed { animation: float-delayed 5s ease-in-out infinite 2s; }
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite 2s;
+}
 
 /* ============================================================
    ORBITING RINGS (FinalCTA)
    ============================================================ */
 @keyframes orbit {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes orbit-reverse {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
 }
 
-.animate-orbit         { animation: orbit 12s linear infinite; }
-.animate-orbit-reverse { animation: orbit-reverse 18s linear infinite; }
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 18s linear infinite;
+}
 
 /* ============================================================
    TYPEWRITER CURSOR BLINK
    ============================================================ */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
-.animate-blink { animation: blink 1s step-end infinite; }
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
 
 /* ============================================================
    COUNT-UP NUMBER FLASH
    ============================================================ */
 @keyframes numberFlash {
-  0%   { color: #E1F28F; transform: scale(1.15); }
-  100% { color: inherit; transform: scale(1); }
+  0% {
+    color: #E1F28F;
+    transform: scale(1.15);
+  }
+
+  100% {
+    color: inherit;
+    transform: scale(1);
+  }
 }
 
 .animate-number-flash {
@@ -184,7 +302,9 @@
    PROGRESS BAR FILL (animated on mount)
    ============================================================ */
 @keyframes fillBar {
-  from { width: 0%; }
+  from {
+    width: 0%;
+  }
 }
 
 .animate-fill-bar {
@@ -206,12 +326,10 @@
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(225, 242, 143, 0.08) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(225, 242, 143, 0.08) 50%,
+      transparent 100%);
   pointer-events: none;
   transition: left 0.5s ease;
 }
@@ -224,12 +342,22 @@
    HEARTBEAT GLOW (popular pricing card)
    ============================================================ */
 @keyframes heartbeat {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 242, 143, 0),
-                          0 25px 50px -12px rgba(0,0,0,0.5); }
-  40%       { box-shadow: 0 0 0 8px rgba(225, 242, 143, 0.15),
-                          0 25px 50px -12px rgba(0,0,0,0.5); }
-  80%       { box-shadow: 0 0 0 16px rgba(225, 242, 143, 0),
-                          0 25px 50px -12px rgba(0,0,0,0.5); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 242, 143, 0),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  40% {
+    box-shadow: 0 0 0 8px rgba(225, 242, 143, 0.15),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  80% {
+    box-shadow: 0 0 0 16px rgba(225, 242, 143, 0),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .animate-heartbeat {
@@ -240,8 +368,17 @@
    LETTER STAGGER (Final CTA headline reveal)
    ============================================================ */
 @keyframes letterReveal {
-  from { opacity: 0; transform: translateY(40px) rotateX(-30deg); filter: blur(4px); }
-  to   { opacity: 1; transform: translateY(0) rotateX(0deg); filter: blur(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotateX(-30deg);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
 }
 
 .letter-reveal-char {
@@ -254,8 +391,13 @@
    TICKER SCROLL (social proof)
    ============================================================ */
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-ticker {
@@ -293,8 +435,10 @@
 .card-cta::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
   opacity: 0.4;
   pointer-events: none;
@@ -311,7 +455,9 @@
 }
 
 @media (min-width: 768px) {
-  .heading-card { font-size: 2.25rem !important; }
+  .heading-card {
+    font-size: 2.25rem !important;
+  }
 }
 
 .h1-span {
@@ -344,10 +490,27 @@
   color: #0A2E22;
 }
 
-.aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
-.aligncenter img { margin-left: auto; margin-right: auto; }
-.wp-block-image { margin: 3rem 0; }
-.wp-block-image img { width: 100%; height: auto; border-radius: 1rem; }
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.aligncenter img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-block-image {
+  margin: 3rem 0;
+}
+
+.wp-block-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
 
 .blog-content h1,
 .blog-content h2,
@@ -369,10 +532,16 @@
 }
 
 @media (min-width: 768px) {
-  .blog-content h2 { font-size: 2.25rem; }
+  .blog-content h2 {
+    font-size: 2.25rem;
+  }
 }
 
-.blog-content h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+.blog-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
 
 .blog-content p {
   margin-bottom: 1.5rem;
@@ -381,11 +550,28 @@
   font-size: 1.125rem;
 }
 
-.blog-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-.blog-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
-.blog-content li { margin-bottom: 0.5rem; color: #374151; font-size: 1.125rem; }
-.blog-content li::marker { color: #E1F28F; font-weight: bold; }
+.blog-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 1.125rem;
+}
+
+.blog-content li::marker {
+  color: #E1F28F;
+  font-weight: bold;
+}
 
 .blog-content blockquote {
   border-left: 4px solid #E1F28F;
@@ -405,7 +591,10 @@
   transition: all 0.2s;
 }
 
-.blog-content a:hover { background-color: #E1F28F; color: #0A2E22; }
+.blog-content a:hover {
+  background-color: #E1F28F;
+  color: #0A2E22;
+}
 
 .blog-content figcaption {
   text-align: center;

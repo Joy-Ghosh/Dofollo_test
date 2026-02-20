@@ -10,7 +10,7 @@ export default function TeamSection() {
         <section className="py-24 bg-white text-[#0A2E22] border-t border-[#0A2E22]/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0A2E22] text-[#E1F28F] text-xs font-bold uppercase tracking-wider rounded-full mb-5">
                         {team.badge}

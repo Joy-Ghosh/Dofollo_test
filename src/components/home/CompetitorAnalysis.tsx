@@ -38,7 +38,7 @@ export default function CompetitorAnalysis() {
         <section className="py-24 bg-white text-[#0A2E22] relative overflow-hidden">
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Visual side — animated comparison */}

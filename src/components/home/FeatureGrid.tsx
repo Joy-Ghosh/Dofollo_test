@@ -17,7 +17,7 @@ export default function FeatureGrid() {
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#E1F28F]/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
                         {feature_grid.heading_first} <span className="text-[#E1F28F]">{feature_grid.heading_highlight}</span>

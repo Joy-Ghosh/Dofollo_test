@@ -113,7 +113,7 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
             {/* Texture Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 {/* Letter-reveal headline */}
                 <h2 className="text-5xl lg:text-7xl font-extrabold mb-8 tracking-tight drop-shadow-2xl" style={{ perspective: '600px' }}>
                     <SplitText text={pre + ' '} inView={inView} baseDelay={0.1} />

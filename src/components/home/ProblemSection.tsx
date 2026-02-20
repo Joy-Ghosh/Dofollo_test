@@ -37,10 +37,10 @@ function ProblemCard({ item, i }: { item: any; i: number }) {
             style={{ transform: hovered ? 'translateY(-6px)' : 'translateY(0)' }}
         >
             {/* Emotional progress bar at top — fills green on hover */}
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-red-200 overflow-hidden rounded-t-2xl">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#0A2E22]/5 overflow-hidden rounded-t-2xl">
                 <div
-                    className="h-full bg-gradient-to-r from-red-400 to-[#045C4E] transition-all duration-700 ease-out"
-                    style={{ width: hovered ? '100%' : '25%' }}
+                    className="absolute inset-0 bg-gradient-to-r from-red-400 via-[#E1F28F] to-[#045C4E] transition-all duration-700 ease-out"
+                    style={{ clipPath: hovered ? 'inset(0 0 0 0)' : 'inset(0 75% 0 0)' }}
                 />
             </div>
 
@@ -103,7 +103,7 @@ export default function ProblemSection() {
 
     return (
         <section className="py-24 bg-white text-[#0A2E22]">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto ">
                 <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     {/* Empathy hook */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-red-400 font-bold text-xs uppercase tracking-wider mb-6">

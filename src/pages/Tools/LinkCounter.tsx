@@ -43,7 +43,7 @@ export default function LinkCounter() {
             />
 
             {/* --- Main Content Area --- */}
-            <main className="flex-grow container max-w-7xl mx-auto px-6 mt-10 relative z-20 pb-20">
+ <main className="flex-grow container max-w-7xl mx-auto mt-10 relative z-20 pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     {/* Left Column: Tool & Content */}

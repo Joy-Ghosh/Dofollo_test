@@ -8,7 +8,7 @@ export default function FAQSection() {
 
     return (
         <section className="py-24 bg-white text-[#0A2E22]">
-            <div className="container mx-auto px-6 max-w-3xl">
+ <div className="container mx-auto max-w-3xl">
                 <h2 className="text-3xl lg:text-5xl font-extrabold text-center mb-16 tracking-tight text-[#0A2E22]">
                     {faq_section.heading_first} <span className="text-[#045C4E]">{faq_section.heading_highlight}</span>
                 </h2>

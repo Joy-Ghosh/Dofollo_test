@@ -87,7 +87,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
           {/* Left Column: Typography */}

@@ -8,7 +8,7 @@ export default function AgencyFAQ() {
 
     return (
         <section className="py-24 bg-[#0A2E22] border-b border-white/5">
-            <div className="container mx-auto px-6 max-w-3xl">
+ <div className="container mx-auto max-w-3xl">
                 <h2 className="text-3xl font-bold text-center mb-16 text-white">
                     {faq.title} <span className="text-[#E1F28F]">{faq.title_highlight}</span>
                 </h2>

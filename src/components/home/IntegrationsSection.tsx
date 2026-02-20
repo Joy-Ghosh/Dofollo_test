@@ -6,7 +6,7 @@ export default function IntegrationsSection() {
 
     return (
         <section className="py-24 bg-white text-[#0A2E22]">
-            <div className="container mx-auto px-6 text-center">
+ <div className="container mx-auto text-center">
                 <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-[#0A2E22]">
                     {integrations_section.title}
                 </h2>

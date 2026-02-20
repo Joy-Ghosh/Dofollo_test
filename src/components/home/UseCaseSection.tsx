@@ -8,7 +8,7 @@ export default function UseCaseSection() {
         <section className="py-24 bg-[#0A2E22] text-white bg-noise relative overflow-hidden">
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+ <div className="container mx-auto relative z-10">
                 <h2 className="text-3xl lg:text-5xl font-extrabold text-center mb-16 tracking-tight text-white">
                     {use_case_section.heading_first} <span className="text-[#E1F28F]">{use_case_section.heading_highlight}</span>
                 </h2>
