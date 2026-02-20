@@ -3,6 +3,7 @@ import CompactHero from '../components/CompactHero';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import ScrollReveal from '../components/ScrollReveal';
 import FeatureSection from '../components/features/FeatureSection';
 import AgencyFAQ from '../components/AgencyFAQ';
 import seoData from '../data/seo.json';
@@ -144,42 +145,52 @@ export default function Agency() {
                 ))}
             </div>
 
-            {/* Value Summary (Why Choose Us) */}
-            <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22]">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4 tracking-tight">{value_summary.title}</h2>
-                        <p className="text-[#0A2E22]/70">{value_summary.subtitle}</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Value Summary */}
+            <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22] relative overflow-hidden">
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="container mx-auto px-6 relative z-10">
+                    <ScrollReveal variant="fade-up">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">{value_summary.title}</h2>
+                            <p className="text-[#0A2E22]/60 max-w-xl mx-auto">{value_summary.subtitle}</p>
+                        </div>
+                    </ScrollReveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {value_summary.items.map((item, i) => (
-                            <div key={i} className="p-6 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/20 transition-colors hover:shadow-md">
-                                <div className="w-12 h-12 bg-[#045C4E]/5 rounded-xl flex items-center justify-center mb-4 text-[#045C4E] font-bold text-xl">
-                                    {(i + 1).toString().padStart(2, '0')}
+                            <ScrollReveal key={i} variant="fade-up" delay={i * 0.1}>
+                                <div className="p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/25 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group h-full">
+                                    <div className="w-12 h-12 bg-[#0A2E22] rounded-xl flex items-center justify-center mb-5 text-[#E1F28F] font-extrabold text-lg group-hover:bg-[#045C4E] transition-colors">
+                                        {(i + 1).toString().padStart(2, '0')}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-[#0A2E22] mb-2">{item.title}</h3>
+                                    <p className="text-sm text-[#0A2E22]/60 leading-relaxed">{item.desc}</p>
                                 </div>
-                                <h3 className="text-lg font-bold text-[#0A2E22] mb-2">{item.title}</h3>
-                                <p className="text-sm text-[#0A2E22]/70">{item.desc}</p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* Testimonial */}
-            <section className="py-20 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
+            <section className="py-24 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-noise opacity-20 pointer-events-none" />
-                <div className="container mx-auto px-6 text-center relative z-10">
-                    <div className="inline-flex gap-1 text-[#E1F28F] mb-6">
-                        {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-xl">★</span>)}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E1F28F]/8 rounded-full blur-[80px] pointer-events-none" />
+                <ScrollReveal variant="fade-up" className="container mx-auto px-6 text-center relative z-10">
+                    <div className="inline-flex gap-0.5 text-[#E1F28F] mb-6">
+                        {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>
-                    <blockquote className="text-2xl md:text-4xl font-medium leading-relaxed max-w-4xl mx-auto mb-8 text-white">
-                        "{testimonials.quote}"
+                    <div className="text-[100px] leading-none text-[#E1F28F]/10 font-serif mb-[-36px] select-none">&ldquo;</div>
+                    <blockquote className="text-2xl md:text-4xl font-medium leading-relaxed max-w-4xl mx-auto mb-10 text-white relative z-10">
+                        &ldquo;{testimonials.quote}&rdquo;
                     </blockquote>
-                    <div className="flex flex-col items-center justify-center gap-2">
-                        <div className="text-base font-bold text-white">{testimonials.author}</div>
-                        <div className="text-sm text-[#E1F28F] font-mono tracking-wide">{testimonials.role}</div>
+                    <div className="flex flex-col items-center justify-center gap-3">
+                        <div className="w-14 h-14 bg-gradient-to-br from-[#E1F28F] to-[#045C4E] rounded-full ring-2 ring-[#E1F28F]/30 ring-offset-2 ring-offset-[#0A2E22]" />
+                        <div className="text-center">
+                            <div className="text-base font-bold text-white">{testimonials.author}</div>
+                            <div className="text-sm text-[#E1F28F]/70 font-mono tracking-wide">{testimonials.role}</div>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* FAO */}

@@ -2,6 +2,420 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   GLOBAL CURSOR — Magnetic dot + ring
+   ============================================================ */
+*, *::before, *::after { cursor: none !important; }
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #E1F28F;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: transform 0.08s ease, opacity 0.3s ease, background 0.2s;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #E1F28F;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transition: transform 0.15s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+/* ============================================================
+   NOISE TEXTURE
+   ============================================================ */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   GLASS CARD
+   ============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   MARQUEE / SCROLL
+   ============================================================ */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 1.5rem)); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #0a2e22b4; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #0a2e22; }
+
+/* ============================================================
+   FADE IN UP (entry animation)
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
+   SHINE / SHIMMER SWEEP
+   ============================================================ */
+@keyframes shine {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+.animate-shine {
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ============================================================
+   BREATHING PULSE GLOW (for CTA buttons)
+   ============================================================ */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 242, 143, 0); }
+  50%       { box-shadow: 0 0 40px 12px rgba(225, 242, 143, 0.25); }
+}
+
+.animate-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   FLOATING CARDS
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-float        { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 5s ease-in-out infinite 2s; }
+
+/* ============================================================
+   ORBITING RINGS (FinalCTA)
+   ============================================================ */
+@keyframes orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.animate-orbit         { animation: orbit 12s linear infinite; }
+.animate-orbit-reverse { animation: orbit-reverse 18s linear infinite; }
+
+/* ============================================================
+   TYPEWRITER CURSOR BLINK
+   ============================================================ */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.animate-blink { animation: blink 1s step-end infinite; }
+
+/* ============================================================
+   COUNT-UP NUMBER FLASH
+   ============================================================ */
+@keyframes numberFlash {
+  0%   { color: #E1F28F; transform: scale(1.15); }
+  100% { color: inherit; transform: scale(1); }
+}
+
+.animate-number-flash {
+  animation: numberFlash 0.3s ease-out;
+}
+
+/* ============================================================
+   PROGRESS BAR FILL (animated on mount)
+   ============================================================ */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+.animate-fill-bar {
+  animation: fillBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ============================================================
+   BEAM SWEEP (feature cards)
+   ============================================================ */
+.beam-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.beam-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(225, 242, 143, 0.08) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: left 0.5s ease;
+}
+
+.beam-card:hover::after {
+  left: 150%;
+}
+
+/* ============================================================
+   HEARTBEAT GLOW (popular pricing card)
+   ============================================================ */
+@keyframes heartbeat {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 242, 143, 0),
+                          0 25px 50px -12px rgba(0,0,0,0.5); }
+  40%       { box-shadow: 0 0 0 8px rgba(225, 242, 143, 0.15),
+                          0 25px 50px -12px rgba(0,0,0,0.5); }
+  80%       { box-shadow: 0 0 0 16px rgba(225, 242, 143, 0),
+                          0 25px 50px -12px rgba(0,0,0,0.5); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   LETTER STAGGER (Final CTA headline reveal)
+   ============================================================ */
+@keyframes letterReveal {
+  from { opacity: 0; transform: translateY(40px) rotateX(-30deg); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0) rotateX(0deg); filter: blur(0); }
+}
+
+.letter-reveal-char {
+  display: inline-block;
+  opacity: 0;
+  animation: letterReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ============================================================
+   TICKER SCROLL (social proof)
+   ============================================================ */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 20s linear infinite;
+}
+
+/* ============================================================
+   3D PRESERVE
+   ============================================================ */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ============================================================
+   BLOG CONTENT (unchanged)
+   ============================================================ */
+
+.card-cta {
+  background: linear-gradient(135deg, #0A2E22 0%, #174232 100%);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 40px -10px rgba(10, 46, 34, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-cta::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.heading-card {
+  font-size: 1.875rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 2rem !important;
+  color: white !important;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .heading-card { font-size: 2.25rem !important; }
+}
+
+.h1-span {
+  color: #E1F28F;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E1F28F;
+  color: #0A2E22;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 10;
+}
+
+.btn-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  color: #0A2E22;
+}
+
+.aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+.aligncenter img { margin-left: auto; margin-right: auto; }
+.wp-block-image { margin: 3rem 0; }
+.wp-block-image img { width: 100%; height: auto; border-radius: 1rem; }
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: #0A2E22;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.blog-content h2 {
+  font-size: 1.875rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+@media (min-width: 768px) {
+  .blog-content h2 { font-size: 2.25rem; }
+}
+
+.blog-content h3 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #374151;
+  font-size: 1.125rem;
+}
+
+.blog-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.blog-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+
+.blog-content li { margin-bottom: 0.5rem; color: #374151; font-size: 1.125rem; }
+.blog-content li::marker { color: #E1F28F; font-weight: bold; }
+
+.blog-content blockquote {
+  border-left: 4px solid #E1F28F;
+  background-color: #F9FAFB;
+  padding: 1.5rem 2rem;
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+  color: #4B5563;
+  margin: 2rem 0;
+}
+
+.blog-content a {
+  color: #0A2E22;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid #E1F28F;
+  transition: all 0.2s;
+}
+
+.blog-content a:hover { background-color: #E1F28F; color: #0A2E22; }
+
+.blog-content figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #9CA3AF;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+
 /* Noise texture for premium feel */
 .bg-noise {
   position: relative;

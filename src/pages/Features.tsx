@@ -1,12 +1,11 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
+import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import FeatureSection from '../components/features/FeatureSection';
 import TechnicalFAQ from '../components/features/TechnicalFAQ';
 import FinalCTA from '../components/FinalCTA';
 import CompactHero from '../components/CompactHero';
+import ScrollReveal from '../components/ScrollReveal';
 import featuresData from '../data/pages/features.json';
-
 import SEO from '../components/SEO';
 import seoData from '../data/seo.json';
 
@@ -222,6 +221,21 @@ const renderVisual = (id: string) => {
 
 export default function Features() {
     const { hero, navigation, sections, value_summary, testimonials } = featuresData;
+    const [activeNav, setActiveNav] = useState(navigation[0]?.id ?? '');
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            for (const item of [...navigation].reverse()) {
+                const el = document.getElementById(item.id);
+                if (el && el.getBoundingClientRect().top <= 120) {
+                    setActiveNav(item.id);
+                    return;
+                }
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [navigation]);
 
     return (
         <div className="min-h-screen bg-[#0A2E22] text-white">
@@ -239,9 +253,9 @@ export default function Features() {
             />
 
             {/* 2. Quick Nav */}
-            <div className="sticky top-20 md:top-24 z-40 bg-[#0A2E22]/80 backdrop-blur-md border-b border-white/5">
+            <div className="sticky top-16 md:top-[72px] z-40 bg-[#0A2E22]/90 backdrop-blur-md border-b border-white/5">
                 <div className="container mx-auto px-6 overflow-x-auto no-scrollbar">
-                    <div className="flex items-center justify-center gap-8 py-4 min-w-max">
+                    <div className="flex items-center justify-center gap-2 py-3 min-w-max">
                         {navigation.map((item) => (
                             <a
                                 key={item.id}
@@ -249,8 +263,12 @@ export default function Features() {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                                    setActiveNav(item.id);
                                 }}
-                                className="text-sm font-bold text-white/60 hover:text-[#E1F28F] transition-colors whitespace-nowrap"
+                                className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all whitespace-nowrap ${activeNav === item.id
+                                        ? 'bg-[#E1F28F]/15 text-[#E1F28F] border border-[#E1F28F]/30'
+                                        : 'text-white/50 hover:text-white'
+                                    }`}
                             >
                                 {item.label}
                             </a>
@@ -277,40 +295,49 @@ export default function Features() {
             </div>
 
             {/* 4. Value Summary Grid */}
-            <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22]">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4 tracking-tight">{value_summary.title}</h2>
-                        <p className="text-[#0A2E22]/70">{value_summary.subtitle}</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22] overflow-hidden relative">
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="container mx-auto px-6 relative z-10">
+                    <ScrollReveal variant="fade-up">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">{value_summary.title}</h2>
+                            <p className="text-[#0A2E22]/60 max-w-xl mx-auto">{value_summary.subtitle}</p>
+                        </div>
+                    </ScrollReveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {value_summary.items.map((item, i) => (
-                            <div key={i} className="p-6 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/20 transition-colors hover:shadow-md">
-                                <h3 className="text-lg font-bold text-[#0A2E22] mb-2">{item.title}</h3>
-                                <p className="text-sm text-[#0A2E22]/70">{item.desc}</p>
-                            </div>
+                            <ScrollReveal key={i} variant="fade-up" delay={i * 0.1}>
+                                <div className="p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/25 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group h-full">
+                                    <div className="w-12 h-12 bg-[#0A2E22] rounded-xl flex items-center justify-center mb-5 text-[#E1F28F] font-extrabold text-lg group-hover:bg-[#045C4E] transition-colors">
+                                        {(i + 1).toString().padStart(2, '0')}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-[#0A2E22] mb-2">{item.title}</h3>
+                                    <p className="text-sm text-[#0A2E22]/60 leading-relaxed">{item.desc}</p>
+                                </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 5. Customer Proof (Mini) */}
-            <section className="py-20 bg-[#0A2E22] border-b border-white/5">
-                <div className="container mx-auto px-6 text-center">
-                    <div className="inline-flex gap-1 text-[#E1F28F] mb-4">
-                        {[1, 2, 3, 4, 5].map(i => <span key={i}>★</span>)}
+            {/* 5. Customer Proof */}
+            <section className="py-24 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E1F28F]/8 rounded-full blur-[80px] pointer-events-none" />
+                <ScrollReveal variant="fade-up" className="container mx-auto px-6 text-center relative z-10">
+                    <div className="inline-flex gap-0.5 text-[#E1F28F] mb-6">
+                        {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>
-                    {/* Using dangerouslySetInnerHTML for quote since it contains HTML in JSON */}
-                    <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed max-w-4xl mx-auto mb-8" dangerouslySetInnerHTML={{ __html: `"${testimonials.quote}"` }}>
-                    </blockquote>
+                    <div className="text-[100px] leading-none text-[#E1F28F]/10 font-serif mb-[-36px] select-none">&ldquo;</div>
+                    <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed max-w-4xl mx-auto mb-10 text-white relative z-10" dangerouslySetInnerHTML={{ __html: `"${testimonials.quote}"` }} />
                     <div className="flex items-center justify-center gap-4">
-                        <div className="w-10 h-10 bg-white/10 rounded-full" />
+                        <div className="w-12 h-12 bg-gradient-to-br from-[#E1F28F] to-[#045C4E] rounded-full ring-2 ring-[#E1F28F]/30 ring-offset-2 ring-offset-[#0A2E22]" />
                         <div className="text-left">
                             <div className="text-sm font-bold text-white">{testimonials.author}</div>
-                            <div className="text-xs text-white/50">{testimonials.role}</div>
+                            <div className="text-xs text-[#E1F28F]/70 font-mono tracking-wide">{testimonials.role}</div>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* 6. Technical FAQ */}
