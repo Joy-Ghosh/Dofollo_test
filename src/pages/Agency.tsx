@@ -115,7 +115,7 @@ export default function Agency() {
             {/* Trusted By Section */}
             <div className="py-12 border-b border-white/5 bg-[#0D261F] relative">
                 <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
- <div className="container mx-auto text-center relative z-10">
+                <div className="container mx-auto text-center relative z-10">
                     <p className="text-white/40 text-sm font-bold uppercase tracking-widest mb-8">{trust.text}</p>
                     <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
                         {/* Placeholder Logos */}
@@ -148,7 +148,7 @@ export default function Agency() {
             {/* Value Summary */}
             <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22] relative overflow-hidden">
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
- <div className="container mx-auto relative z-10">
+                <div className="container mx-auto relative z-10">
                     <ScrollReveal variant="fade-up">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">{value_summary.title}</h2>
@@ -157,13 +157,13 @@ export default function Agency() {
                     </ScrollReveal>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {value_summary.items.map((item, i) => (
-                            <ScrollReveal key={i} variant="fade-up" delay={i * 0.1}>
-                                <div className="p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/25 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group h-full">
+                            <ScrollReveal key={i} variant="fade-up" delay={i * 0.1} className="h-full">
+                                <div className="p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-sm hover:border-[#045C4E]/25 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group h-full flex flex-col">
                                     <div className="w-12 h-12 bg-[#0A2E22] rounded-xl flex items-center justify-center mb-5 text-[#E1F28F] font-extrabold text-lg group-hover:bg-[#045C4E] transition-colors">
                                         {(i + 1).toString().padStart(2, '0')}
                                     </div>
                                     <h3 className="text-lg font-bold text-[#0A2E22] mb-2">{item.title}</h3>
-                                    <p className="text-sm text-[#0A2E22]/60 leading-relaxed">{item.desc}</p>
+                                    <p className="text-sm text-[#0A2E22]/60 leading-relaxed flex-grow">{item.desc}</p>
                                 </div>
                             </ScrollReveal>
                         ))}
@@ -175,7 +175,7 @@ export default function Agency() {
             <section className="py-24 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-noise opacity-20 pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E1F28F]/8 rounded-full blur-[80px] pointer-events-none" />
- <ScrollReveal variant="fade-up" className="container mx-auto text-center relative z-10">
+                <ScrollReveal variant="fade-up" className="container mx-auto text-center relative z-10">
                     <div className="inline-flex gap-0.5 text-[#E1F28F] mb-6">
                         {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>

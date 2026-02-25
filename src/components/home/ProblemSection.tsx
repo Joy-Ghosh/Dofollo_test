@@ -31,7 +31,7 @@ function ProblemCard({ item, i }: { item: any; i: number }) {
 
     return (
         <div
-            className="relative p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-[0_2px_10px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(10,46,34,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden"
+            className="relative h-full flex flex-col p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-[0_2px_10px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(10,46,34,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={{ transform: hovered ? 'translateY(-6px)' : 'translateY(0)' }}
@@ -75,14 +75,14 @@ function ProblemCard({ item, i }: { item: any; i: number }) {
             <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${hovered ? 'text-[#045C4E]' : 'text-[#0A2E22]'}`}>
                 {item.title}
             </h3>
-            <p className="text-[#0A2E22]/60 leading-relaxed text-sm mb-6 relative z-10">
+            <p className="text-[#0A2E22]/60 leading-relaxed text-sm mb-6 relative z-10 flex-grow">
                 {item.description}
             </p>
 
             {/* Hours comparison — slides up on hover */}
             <div
                 className="flex items-center gap-3 overflow-hidden transition-all duration-500"
-                style={{ maxHeight: hovered ? '48px' : '0px', opacity: hovered ? 1 : 0 }}
+                style={{ maxHeight: hovered ? '100px' : '0px', opacity: hovered ? 1 : 0, marginTop: hovered ? '1.5rem' : '0' }}
             >
                 <div className="flex-1 text-center p-2 bg-red-50 rounded-lg border border-red-100">
                     <div className="text-xs font-bold text-red-400 tabular-nums">{emp.hoursWasted}</div>
@@ -127,6 +127,7 @@ export default function ProblemSection() {
                             key={i}
                             variant="fade-up"
                             delay={i * 0.1}
+                            className="h-full"
                         >
                             <ProblemCard item={item} i={i} />
                         </ScrollReveal>
