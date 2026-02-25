@@ -9,6 +9,26 @@ import AgencyFAQ from '../components/AgencyFAQ';
 import seoData from '../data/seo.json';
 import agencyData from '../data/pages/agency.json';
 
+import esposaLogo from '../assets/agency/esposa.png';
+import glassLogo from '../assets/agency/glass.png';
+import imagiLogo from '../assets/agency/imagi.png';
+import karcherLogo from '../assets/agency/karcher.png';
+import mazdaLogo from '../assets/agency/mazda.png';
+import salesparkLogo from '../assets/agency/salespark.png';
+import thestudioLogo from '../assets/agency/thestudio.png';
+import wdwLogo from '../assets/agency/wdw.png';
+
+const agencyLogos = [
+    { src: esposaLogo, alt: 'Esposa' },
+    { src: glassLogo, alt: 'Glass' },
+    { src: imagiLogo, alt: 'Imagi' },
+    { src: karcherLogo, alt: 'Karcher' },
+    { src: mazdaLogo, alt: 'Mazda' },
+    { src: salesparkLogo, alt: 'Salespark' },
+    { src: thestudioLogo, alt: 'The Studio' },
+    { src: wdwLogo, alt: 'WDW' },
+];
+
 // Helper to render visuals for agency sections
 const renderVisual = (id: string) => {
     switch (id) {
@@ -113,17 +133,27 @@ export default function Agency() {
             />
 
             {/* Trusted By Section */}
-            <div className="py-12 border-b border-white/5 bg-[#0D261F] relative">
-                <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
-                <div className="container mx-auto text-center relative z-10">
-                    <p className="text-white/40 text-sm font-bold uppercase tracking-widest mb-8">{trust.text}</p>
-                    <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                        {/* Placeholder Logos */}
-                        {[1, 2, 3, 4, 5].map((i) => (
-                            <div key={i} className="h-8 w-24 bg-white/10 rounded flex items-center justify-center text-[10px] text-white/30 font-mono">
-                                LOGO {i}
+            <div className="py-12 border-b border-[#0A2E22]/5 bg-gray-50 relative overflow-hidden">
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <p className="text-[#0A2E22]/50 text-sm font-bold uppercase tracking-widest mb-8">{trust.text}</p>
+
+                    <div className="relative max-w-5xl mx-auto">
+                        {/* Fade masks on left/right edges */}
+                        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-r from-gray-50 to-transparent" />
+                        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-l from-gray-50 to-transparent" />
+
+                        <div className="overflow-hidden flex">
+                            <div className="flex gap-12 md:gap-24 w-max items-center animate-scroll opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                                {[...agencyLogos, ...agencyLogos, ...agencyLogos, ...agencyLogos].map((logo, i) => (
+                                    <img
+                                        key={i}
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        className="h-6 md:h-8 w-auto object-contain flex-shrink-0"
+                                    />
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </div>

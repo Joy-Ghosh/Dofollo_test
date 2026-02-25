@@ -42,7 +42,7 @@
             },
             "email": {
                 "label": "Email Address",
-                "placeholder": "john@example.com"
+                "placeholder": "john@rabbitloader.com"
             },
             "subject": {
                 "label": "Subject",

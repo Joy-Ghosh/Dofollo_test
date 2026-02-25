@@ -104,7 +104,7 @@
             "email": {
                 "label": "Work Email Address",
                 "required": true,
-                "placeholder": "name@yourcompany.com",
+                "placeholder": "name@rabbitloader.com",
                 "help": "Please use a business or domain email. Free email addresses (Gmail, Yahoo, Outlook, etc.) will not receive a response."
             },
             "name": {
@@ -115,7 +115,7 @@
             "company": {
                 "label": "Company / Website",
                 "required": true,
-                "placeholder": "yourcompany.com"
+                "placeholder": "rabbitloader.com"
             },
             "contribution_type": {
                 "label": "How would you like to contribute?",
@@ -129,7 +129,7 @@
             "target_url": {
                 "label": "Target URL",
                 "required": true,
-                "placeholder": "https://www.yourwebsite.com/page-you-want-to-promote",
+                "placeholder": "https://www.rabbitloader.com/page-you-want-to-promote",
                 "help": "This is the page you want us to reference or link to."
             },
             "topics": {
@@ -141,7 +141,7 @@
             "sample": {
                 "label": "Sample of Your Writing",
                 "required": true,
-                "placeholder": "https://yourwebsite.com/sample-article",
+                "placeholder": "https://rabbitloader.com/sample-article",
                 "help": "Provide at least one previously published article."
             },
             "outline": {

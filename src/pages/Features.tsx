@@ -227,7 +227,7 @@ export default function Features() {
         const handleScroll = () => {
             for (const item of [...navigation].reverse()) {
                 const el = document.getElementById(item.id);
-                if (el && el.getBoundingClientRect().top <= 120) {
+                if (el && el.getBoundingClientRect().top <= 180) {
                     setActiveNav(item.id);
                     return;
                 }
@@ -253,8 +253,8 @@ export default function Features() {
             />
 
             {/* 2. Quick Nav */}
-            <div className="sticky top-16 md:top-[72px] z-40 bg-[#0A2E22]/90 backdrop-blur-md border-b border-white/5">
- <div className="container mx-auto overflow-x-auto no-scrollbar">
+            <div className="sticky top-[80px] md:top-[104px] z-40 bg-[#0A2E22]/90 backdrop-blur-md border-b border-white/5 shadow-md">
+                <div className="container mx-auto overflow-x-auto no-scrollbar">
                     <div className="flex items-center justify-center gap-2 py-3 min-w-max">
                         {navigation.map((item) => (
                             <a
@@ -266,8 +266,8 @@ export default function Features() {
                                     setActiveNav(item.id);
                                 }}
                                 className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all whitespace-nowrap ${activeNav === item.id
-                                        ? 'bg-[#E1F28F]/15 text-[#E1F28F] border border-[#E1F28F]/30'
-                                        : 'text-white/50 hover:text-white'
+                                    ? 'bg-[#E1F28F]/15 text-[#E1F28F] border border-[#E1F28F]/30'
+                                    : 'text-white/50 hover:text-white'
                                     }`}
                             >
                                 {item.label}
@@ -297,7 +297,7 @@ export default function Features() {
             {/* 4. Value Summary Grid */}
             <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22] overflow-hidden relative">
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
- <div className="container mx-auto relative z-10">
+                <div className="container mx-auto relative z-10">
                     <ScrollReveal variant="fade-up">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">{value_summary.title}</h2>
@@ -324,7 +324,7 @@ export default function Features() {
             <section className="py-24 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
                 <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E1F28F]/8 rounded-full blur-[80px] pointer-events-none" />
- <ScrollReveal variant="fade-up" className="container mx-auto text-center relative z-10">
+                <ScrollReveal variant="fade-up" className="container mx-auto text-center relative z-10">
                     <div className="inline-flex gap-0.5 text-[#E1F28F] mb-6">
                         {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>

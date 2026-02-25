@@ -3,6 +3,20 @@ import aboutData from '../../data/pages/about.json';
 import { Linkedin, Twitter } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
 
+import abhishekImg from '../../assets/us/abhishek.webp';
+import akashImg from '../../assets/us/akash.webp';
+import joyImg from '../../assets/us/joy.webp';
+import sonjuImg from '../../assets/us/sonju.webp';
+import palashImg from '../../assets/us/palash.webp';
+
+const teamImages: Record<number, string> = {
+    1: abhishekImg,
+    2: akashImg,
+    3: joyImg,
+    4: sonjuImg,
+    5: palashImg,
+};
+
 export default function TeamSection() {
     const { team } = aboutData;
 
@@ -10,7 +24,7 @@ export default function TeamSection() {
         <section className="py-24 bg-white text-[#0A2E22] border-t border-[#0A2E22]/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
 
- <div className="container mx-auto relative z-10">
+            <div className="container mx-auto relative z-10">
                 <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0A2E22] text-[#E1F28F] text-xs font-bold uppercase tracking-wider rounded-full mb-5">
                         {team.badge}
@@ -26,9 +40,9 @@ export default function TeamSection() {
                                 {/* Image */}
                                 <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4 shadow-md group-hover:shadow-xl transition-shadow duration-500">
                                     <img
-                                        src={member.image}
+                                        src={teamImages[member.id] || member.image}
                                         alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
                                     />
                                     {/* Overlay gradient bottom */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A2E22]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

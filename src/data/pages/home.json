@@ -85,8 +85,8 @@
         "description": "See how authority flows through your site structure with intelligent linking.",
         "center_label": "Homepage",
         "center_sublabel": "Central Authority Hub",
-        "inbound_title": "Link Sources",
-        "outbound_title": "Link Targets",
+        "inbound_title": "Incoming Links",
+        "outbound_title": "Outgoing Links",
         "inbound_nodes": [
             {
                 "id": "in-1",
@@ -219,14 +219,37 @@
         ]
     },
     "integrations_section": {
-        "title": "Works With Your Stack",
-        "description": "Connect Dofollo to your favorite CMS and SEO tools in seconds. No coding required.",
+        "badge": "COMPATIBILITY",
+        "title": "Works With Any Website Stack",
         "tools": [
-            "WordPress",
-            "Webflow",
-            "Shopify",
-            "Ghost",
-            "Custom API"
+            {
+                "name": "WordPress",
+                "description": "Automatically detects pages and applies SEO-safe internal links."
+            },
+            {
+                "name": "Shopify",
+                "description": "Improves internal linking across product and collection pages."
+            },
+            {
+                "name": "WooCommerce",
+                "description": "Optimizes internal links to boost product discovery."
+            },
+            {
+                "name": "Custom",
+                "description": "Works seamlessly with custom-built and static websites."
+            },
+            {
+                "name": "Google Analytics",
+                "description": "Uses engagement data to refine internal linking decisions."
+            },
+            {
+                "name": "Google Search Console",
+                "description": "Aligns internal links with real search performance insights."
+            },
+            {
+                "name": "Plugin-Free Setup",
+                "description": "Enhances internal links without plugins or rewrites."
+            }
         ]
     },
     "use_case_section": {

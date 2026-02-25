@@ -22,7 +22,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
     return (
         <section
             id={id}
-            className={`py-24 relative overflow-hidden ${isDark ? 'bg-[#0A2E22] text-white' : 'bg-white text-[#0A2E22]'}`}
+            className={`py-24 scroll-mt-[160px] relative overflow-hidden ${isDark ? 'bg-[#0A2E22] text-white' : 'bg-white text-[#0A2E22]'}`}
         >
             {/* Background blobs */}
             {isDark ? (
@@ -35,7 +35,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
                 </div>
             )}
 
- <div className="container mx-auto relative z-10">
+            <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Text Column */}

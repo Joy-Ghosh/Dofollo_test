@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Scan, Sparkles, Link, ArrowRight } from 'lucide-react';
+import { Scan, Sparkles, Link, ArrowRight, Check, Zap } from 'lucide-react';
 import homeData from '../../data/pages/home.json';
 import ScrollReveal from '../ScrollReveal';
 
@@ -7,9 +7,9 @@ const iconMap: { [key: string]: React.ElementType } = { Scan, Sparkles, Link };
 
 // Proof badges per step
 const proofBadges = [
-    '✓ Used by 1,200+ sites',
-    '⚡ AI-powered suggestions',
-    '🔗 One-click apply',
+    { icon: Check, text: 'Used by 1,200+ sites' },
+    { icon: Zap, text: 'AI-powered suggestions' },
+    { icon: Link, text: 'One-click apply' },
 ];
 
 function useInView(threshold = 0.3) {
@@ -54,7 +54,7 @@ export default function WorkflowSection() {
 
     return (
         <section className="py-24 bg-white text-[#0A2E22] overflow-hidden">
- <div className="container mx-auto ">
+            <div className="container mx-auto ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Content & Timeline */}
@@ -75,6 +75,9 @@ export default function WorkflowSection() {
                         <div className="space-y-0 relative" ref={stepsRef}>
                             {steps.map((item: any, i: number) => {
                                 const Icon = iconMap[item.icon] || Scan;
+                                const badge = proofBadges[i];
+                                const BadgeIcon = badge?.icon;
+
                                 return (
                                     <ScrollReveal
                                         key={i}
@@ -114,9 +117,12 @@ export default function WorkflowSection() {
                                             <h3 className="text-xl font-bold mb-2 text-[#0A2E22] group-hover:text-[#045C4E] transition-colors">{item.title}</h3>
                                             <p className="text-[#0A2E22]/60 leading-relaxed text-base mb-3">{item.description}</p>
                                             {/* Proof badge */}
-                                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#045C4E]/5 rounded-full border border-[#045C4E]/10 text-[#045C4E] text-xs font-semibold">
-                                                {proofBadges[i] || '✓ Verified'}
-                                            </div>
+                                            {badge && BadgeIcon && (
+                                                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#045C4E]/5 rounded-full border border-[#045C4E]/10 text-[#045C4E] text-xs font-semibold">
+                                                    <BadgeIcon className="w-3.5 h-3.5" />
+                                                    {badge.text}
+                                                </div>
+                                            )}
                                         </div>
                                     </ScrollReveal>
                                 );

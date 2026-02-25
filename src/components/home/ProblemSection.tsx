@@ -116,9 +116,6 @@ export default function ProblemSection() {
                     <p className="text-lg lg:text-xl text-[#0A2E22]/70 leading-relaxed">
                         {problem_section.subheading}
                     </p>
-                    <p className="mt-4 text-sm text-[#0A2E22]/40 italic">
-                        👇 Hover each card to see your time back
-                    </p>
                 </ScrollReveal>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

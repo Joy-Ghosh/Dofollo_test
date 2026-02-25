@@ -12,11 +12,12 @@ export default function MagneticCursor() {
         visible: false,
         clicked: false,
         hovered: false,
+        isLightBg: false,
     });
 
     useEffect(() => {
-        // Hide on touch devices — check once on mount
-        if (window.matchMedia('(pointer: coarse)').matches) return;
+        // Hide on touch devices or small screens — check once on mount
+        if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768) return;
 
         let raf: number;
         const s = state.current;
@@ -34,7 +35,9 @@ export default function MagneticCursor() {
 
         const onOver = (e: MouseEvent) => {
             const t = e.target as HTMLElement;
+            if (!t || !t.closest) return;
             s.hovered = !!t.closest('button, a, [data-magnetic], input, textarea, select');
+            s.isLightBg = !!t.closest('.bg-white, .bg-gray-50, .bg-\\[\\#F9FAFB\\]');
         };
         const onOut = () => { s.hovered = false; };
 
@@ -62,10 +65,14 @@ export default function MagneticCursor() {
             if (dotRef.current) {
                 dotRef.current.style.transform = `translate(${s.dot.x - 4}px, ${s.dot.y - 4}px) scale(${dotScale})`;
                 dotRef.current.style.opacity = String(dotOpacity);
+                if (s.isLightBg) dotRef.current.classList.add('dark');
+                else dotRef.current.classList.remove('dark');
             }
             if (ringRef.current) {
                 ringRef.current.style.transform = `translate(${s.ring.x - 20}px, ${s.ring.y - 20}px) scale(${ringScale})`;
                 ringRef.current.style.opacity = String(ringOpacity);
+                if (s.isLightBg) ringRef.current.classList.add('dark');
+                else ringRef.current.classList.remove('dark');
             }
 
             raf = requestAnimationFrame(animate);

@@ -7,8 +7,22 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-right: 32px;
+      padding-left: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-right: 60px;
+      padding-left: 60px;
+    }
   }
 
   @media (min-width: 1536px) {
@@ -27,10 +41,22 @@
 /* ============================================================
    GLOBAL CURSOR — Magnetic dot + ring
    ============================================================ */
-*,
-*::before,
-*::after {
-  cursor: none !important;
+@media (pointer: fine) and (min-width: 769px) {
+
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse),
+(max-width: 768px) {
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
 }
 
 .cursor-dot {
@@ -57,9 +83,18 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
-  transition: transform 0.15s ease, opacity 0.3s ease;
+  transition: transform 0.15s ease, opacity 0.3s ease, border-color 0.2s;
   will-change: transform;
 }
+
+.cursor-dot.dark {
+  background: #0A2E22;
+}
+
+.cursor-ring.dark {
+  border-color: #0A2E22;
+}
+
 
 /* ============================================================
    NOISE TEXTURE
@@ -608,11 +643,31 @@
   text-decoration: none;
   border-bottom: 2px solid #E1F28F;
   transition: all 0.2s;
+  overflow-wrap: break-word;
+  /* Ensure long links break */
+  word-break: break-all;
 }
 
 .blog-content a:hover {
   background-color: #E1F28F;
   color: #0A2E22;
+}
+
+.blog-content pre,
+.blog-content code {
+  white-space: pre-wrap;
+  /* Break long lines of code */
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #374151;
+  font-size: 1.125rem;
+  overflow-wrap: break-word;
+  /* Prevent paragraph text overflow */
 }
 
 .blog-content figcaption {
@@ -622,7 +677,6 @@
   margin-top: 0.75rem;
   font-style: italic;
 }
-
 
 /* Noise texture for premium feel */
 .bg-noise {

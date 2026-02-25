@@ -262,7 +262,7 @@ export default function BlogInlineCTA() {
                                 onChange={e => setDomain(e.target.value)}
                                 onFocus={() => setFocused(true)}
                                 onBlur={() => setFocused(false)}
-                                placeholder="yourwebsite.com"
+                                placeholder="rabbitloader.com"
                                 style={{
                                     border: 'none',
                                     outline: 'none',
