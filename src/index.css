@@ -653,12 +653,34 @@
   color: #0A2E22;
 }
 
-.blog-content pre,
-.blog-content code {
-  white-space: pre-wrap;
-  /* Break long lines of code */
-  word-break: break-all;
-  overflow-wrap: break-word;
+.blog-content pre {
+  background-color: #0A2E22;
+  color: #E1F28F;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content pre code {
+  color: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.blog-content p code {
+  background-color: #F3F4F6;
+  color: #ef4444;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  word-break: break-word;
+  /* Allows inline code to break if too long */
 }
 
 .blog-content p {
