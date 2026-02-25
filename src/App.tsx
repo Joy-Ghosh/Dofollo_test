@@ -12,6 +12,9 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import DocPage from './pages/Docs/DocPage';
+import WriteForUs from './pages/WriteForUs';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -32,6 +35,9 @@ function App() {
           <Route path="tools/link-counter" element={<LinkCounter />} />
           <Route path="tools/keyword-density" element={<KeywordDensityChecker />} />
           <Route path="support" element={<Support />} />
+          <Route path="write-for-us" element={<WriteForUs />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="privacy" element={<Privacy />} />
           <Route path="docs" element={<Navigate to="/docs/getting-started-with-dofollo" replace />} />
           <Route path="docs/:slug" element={<DocPage />} />
         </Route>

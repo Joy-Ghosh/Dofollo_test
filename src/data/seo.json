@@ -74,6 +74,21 @@
             "twitterImage": "/images/twitter-agency.jpg",
             "canonical": "https://dofollo.ai/agency",
             "robots": "index, follow"
+        },
+        "write_for_us": {
+            "title": "Write for Us | Share SEO & Internal Linking Expertise – Dofollo",
+            "description": "Write for Dofollo. Contribute expert articles on internal linking strategy, AI SEO, technical SEO, and site architecture. Submit your guest post request.",
+            "keywords": "write for us, guest post, seo blog, internal linking guest post, submit article, seo content contributor",
+            "ogTitle": "Write for Dofollo – Share Your SEO Expertise",
+            "ogDescription": "Contribute practical, experience-driven articles on internal linking, AI SEO, and technical SEO to the Dofollo blog.",
+            "ogImage": "/images/og-write-for-us.jpg",
+            "ogUrl": "https://dofollo.ai/write-for-us",
+            "twitterCard": "summary_large_image",
+            "twitterTitle": "Write for Dofollo – SEO Guest Post",
+            "twitterDescription": "Submit a guest article on internal linking, AI SEO, or technical SEO. We accept in-depth, practical content.",
+            "twitterImage": "/images/twitter-write-for-us.jpg",
+            "canonical": "https://dofollo.ai/write-for-us",
+            "robots": "index, follow"
         }
     },
     "tools": {

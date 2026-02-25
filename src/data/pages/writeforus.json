@@ -1,0 +1,169 @@
+{
+    "hero": {
+        "badge": "Write for Us",
+        "title": "Share Your Expertise on",
+        "title_highlight": "Internal Linking & SEO Intelligence",
+        "description": "Write practical, experience-driven content on internal linking, site architecture, or AI SEO — and we'd love to hear from you.",
+        "cta_primary": "Submit Your Request",
+        "cta_secondary": "Read Guidelines"
+    },
+    "topics": {
+        "intro": "Our readers include SEO professionals, agency owners, content marketers, and website operators looking to scale organic growth with smarter internal linking.",
+        "subtitle": "We accept in-depth, practical content on:",
+        "list": [
+            {
+                "title": "Internal Linking Strategy",
+                "description": "Advanced and practical frameworks for improving link equity and topical authority."
+            },
+            {
+                "title": "AI in SEO",
+                "description": "How AI can assist with content optimization, internal linking, and SEO workflows."
+            },
+            {
+                "title": "Technical SEO & Site Architecture",
+                "description": "Crawl depth, orphan pages, link flow, and structural optimization."
+            },
+            {
+                "title": "Competitor SEO Analysis",
+                "description": "Reverse engineering internal linking strategies and content clusters."
+            },
+            {
+                "title": "Link Equity & Topical Authority",
+                "description": "How to distribute authority effectively across large websites."
+            },
+            {
+                "title": "SEO Automation & Workflows",
+                "description": "Scaling SEO processes using tools, APIs, and automation systems."
+            },
+            {
+                "title": "Enterprise & Large Site SEO",
+                "description": "Managing thousands of URLs efficiently."
+            }
+        ]
+    },
+    "guidelines": {
+        "title": "Guest Post Guidelines",
+        "subtitle": "We maintain high editorial standards. Please review carefully before submitting.",
+        "content": {
+            "title": "Content Guidelines",
+            "items": [
+                "Content must be 100% original and human-written",
+                "No AI-generated spam or low-effort articles",
+                "Clear, simple, and professional language",
+                "No aggressive promotional tone",
+                "Practical insights only — no generic SEO advice",
+                "Include real examples, frameworks, or case insights",
+                "Use proper heading structure (H2, H3)",
+                "Recommended length: 1200–2000 words",
+                "Tone: Professional, insightful, reader-first"
+            ]
+        },
+        "link_policy": {
+            "title": "Link Policy",
+            "items": [
+                "Maximum 1 contextual do-follow link",
+                "No links in the first paragraph",
+                "No affiliate links",
+                "No casino, crypto, adult, or gambling content"
+            ]
+        },
+        "meta": {
+            "title": "Meta Requirements",
+            "subtitle": "Please include:",
+            "items": [
+                "Title: 55–60 characters",
+                "Meta Title: Maximum 60 characters",
+                "Meta Description: Maximum 160 characters",
+                "Suggested slug"
+            ]
+        },
+        "editorial_rights": {
+            "title": "Editorial Rights",
+            "description": "Dofollo retains full editorial rights.",
+            "items": [
+                "Edit grammar and structure",
+                "Improve clarity",
+                "Adjust headings",
+                "Modify or remove links",
+                "Add internal links"
+            ],
+            "footer": "Final publishing decisions remain with our editorial team."
+        }
+    },
+    "form": {
+        "title": "Write for Dofollo",
+        "subtitle": "Guest Contribution Request Form",
+        "description": "Submit your request to contribute a guest article or suggest a contextual link placement.",
+        "note": "We review only high-quality, original submissions from verified business emails.",
+        "join_text": "Join Dofollo to share expertise with SEO professionals and digital growth teams worldwide.",
+        "sections": {
+            "your_info": "Your Information",
+            "contribution": "Contribution Details"
+        },
+        "fields": {
+            "email": {
+                "label": "Work Email Address",
+                "required": true,
+                "placeholder": "name@yourcompany.com",
+                "help": "Please use a business or domain email. Free email addresses (Gmail, Yahoo, Outlook, etc.) will not receive a response."
+            },
+            "name": {
+                "label": "Full Name",
+                "required": true,
+                "placeholder": "Your full name"
+            },
+            "company": {
+                "label": "Company / Website",
+                "required": true,
+                "placeholder": "yourcompany.com"
+            },
+            "contribution_type": {
+                "label": "How would you like to contribute?",
+                "required": true,
+                "options": [
+                    "Guest Article",
+                    "Link Insertion Request",
+                    "Content Collaboration"
+                ]
+            },
+            "target_url": {
+                "label": "Target URL",
+                "required": true,
+                "placeholder": "https://www.yourwebsite.com/page-you-want-to-promote",
+                "help": "This is the page you want us to reference or link to."
+            },
+            "topics": {
+                "label": "Proposed Topic(s)",
+                "required": true,
+                "placeholder": "Share 1–3 topic ideas relevant to internal linking, AI SEO, or technical SEO growth.\n\nExample:\n\"Building Internal Link Clusters for Large Content Sites\"",
+                "help": "Share 1–3 topic ideas relevant to internal linking, AI SEO, or technical SEO growth."
+            },
+            "sample": {
+                "label": "Sample of Your Writing",
+                "required": true,
+                "placeholder": "https://yourwebsite.com/sample-article",
+                "help": "Provide at least one previously published article."
+            },
+            "outline": {
+                "label": "Proposed Article Outline",
+                "required": true,
+                "placeholder": "Briefly list headings, key insights, and key takeaways."
+            },
+            "dofollo_url": {
+                "label": "Dofollo Article URL for Link Placement (If Applicable)",
+                "required": false,
+                "placeholder": "https://dofollo.ai/blog/example-article"
+            }
+        },
+        "submit_button": "Submit Contribution Request",
+        "submitting_button": "Submitting...",
+        "success_title": "Request Submitted!",
+        "success_message": "Thank you for your contribution request. We review only high-quality submissions and will get back to you if your pitch is a good fit for our audience.",
+        "blog_cta": {
+            "title": "Explore Our Blog",
+            "description": "Want to understand our content style and depth? Explore recent Dofollo articles to align your submission with our editorial standards.",
+            "link_label": "Explore the Blog",
+            "link_url": "/blog"
+        }
+    }
+}

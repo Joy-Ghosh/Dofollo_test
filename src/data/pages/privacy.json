@@ -1,0 +1,86 @@
+{
+    "hero": {
+        "badge": "Privacy Policy",
+        "title": "Our Privacy Policy",
+        "description": "Your privacy and security are our top priorities. Learn how we protect your data.",
+        "last_updated": "February 25, 2026"
+    },
+    "sections": [
+        {
+            "id": "information-we-collect",
+            "number": "1",
+            "title": "Information We Collect",
+            "icon": "Database",
+            "content": "We collect information you provide directly to us, such as when you create an account or contact us:",
+            "list": [
+                "Email address and contact information",
+                "Name and company information",
+                "Phone number",
+                "Usage data and analytics"
+            ]
+        },
+        {
+            "id": "how-we-use-data",
+            "number": "2",
+            "title": "How We Use Your Data",
+            "icon": "Settings",
+            "content": "We use your information to provide, maintain, and improve our services:",
+            "list": [
+                "Provide and maintain our services",
+                "Communicate with you about updates and changes",
+                "Provide customer support",
+                "Improve and optimize our platform",
+                "Comply with legal obligations"
+            ]
+        },
+        {
+            "id": "data-security",
+            "number": "3",
+            "title": "Data Security",
+            "icon": "ShieldCheck",
+            "content": "We implement industry-standard security measures to protect your data against unauthorized access, alteration, disclosure, or destruction including SSL/TLS encryption and access controls.",
+            "list": null
+        },
+        {
+            "id": "your-rights",
+            "number": "4",
+            "title": "Your Rights",
+            "icon": "UserCheck",
+            "content": "You have the right to access, update, or delete your personal information at any time. You can also request a copy of your data.",
+            "list": null
+        },
+        {
+            "id": "third-party-services",
+            "number": "5",
+            "title": "Third-Party Services",
+            "icon": "Share2",
+            "content": "We may use third-party service providers who have access to your information only to perform specific tasks. They are bound by confidentiality agreements.",
+            "list": null
+        }
+    ],
+    "trust_badges": [
+        {
+            "label": "SSL Encrypted",
+            "icon": "Lock"
+        },
+        {
+            "label": "GDPR Compliant",
+            "icon": "ShieldCheck"
+        },
+        {
+            "label": "No Data Selling",
+            "icon": "Ban"
+        },
+        {
+            "label": "SOC 2 Ready",
+            "icon": "Award"
+        }
+    ],
+    "contact": {
+        "heading": "Questions About Your Privacy?",
+        "description": "If you have any questions about how we handle your data, our privacy team is here to help.",
+        "email": "privacy@dofollo.ai",
+        "button_label": "Contact Support",
+        "button_href": "/support"
+    }
+}

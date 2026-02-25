@@ -15,13 +15,13 @@ const TICKER_ITEMS = [
 ];
 
 // Letter-by-letter reveal component
-function SplitText({ text, inView, baseDelay = 0 }: { text: string; inView: boolean; baseDelay?: number }) {
+function SplitText({ text, inView, baseDelay = 0, charClassName = '' }: { text: string; inView: boolean; baseDelay?: number; charClassName?: string }) {
     return (
         <span>
             {text.split('').map((ch, i) => (
                 <span
                     key={i}
-                    className={ch === ' ' ? 'inline-block w-[0.35em]' : 'letter-reveal-char'}
+                    className={ch === ' ' ? 'inline-block w-[0.35em]' : `letter-reveal-char ${charClassName}`}
                     style={inView ? { animationDelay: `${baseDelay + i * 0.03}s` } : { opacity: 0 }}
                 >
                     {ch === ' ' ? '\u00A0' : ch}
@@ -113,13 +113,16 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
             {/* Texture Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)] pointer-events-none" />
 
- <div className="container mx-auto relative z-10">
+            <div className="container mx-auto relative z-10">
                 {/* Letter-reveal headline */}
                 <h2 className="text-5xl lg:text-7xl font-extrabold mb-8 tracking-tight drop-shadow-2xl" style={{ perspective: '600px' }}>
                     <SplitText text={pre + ' '} inView={inView} baseDelay={0.1} />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E1F28F] to-white">
-                        <SplitText text={highlight} inView={inView} baseDelay={0.1 + (pre.length + 1) * 0.03} />
-                    </span>
+                    <SplitText
+                        text={highlight}
+                        inView={inView}
+                        baseDelay={0.1 + (pre.length + 1) * 0.03}
+                        charClassName="text-[#E1F28F]"
+                    />
                     {post && (
                         <>
                             {' '}

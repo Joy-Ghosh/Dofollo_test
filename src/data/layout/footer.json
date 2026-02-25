@@ -73,6 +73,11 @@
                     "isRouterLink": true
                 },
                 {
+                    "label": "Write for Us",
+                    "href": "/write-for-us",
+                    "isRouterLink": true
+                },
+                {
                     "label": "Partner",
                     "href": "#"
                 }
@@ -83,11 +88,13 @@
             "links": [
                 {
                     "label": "Privacy",
-                    "href": "#"
+                    "href": "/privacy",
+                    "isRouterLink": true
                 },
                 {
                     "label": "Terms",
-                    "href": "#"
+                    "href": "/terms",
+                    "isRouterLink": true
                 },
                 {
                     "label": "Agency",
@@ -130,6 +137,63 @@
                     },
                     {
                         "label": "Plagiarism Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Backlink Analyzer",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Bulk URL Opener",
+                        "href": "#"
+                    }
+                ]
+            },
+            "readability": {
+                "title": "Readability Tools",
+                "items": [
+                    {
+                        "label": "Readability Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Flesch Reading Ease",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Flesch-Kincaid Grade",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Gunning Fog Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "SMOG Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Readability Analysis",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Automated Readability Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Coleman-Liau Index",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Dale-Chall Readability",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Lix Readability Score",
+                        "href": "#"
+                    },
+                    {
+                        "label": "Rix Text Complexity",
                         "href": "#"
                     }
                 ]
@@ -184,60 +248,15 @@
                     }
                 ]
             },
-            "readability": {
-                "title": "Readability Tools",
-                "items": [
-                    {
-                        "label": "Readability Checker",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Flesch Reading Ease",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Flesch-Kincaid Grade",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Gunning Fog Index",
-                        "href": "#"
-                    },
-                    {
-                        "label": "SMOG Index",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Readability Analysis",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Automated Readability Index",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Coleman-Liau Index",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Dale-Chall Readability",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Lix Readability Score",
-                        "href": "#"
-                    },
-                    {
-                        "label": "Rix Text Complexity",
-                        "href": "#"
-                    }
-                ]
-            },
             "more": {
                 "title": "More Tools",
                 "items": [
                     {
                         "label": "SSL Certificate Checker",
+                        "href": "#"
+                    },
+                    {
+                        "label": "SSL Details Lookup",
                         "href": "#"
                     },
                     {
@@ -261,11 +280,11 @@
         "links": [
             {
                 "label": "Privacy Policy",
-                "href": "#"
+                "href": "/privacy"
             },
             {
                 "label": "Terms of Service",
-                "href": "#"
+                "href": "/terms"
             },
             {
                 "label": "Sitemap",

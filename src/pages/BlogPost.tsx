@@ -4,7 +4,35 @@ import { Calendar, Clock, Tag, ChevronLeft, ArrowRight, Share2, Linkedin, Twitte
 import Footer from '../components/Footer';
 import FinalCTA from '../components/FinalCTA';
 import SEO from '../components/SEO';
+import BlogInlineCTA from '../components/BlogInlineCTA';
+import BlogSoftCTA from '../components/BlogSoftCTA';
+import BlogFinalCTA from '../components/BlogFinalCTA';
 import blogData from '../data/pages/blog.json';
+
+// ── Strip old inline CTA HTML and split content into chunks ──────────────────
+// The legacy CTA was a raw <main class="main-card-for-some"> block embedded
+// inside every post's content string. We strip those and split into chunks,
+// then inject 3 purposeful, visually distinct CTAs in strategic positions.
+const OLD_CTA_REGEX = /<main[^>]*>[\s\S]*?<\/main>/gi;
+
+function splitContentIntoCTAChunks(html: string): string[] {
+    return html.split(OLD_CTA_REGEX).filter(chunk => chunk.trim().length > 0);
+}
+
+/**
+ * Decide which CTA to render after a content chunk.
+ *
+ * Strategy (max 3 CTAs, all different):
+ *   idx 0  → BlogSoftCTA   — quiet nudge after intro
+ *   idx 1  → BlogInlineCTA — main visual CTA after problem section
+ *   idx 2+ → nothing       — let the reader breathe
+ *   (BlogFinalCTA is always placed after ALL chunks, before tags)
+ */
+function getCtaForIndex(idx: number): React.ReactNode {
+    if (idx === 0) return <BlogSoftCTA />;
+    if (idx === 1) return <BlogInlineCTA />;
+    return null;  // skip remaining mid-content slots
+}
 
 // Reuse category badge logic from Blog page
 const categoryDotColors: Record<string, string> = {
@@ -74,7 +102,7 @@ export default function BlogPost() {
                 {/* Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E1F28F]/5 rounded-full blur-[100px] pointer-events-none" />
 
- <div className="container mx-auto relative z-10 max-w-4xl text-center">
+                <div className="container mx-auto relative z-10 max-w-4xl text-center">
                     <div className="flex flex-col items-center gap-6">
                         <Link to="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-[#E1F28F] transition-colors text-sm font-medium mb-4">
                             <ChevronLeft size={16} /> Back to Blog
@@ -101,7 +129,7 @@ export default function BlogPost() {
             </header>
 
             {/* Main Content */}
- <main className="container mx-auto py-12 md:py-20">
+            <main className="container mx-auto py-12 md:py-20">
                 <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
 
                     {/* Article Body */}
@@ -140,15 +168,28 @@ export default function BlogPost() {
                             </div>
                         )}
 
-                        {/* Content */}
-                        <div
-                            className="blog-content prose prose-lg max-w-none
-                                prose-headings:text-[#0A2E22]
-                                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-4 prose-h2:border-b prose-h2:border-gray-100
-                                prose-p:text-gray-600 prose-p:leading-8 prose-p:mb-6
-                                prose-img:rounded-2xl prose-img:shadow-xl prose-img:w-full prose-img:my-10"
-                            dangerouslySetInnerHTML={{ __html: post.content || '' }}
-                        />
+                        {/* Content — 3-CTA strategy: soft → visual → final */}
+                        <div className="blog-content-wrapper">
+                            {(() => {
+                                const chunks = splitContentIntoCTAChunks(post.content || '');
+                                return chunks.map((chunk, idx) => (
+                                    <React.Fragment key={idx}>
+                                        <div
+                                            className="blog-content prose prose-lg max-w-none
+                                                prose-headings:text-[#0A2E22]
+                                                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-4 prose-h2:border-b prose-h2:border-gray-100
+                                                prose-p:text-gray-600 prose-p:leading-8 prose-p:mb-6
+                                                prose-img:rounded-2xl prose-img:shadow-xl prose-img:w-full prose-img:my-10"
+                                            dangerouslySetInnerHTML={{ __html: chunk }}
+                                        />
+                                        {getCtaForIndex(idx)}
+                                    </React.Fragment>
+                                ));
+                            })()}
+
+                            {/* BlogFinalCTA — always after all content, before tags */}
+                            <BlogFinalCTA />
+                        </div>
 
                         {/* Tags */}
                         <div className="mt-12 pt-8 border-t border-gray-100">

@@ -40,7 +40,7 @@ export default function Footer() {
             {/* Large background decorative elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E1F28F]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
- <div className="container mx-auto py-20 relative z-10">
+            <div className="container mx-auto py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
                     {/* Brand Column (Left) */}
                     <div className="lg:col-span-4 space-y-8">
@@ -52,7 +52,7 @@ export default function Footer() {
                                     {brand.logo.text}<span className="text-[#E1F28F]">{brand.logo.highlight}</span>
                                 </span>
                             </Link>
-                            <p className="text-white/60 text-sm leading-relaxed mb-6">
+                            <p className="text-white/60 text-sm leading-relaxed mt-4 mb-0">
                                 {brand.description}
                             </p>
                         </div>
@@ -98,45 +98,46 @@ export default function Footer() {
 
                 {/* Directory Sections */}
                 <div className="border-t border-white/10 pt-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-                        <div className="lg:col-span-4">
-                            <button
-                                onClick={() => toggleSection('seo')}
-                                className="flex items-center gap-3 text-white/80 hover:text-[#E1F28F] transition-colors group mb-8 lg:mb-0 w-full lg:w-auto"
-                            >
-                                <div className={`p-2 rounded-full bg-white/5 group-hover:bg-[#E1F28F]/20 transition-all ${openSections.seo ? 'rotate-180' : ''}`}>
-                                    <ChevronDown className="w-5 h-5" />
-                                </div>
-                                <h3 className="text-sm font-bold uppercase tracking-widest text-white/40 group-hover:text-[#E1F28F] transition-colors text-left flex-1">{directories.main_toggle.button_label}</h3>
-                            </button>
-                            <Link to={directories.main_toggle.view_all_link} className="mt-4 ml-12 flex items-center gap-2 text-sm font-medium text-white/60 hover:text-[#E1F28F] transition-colors group">
-                                {directories.main_toggle.view_all_label} <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                        </div>
-
-                        <div className={`lg:col-span-8 transition-all duration-500 overflow-hidden ${openSections.seo ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 pb-12">
-                                {Object.entries(directories.sections).map(([key, section]) => (
-                                    <div key={key} className="space-y-4">
-                                        <h4 className="font-bold text-[#E1F28F]">{section.title}</h4>
-                                        <ul className="space-y-2">
-                                            {section.items.map((item, i) => (
-                                                <li key={i}>
-                                                    {item.href.startsWith('/') ? (
-                                                        <Link to={item.href} className={`text-sm transition-colors hover:underline decoration-[#E1F28F]/50 underline-offset-4 block leading-snug ${location.pathname === item.href ? 'text-[#E1F28F] font-medium' : 'text-white/50 hover:text-white'}`}>
-                                                            {item.label}
-                                                        </Link>
-                                                    ) : (
-                                                        <a href={item.href} className="text-sm text-white/50 hover:text-white transition-colors hover:underline decoration-[#E1F28F]/50 underline-offset-4 block leading-snug">
-                                                            {item.label}
-                                                        </a>
-                                                    )}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
+                    {/* Header row: toggle + view all */}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+                        <button
+                            onClick={() => toggleSection('seo')}
+                            className="flex items-center gap-3 text-white/80 hover:text-[#E1F28F] transition-colors group w-full sm:w-auto"
+                        >
+                            <div className={`p-2 rounded-full bg-white/5 group-hover:bg-[#E1F28F]/20 transition-all ${openSections.seo ? 'rotate-180' : ''}`}>
+                                <ChevronDown className="w-5 h-5" />
                             </div>
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-white/40 group-hover:text-[#E1F28F] transition-colors text-left flex-1">{directories.main_toggle.button_label}</h3>
+                        </button>
+
+                        <Link to={directories.main_toggle.view_all_link} className="flex items-center gap-2 text-sm font-medium text-white/60 hover:text-[#E1F28F] transition-colors group ml-12 sm:ml-0">
+                            {directories.main_toggle.view_all_label} <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                    </div>
+
+                    {/* 5-column tools grid — full width */}
+                    <div className={`transition-all duration-500 overflow-hidden ${openSections.seo ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 pb-12">
+                            {Object.entries(directories.sections).map(([key, section]) => (
+                                <div key={key} className="space-y-4">
+                                    <h4 className="font-bold text-[#E1F28F]">{section.title}</h4>
+                                    <ul className="space-y-2">
+                                        {section.items.map((item, i) => (
+                                            <li key={i}>
+                                                {item.href.startsWith('/') ? (
+                                                    <Link to={item.href} className={`text-sm transition-colors hover:underline decoration-[#E1F28F]/50 underline-offset-4 block leading-snug ${location.pathname === item.href ? 'text-[#E1F28F] font-medium' : 'text-white/50 hover:text-white'}`}>
+                                                        {item.label}
+                                                    </Link>
+                                                ) : (
+                                                    <a href={item.href} className="text-sm text-white/50 hover:text-white transition-colors hover:underline decoration-[#E1F28F]/50 underline-offset-4 block leading-snug">
+                                                        {item.label}
+                                                    </a>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -145,9 +146,13 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center pt-12 mt-12 border-t border-white/10 text-sm text-white/40">
                     <p>{bottom_bar.copyright}</p>
                     <div className="flex gap-8 mt-4 md:mt-0">
-                        {bottom_bar.links.map((link, i) => (
-                            <a key={i} href={link.href} className="hover:text-white transition-colors">{link.label}</a>
-                        ))}
+                        {bottom_bar.links.map((link, i) =>
+                            link.href.startsWith('/') ? (
+                                <Link key={i} to={link.href} className="hover:text-white transition-colors">{link.label}</Link>
+                            ) : (
+                                <a key={i} href={link.href} className="hover:text-white transition-colors">{link.label}</a>
+                            )
+                        )}
                     </div>
                 </div>
             </div>
