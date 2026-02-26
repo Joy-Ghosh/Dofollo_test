@@ -145,20 +145,19 @@ export default function BlogInlineCTA() {
                     zIndex: 1,
                 }}
             >
-                {/* ── Left: mini visual ── */}
+                {/* ── Left: mini visual — hidden on mobile via CSS ── */}
                 <div
                     aria-hidden="true"
+                    className="blog-graph-panel"
                     style={{
                         flexShrink: 0,
                         width: '180px',
-                        display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         background: 'linear-gradient(135deg, rgba(4,92,78,0.06) 0%, rgba(4,92,78,0.02) 100%)',
                         borderRight: '1px solid rgba(4,92,78,0.08)',
                         padding: '20px 12px',
                     }}
-                    className="hidden sm:flex"
                 >
                     <div style={{ width: '100%', height: '140px' }}>
                         <LinkGraph />
@@ -166,7 +165,7 @@ export default function BlogInlineCTA() {
                 </div>
 
                 {/* ── Right: content ── */}
-                <div style={{ flex: 1, padding: '28px 28px 24px 28px', minWidth: 0 }}>
+                <div style={{ flex: 1, padding: 'clamp(18px, 4vw, 28px)', minWidth: 0 }}>
                     {/* Badge */}
                     <div style={{ marginBottom: '10px' }}>
                         <span
@@ -202,15 +201,14 @@ export default function BlogInlineCTA() {
                     {/* Headline */}
                     <h3
                         style={{
-                            fontSize: 'clamp(16px, 2.2vw, 20px)',
+                            fontSize: 'clamp(15px, 4vw, 20px)',
                             fontWeight: 800,
                             color: '#0A2E22',
                             lineHeight: 1.25,
-                            marginBottom: '8px',
                             margin: '0 0 8px 0',
                         }}
                     >
-                        Ready to See Your Internal Link Gaps?
+                        See Every Broken Link Opportunity on Your Site
                     </h3>
 
                     {/* Subtext */}
@@ -219,31 +217,28 @@ export default function BlogInlineCTA() {
                             fontSize: '13px',
                             color: '#4B7A5C',
                             lineHeight: 1.55,
-                            margin: '0 0 18px 0',
-                            maxWidth: '440px',
+                            margin: '0 0 16px 0',
                         }}
                     >
-                        Let Dofollo analyze your site structure and uncover high-impact link opportunities instantly — no manual work needed.
+                        Enter your domain — Dofollo maps your full link structure and surfaces the pages leaking authority right now.
                     </p>
 
-                    {/* Domain input + CTA */}
+                    {/* Domain input + CTA — stacks on mobile */}
                     <form
                         onSubmit={handleSubmit}
                         style={{
                             display: 'flex',
                             gap: '8px',
-                            flexWrap: 'wrap',
-                            alignItems: 'center',
+                            flexDirection: 'column',
                             marginBottom: '14px',
                         }}
+                        className="blog-cta-form"
                     >
                         <div
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                flex: '1 1 200px',
-                                minWidth: '180px',
-                                maxWidth: '300px',
+                                width: '100%',
                                 background: '#fff',
                                 border: `1.5px solid ${focused ? '#045C4E' : 'rgba(4,92,78,0.2)'}`,
                                 borderRadius: '10px',
@@ -262,7 +257,7 @@ export default function BlogInlineCTA() {
                                 onChange={e => setDomain(e.target.value)}
                                 onFocus={() => setFocused(true)}
                                 onBlur={() => setFocused(false)}
-                                placeholder="rabbitloader.com"
+                                placeholder="yoursite.com"
                                 style={{
                                     border: 'none',
                                     outline: 'none',
@@ -280,21 +275,21 @@ export default function BlogInlineCTA() {
                             type="submit"
                             id="blog-cta-analyze-btn"
                             style={{
-                                display: 'inline-flex',
+                                display: 'flex',
                                 alignItems: 'center',
+                                justifyContent: 'center',
                                 gap: '7px',
                                 background: '#045C4E',
                                 color: '#E1F28F',
                                 border: 'none',
                                 borderRadius: '10px',
-                                padding: '10px 20px',
+                                padding: '11px 20px',
                                 fontSize: '13px',
                                 fontWeight: 700,
                                 cursor: 'pointer',
-                                whiteSpace: 'nowrap',
                                 transition: 'background 0.2s, transform 0.15s, box-shadow 0.2s',
                                 boxShadow: '0 2px 12px rgba(4,92,78,0.25)',
-                                flexShrink: 0,
+                                width: '100%',
                             }}
                             onMouseEnter={e => {
                                 (e.currentTarget as HTMLButtonElement).style.background = '#033D34';
@@ -307,7 +302,7 @@ export default function BlogInlineCTA() {
                                 (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 2px 12px rgba(4,92,78,0.25)';
                             }}
                         >
-                            Analyze My Site
+                            Audit My Site Free
                             <ArrowRight size={13} style={{ transition: 'transform 0.2s' }} />
                         </button>
                     </form>
@@ -317,7 +312,7 @@ export default function BlogInlineCTA() {
                         style={{
                             display: 'flex',
                             flexWrap: 'wrap',
-                            gap: '12px',
+                            gap: '10px',
                             alignItems: 'center',
                         }}
                     >
@@ -350,6 +345,33 @@ export default function BlogInlineCTA() {
                     50% { opacity: 0.6; transform: scale(1.3); }
                 }
                 .blog-inline-cta * { box-sizing: border-box; }
+
+                /* Graph panel: hidden on mobile, shown on sm+ */
+                .blog-graph-panel {
+                    display: none;
+                }
+                @media (min-width: 640px) {
+                    .blog-graph-panel {
+                        display: flex;
+                    }
+                }
+
+                /* Form: stacked on mobile, row on sm+ */
+                @media (min-width: 480px) {
+                    .blog-cta-form {
+                        flex-direction: row !important;
+                        align-items: center;
+                    }
+                    .blog-cta-form > div:first-child {
+                        flex: 1 1 0;
+                        min-width: 0;
+                    }
+                    .blog-cta-form > button {
+                        width: auto !important;
+                        flex-shrink: 0;
+                        white-space: nowrap;
+                    }
+                }
             `}</style>
         </div>
     );

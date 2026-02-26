@@ -6,7 +6,6 @@ import { ArrowRight, Zap } from 'lucide-react';
  *
  * Strong, confident close. Full-width dark themed block.
  * Converts readers who consumed the full article.
- * Different layout & copy from the mid-content visual CTA.
  */
 export default function BlogFinalCTA() {
     const [hovered, setHovered] = useState(false);
@@ -55,16 +54,14 @@ export default function BlogFinalCTA() {
                 style={{
                     position: 'relative',
                     zIndex: 1,
-                    padding: '36px 40px',
+                    padding: 'clamp(24px, 5vw, 40px) clamp(20px, 5vw, 40px)',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '32px',
-                    flexWrap: 'wrap',
+                    flexDirection: 'column',
+                    gap: '24px',
                 }}
             >
-                {/* Left: text */}
-                <div style={{ flex: '1 1 280px', minWidth: 0 }}>
+                {/* Text section */}
+                <div>
                     {/* Icon + label */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                         <div
@@ -96,15 +93,15 @@ export default function BlogFinalCTA() {
 
                     <h3
                         style={{
-                            fontSize: 'clamp(18px, 2.5vw, 24px)',
+                            fontSize: 'clamp(18px, 5vw, 24px)',
                             fontWeight: 800,
                             color: '#ffffff',
                             margin: '0 0 10px 0',
-                            lineHeight: 1.2,
+                            lineHeight: 1.25,
                         }}
                     >
-                        Implement This Strategy on{' '}
-                        <span style={{ color: '#E1F28F' }}>Your Website Today</span>
+                        Fix Your Internal Link Structure.{' '}
+                        <span style={{ color: '#E1F28F' }}>Rank the Pages You Should.</span>
                     </h3>
 
                     <p
@@ -113,15 +110,14 @@ export default function BlogFinalCTA() {
                             color: 'rgba(255,255,255,0.55)',
                             margin: 0,
                             lineHeight: 1.6,
-                            maxWidth: '400px',
                         }}
                     >
-                        Dofollo gives you a visual map of your entire internal link structure, surfaces AI opportunities, and applies them — all without leaving your dashboard.
+                        Dofollo audits your entire site, surfaces the links you're missing, and adds them without you touching a single page. Most users see ranking movement in 3–8 weeks.
                     </p>
                 </div>
 
-                {/* Right: CTA block */}
-                <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
+                {/* CTA block — full width on mobile */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '12px' }}>
                     <a
                         href="https://dash.dofollo.ai/"
                         target="_blank"
@@ -130,17 +126,17 @@ export default function BlogFinalCTA() {
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
                         style={{
-                            display: 'inline-flex',
+                            display: 'flex',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             gap: '8px',
                             background: hovered ? '#c8dc6e' : '#E1F28F',
                             color: '#0A2E22',
                             borderRadius: '12px',
-                            padding: '13px 26px',
+                            padding: '14px 26px',
                             fontSize: '14px',
                             fontWeight: 800,
                             textDecoration: 'none',
-                            whiteSpace: 'nowrap',
                             transition: 'all 0.2s',
                             boxShadow: hovered
                                 ? '0 6px 24px rgba(225,242,143,0.35), 0 0 0 3px rgba(225,242,143,0.15)'
@@ -148,31 +144,63 @@ export default function BlogFinalCTA() {
                             transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
                         }}
                     >
-                        Start Free — No Card Needed
+                        Start Free Audit — No Card Needed
                         <ArrowRight
                             size={15}
                             style={{
                                 transform: hovered ? 'translateX(4px)' : 'translateX(0)',
                                 transition: 'transform 0.2s',
+                                flexShrink: 0,
                             }}
                         />
                     </a>
 
-                    {/* Social proof pill */}
+                    {/* Social proof */}
                     <div
                         style={{
                             display: 'flex',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             gap: '6px',
                             fontSize: '11px',
                             color: 'rgba(255,255,255,0.4)',
                         }}
                     >
                         <span style={{ color: '#E1F28F', fontSize: '13px' }}>⭐⭐⭐⭐⭐</span>
-                        Trusted by 1,000+ SEO teams
+                        Trusted by 2,000+ SEO professionals
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .blog-final-cta * { box-sizing: border-box; }
+
+                /* On larger screens, lay text + button side by side */
+                @media (min-width: 560px) {
+                    .blog-final-cta > div > div:last-child {
+                        /* reset stretch so button doesn't span full width on desktop */
+                        align-items: flex-start;
+                    }
+                    .blog-final-cta > div {
+                        flex-direction: row !important;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .blog-final-cta > div > div:first-child {
+                        flex: 1 1 0;
+                        min-width: 0;
+                        max-width: 420px;
+                    }
+                    .blog-final-cta > div > div:last-child {
+                        flex-shrink: 0;
+                        align-items: flex-start;
+                    }
+                    #blog-final-cta-btn {
+                        display: inline-flex !important;
+                        white-space: nowrap;
+                    }
+                }
+            `}</style>
         </div>
     );
 }

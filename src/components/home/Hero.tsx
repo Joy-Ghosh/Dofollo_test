@@ -38,13 +38,13 @@ function useTypewriter(phrases: string[], speed = 60, pause = 2000) {
   return displayed;
 }
 
-// Live user count that flickers slightly
+// Links-audited-today counter — ticks up naturally
 function useLiveCount(base: number) {
   const [count, setCount] = useState(base);
   useEffect(() => {
     const t = setInterval(() => {
-      setCount(base + Math.floor(Math.random() * 15) - 7);
-    }, 3000 + Math.random() * 2000);
+      setCount(c => c + Math.floor(Math.random() * 4) + 1);
+    }, 2800 + Math.random() * 1400);
     return () => clearInterval(t);
   }, [base]);
   return count;
@@ -59,7 +59,7 @@ export default function Hero() {
     'content strategy',
     'crawl efficiency',
   ]);
-  const liveCount = useLiveCount(247);
+  const liveCount = useLiveCount(18_340);
 
   return (
     <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-24 md:pt-32 pb-20 bg-noise">
@@ -87,23 +87,23 @@ export default function Hero() {
         ))}
       </div>
 
- <div className="container mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
           {/* Left Column: Typography */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
 
             {/* Live Signal Badge */}
-            <div className="relative group cursor-pointer inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md hover:bg-white/10 transition-all duration-300 animate-fade-in-up">
-              <span className="relative flex h-2 w-2">
+            <div className="relative group cursor-pointer w-fit inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 sm:gap-3 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md hover:bg-white/10 transition-all duration-300 animate-fade-in-up">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1F28F] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E1F28F]"></span>
               </span>
-              <span className="text-xs font-bold text-white tracking-wide uppercase">{hero.badge}</span>
-              {/* Live count */}
-              <span className="flex items-center gap-1.5 ml-1 pl-3 border-l border-white/10 text-[10px] text-[#E1F28F]/70 font-mono">
-                <Users className="w-3 h-3" />
-                <span className="tabular-nums">{liveCount}</span> active now
+              <span className="text-[10px] sm:text-xs font-bold text-white tracking-wide uppercase whitespace-nowrap">{hero.badge}</span>
+              {/* Links audited today — desktop only */}
+              <span className="hidden sm:flex items-center gap-1.5 ml-1 pl-3 border-l border-white/10 text-[10px] text-[#E1F28F]/70 font-mono whitespace-nowrap">
+                <LinkIcon className="w-3 h-3 shrink-0" />
+                <span className="tabular-nums">{liveCount.toLocaleString()}</span> links audited today
               </span>
             </div>
 
@@ -182,7 +182,7 @@ export default function Hero() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[#045C4E]/20 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[#39BD83]/15 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />
 
-            <div className="relative w-full max-w-2xl">
+            <div className="relative w-full max-w-2xl ml-auto py-16">
               {/* Main Visual Card */}
               <div className="relative z-10 bg-gradient-to-br from-[#16302B] to-[#0D1F1C] rounded-xl border border-[#E1F28F]/30 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden ring-1 ring-white/10">
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E1F28F]/30 to-transparent"></div>
@@ -258,8 +258,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* CARD 1: AI Opportunities */}
-              <div className="absolute -top-16 -right-10 z-30 animate-float-delayed hidden sm:block">
+              {/* CARD 1: AI Opportunities — top-right, within section bounds */}
+              <div className="absolute -top-10 -right-4 z-30 animate-float-delayed hidden sm:block">
                 <div className="bg-[#0D261F]/90 backdrop-blur-xl p-4 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-56 ring-1 ring-white/10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
                   <div className="flex items-center gap-2 mb-3 border-b border-white/5 pb-2 relative z-10">
@@ -293,8 +293,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* CARD 2: SEO Performance */}
-              <div className="absolute -bottom-8 -left-8 z-30 animate-float hidden sm:block">
+              {/* CARD 2: SEO Performance — bottom-left, within section bounds */}
+              <div className="absolute bottom-0 -left-4 z-30 animate-float hidden sm:block">
                 <div className="bg-[#0D261F]/90 backdrop-blur-xl p-5 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-64 ring-1 ring-white/10 relative overflow-hidden group/card hover:-translate-y-1 transition-transform duration-500">
                   <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
                   <div className="flex items-center justify-between mb-3 relative z-10">

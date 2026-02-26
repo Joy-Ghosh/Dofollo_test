@@ -1,65 +1,65 @@
 {
     "hero": {
-        "badge": "AI-Powered SEO V2.0",
-        "title_first": "Build Smart",
-        "title_highlight": "Internal Links",
-        "title_last": "Faster Than Ever.",
-        "description": "Stop manually interlinking. Dofollo AI scans your content, finds relevant opportunities, and inserts optimized links automatically.",
-        "primary_cta": "Start Free Trial",
+        "badge": "Internal Linking, Fully Automated",
+        "title_first": "Your Content Ranks Higher",
+        "title_highlight": "When Links Are Right.",
+        "title_last": "",
+        "description": "Dofollo audits your internal link structure, finds missed opportunities across every page, and places the right links — without you opening a single editor.",
+        "primary_cta": "Audit My Site Free",
         "secondary_cta": "See How It Works",
-        "trust_text": "Loved by SEO pros worldwide",
+        "trust_text": "Used by SEO teams & agencies worldwide",
         "trust_count": "2k+"
     },
     "problem_section": {
-        "heading_first": "Internal Linking Is The Most",
-        "heading_highlight": "Ignored SEO Growth Lever",
-        "subheading": "You spend hours writing content, but poor site structure holds it back from ranking.",
+        "heading_first": "You're Publishing Great Content.",
+        "heading_highlight": "It's Not Ranking Because of Links.",
+        "subheading": "Most SEO teams fix keywords and backlinks — but ignore the internal link graph that Google uses to understand site authority.",
         "problems": [
             {
                 "icon": "AlertCircle",
-                "title": "Missed Opportunities",
-                "description": "Thousands of potential internal links go unnoticed, wasting link equity."
+                "title": "Link Equity Is Leaking",
+                "description": "High-authority pages sit unconnected. Link equity that should flow to your money pages is going nowhere."
             },
             {
                 "icon": "Clock",
-                "title": "Time Consuming",
-                "description": "Manually finding and placing links takes dozens of hours per month."
+                "title": "Hours Wasted Per Client",
+                "description": "Finding link opportunities manually across 500+ pages takes days. That's billable time you're giving away."
             },
             {
                 "icon": "Layout",
-                "title": "Weak Structure",
-                "description": "Without a plan, your site architecture becomes messy and hard to crawl."
+                "title": "Crawlers Miss Your Pages",
+                "description": "Orphan pages and shallow link depth mean Google bots deprioritize your content before anyone reads it."
             },
             {
                 "icon": "TrendingDown",
-                "title": "Lost Traffic",
-                "description": "Competitors with better site structure outrank you for easy keywords."
+                "title": "Competitors Outrank You",
+                "description": "They're not smarter — they have tighter site structures. Better internal linking = faster ranking gains."
             }
         ]
     },
     "workflow_section": {
         "badge": "How It Works",
-        "heading_first": "From Audit to Optimized",
-        "heading_highlight": "in 3 Simple Steps.",
-        "description": "Stop playing guessing games with spreadsheets. Let AI handle the heavy lifting while you focus on creating great content.",
+        "heading_first": "From Scattered Pages to",
+        "heading_highlight": "a Tight Link Structure.",
+        "description": "No more spreadsheets, no more guesswork. Dofollo maps your entire content graph and surfaces exactly where to add links — then adds them for you.",
         "steps": [
             {
                 "icon": "Scan",
                 "number": "01",
-                "title": "AI Audit & Scan",
-                "description": "Dofollo crawls your entire site map, understanding the semantic relationship between every single page."
+                "title": "Site-Wide Link Audit",
+                "description": "Dofollo crawls every page of your site, mapping existing links and exposing orphan pages, broken links, and underlinked content."
             },
             {
                 "icon": "Sparkles",
                 "number": "02",
-                "title": "Smart Suggestions",
-                "description": "Our engine identifies high-relevance anchor text opportunities that feel natural, not robotic."
+                "title": "AI Link Suggestions",
+                "description": "Our engine surfaces semantically relevant anchor text opportunities — ranked by link equity impact, not guesswork."
             },
             {
                 "icon": "Link",
                 "number": "03",
-                "title": "Auto-Insertion",
-                "description": "Approve suggestions in bulk. Links are injected directly into your CMS without opening a single editor."
+                "title": "One-Click Publishing",
+                "description": "Approve in bulk. Dofollo pushes links directly to your CMS with the right anchor text — no editing pages one by one."
             }
         ],
         "visual": {
@@ -75,14 +75,14 @@
         }
     },
     "product_showcase": {
-        "heading_first": "Analyze, Optimize, and",
-        "heading_highlight": "Dominate",
-        "description": "A complete suite of tools to visualize your site architecture and uncover hidden SEO potential."
+        "heading_first": "See Your Entire Site Structure.",
+        "heading_highlight": "Fix It.",
+        "description": "A visual link graph that shows exactly how authority moves through your site — and where it's getting stuck."
     },
     "visualizer_section": {
-        "badge": "Visualizing Architecture",
-        "title": "Internal Linking Logic",
-        "description": "See how authority flows through your site structure with intelligent linking.",
+        "badge": "Link Graph Visualizer",
+        "title": "See How Authority Flows",
+        "description": "Understand which pages pass link equity, which pages receive it, and which ones are completely isolated from your link graph.",
         "center_label": "Homepage",
         "center_sublabel": "Central Authority Hub",
         "inbound_title": "Incoming Links",
@@ -90,88 +90,88 @@
         "inbound_nodes": [
             {
                 "id": "in-1",
-                "label": "Blog Post: SEO Tips",
+                "label": "Blog: Internal Linking Tips",
                 "type": "blog"
             },
             {
                 "id": "in-2",
-                "label": "Support: How-to Guide",
+                "label": "Guide: SEO Audit Checklist",
                 "type": "support"
             },
             {
                 "id": "in-3",
-                "label": "Category: Marketing",
+                "label": "Category: Link Building",
                 "type": "category"
             }
         ],
         "outbound_nodes": [
             {
                 "id": "out-1",
-                "label": "Service: Audit",
+                "label": "Service: Site Audit",
                 "type": "service"
             },
             {
                 "id": "out-2",
-                "label": "Landing Page: eBook",
+                "label": "Landing: Free Trial",
                 "type": "landing"
             },
             {
                 "id": "out-3",
-                "label": "Product: Pro Plan",
+                "label": "Pricing: Agency Plan",
                 "type": "product"
             }
         ]
     },
     "competitor_analysis": {
-        "badge": "Market Intelligence",
-        "heading_first": "Outperform Competitors",
-        "heading_highlight": "With AI Intelligence",
-        "description": "See exactly where your competitors are linking and find the gaps they missed. Steal their strategy in seconds with our advanced link graph visualization.",
-        "cta": "Explore Competitor Tools",
-        "visual_title": "Competitor Gap Analysis",
+        "badge": "Competitor Intelligence",
+        "heading_first": "See How Top-Ranking Sites",
+        "heading_highlight": "Structure Their Links",
+        "description": "Enter any competitor's domain and instantly map their internal link strategy. Find the gaps they've exploited — and the ones they've missed — then apply it to your own site.",
+        "cta": "Analyze a Competitor",
+        "visual_title": "Competitor Link Gap Analysis",
         "visual_badge": "LIVE TRACKING"
     },
     "impact_section": {
-        "badge": "Proven Results",
-        "heading_first": "Real Results, Measured in",
-        "heading_highlight": "Growth",
+        "badge": "Real Results",
+        "heading_first": "The Numbers SEO Teams",
+        "heading_highlight": "Actually Care About",
         "metrics": [
             {
-                "label": "Link Coverage",
+                "label": "More Link Coverage",
                 "value": "+65%"
             },
             {
-                "label": "Organic Traffic",
+                "label": "Organic Traffic Lift",
                 "value": "+34%"
             },
             {
-                "label": "Hours Saved",
+                "label": "Hours Saved / Month",
                 "value": "40hr"
             },
             {
-                "label": "ROI",
+                "label": "Return on Investment",
                 "value": "10x"
             }
         ]
     },
     "testimonials_section": {
-        "heading_first": "Trusted by Top",
-        "heading_highlight": "SEO Teams",
+        "heading_first": "Trusted by",
+        "heading_highlight": "SEO Pros Who Ship Results",
         "testimonials": [
             {
-                "quote": "\"Dofollo saved us 20 hours a week on internal linking. It's an absolute game changer for our agency.\"",
-                "author": "Alex Johnson",
-                "role": "Head of SEO, TechGrowth"
+                "quote": "\"We manage 30+ client sites. Dofollo cut our internal linking time by 80%. Now we deliver it as a standard service — clients love seeing the link graph.\"",
+                "author": "Rachel M.",
+                "role": "Founder, RankRight Agency"
             },
             {
-                "quote": "\"Dofollo saved us 20 hours a week on internal linking. It's an absolute game changer for our agency.\"",
-                "author": "Alex Johnson",
-                "role": "Head of SEO, TechGrowth"
+                "quote": "\"I was skeptical about automation, but the anchor text suggestions are genuinely good. It understands context the way a senior SEO would.\"",
+                "author": "James T.",
+                "role": "SEO Lead, B2B SaaS Company"
             },
             {
-                "quote": "\"Dofollo saved us 20 hours a week on internal linking. It's an absolute game changer for our agency.\"",
-                "author": "Alex Johnson",
-                "role": "Head of SEO, TechGrowth"
+                "quote": "\"Orphan pages were killing our crawl budget. Dofollo surfaced 200+ disconnected pages in minutes. We fixed them and saw rankings move within 3 weeks.\"",
+                "author": "Priya S.",
+                "role": "Independent SEO Consultant"
             }
         ],
         "companies": [
@@ -182,90 +182,90 @@
         ]
     },
     "feature_grid": {
-        "heading_first": "Everything You Need",
-        "heading_highlight": "to Rank",
-        "description": "A complete toolkit designed for modern SEOs who demand precision and scale.",
+        "heading_first": "Every Tool You Need to",
+        "heading_highlight": "Win on Internal Links",
+        "description": "Built for SEO professionals who manage real sites at real scale — not just theory.",
         "features": [
             {
                 "icon": "Target",
-                "title": "Anchor Optimization",
-                "description": "Smart anchor text selection to prevent over-optimization."
+                "title": "Smart Anchor Text",
+                "description": "AI selects contextually accurate anchor text that reads naturally and avoids over-optimization penalties."
             },
             {
                 "icon": "BarChart2",
-                "title": "Link Graph",
-                "description": "Visualize your site's internal link structure with an interactive map."
+                "title": "Visual Link Graph",
+                "description": "See your full site link structure in an interactive map. Instantly spot isolated pages and dead-end clusters."
             },
             {
                 "icon": "Zap",
-                "title": "Bulk Automation",
-                "description": "Insert hundreds of links across thousands of pages in one click."
+                "title": "Bulk Link Publishing",
+                "description": "Approve hundreds of link suggestions at once and push them live — no CMS juggling, no developer needed."
             },
             {
                 "icon": "Database",
                 "title": "CMS Integration",
-                "description": "Seamlessly connects with WordPress, Ghost, and custom stacks."
+                "description": "Connects directly to WordPress and your existing stack. Links go live without leaving the Dofollo dashboard."
             },
             {
                 "icon": "Globe",
-                "title": "Multilingual Support",
-                "description": "Works across 20+ languages for finding semantic opportunities."
+                "title": "Multilingual Sites",
+                "description": "Works across 20+ languages — find semantic opportunities whether you're running EN, DE, ES, or any other locale."
             },
             {
                 "icon": "Share2",
-                "title": "Competitor Analysis",
-                "description": "Track competitor linking strategies and replicate their wins."
+                "title": "Competitor Link Map",
+                "description": "Reverse-engineer how top-ranking competitors structure their internal links — and replicate what's working."
             }
         ]
     },
     "integrations_section": {
-        "badge": "COMPATIBILITY",
-        "title": "Works With Any Website Stack",
+        "badge": "INTEGRATIONS",
+        "title": "Plugs Into Your Existing Stack",
         "tools": [
             {
                 "name": "WordPress",
-                "description": "Automatically detects pages and applies SEO-safe internal links."
+                "description": "Directly publishes approved internal links to WordPress pages with SEO-safe markup."
             },
             {
                 "name": "Shopify",
-                "description": "Improves internal linking across product and collection pages."
+                "description": "Strengthens internal linking across product and collection pages to improve crawl depth."
             },
             {
                 "name": "WooCommerce",
-                "description": "Optimizes internal links to boost product discovery."
+                "description": "Connects product pages to relevant categories and blog content to boost discovery."
             },
             {
                 "name": "Custom",
-                "description": "Works seamlessly with custom-built and static websites."
+                "description": "Outputs clean link recommendations compatible with any custom CMS or static site setup."
             },
             {
                 "name": "Google Analytics",
-                "description": "Uses engagement data to refine internal linking decisions."
+                "description": "Uses page-level engagement signals to prioritize link placements that drive real traffic."
             },
             {
                 "name": "Google Search Console",
-                "description": "Aligns internal links with real search performance insights."
+                "description": "Aligns link decisions with actual search performance — impressions, clicks, and position data."
             },
             {
                 "name": "Plugin-Free Setup",
-                "description": "Enhances internal links without plugins or rewrites."
+                "description": "No bloated plugins. Just connect your site and start building a better link structure immediately."
             }
         ]
     },
     "use_case_section": {
-        "heading_first": "Built For Every",
-        "heading_highlight": "SEO Need",
+        "heading_first": "Built for Every",
+        "heading_highlight": "SEO Use Case",
         "cards": [
             {
-                "title": "For SaaS Teams",
-                "description": "Scale your programmatic SEO and content hubs without hiring more writers. Automate internal linking across thousands of pages instantly.",
-                "cta": "Explore Solution",
+                "title": "For SEO Agencies",
+                "description": "Deliver internal linking as a trackable, repeatable service. Impress clients with visual link graphs, fix orphan pages at scale, and report concrete wins — across every account you manage.",
+                "cta": "See Agency Features",
                 "theme": "dark"
             },
             {
-                "title": "For Agencies",
-                "description": "Manage multiple clients and deliver higher ROI reports with automated linking. impress clients with visual link graphs and quick wins.",
-                "cta": "Explore Agency Plan",
+                "title": "For In-House & Freelance SEOs",
+                "description": "Stop spending days on link audits. Dofollo maps your full site structure in minutes, surfaces your highest-impact opportunities, and handles placement — so you can focus on strategy.",
+                "cta": "Start Free Audit",
                 "theme": "light"
             }
         ]
@@ -273,14 +273,14 @@
     "pricing_section": {
         "heading_first": "Simple, Transparent",
         "heading_highlight": "Pricing",
-        "description": "Start for free, scale as you grow. No credit card required.",
+        "description": "Start free. Scale as your site or client base grows. No credit card to begin.",
         "monthly_label": "Monthly",
         "yearly_label": "Yearly",
         "yearly_discount": "-20%",
         "plans": [
             {
                 "name": "Basic",
-                "description": "Perfect for individuals and small projects starting with AI internal linking.",
+                "description": "For individual SEOs and small site owners who want AI-powered internal linking without the manual grind.",
                 "price_monthly": 39,
                 "price_yearly": 35,
                 "features": [
@@ -296,7 +296,7 @@
             {
                 "name": "Pro",
                 "tag": "Most Popular",
-                "description": "Best for growing businesses and marketing teams scaling their SEO strategy.",
+                "description": "For growing SEO teams and in-house marketers managing multiple properties or content-heavy sites.",
                 "price_monthly": 99,
                 "price_yearly": 89,
                 "features": [
@@ -311,7 +311,7 @@
             },
             {
                 "name": "Pro Max",
-                "description": "Built for agencies and large-scale SEO operations.",
+                "description": "For SEO agencies and consultants handling multiple client sites who need volume, speed, and reliability.",
                 "price_monthly": 199,
                 "price_yearly": 179,
                 "features": [
@@ -326,55 +326,55 @@
             }
         ],
         "custom_plan": {
-            "title": "Need a Custom Plan?",
-            "description": "Contact our team to discuss enterprise solutions, higher project limits, or custom integrations.",
+            "title": "Running a Larger Operation?",
+            "description": "Talk to us about custom project limits, white-label reporting, and dedicated onboarding for enterprise SEO teams.",
             "cta": "Contact Sales"
         }
     },
     "faq_section": {
-        "heading_first": "Frequently Asked",
-        "heading_highlight": "Questions",
+        "heading_first": "Questions SEOs",
+        "heading_highlight": "Actually Ask",
         "items": [
             {
-                "question": "What is Dofollo?",
-                "answer": "Dofollo is an AI-powered internal link management tool. It helps website owners discover internal linking opportunities and create new internal links using artificial intelligence. Dofollo can also analyze the internal linking strategy of competitors."
+                "question": "What does Dofollo actually do?",
+                "answer": "Dofollo is an AI-powered internal link management platform. It audits your site's link structure, identifies pages that are underlinked or disconnected, suggests semantically relevant internal links with proper anchor text, and publishes approved links directly to your CMS — all without manually editing pages."
             },
             {
-                "question": "How long does it take to get started with Dofollo?",
-                "answer": "You can get up and running in minutes. Simply add your website and let our AI scan your content to instantly discover internal linking opportunities."
+                "question": "How quickly can I see results?",
+                "answer": "Setup takes under 5 minutes. Your first audit results are ready in seconds. Most users see ranking improvements within 3–8 weeks of implementing Dofollo's suggestions, depending on their site's crawl frequency and content volume."
             },
             {
-                "question": "What kind of SEO results can I expect?",
-                "answer": "Our users typically see significant improvements over time, including up to +300% impressions and +120% clicks within 8–16 months. Results may vary depending on website structure and content quality."
+                "question": "What SEO impact should I expect?",
+                "answer": "Users typically report stronger crawl coverage, reduced orphan pages, and improved rankings for target keywords. On average, teams see +34% organic traffic lift and +65% link coverage improvements within the first 90 days."
             },
             {
-                "question": "Which integrations are supported?",
-                "answer": "Dofollo seamlessly integrates with WordPress and Google Search Console, enabling smarter SEO insights and one-click internal link publishing."
+                "question": "Which platforms does Dofollo integrate with?",
+                "answer": "Dofollo integrates natively with WordPress and Google Search Console. It also works with Shopify, WooCommerce, and custom-built sites. Links are published directly — no plugin installations or developer access required."
             },
             {
-                "question": "Does Dofollo handle orphan pages and broken links?",
-                "answer": "Yes. Dofollo automatically identifies and connects orphan pages to improve crawl visibility. It also detects and helps fix broken links to recover lost authority."
+                "question": "Does it find orphan pages and broken links?",
+                "answer": "Yes. Dofollo's audit flags all orphan pages (pages with no internal links pointing to them) and broken internal links. You can see them at a glance and either fix or connect them directly from your dashboard."
             },
             {
-                "question": "Do I need technical expertise to use Dofollo?",
-                "answer": "Not at all. Setup is simple. Just add your website and approve AI-generated link suggestions directly from your dashboard. No backend or development access is required."
+                "question": "Do I need technical SEO knowledge to use it?",
+                "answer": "No. Dofollo is built for SEO professionals of all levels. You don't need backend access or developer involvement — just add your site, review AI suggestions, and approve what you want to publish."
             },
             {
-                "question": "What pricing and support options are available?",
-                "answer": "Dofollo offers a free trial (typically 14 days with no credit card required) along with flexible pricing plans based on your needs. Support is available via email and chat."
+                "question": "Is there a free trial?",
+                "answer": "Yes — Dofollo offers a 14-day free trial with no credit card required. You get full access to the audit, suggestions, and publishing features so you can see real results before committing."
             },
             {
-                "question": "Do you have iOS and Android apps?",
-                "answer": "Currently, Dofollo is a web-based platform optimized for desktop and mobile browsers. Native iOS and Android apps may be introduced in the future."
+                "question": "Do you have a mobile app?",
+                "answer": "Dofollo is a web-based platform that works on all modern browsers, including mobile. A dedicated iOS and Android app is on the roadmap based on user demand."
             }
         ]
     },
     "final_cta": {
-        "heading_pre": "Ready to",
-        "heading_highlight": "Dominate",
-        "heading_post": "Search?",
-        "description": "Join 2,000+ SEOs using Dofollo to automate their internal linking strategy and reclaim their time.",
-        "primary_btn": "Start Free Trial",
+        "heading_pre": "Stop Guessing.",
+        "heading_highlight": "Start Ranking",
+        "heading_post": "With Better Links.",
+        "description": "Join 2,000+ SEO professionals using Dofollo to fix their internal link structure and recover rankings they should already own.",
+        "primary_btn": "Audit My Site Free",
         "secondary_btn": "Book a Demo",
         "footer_note": "14-DAY FREE TRIAL · NO CREDIT CARD REQUIRED · CANCEL ANYTIME"
     }

@@ -34,8 +34,8 @@ export default function BlogSoftCTA() {
                 }}
             >
                 <span style={{ opacity: 0.6, marginRight: 6 }}>💡</span>
-                Want to see your internal link gaps instantly?{' '}
-                <strong style={{ color: '#045C4E' }}>Try Dofollo free</strong> — no credit card needed.
+                Is link equity leaking from your best pages?{' '}
+                <strong style={{ color: '#045C4E' }}>Dofollo finds it free</strong> — no credit card, no setup time.
             </p>
 
             <a

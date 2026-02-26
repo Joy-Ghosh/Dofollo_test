@@ -15,6 +15,24 @@ import blogData from '../data/pages/blog.json';
 // then inject 3 purposeful, visually distinct CTAs in strategic positions.
 const OLD_CTA_REGEX = /<main[^>]*>[\s\S]*?<\/main>/gi;
 
+/**
+ * Sanitize raw HTML content from the JSON blob.
+ * Some posts have over-escaped content where:
+ *   - Literal `\n\n` text (not real newlines) appears visibly on screen
+ *   - `\\\"` or `\\\\\"` sequences come through as escaped quotes
+ * We fix this before rendering via dangerouslySetInnerHTML.
+ */
+function sanitizeContent(html: string): string {
+    return html
+        // Replace literal backslash-n sequences (visible \n\n text) with nothing
+        .replace(/\\n/g, '')
+        // Unescape over-escaped double quotes (\\" → ")
+        .replace(/\\\\"/g, '"')
+        .replace(/\\"/g, '"')
+        // Unescape over-escaped backslashes that are not part of HTML entities
+        .replace(/\\\\/g, '');
+}
+
 function splitContentIntoCTAChunks(html: string): string[] {
     return html.split(OLD_CTA_REGEX).filter(chunk => chunk.trim().length > 0);
 }
@@ -180,7 +198,7 @@ export default function BlogPost() {
                                                 prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-4 prose-h2:border-b prose-h2:border-gray-100
                                                 prose-p:text-gray-600 prose-p:leading-8 prose-p:mb-6
                                                 prose-img:rounded-2xl prose-img:shadow-xl prose-img:w-full prose-img:my-10"
-                                            dangerouslySetInnerHTML={{ __html: chunk }}
+                                            dangerouslySetInnerHTML={{ __html: sanitizeContent(chunk) }}
                                         />
                                         {getCtaForIndex(idx)}
                                     </React.Fragment>

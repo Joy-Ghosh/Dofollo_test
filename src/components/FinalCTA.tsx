@@ -4,14 +4,14 @@ import homeData from '../data/pages/home.json';
 
 // Social proof ticker items
 const TICKER_ITEMS = [
-    '🟢 Sarah K. just started her free trial',
-    '⚡ Marcus upgraded to Pro · 3m ago',
-    '🎯 Priya landed #1 for target keyword',
-    '🟢 James added 40+ internal links in 2min',
-    '📈 Tejas saw +28% organic traffic this week',
-    '🟢 Anna just started her free trial',
-    '⚡ Luis upgraded to Pro · 7m ago',
-    '🎯 Chen recovered 200+ orphaned pages',
+    '🟢 Rachel M. just published 47 internal links across 3 client sites',
+    '⚡ James upgraded to Pro Max · managing 8 client accounts',
+    '🎯 Priya fixed 214 orphan pages · rankings moved in 3 weeks',
+    '🟢 David added 60+ links in under 4 min — no CMS editing',
+    '📈 Agency team saw +34% organic traffic lift after 90-day audit',
+    '🟢 Tanvir just completed his first site-wide link audit',
+    '⚡ SEO Lead at B2B SaaS upgraded · 3 sites connected',
+    '🎯 Freelance SEO recovered 180 disconnected pages in one pass',
 ];
 
 // Letter-by-letter reveal component
@@ -115,18 +115,25 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
 
             <div className="container mx-auto relative z-10">
                 {/* Letter-reveal headline */}
-                <h2 className="text-5xl lg:text-7xl font-extrabold mb-8 tracking-tight drop-shadow-2xl" style={{ perspective: '600px' }}>
-                    <SplitText text={pre + ' '} inView={inView} baseDelay={0.1} />
-                    <SplitText
-                        text={highlight}
-                        inView={inView}
-                        baseDelay={0.1 + (pre.length + 1) * 0.03}
-                        charClassName="text-[#E1F28F]"
-                    />
+                <h2 className="text-4xl lg:text-6xl font-extrabold mb-8 tracking-tight drop-shadow-2xl" style={{ perspective: '600px', hyphens: 'none' }}>
+                    <span className="inline-block whitespace-nowrap">
+                        <SplitText text={pre} inView={inView} baseDelay={0.1} />
+                    </span>
+                    {' '}
+                    <span className="inline-block whitespace-nowrap">
+                        <SplitText
+                            text={highlight}
+                            inView={inView}
+                            baseDelay={0.1 + (pre.length + 1) * 0.03}
+                            charClassName="text-[#E1F28F]"
+                        />
+                    </span>
                     {post && (
                         <>
                             {' '}
-                            <SplitText text={post} inView={inView} baseDelay={0.1 + (pre.length + 1 + highlight.length + 1) * 0.03} />
+                            <span className="inline-block whitespace-nowrap">
+                                <SplitText text={post} inView={inView} baseDelay={0.1 + (pre.length + 1 + highlight.length + 1) * 0.03} />
+                            </span>
                         </>
                     )}
                 </h2>
