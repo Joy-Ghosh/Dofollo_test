@@ -166,7 +166,7 @@ export default function PricingPreview() {
 
                                     {/* CTA */}
                                     <a
-                                        href="https://dash.dofollo.ai/"
+                                        href="https://dash.dofollo.ai/pricing"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`group w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2.5 transition-all duration-300 text-sm ${isHighlight

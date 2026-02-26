@@ -14,8 +14,8 @@
         },
         {
             "label": "Pricing",
-            "link": "#",
-            "type": "anchor"
+            "link": "https://dash.dofollo.ai/pricing",
+            "type": "link"
         },
         {
             "label": "Resources",
