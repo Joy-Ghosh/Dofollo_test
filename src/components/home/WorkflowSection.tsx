@@ -53,7 +53,7 @@ export default function WorkflowSection() {
     const { ref: stepsRef, inView } = useInView(0.2);
 
     return (
-        <section className="py-24 bg-white text-[#0A2E22] overflow-hidden">
+        <section className="py-24 md:py-32 bg-white text-[#0A2E22] overflow-hidden">
             <div className="container mx-auto ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 

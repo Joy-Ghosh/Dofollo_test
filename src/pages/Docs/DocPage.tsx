@@ -34,7 +34,7 @@ const DocPage: React.FC = () => {
     if (!doc) {
         return (
             <DocsLayout>
-                <div className="text-center py-20">
+                <div className="text-center py-24">
                     <h1 className="text-3xl font-bold text-white mb-4">Document Not Found</h1>
                     <p className="text-white/60">The requested documentation page could not be found.</p>
                 </div>

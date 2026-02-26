@@ -106,9 +106,9 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <button className="bg-white text-[#0A2E22] hover:bg-[#E1F28F] px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95">
+          <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="bg-white text-[#0A2E22] hover:bg-[#E1F28F] px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95">
             {cta.label}
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -187,10 +187,10 @@ export default function Navbar() {
         </div>
 
         <div className="mt-auto pt-8 border-t border-white/10">
-          <button className="w-full bg-white text-[#0A2E22] hover:bg-[#E1F28F] px-6 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+          <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="w-full bg-white text-[#0A2E22] hover:bg-[#E1F28F] px-6 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
             {cta.label}
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </div>
     </nav>

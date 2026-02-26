@@ -329,7 +329,7 @@ export default function Features() {
                         {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>
                     <div className="text-[100px] leading-none text-[#E1F28F]/10 font-serif mb-[-36px] select-none">&ldquo;</div>
-                    <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed max-w-4xl mx-auto mb-10 text-white relative z-10" dangerouslySetInnerHTML={{ __html: `"${testimonials.quote}"` }} />
+                    <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed max-w-4xl mx-auto mb-12 text-white relative z-10" dangerouslySetInnerHTML={{ __html: `"${testimonials.quote}"` }} />
                     <div className="flex items-center justify-center gap-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-[#E1F28F] to-[#045C4E] rounded-full ring-2 ring-[#E1F28F]/30 ring-offset-2 ring-offset-[#0A2E22]" />
                         <div className="text-left">

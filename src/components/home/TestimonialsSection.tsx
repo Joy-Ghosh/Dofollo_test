@@ -7,12 +7,14 @@ import ScrollReveal from '../ScrollReveal';
 
 // Emotion transformation tags per testimonial
 const emotionTags = [
-    { before: '😤 Hours lost', after: '🙌 Fully automated' },
-    { before: '😰 Flying blind', after: '🎯 Crystal clear' },
-    { before: '😓 Manual chaos', after: '⚡ One click done' },
-    { before: '🤯 Overwhelmed', after: '😌 In control' },
-    { before: '😤 Wasted budget', after: '📈 ROI visible' },
-    { before: '😞 Guessing', after: '✅ Data-driven' },
+    { before: '😤 6hrs wasted', after: '⚡ 10 min audit' },
+    { before: '😨 Orphans hiding', after: '🔍 All surfaced' },
+    { before: '� Guessing anchors', after: '🎯 AI picks perfectly' },
+    { before: '� Leaking equity', after: '📈 Flowing again' },
+    { before: '🤷 Unknown gaps', after: '🗺️ Full link map' },
+    { before: '😰 Manual publishes', after: '✅ One-click done' },
+    { before: '😤 Flying blind', after: '� GSC-powered' },
+    { before: '🤯 Competitor mystery', after: '🔓 Structure revealed' },
 ];
 
 // Duplicate cards for seamless infinite loop
@@ -22,9 +24,9 @@ export default function TestimonialsSection() {
     const { testimonials_section } = homeData;
 
     return (
-        <section className="py-24 bg-white text-[#0A2E22] overflow-hidden">
+        <section className="py-24 md:py-32 bg-white text-[#0A2E22] overflow-hidden">
             <div className="container mx-auto">
-                <ScrollReveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <ScrollReveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider mb-4">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#045C4E] animate-pulse" />
@@ -55,7 +57,7 @@ export default function TestimonialsSection() {
                                             className="w-[300px] md:w-[360px] flex-shrink-0 relative group"
                                             whileHover={{ y: -8, transition: { duration: 0.25 } }}
                                         >
-                                            <div className="relative p-7 rounded-3xl border border-[#0A2E22]/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] group-hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-300 h-full flex flex-col justify-between bg-white">
+                                            <div className="relative p-8 rounded-3xl border border-[#0A2E22]/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] group-hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] transition-all duration-300 h-full flex flex-col justify-between bg-white">
 
                                                 {/* Emotion transformation tag */}
                                                 <div className="flex items-center gap-2 mb-5 p-2.5 bg-[#f5ffef] rounded-xl border border-[#E1F28F]/40">

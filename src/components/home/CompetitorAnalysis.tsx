@@ -38,7 +38,7 @@ export default function CompetitorAnalysis() {
         <section className="py-24 bg-white text-[#0A2E22] relative overflow-hidden">
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/5 rounded-full blur-[120px] pointer-events-none" />
 
- <div className="container mx-auto relative z-10">
+            <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Visual side — animated comparison */}
@@ -134,10 +134,10 @@ export default function CompetitorAnalysis() {
                         <p className="text-lg text-[#0A2E22]/70 mb-8 leading-relaxed">
                             {competitor_analysis.description}
                         </p>
-                        <button className="group relative inline-flex items-center gap-2 text-[#045C4E] font-bold pb-1 overflow-hidden">
+                        <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center gap-2 text-[#045C4E] font-bold pb-1 overflow-hidden">
                             <span className="relative z-10 transition-colors group-hover:text-[#0A2E22]">{competitor_analysis.cta}</span>
                             <span className="absolute bottom-0 left-0 h-[2px] bg-[#045C4E] transition-all duration-300 group-hover:w-full group-hover:bg-[#0A2E22]" style={{ width: '100%' }}></span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

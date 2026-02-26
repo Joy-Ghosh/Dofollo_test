@@ -1,30 +1,58 @@
 [
     {
         "id": 1,
-        "text": "Working with several WordPress themes and templates over the last years, I can confidently say this is the best in every level. I use it for my company and the reviews I have already received are all excellent. Not only the design but also the code quality.",
-        "name": "Alexander Cameron",
-        "role": "Lead Developer",
+        "text": "I run a 12-person SEO agency. Before Dofollo, internal linking was a client conversation I dreaded — too manual, too slow. Now I run a full link audit in minutes, show clients their visual link graph, and charge for it as a premium service. Game changer.",
+        "name": "Rachel M.",
+        "role": "Founder, RankRight Agency",
         "rating": 5
     },
     {
         "id": 2,
-        "text": "Excellent experience with this template. Everything works perfectly and the customization is super easy. The team support is also very responsive and helpful I have already received are all excellent. Not only the design but also the code quality perfectly.",
-        "name": "Brooklyn Simmons",
-        "role": "Lead Developer",
+        "text": "Dofollo found 140 orphan pages on a site I thought I knew inside-out. That's 140 pages Google was basically ignoring. Fixed them in one session. Rankings moved within 4 weeks. I should have had this tool two years ago.",
+        "name": "Priya S.",
+        "role": "Independent SEO Consultant",
         "rating": 5
     },
     {
         "id": 3,
-        "text": "A fantastic template with great design and features. It has helped us speed up development and deliver professional websites to our clients template with great design and features. It has helped us speed up development and deliver professional websites.",
-        "name": "Alexander Cameron",
-        "role": "Lead Developer",
+        "text": "The anchor text suggestions are scary good. It doesn't just guess — it reads the surrounding content and picks anchors that feel natural. Our content team thought I wrote them manually. I don't correct them.",
+        "name": "James T.",
+        "role": "SEO Lead, B2B SaaS",
         "rating": 5
     },
     {
         "id": 4,
-        "text": "This template stands out in terms of quality and flexibility. I highly recommend it for developers looking for a solid starting point for their projects I highly recommend it for developers looking for a solid starting point for their projects recommend it for.",
-        "name": "Brooklyn Simmons",
-        "role": "Lead Developer",
+        "text": "We have 3,000+ product pages. Dofollo mapped our full internal link structure overnight and highlighted exactly where link equity was leaking. One audit session recovered pages that hadn't ranked in 18 months.",
+        "name": "Sofia K.",
+        "role": "Head of E-commerce SEO",
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "text": "I was spending 6 hours per client just on internal linking audits. Dofollo does it in under 10 minutes and the output is cleaner than anything I could produce manually. I've basically hired a senior intern that never sleeps.",
+        "name": "Marcus L.",
+        "role": "Freelance SEO Specialist",
+        "rating": 5
+    },
+    {
+        "id": 6,
+        "text": "The Competitor Link Map feature is where things get wild. I pulled a competitor's internal structure, spotted a cluster they were using to funnel authority to their money pages, copied the pattern for our site. We ranked above them 6 weeks later.",
+        "name": "Tanvir H.",
+        "role": "Growth Lead, SaaS Startup",
+        "rating": 5
+    },
+    {
+        "id": 7,
+        "text": "One-click publishing is not a gimmick — it genuinely pushed 300+ approved links to WordPress without me touching a single post. My dev team was confused why I stopped filing tickets for link updates. Dofollo replaced that entire workflow.",
+        "name": "Claire D.",
+        "role": "Content Strategy Director",
+        "rating": 5
+    },
+    {
+        "id": 8,
+        "text": "We connect Google Search Console directly to Dofollo. It prioritizes link placements based on actual traffic and impressions data — not just keyword guesses. That data-first approach is exactly what separates it from every other tool I've tried.",
+        "name": "Omar R.",
+        "role": "In-House SEO Manager",
         "rating": 5
     }
 ]

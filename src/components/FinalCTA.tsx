@@ -66,7 +66,7 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
     const allTicker = [...TICKER_ITEMS, ...TICKER_ITEMS];
 
     return (
-        <section ref={sectionRef} className="py-32 bg-[#0A2E22] text-white text-center relative overflow-hidden bg-noise">
+        <section ref={sectionRef} className="py-32 md:py-40 bg-[#0A2E22] text-white text-center relative overflow-hidden bg-noise">
 
             {/* Central Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E1F28F]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -144,15 +144,15 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                     {/* Primary — breathing glow */}
-                    <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-10 h-14 rounded-full text-lg font-extrabold animate-breathe hover:scale-[1.05] transition-all duration-300 overflow-hidden">
+                    <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-10 h-14 rounded-full text-lg font-extrabold animate-breathe hover:scale-[1.05] transition-all duration-300 overflow-hidden">
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                         <span className="relative z-10">{pBtn}</span>
                         <ArrowUpRight className="relative z-10 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    </button>
+                    </a>
 
-                    <button className="px-8 h-14 rounded-full text-white font-bold border border-white/10 hover:bg-white/5 transition-colors">
+                    <a href="/support" className="px-8 h-14 rounded-full text-white font-bold border border-white/10 hover:bg-white/5 transition-colors flex items-center justify-center">
                         {sBtn}
-                    </button>
+                    </a>
                 </div>
 
                 <p className="mt-10 text-sm opacity-50 font-medium tracking-wide">{note}</p>

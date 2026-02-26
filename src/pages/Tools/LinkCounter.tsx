@@ -43,7 +43,7 @@ export default function LinkCounter() {
             />
 
             {/* --- Main Content Area --- */}
- <main className="flex-grow container max-w-7xl mx-auto mt-10 relative z-20 pb-20">
+            <main className="flex-grow container max-w-7xl mx-auto mt-10 relative z-20 pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     {/* Left Column: Tool & Content */}
@@ -389,9 +389,9 @@ export default function LinkCounter() {
                                 </div>
                                 <h3 className="text-lg font-bold mb-1.5">{sidebar.promo.title}</h3>
                                 <p className="text-white/70 text-xs mb-5 leading-relaxed">{sidebar.promo.description}</p>
-                                <button className="w-full py-3 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-all shadow-lg hover:shadow-xl">
+                                <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-all shadow-lg hover:shadow-xl flex items-center justify-center">
                                     {sidebar.promo.button_label}
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

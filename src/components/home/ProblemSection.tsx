@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AlertCircle, Clock, Layout, TrendingDown, CheckCircle2 } from 'lucide-react';
 import homeData from '../../data/pages/home.json';
 import ScrollReveal from '../ScrollReveal';
@@ -23,40 +23,66 @@ const empathyData = [
     { hoursWasted: '5 hrs/week', savedWith: '20 min/week', color: 'from-red-600/20 to-transparent' },
 ];
 
-function ProblemCard({ item, i }: { item: any; i: number }) {
+function ProblemCard({
+    item,
+    i,
+    isMobile,
+    activeIndex,
+    onToggle,
+}: {
+    item: any;
+    i: number;
+    isMobile: boolean;
+    activeIndex: number | null;
+    onToggle: (i: number) => void;
+}) {
     const Icon = iconMap[item.icon] || AlertCircle;
     const ResolvedIcon = resolvedIconMap[item.icon] || CheckCircle2;
     const [hovered, setHovered] = useState(false);
     const emp = empathyData[i] || empathyData[0];
 
+    // On mobile, "open" is driven by activeIndex; on desktop, by hover
+    const isOpen = isMobile ? activeIndex === i : hovered;
+
     return (
         <div
             className="relative h-full flex flex-col p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-[0_2px_10px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(10,46,34,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            style={{ transform: hovered ? 'translateY(-6px)' : 'translateY(0)' }}
+            onMouseEnter={() => { if (!isMobile) setHovered(true); }}
+            onMouseLeave={() => { if (!isMobile) setHovered(false); }}
+            onClick={() => { if (isMobile) onToggle(i); }}
+            style={{ transform: isOpen ? 'translateY(-6px)' : 'translateY(0)' }}
         >
-            {/* Emotional progress bar at top — fills green on hover */}
+            {/* Emotional progress bar at top — fills green when open */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-[#0A2E22]/5 overflow-hidden rounded-t-2xl">
                 <div
                     className="absolute inset-0 bg-gradient-to-r from-red-400 via-[#E1F28F] to-[#045C4E] transition-all duration-700 ease-out"
-                    style={{ clipPath: hovered ? 'inset(0 0 0 0)' : 'inset(0 75% 0 0)' }}
+                    style={{ clipPath: isOpen ? 'inset(0 0 0 0)' : 'inset(0 75% 0 0)' }}
                 />
             </div>
 
             {/* Background state shift */}
             <div
                 className="absolute inset-0 rounded-2xl transition-opacity duration-500"
-                style={{ opacity: hovered ? 1 : 0, background: 'linear-gradient(135deg, rgba(4,92,78,0.03) 0%, rgba(225,242,143,0.05) 100%)' }}
+                style={{ opacity: isOpen ? 1 : 0, background: 'linear-gradient(135deg, rgba(4,92,78,0.03) 0%, rgba(225,242,143,0.05) 100%)' }}
             />
+
+            {/* Tap hint on mobile for non-active cards */}
+            {isMobile && !isOpen && (
+                <div className="absolute top-3 right-3 z-20 text-[10px] font-semibold text-[#045C4E]/50 flex items-center gap-1">
+                    <span>Tap</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" />
+                    </svg>
+                </div>
+            )}
 
             {/* Icon — flips from problem to resolved */}
             <div className="relative w-14 h-14 mb-6" style={{ perspective: '400px' }}>
                 <div
                     className="absolute inset-0 flex items-center justify-center w-14 h-14 bg-red-50 rounded-xl transition-all duration-500"
                     style={{
-                        opacity: hovered ? 0 : 1,
-                        transform: hovered ? 'rotateY(90deg)' : 'rotateY(0deg)',
+                        opacity: isOpen ? 0 : 1,
+                        transform: isOpen ? 'rotateY(90deg)' : 'rotateY(0deg)',
                     }}
                 >
                     <Icon className="w-7 h-7 text-red-400" />
@@ -64,25 +90,25 @@ function ProblemCard({ item, i }: { item: any; i: number }) {
                 <div
                     className="absolute inset-0 flex items-center justify-center w-14 h-14 bg-[#E1F28F] rounded-xl transition-all duration-500"
                     style={{
-                        opacity: hovered ? 1 : 0,
-                        transform: hovered ? 'rotateY(0deg)' : 'rotateY(-90deg)',
+                        opacity: isOpen ? 1 : 0,
+                        transform: isOpen ? 'rotateY(0deg)' : 'rotateY(-90deg)',
                     }}
                 >
                     <ResolvedIcon className="w-7 h-7 text-[#0A2E22]" />
                 </div>
             </div>
 
-            <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${hovered ? 'text-[#045C4E]' : 'text-[#0A2E22]'}`}>
+            <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isOpen ? 'text-[#045C4E]' : 'text-[#0A2E22]'}`}>
                 {item.title}
             </h3>
             <p className="text-[#0A2E22]/60 leading-relaxed text-sm mb-6 relative z-10 flex-grow">
                 {item.description}
             </p>
 
-            {/* Hours comparison — slides up on hover */}
+            {/* Hours comparison — slides up when open */}
             <div
                 className="flex items-center gap-3 overflow-hidden transition-all duration-500"
-                style={{ maxHeight: hovered ? '100px' : '0px', opacity: hovered ? 1 : 0, marginTop: hovered ? '1.5rem' : '0' }}
+                style={{ maxHeight: isOpen ? '100px' : '0px', opacity: isOpen ? 1 : 0, marginTop: isOpen ? '1.5rem' : '0' }}
             >
                 <div className="flex-1 text-center p-2 bg-red-50 rounded-lg border border-red-100">
                     <div className="text-xs font-bold text-red-400 tabular-nums">{emp.hoursWasted}</div>
@@ -101,8 +127,25 @@ function ProblemCard({ item, i }: { item: any; i: number }) {
 export default function ProblemSection() {
     const { problem_section } = homeData;
 
+    // Detect mobile (no hover capability / narrow viewport)
+    const [isMobile, setIsMobile] = useState(false);
+    // First card open by default on mobile
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const handleToggle = (i: number) => {
+        // Tapping the already-open card closes it; tapping another opens it
+        setActiveIndex(prev => (prev === i ? null : i));
+    };
+
     return (
-        <section className="py-24 bg-white text-[#0A2E22]">
+        <section className="py-24 md:py-32 bg-white text-[#0A2E22]">
             <div className="container mx-auto ">
                 <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
                     {/* Empathy hook */}
@@ -126,7 +169,13 @@ export default function ProblemSection() {
                             delay={i * 0.1}
                             className="h-full"
                         >
-                            <ProblemCard item={item} i={i} />
+                            <ProblemCard
+                                item={item}
+                                i={i}
+                                isMobile={isMobile}
+                                activeIndex={activeIndex}
+                                onToggle={handleToggle}
+                            />
                         </ScrollReveal>
                     ))}
                 </div>

@@ -25,10 +25,10 @@ export default function UseCaseSection() {
                             <h3 className="text-3xl font-bold mb-4 relative z-10">{card.title}</h3>
                             <p className={`text-lg leading-relaxed relative z-10 flex-grow ${card.theme === 'dark' ? 'opacity-80' : 'opacity-70'}`}>{card.description}</p>
 
-                            <div className={`mt-8 flex items-center gap-2 font-bold ${card.theme === 'dark' ? 'text-[#E1F28F]' : 'text-[#045C4E]'}`}>
+                            <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className={`mt-8 flex items-center gap-2 font-bold ${card.theme === 'dark' ? 'text-[#E1F28F]' : 'text-[#045C4E]'}`}>
                                 <span>{card.cta}</span>
                                 <div className={`w-8 h-[2px] ${card.theme === 'dark' ? 'bg-[#E1F28F]' : 'bg-[#045C4E]'}`}></div>
-                            </div>
+                            </a>
                         </div>
                     ))}
                 </div>

@@ -62,7 +62,7 @@ export default function Hero() {
   const liveCount = useLiveCount(18_340);
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-24 md:pt-32 pb-20 bg-noise">
+    <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-32 pb-24 bg-noise">
       {/* Background Particles (CSS-driven, performant) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full bg-[#045C4E]/30 blur-[120px]" />
@@ -88,7 +88,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column: Typography */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -136,13 +136,13 @@ export default function Hero() {
               {hero.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
               {/* Primary Button — breathing glow */}
-              <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-8 h-14 rounded-2xl text-base font-extrabold animate-breathe hover:scale-[1.04] transition-all duration-300 overflow-hidden">
+              <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-8 h-14 rounded-2xl text-base font-extrabold animate-breathe hover:scale-[1.04] transition-all duration-300 overflow-hidden">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10">{hero.primary_cta}</span>
                 <ArrowUpRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </button>
+              </a>
 
               {/* Secondary Button */}
               <button

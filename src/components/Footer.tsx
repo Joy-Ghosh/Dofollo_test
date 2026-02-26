@@ -44,8 +44,8 @@ export default function Footer() {
             {/* Large background decorative elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E1F28F]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
-            <div className="container mx-auto py-20 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+            <div className="container mx-auto py-24 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24">
                     {/* Brand Column (Left) */}
                     <div className="lg:col-span-4 space-y-8">
                         <div>

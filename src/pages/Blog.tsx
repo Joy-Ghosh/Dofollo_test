@@ -37,7 +37,7 @@ function CategoryBadge({ category }: { category: string }) {
     );
 }
 
-function BlogPostCard({ post, variant = 'standard' }: { post: Post; variant?: 'standard' | 'landscape' | 'compact' }) {
+function BlogPostCard({ post, variant = 'standard' }: { key?: React.Key; post: Post; variant?: 'standard' | 'landscape' | 'compact' }) {
     if (variant === 'compact') {
         return (
             <Link to={`/blog/${post.id}`} className="group flex gap-5 items-start p-3 rounded-2xl hover:bg-[#0A2E22]/5 transition-all duration-300">
@@ -89,7 +89,7 @@ function BlogPostCard({ post, variant = 'standard' }: { post: Post; variant?: 's
     );
 }
 
-function PopularFeaturedCard({ post }: { post: Post }) {
+function PopularFeaturedCard({ post }: { key?: React.Key; post: Post }) {
     return (
         <Link to={`/blog/${post.id}`} className="group relative block w-full h-full min-h-[450px] rounded-3xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(10,46,34,0.3)] transition-all duration-500 hover:-translate-y-2 border border-black/5">
             {post.image ? (
@@ -207,7 +207,7 @@ export default function Blog() {
                         <span className="text-[#E1F28F]">{blogData.hero?.title_highlight || 'Resources'}</span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+                    <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-12">
                         {blogData.hero?.description || 'Expert insights on SEO, internal linking, and AI-powered content strategies — straight from the Dofollo team.'}
                     </p>
 
@@ -269,7 +269,7 @@ export default function Blog() {
                 <section className="py-16 bg-[#f8faf8] min-h-[60vh]">
                     <div className="container mx-auto max-w-7xl">
                         {/* Results header */}
-                        <div className="flex items-center justify-between mb-10">
+                        <div className="flex items-center justify-between mb-12">
                             <div>
                                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Search Results</p>
                                 <h2 className="text-2xl font-extrabold text-[#0A2E22]">

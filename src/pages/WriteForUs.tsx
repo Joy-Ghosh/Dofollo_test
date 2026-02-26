@@ -109,7 +109,7 @@ export default function WriteForUs() {
 
             <main className="flex-grow">
                 {/* ── Topics Section ── */}
-                <section className="py-16 md:py-20 bg-white">
+                <section className="py-24 bg-white">
                     <div className="container mx-auto max-w-6xl">
                         <ScrollReveal variant="fade-up">
                             <div className="text-center max-w-3xl mx-auto mb-12">
@@ -152,11 +152,11 @@ export default function WriteForUs() {
                 {/* ── Guidelines Section ── */}
                 <section
                     id="guidelines-section"
-                    className="py-20 md:py-28 bg-[#0A2E22]/[0.03] border-y border-[#0A2E22]/[0.06]"
+                    className="py-24 md:py-32 bg-[#0A2E22]/[0.03] border-y border-[#0A2E22]/[0.06]"
                 >
                     <div className="container mx-auto max-w-5xl">
                         <ScrollReveal variant="fade-up">
-                            <div className="text-center mb-14">
+                            <div className="text-center mb-16">
                                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A2E22] mb-3">
                                     {guidelines.title}
                                 </h2>
@@ -273,10 +273,10 @@ export default function WriteForUs() {
                 </section>
 
                 {/* ── Contribution Form Section ── */}
-                <section id="contribution-form" className="py-20 md:py-28 bg-white">
+                <section id="contribution-form" className="py-24 md:py-32 bg-white">
                     <div className="container mx-auto max-w-5xl">
                         <ScrollReveal variant="fade-up">
-                            <div className="text-center max-w-2xl mx-auto mb-14">
+                            <div className="text-center max-w-2xl mx-auto mb-16">
                                 <p className="text-sm font-bold text-[#045C4E] uppercase tracking-wider mb-3">
                                     {form.subtitle}
                                 </p>

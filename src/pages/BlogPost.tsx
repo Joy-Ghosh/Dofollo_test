@@ -147,7 +147,7 @@ export default function BlogPost() {
             </header>
 
             {/* Main Content */}
-            <main className="container mx-auto py-12 md:py-20">
+            <main className="container mx-auto py-16 md:py-24">
                 <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
 
                     {/* Article Body */}
@@ -175,7 +175,7 @@ export default function BlogPost() {
 
                         {/* Hero Image — post's main image shown at the top of content */}
                         {(post as any).image && (
-                            <div className="relative w-full mb-10 rounded-2xl overflow-hidden shadow-lg aspect-[16/7]">
+                            <div className="relative w-full mb-12 rounded-2xl overflow-hidden shadow-lg aspect-[16/7]">
                                 <img
                                     src={(post as any).image}
                                     alt={post.title}
@@ -273,7 +273,7 @@ export default function BlogPost() {
                                     <p className="text-white/55 text-xs leading-relaxed mb-4">
                                         AI finds & adds the right links across your site. No manual work.
                                     </p>
-                                    <a href="#" className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl bg-[#E1F28F] text-[#0A2E22] font-bold text-sm hover:bg-white transition-colors shadow-md">
+                                    <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl bg-[#E1F28F] text-[#0A2E22] font-bold text-sm hover:bg-white transition-colors shadow-md">
                                         Try Dofollo Free <ArrowRight size={13} />
                                     </a>
                                 </div>

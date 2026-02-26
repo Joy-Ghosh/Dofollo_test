@@ -92,9 +92,9 @@ export default function Support() {
                                 <HeartHandshake className="w-10 h-10 text-[#E1F28F] mb-4" />
                                 <h3 className="text-xl font-bold text-white mb-2">{contact_info.partner_cta.title}</h3>
                                 <p className="text-white/55 mb-6 text-sm leading-relaxed">{contact_info.partner_cta.description}</p>
-                                <button className="px-6 py-3 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-colors shadow-sm">
+                                <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-colors shadow-sm">
                                     {contact_info.partner_cta.button_label}
-                                </button>
+                                </a>
                             </div>
                         </div>
 

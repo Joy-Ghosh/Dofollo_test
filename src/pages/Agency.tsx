@@ -210,7 +210,7 @@ export default function Agency() {
                         {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
                     </div>
                     <div className="text-[100px] leading-none text-[#E1F28F]/10 font-serif mb-[-36px] select-none">&ldquo;</div>
-                    <blockquote className="text-2xl md:text-4xl font-medium leading-relaxed max-w-4xl mx-auto mb-10 text-white relative z-10">
+                    <blockquote className="text-2xl md:text-4xl font-medium leading-relaxed max-w-4xl mx-auto mb-12 text-white relative z-10">
                         &ldquo;{testimonials.quote}&rdquo;
                     </blockquote>
                     <div className="flex flex-col items-center justify-center gap-3">

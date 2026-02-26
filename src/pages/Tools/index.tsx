@@ -233,7 +233,7 @@ export default function Tools() {
                         );
                     })
                 ) : (
-                    <div className="text-center py-20">
+                    <div className="text-center py-24">
                         <h3 className="text-2xl font-bold text-white mb-2">{categoriesData.no_results.title}</h3>
                         <p className="text-white/50">{categoriesData.no_results.description}</p>
                     </div>
