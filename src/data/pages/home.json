@@ -1,14 +1,45 @@
 {
     "hero": {
-        "badge": "Internal Linking, Fully Automated",
-        "title_first": "Your Content Ranks Higher",
-        "title_highlight": "When Links Are Right.",
-        "title_last": "",
-        "description": "Dofollo audits your internal link structure, finds missed opportunities across every page, and places the right links — without you opening a single editor.",
-        "primary_cta": "Audit My Site Free",
+        "badge": "AI-Powered Internal Linking",
+        "title_first": "AI That Finds and",
+        "title_highlight": "Fixes Internal",
+        "title_last": "Linking Issues",
+        "description": "Dofollo scans your entire website, detects hidden SEO issues, finds internal link opportunities, and helps you fix them automatically — in minutes, not months.",
+        "primary_cta": "Scan My Website",
         "secondary_cta": "See How It Works",
-        "trust_text": "Used by SEO teams & agencies worldwide",
+        "trust_text": "Trusted by 2,000+ SEO professionals & agencies",
         "trust_count": "2k+"
+    },
+    "ai_website_scan": {
+        "title_first": "Scan Your Entire Website",
+        "title_highlight": "in Seconds",
+        "description": "Enter your URL. Dofollo's AI engine crawls every page, maps your full link structure, and surfaces actionable SEO insights — no setup required."
+    },
+    "ai_link_intelligence": {
+        "title_first": "AI Finds Internal",
+        "title_highlight": "Link Opportunities",
+        "description": "Dofollo analyzes your content structure and suggests perfectly matched contextual internal links to strengthen SEO authority across your entire site."
+    },
+    "seo_opportunities": {
+        "title_first": "Discover Pages That",
+        "title_highlight": "Could Rank Higher",
+        "description": "Dofollo finds pages already close to page one — and shows you exactly how many internal links they need to break through."
+    },
+    "ai_fix_engine": {
+        "title_first": "Not Just Insights —",
+        "title_highlight": "Fix Issues Faster",
+        "description": "Dofollo doesn't just tell you what's broken. It gives you one-click AI fixes for broken links, orphan pages, anchor text problems, and more."
+    },
+    "dashboard_preview": {
+        "badge": "Dashboard Preview",
+        "title_first": "Your SEO Command",
+        "title_highlight": "Center",
+        "description": "A clean, powerful dashboard that puts your entire website's SEO structure in view — issues, opportunities, link graph, and AI suggestions, all in one place."
+    },
+    "interactive_demo": {
+        "title_first": "Try Dofollo",
+        "title_highlight": "Instantly",
+        "description": "Enter your website URL and see what Dofollo finds in seconds. No signup needed."
     },
     "problem_section": {
         "heading_first": "You're Publishing Great Content.",
@@ -370,11 +401,11 @@
         ]
     },
     "final_cta": {
-        "heading_pre": "Stop Guessing.",
-        "heading_highlight": "Start Ranking",
-        "heading_post": "With Better Links.",
-        "description": "Join 2,000+ SEO professionals using Dofollo to fix their internal link structure and recover rankings they should already own.",
-        "primary_btn": "Audit My Site Free",
+        "heading_pre": "Start Optimizing",
+        "heading_highlight": "Your Website",
+        "heading_post": "Today.",
+        "description": "Let AI handle internal linking and SEO structure. Join 2,000+ SEO professionals and agencies already using Dofollo to recover rankings they should already own.",
+        "primary_btn": "Scan My Website Free",
         "secondary_btn": "Book a Demo",
         "footer_note": "14-DAY FREE TRIAL · NO CREDIT CARD REQUIRED · CANCEL ANYTIME"
     }

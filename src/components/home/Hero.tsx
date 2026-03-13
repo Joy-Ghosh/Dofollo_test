@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowUpRight, PlayCircle, Zap, Star, Link as LinkIcon, Network, FileText, TrendingUp, CheckCircle2, Users } from 'lucide-react';
+import { ArrowUpRight, PlayCircle, Zap, Star, Link as LinkIcon, TrendingUp, CheckCircle2 } from 'lucide-react';
 import homeData from '../../data/pages/home.json';
 
 // Typewriter hook — cycles through phrases
@@ -50,20 +50,39 @@ function useLiveCount(base: number) {
   return count;
 }
 
+// Animated scan step sequence
+function useScanLoop() {
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setStep(s => (s + 1) % 5), 1800);
+    return () => clearInterval(t);
+  }, []);
+  return step;
+}
+
 export default function Hero() {
   const { hero } = homeData;
   const typewriterText = useTypewriter([
-    'link equity',
-    'site architecture',
-    'SEO clarity',
-    'content strategy',
-    'crawl efficiency',
+    'broken links',
+    'orphan pages',
+    'link equity leaks',
+    'anchor text issues',
+    'crawl inefficiencies',
   ]);
   const liveCount = useLiveCount(18_340);
+  const scanStep = useScanLoop();
+
+  const scanSteps = [
+    { label: 'Crawling website…', color: 'text-blue-300', icon: '🌐' },
+    { label: 'Mapping pages…', color: 'text-purple-300', icon: '📄' },
+    { label: 'Issues detected', color: 'text-red-400', icon: '⚠️' },
+    { label: 'Links suggested', color: 'text-[#E1F28F]', icon: '🔗' },
+    { label: 'SEO score rising', color: 'text-emerald-400', icon: '📈' },
+  ];
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0A2E22] min-h-screen flex items-center pt-32 pb-24 bg-noise">
-      {/* Background Particles (CSS-driven, performant) */}
+    <div className="relative w-full overflow-x-hidden bg-[#0A2E22] min-h-screen flex items-center pt-32 pb-28">
+      {/* Background glow layers */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full bg-[#045C4E]/30 blur-[120px]" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[#39bd83]/10 blur-[120px]" />
@@ -87,7 +106,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column: Typography */}
@@ -100,16 +119,15 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E1F28F]"></span>
               </span>
               <span className="text-[10px] sm:text-xs font-bold text-white tracking-wide uppercase whitespace-nowrap">{hero.badge}</span>
-              {/* Links audited today — desktop only */}
               <span className="hidden sm:flex items-center gap-1.5 ml-1 pl-3 border-l border-white/10 text-[10px] text-[#E1F28F]/70 font-mono whitespace-nowrap">
                 <LinkIcon className="w-3 h-3 shrink-0" />
                 <span className="tabular-nums">{liveCount.toLocaleString()}</span> links audited today
               </span>
             </div>
 
-            {/* H1 — with typewriter in subtitle */}
-            <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tight text-white mb-6 drop-shadow-2xl">
-              {hero.title_first} <br />
+            {/* H1 — 3-line punchy headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-[5rem] leading-[1.05] font-extrabold tracking-tight text-white mb-6 drop-shadow-2xl">
+              {hero.title_first}<br />
               <span className="relative inline-block">
                 <span className="font-serif italic text-[#E1F28F] relative z-10">
                   {hero.title_highlight}
@@ -121,10 +139,10 @@ export default function Hero() {
             </h1>
 
             {/* Typewriter tagline */}
-            <div className="flex items-center gap-2 mb-10">
-              <p className="text-lg sm:text-xl text-[#E1F28F] font-medium leading-relaxed opacity-80">
-                Master your{' '}
-                <span className="text-white font-bold">
+            <div className="flex items-center gap-2 mb-6">
+              <p className="text-lg sm:text-xl text-white/60 font-medium leading-relaxed">
+                AI automatically detects{' '}
+                <span className="text-[#E1F28F] font-bold">
                   {typewriterText}
                   <span className="animate-blink text-[#E1F28F]">|</span>
                 </span>
@@ -132,22 +150,26 @@ export default function Hero() {
             </div>
 
             {/* Subtext */}
-            <p className="text-base text-white/60 leading-relaxed max-w-lg mb-10 -mt-6">
+            <p className="text-base text-white/60 leading-relaxed max-w-lg mb-10">
               {hero.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
-              {/* Primary Button — breathing glow */}
-              <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-8 h-14 rounded-2xl text-base font-extrabold animate-breathe hover:scale-[1.04] transition-all duration-300 overflow-hidden">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <a
+                href="https://dash.dofollo.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-8 h-14 rounded-2xl text-base font-extrabold animate-breathe hover:scale-[1.04] transition-all duration-300 overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10">{hero.primary_cta}</span>
                 <ArrowUpRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </a>
 
-              {/* Secondary Button */}
               <button
                 onClick={() => document.getElementById('product-showcase')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 h-14 rounded-2xl text-base font-semibold text-white bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#E1F28F]/30 transition-all backdrop-blur-md shadow-lg hover:shadow-[#E1F28F]/10"
+                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 h-14 rounded-2xl text-base font-semibold text-white bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#E1F28F]/30 transition-all backdrop-blur-md"
               >
                 <div className="w-8 h-8 rounded-full bg-[#E1F28F]/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E1F28F] group-hover:text-[#0A2E22] transition-all duration-300">
                   <PlayCircle className="w-4 h-4 fill-current transition-colors" />
@@ -156,15 +178,15 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Trust Footer */}
-            <div className="mt-12 flex items-center gap-8 border-t border-white/5 pt-8 w-full max-w-md">
+            {/* Trust row */}
+            <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-white/5 pt-8 w-full max-w-lg">
               <div className="flex -space-x-3">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0A2E22] overflow-hidden">
-                    <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt="User" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
+                  <div key={i} className="w-9 h-9 rounded-full border-2 border-[#0A2E22] overflow-hidden">
+                    <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt="User" className="w-full h-full object-cover opacity-90" />
                   </div>
                 ))}
-                <div className="w-10 h-10 rounded-full border-2 border-[#0A2E22] bg-[#045C4E] flex items-center justify-center text-[10px] font-bold text-white">
+                <div className="w-9 h-9 rounded-full border-2 border-[#0A2E22] bg-[#045C4E] flex items-center justify-center text-[10px] font-bold text-white">
                   {hero.trust_count}
                 </div>
               </div>
@@ -174,134 +196,130 @@ export default function Hero() {
                 </div>
                 <p className="text-sm text-[#F0FFF8]/60">{hero.trust_text}</p>
               </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E1F28F]" />
+                No credit card required
+              </div>
             </div>
           </div>
 
-          {/* Right Column: 3D Parallax Visual */}
-          <div className="lg:col-span-6 relative h-full min-h-[500px] flex items-center justify-center perspective-1000">
+          {/* Right Column: Animated AI Scan Dashboard */}
+          <div className="lg:col-span-6 relative h-full min-h-[520px] flex items-center justify-center">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[#045C4E]/20 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[#39BD83]/15 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[#39BD83]/10 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />
 
-            <div className="relative w-full max-w-2xl ml-auto py-16">
-              {/* Main Visual Card */}
-              <div className="relative z-10 bg-gradient-to-br from-[#16302B] to-[#0D1F1C] rounded-xl border border-[#E1F28F]/30 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden ring-1 ring-white/10">
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E1F28F]/30 to-transparent"></div>
+            <div className="relative w-full max-w-lg ml-auto py-12">
 
+              {/* Main Dashboard Card */}
+              <div className="relative z-10 bg-gradient-to-br from-[#16302B] to-[#0D1F1C] rounded-2xl border border-[#E1F28F]/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden ring-1 ring-white/10">
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E1F28F]/40 to-transparent"></div>
+
+                {/* Browser chrome */}
                 <div className="h-10 border-b border-white/5 flex items-center px-4 justify-between bg-white/5">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80 shadow-sm"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80 shadow-sm"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80 shadow-sm"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80"></div>
                   </div>
-                  <div className="px-3 py-1 bg-black/20 border border-white/5 rounded text-[10px] font-mono text-emerald-100/50">
-                    dofollo-editor.tsx
+                  <div className="flex-1 mx-4 px-3 py-1 bg-black/20 border border-white/5 rounded text-[10px] font-mono text-emerald-100/50 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400/60 animate-pulse"></span>
+                    dash.dofollo.ai/scan
                   </div>
                 </div>
 
-                <div className="flex h-[400px]">
-                  <div className="flex-1 p-6 font-sans text-sm leading-relaxed text-emerald-100/80 relative">
-                    <h3 className="text-lg font-bold text-white mb-4 font-serif tracking-wide">The Future of SEO Strategy</h3>
-                    <div className="space-y-3">
-                      <p>To dominate search results, you must prioritize content quality. However, without a solid structure, even great content fails.</p>
-                      <p>
-                        This is where <span className="text-white font-medium">intelligent automation</span> comes in. By optimizing your site's architecture, you maximize
-                        <span className="relative inline-block mx-1">
-                          <span className="bg-[#E1F28F]/20 text-[#E1F28F] border-b border-[#E1F28F] px-1 cursor-pointer font-medium whitespace-nowrap">link equity</span>
-                          <div className="absolute left-[10%] -translate-x-1/2 bottom-full mb-2 w-48 bg-[#0D201F] text-white p-2.5 rounded-lg shadow-[0_15px_35px_-5px_rgba(0,60,45,0.4)] z-20 border border-[#E1F28F]/30 animate-fade-in-up ring-1 ring-[#E1F28F]/20">
-                            <div className="flex items-center justify-between text-[10px] mb-1 opacity-90">
-                              <span className="font-bold text-[#E1F28F]">AI SUGGESTION</span>
-                              <span className="font-mono">98% MATCH</span>
-                            </div>
-                            <div className="flex items-center gap-1.5 text-xs font-semibold">
-                              <LinkIcon className="w-3 h-3 text-[#E1F28F]" />
-                              <span>/backlink-strategy</span>
-                            </div>
-                            <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#0D201F] transform rotate-45 border-r border-b border-[#E1F28F]/30"></div>
-                          </div>
+                {/* Scan progress header */}
+                <div className="px-6 pt-5 pb-4 border-b border-white/5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <div className="text-[10px] text-white/40 font-mono mb-1 tracking-widest uppercase">AI Scan in Progress</div>
+                      <div className="text-base font-bold text-white">yourwebsite.com</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-mono font-extrabold text-[#E1F28F]">142</div>
+                      <div className="text-[10px] text-white/40 uppercase tracking-widest">Issues Found</div>
+                    </div>
+                  </div>
+                  <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#045C4E] to-[#E1F28F] rounded-full animate-fill-bar" style={{ width: '78%' }} />
+                  </div>
+                  <div className="flex justify-between mt-1.5 text-[10px] text-white/30 font-mono">
+                    <span>978 / 1,240 pages scanned</span>
+                    <span>78%</span>
+                  </div>
+                </div>
+
+                {/* Animated scan steps */}
+                <div className="px-6 py-4 space-y-1.5">
+                  {scanSteps.map((s, i) => (
+                    <div
+                      key={i}
+                      className={`flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-500 ${i === scanStep ? 'bg-white/5 border border-white/10' : ''}`}
+                    >
+                      <span className="text-sm">{s.icon}</span>
+                      <span className={`text-sm font-medium transition-all duration-300 flex-1 ${i === scanStep ? s.color : i < scanStep ? 'text-white/35 line-through' : 'text-white/20'}`}>
+                        {s.label}
+                      </span>
+                      {i < scanStep && (
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      )}
+                      {i === scanStep && (
+                        <span className="flex gap-0.5 shrink-0">
+                          {[0, 1, 2].map(d => (
+                            <span
+                              key={d}
+                              className="w-1 h-1 rounded-full bg-[#E1F28F] animate-bounce"
+                              style={{ animationDelay: `${d * 0.15}s` }}
+                            />
+                          ))}
                         </span>
-                        flow.
-                      </p>
-                      <div className="h-2 w-full bg-white/5 rounded mt-2"></div>
-                      <div className="h-2 w-3/4 bg-white/5 rounded"></div>
-                      <div className="h-2 w-5/6 bg-white/5 rounded"></div>
-                      <div className="h-2 w-4/5 bg-white/5 rounded mt-4"></div>
-                      <div className="h-2 w-full bg-white/5 rounded"></div>
+                      )}
                     </div>
-                  </div>
-                  <div className="w-40 border-l border-white/5 bg-black/10 p-3 pt-20 hidden sm:block backdrop-blur-sm">
-                    <div className="flex items-center gap-2 mb-4 text-xs font-bold text-emerald-100/70">
-                      <Network className="w-3.5 h-3.5 text-[#E1F28F]" />
-                      Link Graph
+                  ))}
+                </div>
+
+                {/* Issues grid */}
+                <div className="px-6 pb-5 grid grid-cols-3 gap-3 mt-2">
+                  {[
+                    { label: 'Broken Links', value: '12', color: 'text-red-400', bg: 'bg-red-400/10 border-red-400/20' },
+                    { label: 'Orphan Pages', value: '5', color: 'text-amber-400', bg: 'bg-amber-400/10 border-amber-400/20' },
+                    { label: 'Link Opps', value: '28', color: 'text-[#E1F28F]', bg: 'bg-[#E1F28F]/10 border-[#E1F28F]/20' },
+                  ].map((item, i) => (
+                    <div key={i} className={`${item.bg} border rounded-xl p-3 text-center`}>
+                      <div className={`text-xl font-extrabold ${item.color}`}>{item.value}</div>
+                      <div className="text-[10px] text-white/40 mt-0.5">{item.label}</div>
                     </div>
-                    <div className="relative h-24 mb-4 border border-white/10 rounded-lg bg-[#0A2E22]/40 p-2 overflow-hidden shadow-inner">
-                      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#E1F28F] rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_#E1F28F]"></div>
-                      <div className="absolute top-1/4 left-1/4 w-1.5 h-1.5 bg-emerald-500/40 rounded-full"></div>
-                      <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-emerald-500/40 rounded-full"></div>
-                      <svg className="absolute inset-0 w-full h-full opacity-30">
-                        <line x1="50%" y1="50%" x2="25%" y2="25%" stroke="white" strokeWidth="0.5" />
-                        <line x1="50%" y1="50%" x2="75%" y2="66%" stroke="white" strokeWidth="0.5" />
-                      </svg>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-12 bg-white/10 rounded mb-2"></div>
-                      <div className="flex items-center justify-between text-[10px] text-emerald-100/50">
-                        <span>Depth</span><span className="text-[#E1F28F] font-mono">Level 3</span>
-                      </div>
-                      <div className="flex items-center justify-between text-[10px] text-emerald-100/50">
-                        <span>Links</span><span className="text-[#E1F28F] font-mono">12</span>
-                      </div>
-                      <div className="flex items-center justify-between text-[10px] text-emerald-100/50">
-                        <span>Score</span><span className="text-[#E1F28F] font-mono">98</span>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
-              {/* CARD 1: AI Opportunities — top-right, within section bounds */}
-              <div className="absolute -top-10 -right-4 z-30 animate-float-delayed hidden sm:block">
-                <div className="bg-[#0D261F]/90 backdrop-blur-xl p-4 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-56 ring-1 ring-white/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-                  <div className="flex items-center gap-2 mb-3 border-b border-white/5 pb-2 relative z-10">
+              {/* Float card: AI Suggestion */}
+              <div className="absolute -top-8 -right-4 z-30 animate-float-delayed hidden sm:block">
+                <div className="bg-[#0D261F]/95 backdrop-blur-xl p-4 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-52 ring-1 ring-white/10">
+                  <div className="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
                     <div className="p-1.5 bg-[#E1F28F]/20 rounded-md">
                       <Zap className="w-3.5 h-3.5 text-[#E1F28F]" />
                     </div>
-                    <span className="text-xs font-bold text-white tracking-wide">AI Opportunities</span>
+                    <span className="text-xs font-bold text-white">AI Suggestion</span>
+                    <span className="ml-auto text-[10px] font-mono text-[#E1F28F]/70">98%</span>
                   </div>
-                  <div className="space-y-3 relative z-10">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <FileText className="w-3 h-3 text-emerald-100/50" />
-                        <span className="text-[11px] text-emerald-100/80">Content Strategy</span>
-                      </div>
-                      <span className="text-[10px] font-mono text-[#E1F28F]">94%</span>
-                    </div>
-                    <div className="w-full bg-[#0A2E22] h-1 rounded-full overflow-hidden">
-                      <div className="bg-[#E1F28F] h-full w-[94%] shadow-[0_0_10px_#E1F28F] animate-fill-bar"></div>
-                    </div>
-                    <div className="flex items-center justify-between pt-1">
-                      <div className="flex items-center gap-2">
-                        <FileText className="w-3 h-3 text-emerald-100/50" />
-                        <span className="text-[11px] text-emerald-100/80">Keyword Clustering</span>
-                      </div>
-                      <span className="text-[10px] font-mono text-[#E1F28F] opacity-80">88%</span>
-                    </div>
-                    <div className="w-full bg-[#0A2E22] h-1 rounded-full overflow-hidden">
-                      <div className="bg-[#E1F28F] h-full w-[88%] opacity-70 animate-fill-bar" style={{ animationDelay: '0.3s' }}></div>
-                    </div>
+                  <p className="text-[11px] text-white/60 leading-relaxed mb-3">
+                    Add link from <span className="text-[#E1F28F] font-semibold">"Technical SEO Guide"</span> → "Crawl Budget Optimization"
+                  </p>
+                  <div className="flex gap-2">
+                    <button className="flex-1 px-2 py-1 text-[10px] font-bold bg-[#E1F28F] text-[#0A2E22] rounded-md">Add Link</button>
+                    <button className="flex-1 px-2 py-1 text-[10px] font-medium bg-white/5 text-white/50 rounded-md border border-white/10">Skip</button>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 2: SEO Performance — bottom-left, within section bounds */}
-              <div className="absolute bottom-0 -left-4 z-30 animate-float hidden sm:block">
-                <div className="bg-[#0D261F]/90 backdrop-blur-xl p-5 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-64 ring-1 ring-white/10 relative overflow-hidden group/card hover:-translate-y-1 transition-transform duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-                  <div className="flex items-center justify-between mb-3 relative z-10">
+              {/* Float card: SEO Performance */}
+              <div className="absolute -bottom-4 -left-4 z-30 animate-float hidden sm:block">
+                <div className="bg-[#0D261F]/95 backdrop-blur-xl p-4 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] border border-[#E1F28F]/30 w-56 ring-1 ring-white/10">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-bold text-emerald-100/60 uppercase">SEO Performance</span>
                     <TrendingUp className="w-4 h-4 text-[#E1F28F]" />
                   </div>
-                  <div className="flex items-center gap-4 relative z-10">
+                  <div className="flex items-center gap-4">
                     <div>
                       <p className="text-2xl font-extrabold text-white">+65%</p>
                       <p className="text-[10px] font-semibold text-emerald-100/50 mt-0.5">Link Coverage</p>
@@ -312,14 +330,16 @@ export default function Hero() {
                       <p className="text-[10px] font-semibold text-emerald-100/50 mt-0.5">Organic Traffic</p>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-1.5 bg-[#E1F28F]/10 px-2 py-1.5 rounded-lg border border-[#E1F28F]/20 relative z-10">
+                  <div className="mt-3 flex items-center gap-1.5 bg-[#E1F28F]/10 px-2 py-1.5 rounded-lg border border-[#E1F28F]/20">
                     <CheckCircle2 className="w-3 h-3 text-[#E1F28F]" />
-                    <span className="text-[10px] font-medium text-emerald-100">Crawl efficiency optimized</span>
+                    <span className="text-[10px] font-medium text-emerald-100">Avg results within 8 weeks</span>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </div>
