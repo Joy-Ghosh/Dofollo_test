@@ -66,7 +66,7 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
     const allTicker = [...TICKER_ITEMS, ...TICKER_ITEMS];
 
     return (
-        <section ref={sectionRef} className="py-32 md:py-40 bg-[#0A2E22] text-white text-center relative overflow-hidden bg-noise">
+        <section ref={sectionRef} className="py-32 md:py-40 bg-white text-[#0A2E22] text-center relative overflow-hidden">
 
             {/* Central Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E1F28F]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -138,7 +138,7 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
                     )}
                 </h2>
 
-                <p className="text-xl lg:text-2xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+                <p className="text-xl lg:text-2xl text-[#0A2E22]/70 max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
                     {desc}
                 </p>
 
@@ -150,7 +150,7 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
                         <ArrowUpRight className="relative z-10 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                     </a>
 
-                    <a href="/support" className="px-8 h-14 rounded-full text-white font-bold border border-white/10 hover:bg-white/5 transition-colors flex items-center justify-center">
+                    <a href="/support" className="w-full sm:w-auto px-8 h-14 rounded-full text-[#0A2E22] font-bold border border-[#0A2E22]/10 hover:bg-[#0A2E22]/5 transition-colors flex items-center justify-center">
                         {sBtn}
                     </a>
                 </div>
@@ -158,22 +158,22 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
                 <p className="mt-10 text-sm opacity-50 font-medium tracking-wide">{note}</p>
 
                 {/* Social proof ticker */}
-                <div className="mt-16 pt-8 border-t border-white/10">
-                    <div className="text-xs text-white/30 uppercase tracking-widest mb-4 font-bold">
+                <div className="mt-16 pt-8 border-t border-[#0A2E22]/10">
+                    <div className="text-xs text-[#0A2E22]/30 uppercase tracking-widest mb-4 font-bold">
                         Happening right now
                     </div>
                     <div className="overflow-hidden relative">
                         {/* Fade masks */}
-                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0A2E22] to-transparent z-10 pointer-events-none" />
-                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0A2E22] to-transparent z-10 pointer-events-none" />
+                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
                         <div className="flex animate-ticker whitespace-nowrap">
                             {allTicker.map((item, i) => (
                                 <span
                                     key={i}
-                                    className="inline-flex items-center gap-3 text-sm text-white/60 font-medium mr-12 shrink-0"
+                                    className="inline-flex items-center gap-3 text-sm text-[#0A2E22]/60 font-medium mr-12 shrink-0"
                                 >
                                     {item}
-                                    <span className="w-1 h-1 rounded-full bg-white/20" />
+                                    <span className="w-1 h-1 rounded-full bg-[#0A2E22]/20" />
                                 </span>
                             ))}
                         </div>

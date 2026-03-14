@@ -7,10 +7,10 @@ export default function FAQSection() {
     const { faq_section } = homeData;
 
     return (
-        <section className="py-24 bg-white text-[#0A2E22]">
+        <section className="py-24 bg-[#0A2E22] text-white">
  <div className="container mx-auto max-w-3xl">
-                <h2 className="text-3xl lg:text-5xl font-extrabold text-center mb-16 tracking-tight text-[#0A2E22]">
-                    {faq_section.heading_first} <span className="text-[#045C4E]">{faq_section.heading_highlight}</span>
+                <h2 className="text-3xl lg:text-5xl font-extrabold text-center mb-16 tracking-tight text-white">
+                    {faq_section.heading_first} <span className="text-[#E1F28F]">{faq_section.heading_highlight}</span>
                 </h2>
 
                 <div className="space-y-4">
@@ -20,13 +20,13 @@ export default function FAQSection() {
                             <div
                                 key={index}
                                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                                className={`group p-6 rounded-2xl bg-white border cursor-pointer transition-all duration-300 ${isOpen ? 'border-[#045C4E] shadow-md' : 'border-[#0A2E22]/10 hover:border-[#045C4E]/30 shadow-sm hover:shadow-md'}`}
+                                className={`group p-6 rounded-2xl bg-[#0D261F] border cursor-pointer transition-all duration-300 ${isOpen ? 'border-[#E1F28F] shadow-lg shadow-[#E1F28F]/5' : 'border-white/10 hover:border-[#E1F28F]/30 shadow-sm'}`}
                             >
                                 <div className="flex items-center justify-between">
-                                    <span className={`font-bold text-lg transition-colors ${isOpen ? 'text-[#045C4E]' : 'text-[#0A2E22] group-hover:text-[#045C4E]'}`}>
+                                    <span className={`font-bold text-lg transition-colors ${isOpen ? 'text-[#E1F28F]' : 'text-white group-hover:text-[#E1F28F]'}`}>
                                         {faq.question}
                                     </span>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#045C4E] text-white' : 'bg-[#0A2E22]/5 text-[#045C4E] group-hover:bg-[#045C4E] group-hover:text-white'}`}>
+                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#E1F28F] text-[#0A2E22]' : 'bg-white/5 text-[#E1F28F] group-hover:bg-[#E1F28F] group-hover:text-[#0A2E22]'}`}>
                                         {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@ export default function FAQSection() {
                                     className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}
                                 >
                                     <div className="overflow-hidden">
-                                        <p className="text-[#0A2E22]/70 leading-relaxed">
+                                        <p className="text-white/70 leading-relaxed">
                                             {faq.answer}
                                         </p>
                                     </div>

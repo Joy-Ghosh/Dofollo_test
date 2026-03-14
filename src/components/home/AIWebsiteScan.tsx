@@ -135,10 +135,10 @@ export default function AIWebsiteScan() {
           </div>
 
           {/* Right: Dashboard scan UI */}
-          <ScrollReveal variant="fade-left" delay={0.1}>
-            <div className="relative border border-white/10 rounded-2xl bg-[#0D261F] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]">
+          <ScrollReveal variant="slide-left" delay={0.1}>
+            <div className="relative rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] overflow-hidden">
               {/* Browser header */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
+              <div className="flex items-center gap-2 px-4 py-3 bg-black/20 border-b border-white/10">
                 <div className="w-3 h-3 rounded-full bg-red-500/60" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
                 <div className="w-3 h-3 rounded-full bg-green-500/60" />
