@@ -23,6 +23,8 @@ const empathyData = [
     { hoursWasted: '5 hrs/week', savedWith: '20 min/week', color: 'from-red-600/20 to-transparent' },
 ];
 
+
+
 function ProblemCard({
     item,
     i,
@@ -43,14 +45,19 @@ function ProblemCard({
 
     // On mobile, "open" is driven by activeIndex; on desktop, by hover
     const isOpen = isMobile ? activeIndex === i : hovered;
+    const isPrimary = item.primary || false;
 
     return (
         <div
-            className="relative h-full flex flex-col p-8 bg-white rounded-2xl border border-[#0A2E22]/10 shadow-[0_2px_10px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(10,46,34,0.15)] transition-all duration-500 group cursor-pointer overflow-hidden"
+            className={`relative h-full flex flex-col p-8 bg-white rounded-2xl border transition-all duration-500 group cursor-pointer overflow-hidden ${
+                isPrimary
+                    ? 'border-[#045C4E]/30 shadow-[0_4px_20px_-5px_rgba(4,92,78,0.2)] hover:shadow-[0_25px_60px_-15px_rgba(4,92,78,0.3)] scale-105'
+                    : 'border-[#0A2E22]/10 shadow-[0_2px_10px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(10,46,34,0.15)]'
+            }`}
             onMouseEnter={() => { if (!isMobile) setHovered(true); }}
             onMouseLeave={() => { if (!isMobile) setHovered(false); }}
             onClick={() => { if (isMobile) onToggle(i); }}
-            style={{ transform: isOpen ? 'translateY(-6px)' : 'translateY(0)' }}
+            style={{ transform: isOpen ? 'translateY(-8px)' : 'translateY(0)' }}
         >
             {/* Emotional progress bar at top — fills green when open */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-[#0A2E22]/5 overflow-hidden rounded-t-2xl">
@@ -147,7 +154,7 @@ export default function ProblemSection() {
     return (
         <section className="py-24 md:py-32 bg-white text-[#0A2E22]">
             <div className="container mx-auto ">
-                <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
+                <ScrollReveal variant="fade-up" className="text-center max-w-4xl mx-auto mb-16">
                     {/* Empathy hook */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-red-400 font-bold text-xs uppercase tracking-wider mb-6">
                         <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
@@ -179,6 +186,23 @@ export default function ProblemSection() {
                         </ScrollReveal>
                     ))}
                 </div>
+
+                {/* Mini comparison strip */}
+                <ScrollReveal variant="fade-up" delay={0.4} className="mt-12">
+                    <div className="bg-gradient-to-r from-red-50 via-white to-[#E1F28F]/20 rounded-2xl p-6 border border-[#0A2E22]/10">
+                        <div className="flex items-center justify-center gap-8 text-center">
+                            <div className="flex-1">
+                                <div className="text-2xl font-bold text-red-400 mb-1">14.5 hrs/week</div>
+                                <div className="text-sm text-[#0A2E22]/60">Manual SEO work</div>
+                            </div>
+                            <div className="text-[#0A2E22]/30 text-3xl">→</div>
+                            <div className="flex-1">
+                                <div className="text-2xl font-bold text-[#045C4E] mb-1">52 min/week</div>
+                                <div className="text-sm text-[#0A2E22]/60">With Dofollo AI</div>
+                            </div>
+                        </div>
+                    </div>
+                </ScrollReveal>
             </div>
         </section>
     );

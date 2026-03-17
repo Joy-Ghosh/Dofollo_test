@@ -35,8 +35,11 @@ export default function Home() {
             {/* 3. AI Website Scan — Explain the mechanism */}
             <AIWebsiteScan />
 
+            {/* 8. Dashboard Preview — Show the full system */}
+            <DashboardPreview />
+
             {/* 4. AI Link Intelligence — Core feature showcase */}
-            <AILinkIntelligence />
+            {/* <AILinkIntelligence /> */}
 
             {/* 5. Link Explorer Visualization — See the structure */}
             <InternalLinkingVisualizer />
@@ -47,11 +50,9 @@ export default function Home() {
             {/* 7. AI Fix Engine — Major differentiator */}
             <AIFixEngine />
 
-            {/* 8. Dashboard Preview — Show the full system */}
-            <DashboardPreview />
 
             {/* 9. Interactive Demo — Huge conversion boost */}
-            <InteractiveDemo />
+            {/* <InteractiveDemo /> */}
 
             {/* 10. Social Proof — Trust & credibility */}
             <TestimonialsSection />
@@ -60,10 +61,10 @@ export default function Home() {
             <FeatureGrid />
 
             {/* 12. Impact metrics */}
-            <ImpactSection />
+            {/* <ImpactSection /> */}
 
             {/* 13. Competitor Analysis */}
-            <CompetitorAnalysis />
+            {/* <CompetitorAnalysis /> */}
 
             {/* 14. Integrations */}
             <IntegrationsSection />

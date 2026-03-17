@@ -42,31 +42,48 @@
         "description": "Enter your website URL and see what Dofollo finds in seconds. No signup needed."
     },
     "problem_section": {
-        "heading_first": "You're Publishing Great Content.",
-        "heading_highlight": "It's Not Ranking Because of Links.",
-        "subheading": "Most SEO teams fix keywords and backlinks — but ignore the internal link graph that Google uses to understand site authority.",
+        "heading_first": "You Don't Have a Content Problem.",
+        "heading_highlight": "You Have a Structure Problem.",
+        "subheading": "Most SEO tools optimize keywords. Google ranks structure — and your internal links are broken.",
         "problems": [
             {
                 "icon": "AlertCircle",
                 "title": "Link Equity Is Leaking",
-                "description": "High-authority pages sit unconnected. Link equity that should flow to your money pages is going nowhere."
+                "description": "High-authority pages sit unconnected. Link equity that should flow to your money pages is going nowhere.",
+                "visual": "arrows",
+                "primary": true
             },
             {
                 "icon": "Clock",
                 "title": "Hours Wasted Per Client",
-                "description": "Finding link opportunities manually across 500+ pages takes days. That's billable time you're giving away."
+                "description": "Finding link opportunities manually across 500+ pages takes days. That's billable time you're giving away.",
+                "visual": "timer",
+                "primary": false
             },
             {
                 "icon": "Layout",
                 "title": "Crawlers Miss Your Pages",
-                "description": "Orphan pages and shallow link depth mean Google bots deprioritize your content before anyone reads it."
+                "description": "Orphan pages and shallow link depth mean Google bots deprioritize your content before anyone reads it.",
+                "visual": "bot",
+                "primary": false
             },
             {
                 "icon": "TrendingDown",
                 "title": "Competitors Outrank You",
-                "description": "They're not smarter — they have tighter site structures. Better internal linking = faster ranking gains."
+                "description": "They're not smarter — they have tighter site structures. Better internal linking = faster ranking gains.",
+                "visual": "chart",
+                "primary": false
             }
-        ]
+        ],
+        "comparison": {
+            "before": "Without Dofollo",
+            "after": "With Dofollo",
+            "items": [
+                { "before": "Broken links", "after": "Connected structure" },
+                { "before": "Orphan pages", "after": "Linked ecosystem" },
+                { "before": "Manual work", "after": "Automated fixes" }
+            ]
+        }
     },
     "workflow_section": {
         "badge": "How It Works",

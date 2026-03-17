@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4  relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Calm & Clear Typography */}
           <div className="lg:col-span-8 flex flex-col items-start text-left">
@@ -62,18 +62,24 @@ export default function Hero() {
                 animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
               }
               @keyframes float1 {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-5px); }
+                0% { transform: translateY(0px); }
+                25% { transform: translateY(-3px); }
+                50% { transform: translateY(-6px); }
+                75% { transform: translateY(-3px); }
+                100% { transform: translateY(0px); }
               }
               .animate-float1 {
-                animation: float1 4s ease-in-out infinite;
+                animation: float1 3.5s ease-in-out infinite;
               }
               @keyframes float2 {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-4px); }
+                0% { transform: translateY(0px); }
+                25% { transform: translateY(-2.5px); }
+                50% { transform: translateY(-5px); }
+                75% { transform: translateY(-2.5px); }
+                100% { transform: translateY(0px); }
               }
               .animate-float2 {
-                animation: float2 3.5s ease-in-out infinite;
+                animation: float2 4s ease-in-out infinite;
               }
               @keyframes fadeInSlide {
                 from { opacity: 0; transform: translateY(10px); }
@@ -172,7 +178,7 @@ export default function Hero() {
 
             <div className="relative w-full max-w-lg ml-auto">
               {/* Seamless Story System Card */}
-              <div className="relative z-10 bg-[#0D1F1C]/30 backdrop-blur-2xl rounded-2xl border border-white/15 shadow-[0_8px_32px_0_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden flex flex-col">
+              <div className="relative z-10 bg-gradient-to-b from-white/5 via-[#0D1F1C]/30 to-[#0D1F1C]/40 backdrop-blur-2xl rounded-2xl border-t border-t-white/10 border border-white/15 shadow-[0_12px_40px_0_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden flex flex-col">
                 {/* Simulated Address Bar */}
                 <div className="h-10 border-b border-white/5 flex items-center px-4 justify-between bg-black/20">
                   <div className="flex items-center gap-2">
@@ -325,16 +331,16 @@ export default function Hero() {
             </div>
 
             {/* Floating Card 1: AI Suggestion */}
-            <div className="absolute top-6 -right-12 w-56 h-32 bg-white/8 backdrop-blur-lg rounded-lg border border-white/15 shadow-[0_4px_16px_0_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] opacity-90 animate-float1 animate-entry1 hover:scale-105 hover:bg-white/12 transition-all duration-300 z-20">
+            <div className="absolute top-6 -right-12 w-56 h-28 bg-gradient-to-b from-white/10 via-white/8 to-white/6 backdrop-blur-xl rounded-lg border-t border-t-white/15 border border-white/15 shadow-[0_8px_24px_0_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] opacity-90 animate-float1 animate-entry1 hover:scale-105 hover:bg-white/12 transition-all duration-300 z-20 rotate-[-2deg]">
               <div className="p-3 text-xs">
                 <div className="font-bold text-[#E1F28F] mb-1">AI Suggestion</div>
-                <div className="text-white/80 mb-2">Add link from:<br/>"Technical SEO Guide" → "Crawl Budget Optimization"</div>
+                <div className="text-white/80 mb-2">"Technical SEO Guide" → "Crawl Budget Optimization"</div>
                 <button className="bg-[#E1F28F]/20 text-[#E1F28F] px-2 py-1 rounded text-xs font-bold hover:bg-[#E1F28F]/30">Apply</button>
               </div>
             </div>
 
             {/* Floating Card 2: SEO Impact */}
-            <div className="absolute bottom-12 -left-28 w-48 h-24 bg-white/8 backdrop-blur-lg rounded-lg border border-white/15 shadow-[0_4px_16px_0_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] opacity-90 animate-float2 animate-entry2 hover:scale-105 hover:bg-white/12 transition-all duration-300 z-20">
+            <div className="absolute bottom-12 -left-28 w-48 h-24 bg-gradient-to-b from-white/10 via-white/8 to-white/6 backdrop-blur-md rounded-lg border-t border-t-white/15 border border-white/15 shadow-[0_8px_24px_0_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] opacity-90 animate-float2 animate-entry2 hover:scale-105 hover:bg-white/12 transition-all duration-300 z-20 rotate-[2deg]">
               <div className="p-3 text-xs">
                 <div className="font-bold text-emerald-400 mb-1">SEO Impact</div>
                 <div className="text-white/80">+34% Internal Link Coverage<br/>+12 pages improved</div>
