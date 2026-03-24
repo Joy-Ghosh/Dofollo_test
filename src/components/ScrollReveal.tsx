@@ -11,6 +11,7 @@ interface ScrollRevealProps extends MotionProps {
     once?: boolean;
     staggerChildren?: number;
     key?: React.Key | null | undefined;
+    onInView?: () => void;
 }
 
 const defaultTransition: Transition = {
@@ -95,6 +96,7 @@ export default function ScrollReveal({
             ref={ref}
             initial="hidden"
             whileInView="visible"
+            onViewportEnter={() => props.onInView?.()}
             viewport={{ amount: viewportAmount as any, once }}
             variants={getVariants()}
             className={className}

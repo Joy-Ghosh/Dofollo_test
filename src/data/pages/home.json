@@ -94,40 +94,43 @@
         "description": "Enter your website URL and see what Dofollo finds in seconds. No signup needed."
     },
     "problem_section": {
+        "micro_hook": "If your traffic isn't growing \u2014 this is why",
         "heading_first": "You Don't Have a Content Problem.",
         "heading_highlight": "You Have a Structure Problem.",
-        "subheading": "Most SEO tools optimize keywords. Google ranks structure — and your internal links are broken.",
+        "subheading": "You\u2019re creating content. You\u2019re targeting keywords. But your pages aren\u2019t connected the way Google expects \u2014 so your rankings stay stuck.",
         "problems": [
             {
                 "icon": "AlertCircle",
-                "title": "Link Equity Is Leaking",
-                "description": "High-authority pages sit unconnected. Link equity that should flow to your money pages is going nowhere.",
+                "title": "Your Best Pages Aren\u2019t Helping Your Important Ones",
+                "description": "Your high-authority pages aren\u2019t passing value where it matters \u2014 so your money pages stay invisible.",
                 "visual": "arrows",
                 "primary": true
             },
             {
                 "icon": "Clock",
-                "title": "Hours Wasted Per Client",
-                "description": "Finding link opportunities manually across 500+ pages takes days. That's billable time you're giving away.",
+                "title": "You\u2019re Spending Hours Doing What Should Take Minutes",
+                "description": "Manually finding link opportunities across hundreds of pages is slow, repetitive, and expensive.",
                 "visual": "timer",
                 "primary": false
             },
             {
                 "icon": "Layout",
-                "title": "Crawlers Miss Your Pages",
-                "description": "Orphan pages and shallow link depth mean Google bots deprioritize your content before anyone reads it.",
+                "title": "Google Can\u2019t Properly Discover Your Pages",
+                "description": "Orphan pages and weak linking mean your content gets ignored \u2014 no matter how good it is.",
                 "visual": "bot",
                 "primary": false
             },
             {
                 "icon": "TrendingDown",
-                "title": "Competitors Outrank You",
-                "description": "They're not smarter — they have tighter site structures. Better internal linking = faster ranking gains.",
+                "title": "Your Competitors Aren\u2019t Better \u2014 Just Better Structured",
+                "description": "They\u2019re not smarter. Their pages are just connected better \u2014 and Google rewards that.",
                 "visual": "chart",
                 "primary": false
             }
         ],
+        "realization_line": "Most websites don't fail because of bad content \u2014 they fail because their structure is invisible.",
         "comparison": {
+            "title": "What This Looks Like Without vs With Dofollo",
             "before": "Without Dofollo",
             "after": "With Dofollo",
             "items": [
