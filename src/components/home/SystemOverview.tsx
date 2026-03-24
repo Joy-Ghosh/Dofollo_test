@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import ScrollReveal from '../ScrollReveal';
+import homeData from '../../data/pages/home.json';
 import logo from '../../assets/logo.png';
 
 // ─── Config ──────────────────────────────────────────────────────────────────
@@ -14,25 +15,21 @@ const STEP_DURATIONS = [2500, 8000, 3000, 4000]; // ms each step stays (generous
 const TICK_MS = 50;
 const CIRC = 2 * Math.PI * 17; // SVG countdown ring circumference (r=17)
 
-const flowSteps = [
-  { id: 0, icon: Globe, number: '01', title: 'Enter URL', desc: 'Paste your domain — no setup, no code, no API keys required.', detail: 'Supports HTTP, HTTPS, subdomains & subdirectories' },
-  { id: 1, icon: Radar, number: '02', title: 'AI Scans Every Page', desc: 'Our crawler maps your entire site — 1,000+ pages in under 60 seconds.', detail: 'Average scan time: under 60 seconds' },
-  { id: 2, icon: AlertTriangle, number: '03', title: 'Issues Detected', desc: 'Orphan pages, broken links, anchor text gaps, link equity leaks found.', detail: '15+ issue types detected automatically' },
-  { id: 3, icon: BarChart3, number: '04', title: 'Insights Dashboard', desc: 'Prioritized fixes ranked by SEO impact — ready to act in 5 minutes.', detail: 'Ready to act in under 5 minutes' },
-];
+const data = (homeData as any).system_overview || {};
+
+const iconMap: Record<string, any> = { Globe, Radar, AlertTriangle, BarChart3 };
+
+const flowSteps = (data.flow_steps || []).map((step: any) => ({
+  ...step,
+  icon: iconMap[step.icon] || Globe
+}));
 
 const activityData = [
   { name: 'Mon', value: 20 }, { name: 'Tue', value: 30 }, { name: 'Wed', value: 25 },
   { name: 'Thu', value: 35 }, { name: 'Fri', value: 45 }, { name: 'Sat', value: 50 }, { name: 'Sun', value: 60 },
 ];
 
-const criticalIssues = [
-  { type: 'Canonical Mismatch', pages: '279 pages', color: 'text-red-400' },
-  { type: 'Duplicate Alt Text', pages: '273 pages', color: 'text-red-400' },
-  { type: 'Duplicate Title', pages: '244 pages', color: 'text-red-400' },
-  { type: 'Missing H1', pages: '197 pages', color: 'text-amber-400' },
-  { type: 'Orphan Pages', pages: '52 pages', color: 'text-orange-400' },
-];
+const criticalIssues = data.critical_issues || [];
 
 const issueItems = [
   { label: 'Orphan Pages', count: 12, barColor: 'bg-red-500', pct: 75 },
@@ -582,7 +579,7 @@ function DashboardPanel() {
               <div className="text-xs font-semibold text-[#E1F28F] mb-2 flex items-center gap-2">
                 <Zap className="w-3.5 h-3.5" /> Top Quick Wins
               </div>
-              {['Fix missing H1 on 137 pages', 'Add alt text to 109 images', 'Resolve 52 orphan pages'].map((win, i) => (
+              {(data.quick_wins || []).map((win: string, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -8 }}
@@ -653,13 +650,12 @@ export default function SystemOverview() {
         {/* Header */}
         <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider mb-6">
-            <Sparkles className="w-3.5 h-3.5" /> How It Works
+            <Sparkles className="w-3.5 h-3.5" /> {data.badge}
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 leading-tight text-[#0A2E22]">
-            One system. <span className="text-[#045C4E]">Total structural clarity.</span>
+            {data.heading_first} <span className="text-[#045C4E]">{data.heading_highlight}</span>
           </h2>
-          <p className="text-[#0A2E22]/60 text-lg leading-relaxed max-w-xl mx-auto">
-            You don't need a scanner <em>and</em> a dashboard <em>and</em> a fixer. Dofollo is the complete loop — from crawl to actionable insight to fix.
+          <p className="text-[#0A2E22]/60 text-lg leading-relaxed max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: data.description }}>
           </p>
         </ScrollReveal>
 

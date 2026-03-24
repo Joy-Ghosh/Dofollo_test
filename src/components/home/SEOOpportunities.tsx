@@ -3,44 +3,7 @@ import { TrendingUp, ArrowUpRight, Target, BarChart3, Zap, ChevronRight } from '
 import homeData from '../../data/pages/home.json';
 import ScrollReveal from '../ScrollReveal';
 
-const opportunities = [
-  {
-    page: 'Technical SEO Basics',
-    path: '/blog/technical-seo',
-    position: 12,
-    links: 4,
-    traffic: '+38%',
-    difficulty: 'Easy',
-    diffColor: 'text-emerald-600 bg-emerald-50 border border-emerald-100',
-  },
-  {
-    page: 'Site Architecture Guide',
-    path: '/blog/site-architecture',
-    position: 19,
-    links: 6,
-    traffic: '+52%',
-    difficulty: 'Medium',
-    diffColor: 'text-amber-600 bg-amber-50 border border-amber-100',
-  },
-  {
-    page: 'Crawl Budget Tips',
-    path: '/blog/crawl-budget',
-    position: 8,
-    links: 2,
-    traffic: '+21%',
-    difficulty: 'Easy',
-    diffColor: 'text-emerald-600 bg-emerald-50 border border-emerald-100',
-  },
-  {
-    page: 'XML Sitemaps 101',
-    path: '/blog/xml-sitemaps',
-    position: 24,
-    links: 8,
-    traffic: '+67%',
-    difficulty: 'High Impact',
-    diffColor: 'text-[#045C4E] bg-[#E1F28F]/40 border border-[#045C4E]/20',
-  },
-];
+const { opportunities, stats } = (homeData as any).seo_opportunities;
 
 export default function SEOOpportunities() {
   const data = (homeData as any).seo_opportunities;
@@ -147,9 +110,9 @@ export default function SEOOpportunities() {
             <div className="bg-gradient-to-br from-[#0A2E22] to-[#045C4E] rounded-2xl p-5 text-white relative overflow-hidden h-full flex flex-col justify-center shadow-lg">
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#E1F28F]/10 rounded-full blur-2xl pointer-events-none" />
               <BarChart3 className="w-6 h-6 text-[#E1F28F] mb-3" />
-              <div className="text-3xl font-extrabold mb-1">+42%</div>
+              <div className="text-3xl font-extrabold mb-1">{stats.stat1.value}</div>
               <p className="text-white/60 text-[11px] leading-relaxed">
-                Average traffic increase for pages optimized with Dofollo's internal linking.
+                {stats.stat1.desc}
               </p>
             </div>
           </ScrollReveal>
@@ -158,9 +121,9 @@ export default function SEOOpportunities() {
           <ScrollReveal variant="fade-up" delay={0.2} className="h-full">
             <div className="bg-[#F0FFF8] rounded-2xl p-5 border border-[#045C4E]/10 h-full flex flex-col justify-center shadow-sm">
               <TrendingUp className="w-6 h-6 text-[#045C4E] mb-3" />
-              <div className="text-3xl font-extrabold text-[#0A2E22] mb-1">3–8 wks</div>
+              <div className="text-3xl font-extrabold text-[#0A2E22] mb-1">{stats.stat2.value}</div>
               <p className="text-[#0A2E22]/60 text-[11px] leading-relaxed">
-                Average time to see measurable ranking improvements after implementing Dofollo's suggestions.
+                {stats.stat2.desc}
               </p>
             </div>
           </ScrollReveal>
@@ -170,7 +133,7 @@ export default function SEOOpportunities() {
             <div className="bg-[#E1F28F] rounded-2xl p-5 h-full flex flex-col justify-center shadow-sm border border-[#E1F28F]/50">
               <Zap className="w-5 h-5 text-[#0A2E22] mb-2" />
               <p className="text-sm font-extrabold text-[#0A2E22] mb-2 leading-tight">
-                Ready to unlock your hidden pages?
+                {stats.stat3.title}
               </p>
               <a
                 href="https://dash.dofollo.ai/"
@@ -178,7 +141,7 @@ export default function SEOOpportunities() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0A2E22] hover:opacity-70 transition-opacity"
               >
-                Scan My Website <ChevronRight className="w-3.5 h-3.5" />
+                {stats.stat3.cta} <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </ScrollReveal>

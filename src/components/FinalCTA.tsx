@@ -3,16 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import homeData from '../data/pages/home.json';
 
 // Social proof ticker items
-const TICKER_ITEMS = [
-    '🟢 Rachel M. just published 47 internal links across 3 client sites',
-    '⚡ James upgraded to Pro Max · managing 8 client accounts',
-    '🎯 Priya fixed 214 orphan pages · rankings moved in 3 weeks',
-    '🟢 David added 60+ links in under 4 min — no CMS editing',
-    '📈 Agency team saw +34% organic traffic lift after 90-day audit',
-    '🟢 Tanvir just completed his first site-wide link audit',
-    '⚡ SEO Lead at B2B SaaS upgraded · 3 sites connected',
-    '🎯 Freelance SEO recovered 180 disconnected pages in one pass',
-];
+const TICKER_ITEMS = (homeData.final_cta as any).ticker_items;
 
 // Letter-by-letter reveal component
 function SplitText({ text, inView, baseDelay = 0, charClassName = '' }: { text: string; inView: boolean; baseDelay?: number; charClassName?: string }) {

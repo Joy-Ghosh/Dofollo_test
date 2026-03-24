@@ -2,38 +2,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TrendingUp, Clock, Target, ArrowUpRight, Sparkles } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
 
-const outcomes = [
-  {
-    icon: TrendingUp,
-    metric: '+42%',
-    metricLabel: 'Avg. traffic increase',
-    before: 'Pages stuck on page 2–3',
-    after: 'Pages climbing to top 5',
-    color: 'from-[#045C4E] to-[#0A2E22]',
+import homeData from '../../data/pages/home.json';
+
+const iconMap: Record<string, any> = { TrendingUp, Clock, Target };
+
+function getOutcomes(data: any) {
+  if (!data?.outcomes) return [];
+  return data.outcomes.map((item: any, i: number) => ({
+    ...item,
+    icon: iconMap[item.icon] || TrendingUp,
     accentColor: '#E1F28F',
-    delay: 0,
-  },
-  {
-    icon: Clock,
-    metric: '< 60s',
-    metricLabel: 'Full site scan time',
-    before: 'Days of manual auditing',
-    after: 'Instant structural intelligence',
-    color: 'from-[#0A2E22] to-[#0d3b2c]',
-    accentColor: '#E1F28F',
-    delay: 0.1,
-  },
-  {
-    icon: Target,
-    metric: '3–8 wks',
-    metricLabel: 'To see ranking uplift',
-    before: 'Guessing what to fix',
-    after: 'AI-prioritized action plan',
-    color: 'from-[#0d3b2c] to-[#045C4E]',
-    accentColor: '#E1F28F',
-    delay: 0.2,
-  },
-];
+    delay: i * 0.1,
+  }));
+}
 
 function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [value, setValue] = useState(0);
@@ -68,6 +49,9 @@ function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
 }
 
 export default function OutcomeSection() {
+  const data = (homeData as any).outcome_section || {};
+  const outcomes = getOutcomes(data);
+
   return (
     <section className="py-24 md:py-32 bg-[#0A2E22] text-white relative overflow-hidden">
       {/* Glow orbs */}
@@ -79,15 +63,15 @@ export default function OutcomeSection() {
         <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#E1F28F]/10 border border-[#E1F28F]/20 text-[#E1F28F] font-bold text-xs uppercase tracking-wider mb-6">
             <Sparkles className="w-3.5 h-3.5" />
-            What You Get
+            {data.badge || 'What You Get'}
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
-            Imagine your website{' '}
-            <span className="text-[#E1F28F]">working smarter</span>
-            <br />not harder.
+            {data.heading_first || 'Imagine your website'}{' '}
+            <span className="text-[#E1F28F]">{data.heading_highlight || 'working smarter'}</span>
+            <br />{data.heading_post || 'not harder.'}
           </h2>
           <p className="text-white/60 text-lg leading-relaxed max-w-xl mx-auto">
-            Before you see the product — here's the transformation Dofollo delivers. No guesswork. No bloated audits. Just clear results.
+            {data.description || ''}
           </p>
         </ScrollReveal>
 
@@ -146,17 +130,13 @@ export default function OutcomeSection() {
                 ))}
               </div>
               <div>
-                <div className="text-sm font-bold text-white">Trusted by 2,400+ growth teams</div>
-                <div className="text-xs text-white/40">SEO managers, agencies, and founders</div>
+                <div className="text-sm font-bold text-white">{data.social_proof?.title}</div>
+                <div className="text-xs text-white/40">{data.social_proof?.subtitle}</div>
               </div>
             </div>
 
             <div className="flex items-center gap-8 relative z-10">
-              {[
-                { value: '2.4K+', label: 'Sites scanned' },
-                { value: '98K+', label: 'Issues resolved' },
-                { value: '4.9★', label: 'User rating' },
-              ].map((stat, i) => (
+              {(data.social_proof?.stats || []).map((stat: any, i: number) => (
                 <div key={i} className="text-center">
                   <div className="text-xl font-extrabold text-[#E1F28F]">{stat.value}</div>
                   <div className="text-[11px] text-white/40 mt-0.5">{stat.label}</div>
@@ -170,7 +150,7 @@ export default function OutcomeSection() {
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-colors relative z-10"
             >
-              See My Results <ArrowUpRight className="w-4 h-4" />
+              {data.social_proof?.cta || 'See My Results'} <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </ScrollReveal>
