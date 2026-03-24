@@ -120,13 +120,13 @@ export default function FinalCTA({ headingPre, headingHighlight, headingPost, de
                         <SplitText text={pre} inView={inView} baseDelay={0.1} />
                     </span>
                     {' '}
-                    <span className="inline-block whitespace-nowrap">
+                    <span className="text-[#045C4E] relative inline-block whitespace-nowrap">
                         <SplitText
                             text={highlight}
                             inView={inView}
                             baseDelay={0.1 + (pre.length + 1) * 0.03}
-                            charClassName="text-[#E1F28F]"
                         />
+                        <div className="absolute bottom-1 left-0 w-full h-3 bg-[#E1F28F]/60 -z-10 -rotate-1" />
                     </span>
                     {post && (
                         <>

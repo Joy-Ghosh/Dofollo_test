@@ -1,19 +1,15 @@
 import React from 'react';
 import Hero from '../components/home/Hero';
 import ProblemSection from '../components/home/ProblemSection';
-import AIWebsiteScan from '../components/home/AIWebsiteScan';
-import AILinkIntelligence from '../components/home/AILinkIntelligence';
+import OutcomeSection from '../components/home/OutcomeSection';
+import SystemOverview from '../components/home/SystemOverview';
 import InternalLinkingVisualizer from '../components/home/InternalLinkingVisualizer';
 import SEOOpportunities from '../components/home/SEOOpportunities';
 import AIFixEngine from '../components/home/AIFixEngine';
-import DashboardPreview from '../components/home/DashboardPreview';
-import InteractiveDemo from '../components/home/InteractiveDemo';
-import TestimonialsSection from '../components/home/TestimonialsSection';
-import FeatureGrid from '../components/home/FeatureGrid';
-import ImpactSection from '../components/home/ImpactSection';
-import CompetitorAnalysis from '../components/home/CompetitorAnalysis';
-import IntegrationsSection from '../components/home/IntegrationsSection';
+import FeatureSystems from '../components/home/FeatureSystems';
 import UseCaseSection from '../components/home/UseCaseSection';
+import IntegrationsSection from '../components/home/IntegrationsSection';
+import TestimonialsSection from '../components/home/TestimonialsSection';
 import PricingPreview from '../components/home/PricingPreview';
 import FAQSection from '../components/home/FAQSection';
 import FinalCTA from '../components/FinalCTA';
@@ -26,59 +22,46 @@ export default function Home() {
         <div className="w-full min-h-screen bg-[#0A2E22] overflow-x-hidden">
             <SEO {...seoData.pages.home} />
 
-            {/* 1. Hero — Immediate clarity + curiosity */}
+            {/* 1. Hero — Emotional hook: immediate clarity + curiosity */}
             <Hero />
 
-            {/* 2. Problem — Make users feel understood */}
+            {/* 2. Problem — "You don't have a content problem. You have a structure problem." */}
             <ProblemSection />
 
-            {/* 3. AI Website Scan — Explain the mechanism */}
-            <AIWebsiteScan />
+            {/* 3. Outcome (NEW) — Show transformation BEFORE the product */}
+            <OutcomeSection />
 
-            {/* 8. Dashboard Preview — Show the full system */}
-            <DashboardPreview />
+            {/* 4. System Overview — Merged: Scan + Analyze + Dashboard in ONE flow */}
+            <SystemOverview />
 
-            {/* 4. AI Link Intelligence — Core feature showcase */}
-            {/* <AILinkIntelligence /> */}
-
-            {/* 5. Link Explorer Visualization — See the structure */}
+            {/* 5. Link Intelligence — Unique selling point (Visualizer) */}
             <InternalLinkingVisualizer />
 
-            {/* 6. SEO Growth Opportunities — Hidden gems */}
+            {/* 6. Growth Opportunities — Growth hook */}
             <SEOOpportunities />
 
-            {/* 7. AI Fix Engine — Major differentiator */}
+            {/* 7. Action Engine — "We don't just analyze — we help you act" */}
             <AIFixEngine />
 
+            {/* 8. Feature Systems — Grouped capabilities, not random tools */}
+            <FeatureSystems />
 
-            {/* 9. Interactive Demo — Huge conversion boost */}
-            {/* <InteractiveDemo /> */}
-
-            {/* 10. Social Proof — Trust & credibility */}
-            <TestimonialsSection />
-
-            {/* 11. Feature Summary Grid */}
-            <FeatureGrid />
-
-            {/* 12. Impact metrics */}
-            {/* <ImpactSection /> */}
-
-            {/* 13. Competitor Analysis */}
-            {/* <CompetitorAnalysis /> */}
-
-            {/* 14. Integrations */}
-            <IntegrationsSection />
-
-            {/* 15. Use Case / Who It's For */}
+            {/* 9. Use Case — "Is this for me?" (earlier = better) */}
             <UseCaseSection />
 
-            {/* 16. Pricing */}
+            {/* 10. Integrations */}
+            <IntegrationsSection />
+
+            {/* 11. Testimonials — Trust before pricing */}
+            <TestimonialsSection />
+
+            {/* 12. Pricing */}
             <PricingPreview />
 
-            {/* 17. FAQ */}
+            {/* 13. FAQ */}
             <FAQSection />
 
-            {/* 18. Final CTA */}
+            {/* 14. Final CTA */}
             <FinalCTA />
 
             <Footer />

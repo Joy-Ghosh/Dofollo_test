@@ -152,7 +152,11 @@ export default function ProblemSection() {
     };
 
     return (
-        <section className="py-24 md:py-32 bg-white text-[#0A2E22]">
+        <section className="py-24 md:py-32 bg-white text-[#0A2E22] relative">
+            {/* Top blend from dark Hero */}
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#0A2E22]/8 to-transparent pointer-events-none" />
+            {/* Bottom blend to dark OutcomeSection */}
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0A2E22]/6 to-transparent pointer-events-none" />
             <div className="container mx-auto ">
                 <ScrollReveal variant="fade-up" className="text-center max-w-4xl mx-auto mb-16">
                     {/* Empathy hook */}

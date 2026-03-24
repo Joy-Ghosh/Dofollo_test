@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 interface CompactHeroProps {
@@ -6,9 +7,11 @@ interface CompactHeroProps {
     title: React.ReactNode;
     description: string;
     stats?: { value: string; label: string }[];
+    primaryBtn?: string;
+    secondaryBtn?: string;
 }
 
-export default function CompactHero({ badge, title, description, stats }: CompactHeroProps) {
+export default function CompactHero({ badge, title, description, stats, primaryBtn, secondaryBtn }: CompactHeroProps) {
     return (
         <section className="pt-32 pb-24 relative overflow-hidden bg-[#0A2E22]">
             {/* Background noise */}
@@ -65,6 +68,26 @@ export default function CompactHero({ badge, title, description, stats }: Compac
                         {description}
                     </p>
                 </ScrollReveal>
+
+                {/* CTA Buttons */}
+                {(primaryBtn || secondaryBtn) && (
+                    <ScrollReveal variant="fade-up" delay={0.3}>
+                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+                            {primaryBtn && (
+                                <a href="https://dash.dofollo.ai/" target="_blank" rel="noopener noreferrer" className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#E1F28F] text-[#0A2E22] px-10 h-14 rounded-full text-lg font-extrabold animate-breathe hover:scale-[1.05] transition-all duration-300 overflow-hidden">
+                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                                    <span className="relative z-10">{primaryBtn}</span>
+                                    <ArrowUpRight className="relative z-10 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                                </a>
+                            )}
+                            {secondaryBtn && (
+                                <a href="/support" className="w-full sm:w-auto px-8 h-14 rounded-full text-white font-bold border border-white/20 hover:bg-white/5 transition-colors flex items-center justify-center">
+                                    {secondaryBtn}
+                                </a>
+                            )}
+                        </div>
+                    </ScrollReveal>
+                )}
 
                 {/* Optional inline stats */}
                 {stats && stats.length > 0 && (

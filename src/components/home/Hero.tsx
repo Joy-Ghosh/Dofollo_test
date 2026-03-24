@@ -36,13 +36,26 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative w-full bg-[#0A2E22] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-24">
-      {/* Calm Background glow layers */}
+    <div className="relative w-full bg-[#0A2E22] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      {/* Rich Background glow layers matching Tools page */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full bg-[#045C4E]/15 blur-[120px]" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[#39bd83]/5 blur-[120px]" />
-        {/* Subtle Grid overlay - lower opacity for calmer feel */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]" />
+        {/* Central Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-[#E1F28F]/10 rounded-full blur-[130px]" />
+        
+        {/* Secondary corner glows */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#E1F28F]/5 rounded-full blur-[120px]" />
+        
+        {/* Grid overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
+
+        {/* Floating Particles */}
+        <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 rounded-full bg-[#E1F28F]/40 animate-pulse" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-[35%] left-[8%] w-1 h-1 rounded-full bg-[#E1F28F]/20 animate-pulse" style={{ animationDelay: '0.8s' }} />
+        <div className="absolute top-[60%] left-[12%] w-1.5 h-1.5 rounded-full bg-[#045C4E]/60 animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-[15%] right-[18%] w-1 h-1 rounded-full bg-[#E1F28F]/30 animate-pulse" style={{ animationDelay: '0.4s' }} />
+        <div className="absolute top-[45%] right-[10%] w-1.5 h-1.5 rounded-full bg-[#E1F28F]/20 animate-pulse" style={{ animationDelay: '1.2s' }} />
+        <div className="absolute top-[70%] right-[15%] w-1 h-1 rounded-full bg-[#045C4E]/50 animate-pulse" style={{ animationDelay: '0.6s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4  relative z-10 w-full">

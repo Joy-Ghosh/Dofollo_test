@@ -6,6 +6,8 @@ export default function UseCaseSection() {
 
     return (
         <section className="py-24 bg-[#0A2E22] text-white bg-noise relative overflow-hidden">
+            {/* Top blend from white FeatureSystems */}
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto relative z-10">

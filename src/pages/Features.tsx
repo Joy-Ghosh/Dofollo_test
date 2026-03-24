@@ -5,44 +5,15 @@ import TechnicalFAQ from '../components/features/TechnicalFAQ';
 import FinalCTA from '../components/FinalCTA';
 import CompactHero from '../components/CompactHero';
 import ScrollReveal from '../components/ScrollReveal';
+import SystemFlow from '../components/features/SystemFlow';
 import featuresData from '../data/pages/features.json';
 import SEO from '../components/SEO';
 import seoData from '../data/seo.json';
 
-// Helper to render visuals based on ID (since specialized components/JSX can't be in JSON)
+// Helper to render visuals based on ID
 const renderVisual = (id: string) => {
     switch (id) {
-        case 'ai-suggestions':
-            return (
-                <div className="aspect-[4/3] bg-[#0A2E22]/5 relative overflow-hidden flex items-center justify-center p-8">
-                    {/* Mock UI */}
-                    <div className="w-full h-full bg-white rounded-xl shadow-sm border border-[#0A2E22]/5 p-6 flex flex-col">
-                        <div className="flex justify-between items-center mb-6">
-                            <div className="flex gap-2">
-                                <div className="w-2 h-2 rounded-full bg-green-500" />
-                                <div className="h-2 w-24 bg-[#0A2E22]/10 rounded-full" />
-                            </div>
-                            <div className="h-8 w-24 bg-[#E1F28F] rounded-lg opacity-50" />
-                        </div>
-                        <div className="space-y-4 flex-1">
-                            <div className="p-4 bg-[#0A2E22]/5 rounded-lg border border-[#0A2E22]/5">
-                                <p className="text-sm text-[#0A2E22]/60 leading-relaxed mb-3">
-                                    ...improving your <span className="bg-[#E1F28F]/30 px-1 py-0.5 rounded text-[#045C4E] font-bold border-b-2 border-[#E1F28F]">site architecture</span> is crucial for SEO...
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <span className="text-xs font-bold text-[#0A2E22]">Suggested Link: <strong>/guides/site-structure</strong></span>
-                                    <span className="text-xs font-mono text-[#045C4E] bg-white px-2 py-1 rounded shadow-sm">98% Match</span>
-                                </div>
-                            </div>
-                            <div className="p-4 bg-white rounded-lg border border-[#0A2E22]/5 opacity-50">
-                                <div className="h-2 w-full bg-[#0A2E22]/5 rounded mb-2" />
-                                <div className="h-2 w-3/4 bg-[#0A2E22]/5 rounded" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
-        case 'content-map':
+        case 'link-intelligence':
             return (
                 <div className="aspect-[4/3] bg-[#0D261F] relative overflow-hidden flex items-center justify-center">
                     {/* Network Background */}
@@ -119,7 +90,7 @@ const renderVisual = (id: string) => {
                     </div>
                 </div>
             );
-        case 'competitor-analysis':
+        case 'growth-intelligence':
             return (
                 <div className="aspect-[4/3] bg-white relative overflow-hidden flex items-center justify-center p-8">
                     <div className="w-full space-y-3">
@@ -153,7 +124,7 @@ const renderVisual = (id: string) => {
                     </div>
                 </div>
             );
-        case 'automation':
+        case 'action-engine':
             return (
                 <div className="aspect-[4/3] bg-[#0A2E22] relative overflow-hidden flex items-center justify-center p-8">
                     <div className="relative w-full max-w-sm bg-[#0D261F] border border-white/5 rounded-2xl p-6 shadow-2xl">
@@ -180,7 +151,7 @@ const renderVisual = (id: string) => {
                     </div>
                 </div>
             );
-        case 'analytics':
+        case 'performance-tracking':
             return (
                 <div className="aspect-[4/3] bg-white relative overflow-hidden flex items-center justify-center p-8">
                     {/* Line Chart Abstract */}
@@ -220,7 +191,7 @@ const renderVisual = (id: string) => {
 }
 
 export default function Features() {
-    const { hero, navigation, sections, value_summary, testimonials } = featuresData;
+    const { hero, system_flow, navigation, sections, value_summary, testimonials, final_cta } = featuresData;
     const [activeNav, setActiveNav] = useState(navigation[0]?.id ?? '');
 
     React.useEffect(() => {
@@ -250,9 +221,19 @@ export default function Features() {
                     </>
                 }
                 description={hero.description}
+                primaryBtn={hero.primary_btn}
+                secondaryBtn={hero.secondary_btn}
             />
 
-            {/* 2. Quick Nav */}
+            {/* 2. System Flow */}
+            <SystemFlow
+                title={system_flow.title}
+                subtitle={system_flow.subtitle}
+                microline={system_flow.microline}
+                steps={system_flow.steps}
+            />
+
+            {/* 3. Quick Nav */}
             <div className="sticky top-[80px] md:top-[104px] z-40 bg-[#0A2E22]/90 backdrop-blur-md border-b border-white/5 shadow-md">
                 <div className="container mx-auto overflow-x-auto no-scrollbar">
                     <div className="flex items-center justify-center gap-2 py-3 min-w-max">
@@ -277,7 +258,7 @@ export default function Features() {
                 </div>
             </div>
 
-            {/* 3. Feature Sections */}
+            {/* 4. Feature Sections */}
             <div className="relative z-10">
                 {sections.map((section) => (
                     <FeatureSection
@@ -294,7 +275,7 @@ export default function Features() {
                 ))}
             </div>
 
-            {/* 4. Value Summary Grid */}
+            {/* 5. Value Summary Grid */}
             <section className="py-24 bg-white border-t border-[#0A2E22]/5 text-[#0A2E22] overflow-hidden relative">
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#E1F28F]/10 rounded-full blur-[100px] pointer-events-none" />
                 <div className="container mx-auto relative z-10">
@@ -320,13 +301,13 @@ export default function Features() {
                 </div>
             </section>
 
-            {/* 5. Customer Proof */}
+            {/* 6. Customer Proof */}
             <section className="py-24 bg-[#0A2E22] border-b border-white/5 relative overflow-hidden">
                 <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E1F28F]/8 rounded-full blur-[80px] pointer-events-none" />
                 <ScrollReveal variant="fade-up" className="container mx-auto text-center relative z-10">
                     <div className="inline-flex gap-0.5 text-[#E1F28F] mb-6">
-                        {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-2xl">&#9733;</span>)}
+                        {[1, 2, 3, 4, 5].map(i => <span key={`star-${i}`} className="text-2xl">&#9733;</span>)}
                     </div>
                     <div className="text-[100px] leading-none text-[#E1F28F]/10 font-serif mb-[-36px] select-none">&ldquo;</div>
                     <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed max-w-4xl mx-auto mb-12 text-white relative z-10" dangerouslySetInnerHTML={{ __html: `"${testimonials.quote}"` }} />
@@ -340,11 +321,19 @@ export default function Features() {
                 </ScrollReveal>
             </section>
 
-            {/* 6. Technical FAQ */}
+            {/* 7. Technical FAQ */}
             <TechnicalFAQ />
 
-            {/* 7. Final CTA */}
-            <FinalCTA />
+            {/* 8. Final CTA */}
+            <FinalCTA 
+                headingPre={final_cta.heading_pre}
+                headingHighlight={final_cta.heading_highlight}
+                headingPost={final_cta.heading_post}
+                description={final_cta.description}
+                primaryBtn={final_cta.primary_btn}
+                secondaryBtn={final_cta.secondary_btn}
+                footerNote={final_cta.footer_note}
+            />
 
             <Footer />
         </div>

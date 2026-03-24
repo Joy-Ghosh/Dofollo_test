@@ -1,34 +1,48 @@
 {
     "metadata": {
         "title": "Features | Dofollo",
-        "description": "Powerful AI features for smarter internal linking."
+        "description": "How Dofollo Turns Your Website Into a Ranking Machine"
     },
     "hero": {
-        "badge": "Dofollo Intelligence Suite",
-        "title_first": "Powerful AI Features for",
-        "title_highlight": "Smarter Internal Linking",
-        "description": "Discover automation tools, competitor insights, and performance analytics designed to improve your website structure and SEO growth."
+        "badge": "No setup required · Works with any CMS · Get insights in seconds",
+        "title_first": "How Dofollo Turns Your Website Into a",
+        "title_highlight": "Ranking Machine",
+        "description": "From understanding your site structure to fixing issues and unlocking growth — Dofollo shows you exactly what to do at every step.",
+        "primary_btn": "Analyze My Website",
+        "secondary_btn": "See How It Works"
+    },
+    "system_flow": {
+        "title": "A Complete System — Not Just Features",
+        "subtitle": "Dofollo simplifies SEO into a clear, repeatable process you can actually act on.",
+        "microline": "No guesswork. Just clarity and action.",
+        "steps": [
+            { "title": "Scan Your Website", "desc": "Instantly analyze how your pages are structured and connected." },
+            { "title": "Understand What's Working (and What's Not)", "desc": "See where your SEO power flows — and where it's being wasted." },
+            { "title": "Discover Opportunities", "desc": "Find pages that can rank higher with the right internal links." },
+            { "title": "Fix What Matters Most", "desc": "Get prioritized actions that actually move rankings." },
+            { "title": "Track Your Growth", "desc": "Measure how your changes impact traffic, rankings, and authority." }
+        ]
     },
     "navigation": [
         {
-            "label": "Link Suggestions",
-            "id": "ai-suggestions"
+            "label": "System Flow",
+            "id": "system-flow"
         },
         {
-            "label": "Content Mapping",
-            "id": "content-map"
+            "label": "Link Intelligence",
+            "id": "link-intelligence"
         },
         {
-            "label": "Competitor Analysis",
-            "id": "competitor-analysis"
+            "label": "Growth Intelligence",
+            "id": "growth-intelligence"
         },
         {
-            "label": "Automation",
-            "id": "automation"
+            "label": "Action Engine",
+            "id": "action-engine"
         },
         {
-            "label": "Analytics",
-            "id": "analytics"
+            "label": "Performance",
+            "id": "performance-tracking"
         },
         {
             "label": "Integrations",
@@ -37,115 +51,105 @@
     ],
     "sections": [
         {
-            "id": "ai-suggestions",
+            "id": "link-intelligence",
             "type": "feature",
             "theme": "light",
             "alignment": "left",
-            "badge": "Core Technology",
-            "title": "Semantic AI That Understands Context.",
-            "description": "Our advanced NLP engine doesn't just match keywords. It understands the topical relevance of every paragraph to suggest internal links that feel natural and authoritative.",
+            "badge": "Link Intelligence",
+            "title": "Understand and Optimize How Your Pages Connect.",
+            "description": "Dofollo doesn't just find links — it understands how your content relates and builds connections that actually improve rankings.",
             "bullets": [
-                "Context-aware anchor text generation",
-                "Relevance scoring (0-100) for every suggestion",
-                "Filters for 'link juice' optimization"
+                "Context-Aware Link Suggestions: Our AI understands meaning, not just keywords — so every link feels natural and relevant.",
+                "Relevance Scoring for Every Link: Know exactly how strong each suggestion is before you apply it.",
+                "Visualize Your Entire Structure: See how authority flows across your site and identify weak or disconnected pages instantly.",
+                "Find Orphan Pages in One Click: Uncover pages that search engines can't reach — and fix them fast."
             ]
         },
         {
-            "id": "content-map",
+            "id": "growth-intelligence",
             "type": "feature",
             "theme": "dark",
             "alignment": "right",
-            "badge": "Visual Intelligence",
-            "title": "See Your Entire Site's Nervous System.",
-            "description": "Visualize how authority flows through your domain. Identify orphan pages, isolated topic clusters, and opportunities to create powerful content silos.",
+            "badge": "Growth Intelligence",
+            "title": "Discover What's Driving Rankings — and Replicate It.",
+            "description": "Stop guessing what works. Dofollo reveals the patterns behind high-performing pages — and helps you apply them.",
             "bullets": [
-                "Interactive force-directed graph visualization",
-                "One-click identification of orphan pages",
-                "Cluster analysis for topic authority"
+                "Competitor Structure Analysis: See how top-ranking sites organize their content and links.",
+                "Find Keyword & Link Gaps: Identify what your competitors are doing that you're missing.",
+                "Uncover Hidden Opportunities: Spot pages on your site that can rank faster with the right support.",
+                "Build Strong Topic Clusters: Create powerful content networks that improve authority and rankings."
             ]
         },
         {
-            "id": "competitor-analysis",
+            "id": "action-engine",
             "type": "feature",
             "theme": "light",
             "alignment": "left",
-            "badge": "Strategic Advantage",
-            "title": "Steal Strategy From Your Top Competitors.",
-            "description": "Don't just guess what works. Dofollo X-rays your competitors' internal linking structures to reveal the keyword gaps and pillar pages driving their rankings.",
+            "badge": "Action Engine",
+            "title": "Turn Insights Into Action — Instantly.",
+            "description": "Dofollo doesn't stop at analysis. It helps you implement changes quickly and safely.",
             "bullets": [
-                "Side-by-side gap analysis",
-                "Competitor anchor text cloud",
-                "Pillar page reverse engineering"
+                "Approve and Apply in One Click: No need to open your CMS — make changes directly from Dofollo.",
+                "Automatic Link Injection via API: We insert clean HTML into your content — no hacks, no overlays.",
+                "Bulk Actions for Scale: Fix hundreds of pages in minutes.",
+                "Safe Rollback Anytime: Every change is reversible — full control, zero risk."
             ]
         },
         {
-            "id": "automation",
+            "id": "performance-tracking",
             "type": "feature",
             "theme": "dark",
             "alignment": "right",
-            "badge": "Workflow Efficiency",
-            "title": "Direct Formatting Injection.",
-            "description": "Stop opening the CMS editor. Approve suggestions in Dofollo, and we insert the HTML code directly into your posts via API.",
+            "badge": "Performance Intelligence",
+            "title": "Measure What Actually Moves Rankings.",
+            "description": "Track how your internal linking improvements impact your SEO performance over time.",
             "bullets": [
-                "Works with WordPress, Webflow, Ghost, and Custom Stacks",
-                "Safe rollback feature for every edit",
-                "Bulk approval mode for enterprise sites"
-            ]
-        },
-        {
-            "id": "analytics",
-            "type": "feature",
-            "theme": "light",
-            "alignment": "left",
-            "badge": "Performance Tracking",
-            "title": "Prove ROI with Precision Analytics.",
-            "description": "Track how your new internal links are impacting page authority, crawl depth, and keyword rankings over time.",
-            "bullets": [
-                "Link equity flow visualization",
-                "Click-through rate (CTR) tracking on internal links",
-                "Crawl budget optimization metrics"
+                "Track Link Impact on Rankings: See how your changes influence page performance.",
+                "Monitor Crawl Depth & Authority Flow: Understand how search engines navigate your site.",
+                "Internal Link CTR Insights: Measure how users interact with your links.",
+                "Clear ROI Visibility: Know what's working — and double down on it."
             ]
         },
         {
             "id": "integrations",
             "type": "feature",
-            "theme": "dark",
-            "alignment": "right",
-            "badge": "Seamless Workflow",
-            "title": "Plug Into Your Existing Stack.",
-            "description": "Dofollo plays nicely with the tools you already use. Connect your CMS and analytics in seconds.",
+            "theme": "light",
+            "alignment": "left",
+            "badge": "Integrations",
+            "title": "Works Seamlessly With Your Stack.",
+            "description": "Connect your tools and start optimizing instantly — no complicated setup required.",
             "bullets": [
-                "Native plugins for WordPress & Shopify",
-                "Headless CMS support (Contentful, Sanity)",
-                "Google Search Console & Analytics integration"
+                "CMS Integrations: WordPress, Webflow, Shopify, and custom setups.",
+                "Headless CMS Support: Contentful, Sanity, and more.",
+                "Google Search Console & Analytics: Bring real performance data into your workflow."
             ]
         }
     ],
     "value_summary": {
-        "title": "Everything You Need To Rank.",
-        "subtitle": "Built for SEO teams who demand precision and speed.",
+        "title": "Built to Replace Guesswork With Clarity.",
+        "subtitle": "Everything you need to understand, fix, and grow your website — in one system.",
         "items": [
             {
                 "title": "Smart Automation",
-                "desc": "Reduce manual linking time by 90%."
+                "desc": "Reduce manual SEO work and move faster."
             },
             {
                 "title": "Deep Intelligence",
-                "desc": "Understand site structure at granular levels."
+                "desc": "Understand your site at a structural level."
             },
             {
-                "title": "Rank Tracking",
-                "desc": "Monitor the impact of every link you build."
+                "title": "Real Growth Signals",
+                "desc": "Focus on what actually improves rankings."
             },
             {
-                "title": "CMS Sync",
-                "desc": "Two-way sync with your favorite platforms."
+                "title": "Seamless Execution",
+                "desc": "Go from insight to action without friction."
             }
         ]
     },
     "testimonials": {
         "rating": 5,
-        "quote": "Dofollo didn't just save us time—it completely reorganized our site structure. We saw a <span class=\"text-[#E1F28F] border-b border-[#E1F28F]/30\">40% uplift in traffic</span> to our deep pages within 60 days.",
+        "quote": "Dofollo didn't just save us time—it completely reorganized our site structure. We saw a <span class=\\\"text-[#E1F28F] border-b border-[#E1F28F]/30\\\">40% increase in traffic</span> to deep pages within 60 days.",
         "author": "Sarah Jenkins",
         "role": "Head of SEO @ TechFlow"
     },
@@ -174,5 +178,14 @@
                 "answer": "No. Dofollo operates as an external analysis tool. The only interaction with your live site is when you approve a link injection, which is a static HTML update. We do not inject any client-side scripts that affect page load speed."
             }
         ]
+    },
+    "final_cta": {
+        "heading_pre": "See How Your",
+        "heading_highlight": "Website Actually Works",
+        "heading_post": "",
+        "description": "Understand your structure, fix what's holding you back, and start growing your traffic today.",
+        "primary_btn": "Analyze My Website",
+        "secondary_btn": "See How It Works",
+        "footer_note": "No setup · No guesswork · Just results"
     }
 }
