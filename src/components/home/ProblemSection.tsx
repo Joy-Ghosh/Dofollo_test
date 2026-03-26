@@ -25,7 +25,7 @@ const empathyData = [
 
 
 
-function ProblemCard({
+const ProblemCard = React.memo(function ProblemCard({
     item,
     i,
     isMobile,
@@ -69,9 +69,9 @@ function ProblemCard({
             onClick={() => { if (isMobile) onToggle(i); }}
         >
             {/* Animated border glow on active */}
-            {isThisActive && (
+            {isThisActive ? (
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#045C4E]/5 via-[#E1F28F]/10 to-transparent animate-pulse" />
-            )}
+            ) : null}
 
             {/* Emotional progress bar at top — fills green when open */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gray-100 overflow-hidden">
@@ -126,7 +126,7 @@ function ProblemCard({
             </div>
         </div>
     );
-}
+});
 
 export default function ProblemSection() {
     const { problem_section } = homeData;
@@ -183,12 +183,12 @@ export default function ProblemSection() {
             <div className="container mx-auto px-4 relative z-10">
                 <ScrollReveal variant="fade-up" className="text-center max-w-4xl mx-auto mb-16">
                     {/* Micro Hook */}
-                    {problem_section.micro_hook && (
+                    {problem_section.micro_hook ? (
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-500 font-bold text-sm tracking-tight mb-6 animate-bounce">
                             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                             {problem_section.micro_hook}
                         </div>
-                    )}
+                    ) : null}
                     
                     <h2 className="text-4xl lg:text-6xl font-extrabold mb-8 tracking-tight text-[#0A2E22] leading-[1.1]">
                         {problem_section.heading_first} <br/>
@@ -202,7 +202,10 @@ export default function ProblemSection() {
                     </p>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-24">
+                <div 
+                    className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-24"
+                    style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
+                >
                     {problem_section.problems.map((item: any, i: number) => (
                         <ScrollReveal
                             key={i}

@@ -35,7 +35,7 @@ export default function ScrollReveal({
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: viewportAmount as any, once });
 
-    const getVariants = (): Variants => {
+    const variants = React.useMemo((): Variants => {
         const transition = { ...defaultTransition, delay, duration, staggerChildren };
 
         switch (variant) {
@@ -89,7 +89,7 @@ export default function ScrollReveal({
                     visible: { opacity: 1, transition }
                 };
         }
-    };
+    }, [variant, delay, duration, staggerChildren]);
 
     return (
         <motion.div
@@ -98,7 +98,7 @@ export default function ScrollReveal({
             whileInView="visible"
             onViewportEnter={() => props.onInView?.()}
             viewport={{ amount: viewportAmount as any, once }}
-            variants={getVariants()}
+            variants={variants}
             className={className}
             {...props}
         >

@@ -29,15 +29,15 @@ interface Post {
 
 // --- Components ---
 
-function CategoryBadge({ category }: { category: string }) {
+const CategoryBadge = React.memo(function CategoryBadge({ category }: { category: string }) {
     return (
         <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-white/95 text-[#0A2E22] backdrop-blur-md shadow-[0_4px_10px_-2px_rgba(0,0,0,0.2)] tracking-wide border border-white/20">
             {category}
         </span>
     );
-}
+});
 
-function BlogPostCard({ post, variant = 'standard' }: { key?: React.Key; post: Post; variant?: 'standard' | 'landscape' | 'compact' }) {
+const BlogPostCard = React.memo(function BlogPostCard({ post, variant = 'standard' }: { key?: React.Key; post: Post; variant?: 'standard' | 'landscape' | 'compact' }) {
     if (variant === 'compact') {
         return (
             <Link to={`/blog/${post.id}`} className="group flex gap-5 items-start p-3 rounded-2xl hover:bg-[#0A2E22]/5 transition-all duration-300">
@@ -87,9 +87,9 @@ function BlogPostCard({ post, variant = 'standard' }: { key?: React.Key; post: P
             </div>
         </Link>
     );
-}
+});
 
-function PopularFeaturedCard({ post }: { key?: React.Key; post: Post }) {
+const PopularFeaturedCard = React.memo(function PopularFeaturedCard({ post }: { key?: React.Key; post: Post }) {
     return (
         <Link to={`/blog/${post.id}`} className="group relative block w-full h-full min-h-[450px] rounded-3xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(10,46,34,0.3)] transition-all duration-500 hover:-translate-y-2 border border-black/5">
             {post.image ? (
@@ -122,7 +122,7 @@ function PopularFeaturedCard({ post }: { key?: React.Key; post: Post }) {
             </div>
         </Link>
     );
-}
+});
 
 
 // --- Main Page ---
@@ -252,14 +252,14 @@ export default function Blog() {
                         })}
 
                         {/* Clear filter shortcut */}
-                        {(activeCategory !== 'all' || searchQuery) && (
+                        {(activeCategory !== 'all' || searchQuery) ? (
                             <button
                                 onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
                                 className="flex-shrink-0 ml-auto flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-red-500 bg-red-50 hover:bg-red-500 hover:text-white transition-all duration-300 border border-red-100 hover:border-red-500 shadow-sm"
                             >
                                 <X size={14} /> Clear
                             </button>
-                        )}
+                        ) : null}
                     </div>
                 </div>
             </div>
@@ -288,7 +288,10 @@ export default function Blog() {
                         </div>
 
                         {filteredPosts.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+                            <div 
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10"
+                                style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
+                            >
                                 {filteredPosts.map((post) => (
                                     <BlogPostCard key={post.id} post={post as Post} />
                                 ))}
@@ -363,7 +366,10 @@ export default function Blog() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                             <div 
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+                                style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
+                            >
                                 {latestPosts.map((post) => (
                                     <BlogPostCard key={post.id} post={post as Post} />
                                 ))}
