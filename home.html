@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dofollo - Surgical Redesign</title>
+    <!-- Premium font suitable for AI tech -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Palette mapped from the visuals */
+            --bg-dark: #071711; /* Deep rich tech green */
+            --bg-dark-alt: #0a1f16;
+            --bg-light: #FAFAFA;
+            --bg-light-alt: #FFFFFF;
+            
+            --text-light: #FFFFFF;
+            --text-light-muted: rgba(255, 255, 255, 0.6);
+            --text-dark: #111827;
+            --text-dark-muted: #6B7280;
+            
+            --accent: #10B981; /* Primary green */
+            --accent-glow: rgba(16, 185, 129, 0.3);
+            --accent-subtle: rgba(16, 185, 129, 0.1);
+            
+            --border-dark: rgba(255, 255, 255, 0.1);
+            --border-light: rgba(0, 0, 0, 0.08);
+            
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { padding: 120px 0; }
+        
+        .dark-section {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+        
+        .light-section {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Typography */
+        h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
+        .h1 { font-size: 4rem; font-weight: 700; margin-bottom: 24px; }
+        .h2 { font-size: 3rem; font-weight: 700; margin-bottom: 24px; }
+        .p-lead { font-size: 1.25rem; font-weight: 400; margin-bottom: 40px; color: var(--text-light-muted); max-width: 600px; }
+        .light-section .p-lead { color: var(--text-dark-muted); }
+
+        /* Generic UI Mocks */
+        .mock-ui {
+            background: var(--bg-dark-alt);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: var(--text-light-muted);
+            font-size: 0.9rem;
+        }
+        .light-section .mock-ui {
+            background: #fff;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark-muted);
+        }
+
+        /* Forms / CTA */
+        .input-group {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .input-url {
+            flex: 1;
+            padding: 18px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-dark);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            font-family: var(--font-main);
+        }
+        .light-section .input-url {
+            border: 1px solid var(--border-light);
+            background: #fff;
+            color: var(--text-dark);
+        }
+        .btn-primary {
+            padding: 18px 36px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 24px var(--accent-glow);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 32px rgba(16, 185, 129, 0.5);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            padding: 14px 28px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid var(--border-dark);
+            font-weight: 500;
+        }
+
+        .trust-micro {
+            font-size: 0.85rem;
+            color: var(--text-light-muted);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .light-section .trust-micro { color: var(--text-dark-muted); }
+
+        /* --- 🔥 1. HERO --- */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), var(--bg-dark) 50%);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        /* Right side reduced intensity */
+        .hero-right {
+            opacity: 0.85; /* Reduced from 100% */
+            transform: perspective(1000px) rotateY(-5deg);
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2)); /* Reduced shadow/glow */
+        }
+
+        /* --- 🔥 2. PROBLEM --- */
+        .problem-section { text-align: center; }
+        .problem-content { max-width: 700px; margin: 0 auto; }
+        .problem-list {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            font-size: 1.25rem;
+            color: var(--text-dark-muted);
+            font-weight: 500;
+        }
+        .problem-list li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .problem-list li::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .problem-highlight {
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--bg-light);
+            border: 1px solid var(--accent-subtle);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        /* --- 🔥 3. PROGRESS BAR --- */
+        .progress-section { padding: 40px 0; border-top: 1px solid var(--border-light); }
+        .progress-wrap {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .progress-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark-muted);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        .bar-container {
+            height: 12px;
+            background: var(--border-light);
+            border-radius: 6px;
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .bar-manual { width: 90%; background: #EF4444; }
+        .bar-dofollo { width: 10%; background: var(--accent); }
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* --- 🔥 4. IMAGINE SMARTER --- */
+        .smarter-section { background: var(--bg-dark-alt); text-align: center; }
+        .metrics-clean {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .metric-item {
+            /* No borders, no shadows, no heavy backgrounds */
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .metric-value { font-size: 4rem; font-weight: 300; color: var(--accent); line-height: 1; }
+        .metric-title { font-size: 1.1rem; color: var(--text-light); font-weight: 500; }
+
+        /* --- 🔥 5. ONE SYSTEM --- */
+        .system-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .step {
+            display: flex;
+            gap: 24px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .step.active { opacity: 1; }
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .step-content h3 { font-size: 1.5rem; margin-bottom: 8px; }
+        .step-content p { color: var(--text-dark-muted); }
+
+        /* --- 🔥 6. GRAPH SECTION --- */
+        .graph-section { background: var(--bg-dark); text-align: center; }
+        .graph-mock {
+            height: 400px;
+            margin-top: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .node { width: 12px; height: 12px; background: rgba(255,255,255,0.2); border-radius: 50%; position: absolute; }
+        .node.center {
+            width: 24px; height: 24px; background: var(--accent);
+            box-shadow: 0 0 20px var(--accent);
+            position: relative;
+            z-index: 10;
+        }
+        /* Dim secondary lines */
+        .graph-line { position: absolute; background: rgba(255,255,255,0.05); height: 1px; width: 100px; }
+
+        /* --- 🔥 7. DISCOVER PAGES --- */
+        .discover-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        .table-mock { width: 100%; border-collapse: collapse; }
+        .table-mock th { text-align: left; padding: 16px; border-bottom: 1px solid var(--border-light); color: var(--text-dark-muted); }
+        .table-mock td { padding: 16px; border-bottom: 1px solid var(--border-light); }
+        .badge { padding: 4px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; }
+        .badge-potential { background: rgba(16, 185, 129, 0.1); color: var(--accent); }
+        .badge-win { background: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+        .insight-cards { display: flex; flex-direction: column; gap: 16px; }
+        .flat-card {
+            padding: 24px; background: var(--bg-light-alt); border: 1px solid var(--border-light); border-radius: 8px;
+            box-shadow: none; /* Reduced contrast */
+        }
+
+        /* --- 🔥 8. FIX ISSUES --- */
+        .fix-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+        .simple-stats { font-size: 1.25rem; color: var(--text-light-muted); margin-bottom: 32px; }
+
+        /* --- 🔥 9. FEATURE GRID --- */
+        .feature-cards {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px;
+        }
+        .feature-card {
+            padding: 40px; background: #fff; border: 1px solid var(--border-light); border-radius: 16px;
+        }
+        .feature-card.highlight {
+            border: 2px solid var(--accent);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.05);
+        }
+        .feature-icon { margin-bottom: 24px; color: var(--accent); }
+
+        /* --- 🔥 10. USE CASES --- */
+        .usecase-section { background: var(--bg-dark-alt); }
+        .usecase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 60px; }
+        .usecase-card {
+            padding: 40px; border: 1px solid var(--border-dark); border-radius: 16px;
+            background: transparent; box-shadow: none; /* Removed heavy styling */
+        }
+
+        /* --- 🔥 11. INTEGRATIONS --- */
+        .integrations-section { padding: 80px 0; text-align: center; }
+        .logos { display: flex; justify-content: center; gap: 40px; margin-top: 32px; opacity: 0.4; } /* Reduced visual weight */
+        .logos div { font-size: 1.5rem; font-weight: 700; color: var(--text-dark-muted); }
+
+        /* --- 🔥 12. TESTIMONIALS --- */
+        .testimonial-section { background: var(--bg-dark); }
+        .test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; }
+        .test-card {
+            padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-dark); border-radius: 12px;
+        }
+        .test-result { font-size: 1.25rem; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+
+        /* --- 🔥 13. PRICING --- */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; align-items: center; }
+        .plan { padding: 40px; border: 1px solid var(--border-light); border-radius: 16px; background: #fff; }
+        .plan h3 { font-size: 1.5rem; margin-bottom: 16px; }
+        .plan .price { font-size: 3rem; font-weight: 700; margin-bottom: 32px; }
+        .plan.pro {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .plan-badge {
+            position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #fff; padding: 6px 16px; border-radius: 100px;
+            font-size: 0.85rem; font-weight: 600;
+        }
+
+        /* --- 🔥 14. FAQ --- */
+        .faq-section { background: var(--bg-dark); }
+        .faq-list { max-width: 800px; margin: 60px auto 0; }
+        .faq-item { border-bottom: 1px solid var(--border-dark); padding: 24px 0; }
+        .faq-q { font-size: 1.25rem; font-weight: 500; display: flex; justify-content: space-between; }
+
+        /* --- 🔥 15. FINAL CTA --- */
+        .final-cta { text-align: center; }
+        .final-cta .input-group { margin: 40px auto; max-width: 600px; }
+    </style>
+</head>
+<body>
+
+    <!-- 🔥 1. HERO SECTION -->
+    <section class="hero-section dark-section">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <h1 class="h1">Stop Guessing Internal Links.<br>Let AI Fix Them.</h1>
+                <p class="p-lead">Identify missing infrastructure and deploy perfect site structures instantly. No dashboards, just fixes.</p>
+                
+                <!-- IMPROVED CTA: Wider input, glow on button only -->
+                <div class="input-group">
+                    <input type="text" placeholder="https://yourwebsite.com" class="input-url">
+                    <button class="btn-primary">Scan My Website →</button>
+                </div>
+                <!-- Micro Trust Line -->
+                <div class="trust-micro">
+                    <span>Free scan</span> • <span>No signup</span> • <span>60 sec</span>
+                </div>
+            </div>
+            
+            <!-- REDUCED RIGHT SIDE: Lower opacity, less glow -->
+            <div class="hero-right mock-ui" style="height: 500px;">
+                UI Component Preview (Subdued)
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 2. PROBLEM SECTION -->
+    <section class="problem-section light-section">
+        <div class="container">
+            <div class="problem-content">
+                <h2 class="h2">You Don't Have a Content Problem.<br>You Have a Structure Problem.</h2>
+                
+                <!-- REMOVED CARDS: Replaced with clean stacked text -->
+                <ul class="problem-list">
+                    <li>Your best pages aren't helping others</li>
+                    <li>You're spending hours doing manual SEO</li>
+                    <li>Google can't properly discover pages</li>
+                    <li>Your competitors are better structured</li>
+                </ul>
+
+                <!-- ONE OPTIONAL HIGHLIGHT CARD -->
+                <div class="problem-highlight">
+                    <h3>The Hidden Cost of Bad Structure</h3>
+                    <p style="color: var(--text-dark-muted); margin-top: 8px;">Missing out on 40% organic traffic purely due to crawlability and orphaned pages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 3. PROGRESS BAR -->
+    <section class="progress-section light-section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="progress-wrap">
+                <!-- ADDED LABEL -->
+                <div class="progress-label">Manual SEO vs Dofollo</div>
+                
+                <!-- SIMPLIFIED VISUAL -->
+                <div class="bar-container">
+                    <div class="bar-manual"></div>
+                    <div class="bar-dofollo"></div>
+                </div>
+                <div class="progress-stats">
+                    <span style="color: #EF4444;">14.5 Hours Manual</span>
+                    <span style="color: var(--accent);">51 Mins Dofollo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 4. IMAGINE SMARTER -->
+    <section class="smarter-section dark-section">
+        <div class="container">
+            <h2 class="h2">Imagine your website working smarter.</h2>
+            
+            <!-- REMOVED BOXES & BORDERS -> PREMIUM TEXT ONLY -->
+            <div class="metrics-clean">
+                <div class="metric-item">
+                    <div class="metric-value">3x</div>
+                    <div class="metric-title">Faster Indexing</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">0</div>
+                    <div class="metric-title">Manual Checks</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-title">Structural Clarity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 5. ONE SYSTEM -->
+    <section class="light-section">
+        <div class="container system-grid">
+            <div class="left">
+                <h2 class="h2" style="margin-bottom: 60px;">One System. Total Structural Clarity.</h2>
+                
+                <div class="steps-list">
+                    <!-- PROMINENT NUMBERS (1->2->3) -->
+                    <div class="step active">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Connect & Scan</h3>
+                            <p>Dofollo reads your entire site architecture instantly.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>AI Insight Engine</h3>
+                            <p>Identifies orphaned pages and broken equity chains.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Apply Fixes</h3>
+                            <p>Deploy optimized link structures with one click.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right mock-ui" style="height: 600px;">
+                Dashboard Process UI
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 6. GRAPH SECTION -->
+    <section class="graph-section dark-section">
+        <div class="container">
+            <h2 class="h2">Visualize Your Link Equity</h2>
+            <p class="p-lead" style="margin: 0 auto;">See exactly how Google crawls your pages.</p>
+            
+            <!-- REDUCED GLOW. DIM BACKGROUND NODES. BRIGHT CENTER. -->
+            <div class="graph-mock">
+                <!-- Dim lines -->
+                <div class="graph-line" style="transform: rotate(45deg); width: 200px;"></div>
+                <div class="graph-line" style="transform: rotate(-30deg); width: 180px;"></div>
+                <div class="graph-line" style="transform: rotate(120deg); width: 150px;"></div>
+                
+                <!-- Center node highly highlighted -->
+                <div class="node center"></div>
+                
+                <!-- Dim secondary nodes -->
+                <div class="node" style="top: 100px; left: 40%;"></div>
+                <div class="node" style="bottom: 150px; right: 30%;"></div>
+                <div class="node" style="top: 200px; right: 20%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 7. DISCOVER PAGES -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center; margin-bottom: 80px;">Discover Pages That Could Rank Higher</h2>
+            
+            <div class="discover-grid">
+                <div class="left">
+                    <table class="table-mock">
+                        <thead>
+                            <tr>
+                                <th>Page URL</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>/blog/seo-guide</td>
+                                <!-- ADDED LABELS -->
+                                <td><span class="badge badge-potential">High Potential</span></td>
+                                <td style="color: var(--accent); font-weight: 500;">Link +3 pages</td>
+                            </tr>
+                            <tr>
+                                <td>/pricing</td>
+                                <td><span class="badge badge-win">Quick Win</span></td>
+                                <td style="color: var(--accent); font-weight: 500;">Fix orphaned</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="right insight-cards">
+                    <!-- REDUCED CONTRAST flat cards -->
+                    <div class="flat-card">Insight 1 details...</div>
+                    <div class="flat-card">Insight 2 details...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 8. FIX ISSUES -->
+    <section class="dark-section" style="background: var(--bg-dark-alt);">
+        <div class="container fix-grid">
+            <div class="left">
+                <h2 class="h2">Not Just Insights. Fix Issues.</h2>
+                <!-- SIMPLIFIED left block -->
+                <div class="simple-stats">
+                    Stop looking at dashboards. Let AI implement the structural changes required.
+                </div>
+                
+                <!-- IMPROVED CTA Focus -->
+                <button class="btn-primary" style="padding: 20px 40px; font-size: 1.1rem;">⚡ Apply AI Suggestions</button>
+            </div>
+            <div class="right mock-ui" style="height: 400px;">Action Engine UI</div>
+        </div>
+    </section>
+
+    <!-- 🔥 9. FEATURE GRID -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center;">Everything you need.</h2>
+            
+            <!-- REDUCED to 4 CARDS -->
+            <div class="feature-cards">
+                <!-- HIGHLIGHTED SINGLE CARD -->
+                <div class="feature-card highlight">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Link Optimization</h3>
+                    <p style="color: var(--text-dark-muted);">Instantly identify contextual link opportunities without manual searching.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Content Auditing</h3>
+                    <p style="color: var(--text-dark-muted);">Basic cleanup algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Crawl Monitoring</h3>
+                    <p style="color: var(--text-dark-muted);">Basic cleanup algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Performance Tracking</h3>
+                    <p style="color: var(--text-dark-muted);">Basic cleanup algorithms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 10. USE CASES -->
+    <section class="usecase-section dark-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center;">Built for Growth</h2>
+            
+            <!-- INCREASED SPACING, REMOVED SHADOWS -->
+            <div class="usecase-grid">
+                <div class="usecase-card">
+                    <h3 style="margin-bottom: 16px;">Agencies</h3>
+                    <p style="color: var(--text-light-muted);">Scale client results instantly.</p>
+                </div>
+                <div class="usecase-card">
+                    <h3 style="margin-bottom: 16px;">In-House Teams</h3>
+                    <p style="color: var(--text-light-muted);">Eliminate manual tedious tasks.</p>
+                </div>
+                <div class="usecase-card">
+                    <h3 style="margin-bottom: 16px;">Founders</h3>
+                    <p style="color: var(--text-light-muted);">Get technical SEO out of the box.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 11. INTEGRATIONS -->
+    <section class="integrations-section light-section">
+        <div class="container">
+            <h3 style="color: var(--text-dark-muted); font-size: 1rem; text-transform: uppercase;">Works with your stack</h3>
+            <!-- REDUCED IMPORTANCE/WEIGHT -->
+            <div class="logos">
+                <div>Wordpress</div>
+                <div>Webflow</div>
+                <div>Shopify</div>
+                <div>NextJS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 12. TESTIMONIALS -->
+    <section class="testimonial-section dark-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center;">Real Results</h2>
+            
+            <!-- REDUCED CARD STYLING, ADDED PROMINENT NUMBERS -->
+            <div class="test-grid">
+                <div class="test-card">
+                    <div class="test-result">+42% Organic Traffic in 30 Days</div>
+                    <p style="color: var(--text-light-muted);">"Dofollo completely reconstructed our site architecture. Pages we forgot about started ranking."</p>
+                    <div style="margin-top: 24px; font-weight: 600;">— Sarah J., Head of Growth</div>
+                </div>
+                <div class="test-card">
+                    <div class="test-result">80 Hours Saved Monthly</div>
+                    <p style="color: var(--text-light-muted);">"We used to do this in spreadsheets. The Action Engine fixed 400 orphaned pages in one click."</p>
+                    <div style="margin-top: 24px; font-weight: 600;">— Mark T., Agency Owner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 13. PRICING -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center;">Simple, Transparent Pricing</h2>
+            
+            <div class="pricing-grid">
+                <div class="plan" style="color: var(--text-dark-muted);">
+                    <h3>Starter</h3>
+                    <div class="price">$29</div>
+                    <button class="btn-secondary" style="color: #000; border-color: var(--border-light); width: 100%;">Choose Starter</button>
+                </div>
+                
+                <!-- IMPROVED CONVERSION FOCUS -->
+                <div class="plan pro">
+                    <div class="plan-badge">Most users choose Pro</div>
+                    <h3>Professional</h3>
+                    <div class="price">$79</div>
+                    <button class="btn-primary" style="width: 100%;">Start Free Trial</button>
+                </div>
+                
+                <div class="plan" style="color: var(--text-dark-muted);">
+                    <h3>Agency</h3>
+                    <div class="price">$199</div>
+                    <button class="btn-secondary" style="color: #000; border-color: var(--border-light); width: 100%;">Choose Agency</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 14. FAQ -->
+    <section class="faq-section dark-section">
+        <div class="container">
+            <h2 class="h2" style="text-align: center;">Frequently Asked Questions</h2>
+            <!-- CLEAN / NO HEAVY BG -->
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">How is this different from Ahrefs/Semrush? <span>+</span></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Does Dofollo actually make the changes? <span>+</span></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Will it break my website? <span>+</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 15. FINAL CTA -->
+    <section class="final-cta light-section">
+        <div class="container">
+            <h2 class="h2">Start Optimizing Your Website Today.</h2>
+            <p class="p-lead" style="margin: 0 auto;">No complicated setup. See results in 60 seconds.</p>
+            
+            <!-- MIRRORS HERO CTA -->
+            <div class="input-group">
+                <input type="text" placeholder="https://yourwebsite.com" class="input-url">
+                <button class="btn-primary">Scan My Website →</button>
+            </div>
+            <div class="trust-micro" style="justify-content: center;">
+                <span>Free scan</span> • <span>No signup</span> • <span>60 sec</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

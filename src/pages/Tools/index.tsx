@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useDeferredValue } from 'react';
 import { Link } from 'react-router-dom';
 import {
     Search, Link as LinkIcon, Hash, Shield, Sparkles, FileText, BarChart3,
@@ -40,52 +40,61 @@ const iconMap: { [key: string]: any } = {
     ShieldAlert
 };
 
+// Tool styles helper - Hoisted outside component
+const getToolStyles = (badge?: string) => {
+    const normalizedBadge = badge?.toLowerCase() || '';
+
+    // Green Tools (Popular, Pro)
+    if (normalizedBadge === 'popular' || normalizedBadge === 'pro') {
+        return {
+            wrapper: "bg-[#E1F28F]/[0.02] border-[#E1F28F]/10 hover:border-[#E1F28F]/30 hover:bg-[#E1F28F]/[0.04]",
+            icon: "text-[#E1F28F]",
+            glow: "bg-[#E1F28F]/20",
+            badge: "bg-[#E1F28F]/10 text-[#E1F28F] border-[#E1F28F]/20",
+            textHover: "group-hover:text-[#E1F28F]"
+        };
+    }
+
+    // Teal Tools (New, AI)
+    if (normalizedBadge === 'new' || normalizedBadge === 'ai' || normalizedBadge === 'beta') {
+        return {
+            wrapper: "bg-teal-500/[0.02] border-teal-500/10 hover:border-teal-500/30 hover:bg-teal-500/[0.04]",
+            icon: "text-teal-400",
+            glow: "bg-teal-500/20",
+            badge: "bg-teal-500/10 text-teal-400 border-teal-500/20",
+            textHover: "group-hover:text-teal-400"
+        };
+    }
+
+    // Default Lime Tools (for everything else)
+    return {
+        wrapper: "bg-lime-500/[0.02] border-lime-500/10 hover:border-lime-500/30 hover:bg-lime-500/[0.04]",
+        icon: "text-lime-400",
+        glow: "bg-lime-500/20",
+        badge: "bg-lime-500/10 text-lime-400 border-lime-500/20",
+        textHover: "group-hover:text-lime-400"
+    };
+};
+
 export default function Tools() {
     const [searchQuery, setSearchQuery] = useState('');
+    const deferredQuery = useDeferredValue(searchQuery);
 
-    // Helper to get color styles based on tool badge
-    const getToolStyles = (badge?: string) => {
-        const normalizedBadge = badge?.toLowerCase() || '';
+    const filteredCategories = useMemo(() => {
+        const query = deferredQuery.toLowerCase();
+        return categoriesData.categories.map(category => ({
+            ...category,
+            tools: category.tools.filter(tool =>
+                tool.name.toLowerCase().includes(query) ||
+                tool.description.toLowerCase().includes(query)
+            )
+        })).filter(category => category.tools.length > 0);
+    }, [deferredQuery]);
 
-        // Green Tools (Popular, Pro)
-        if (normalizedBadge === 'popular' || normalizedBadge === 'pro') {
-            return {
-                wrapper: "bg-[#E1F28F]/[0.02] border-[#E1F28F]/10 hover:border-[#E1F28F]/30 hover:bg-[#E1F28F]/[0.04]",
-                icon: "text-[#E1F28F]",
-                glow: "bg-[#E1F28F]/20",
-                badge: "bg-[#E1F28F]/10 text-[#E1F28F] border-[#E1F28F]/20",
-                textHover: "group-hover:text-[#E1F28F]"
-            };
-        }
-
-        // Teal Tools (New, AI)
-        if (normalizedBadge === 'new' || normalizedBadge === 'ai' || normalizedBadge === 'beta') {
-            return {
-                wrapper: "bg-teal-500/[0.02] border-teal-500/10 hover:border-teal-500/30 hover:bg-teal-500/[0.04]",
-                icon: "text-teal-400",
-                glow: "bg-teal-500/20",
-                badge: "bg-teal-500/10 text-teal-400 border-teal-500/20",
-                textHover: "group-hover:text-teal-400"
-            };
-        }
-
-        // Default Lime Tools (for everything else)
-        return {
-            wrapper: "bg-lime-500/[0.02] border-lime-500/10 hover:border-lime-500/30 hover:bg-lime-500/[0.04]",
-            icon: "text-lime-400",
-            glow: "bg-lime-500/20",
-            badge: "bg-lime-500/10 text-lime-400 border-lime-500/20",
-            textHover: "group-hover:text-lime-400"
-        };
+    const handleCategoryClick = (title: string) => {
+        const element = document.getElementById(title.toLowerCase().replace(/\s+/g, '-'));
+        element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
-
-    const filteredCategories = categoriesData.categories.map(category => ({
-        ...category,
-        tools: category.tools.filter(tool =>
-            tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            tool.description.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-    })).filter(category => category.tools.length > 0);
 
     return (
         <div className="min-h-screen bg-[#051A14]">
@@ -149,10 +158,7 @@ export default function Tools() {
                         {categoriesData.categories.map((category, idx) => (
                             <button
                                 key={idx}
-                                onClick={() => {
-                                    const element = document.getElementById(category.title.toLowerCase().replace(/\s+/g, '-'));
-                                    element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }}
+                                onClick={() => handleCategoryClick(category.title)}
                                 className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-white/70 hover:text-[#E1F28F] hover:bg-[#E1F28F]/10 hover:border-[#E1F28F]/30 transition-all duration-300"
                             >
                                 {category.title}
@@ -194,7 +200,7 @@ export default function Tools() {
 
                                         return (
                                             <Link
-                                                key={tIdx}
+                                                key={tool.name}
                                                 to={linkTarget}
                                                 className={`group relative p-6 rounded-2xl border transition-all duration-300 ${styles.wrapper} cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50`}
                                             >
@@ -206,11 +212,11 @@ export default function Tools() {
                                                         <div className={`p-3 rounded-xl bg-white/5 border border-white/5 ${styles.icon} group-hover:scale-110 transition-transform duration-300`}>
                                                             <ToolIcon className="w-6 h-6" />
                                                         </div>
-                                                        {tool.badge && (
+                                                        {tool.badge ? (
                                                             <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${styles.badge} border`}>
                                                                 {tool.badge}
                                                             </span>
-                                                        )}
+                                                        ) : null}
                                                     </div>
 
                                                     <h3 className={`text-lg font-bold text-white mb-2 ${styles.textHover} transition-colors`}>
@@ -242,3 +248,4 @@ export default function Tools() {
         </div>
     );
 }
+

@@ -39,37 +39,41 @@ export default function Home() {
             <Suspense fallback={<SectionLoader />}>
                 {/* 3. Outcome — Show transformation BEFORE the product */}
                 <OutcomeSection />
+            </Suspense>
 
+            <Suspense fallback={<SectionLoader />}>
                 {/* 4. System Overview — Merged: Scan + Analyze + Dashboard in ONE flow */}
                 <SystemOverview />
+            </Suspense>
 
+            <Suspense fallback={<SectionLoader />}>
                 {/* 5. Link Intelligence — Unique selling point (Visualizer) */}
                 <InternalLinkingVisualizer />
-
                 {/* 6. Growth Opportunities — Growth hook */}
                 <SEOOpportunities />
-
                 {/* 7. Action Engine — "We don't just analyze — we help you act" */}
                 <AIFixEngine />
+            </Suspense>
 
+            <Suspense fallback={<SectionLoader />}>
                 {/* 8. Feature Systems — Grouped capabilities, not random tools */}
                 <FeatureSystems />
-
                 {/* 9. Use Case — "Is this for me?" (earlier = better) */}
                 <UseCaseSection />
+            </Suspense>
 
+            <Suspense fallback={<SectionLoader />}>
                 {/* 10. Integrations */}
                 <IntegrationsSection />
-
                 {/* 11. Testimonials — Trust before pricing */}
                 <TestimonialsSection />
+            </Suspense>
 
+            <Suspense fallback={<SectionLoader />}>
                 {/* 12. Pricing */}
                 <PricingPreview />
-
                 {/* 13. FAQ */}
                 <FAQSection />
-
                 {/* 14. Final CTA */}
                 <FinalCTA />
             </Suspense>

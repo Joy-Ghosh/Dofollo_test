@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { AlertCircle, Clock, Layout, TrendingDown, CheckCircle2 } from 'lucide-react';
 import homeData from '../../data/pages/home.json';
 import ScrollReveal from '../ScrollReveal';
@@ -22,8 +22,6 @@ const empathyData = [
     { hoursWasted: '4 hrs/week', savedWith: '15 min/week', color: 'from-amber-500/20 to-transparent' },
     { hoursWasted: '5 hrs/week', savedWith: '20 min/week', color: 'from-red-600/20 to-transparent' },
 ];
-
-
 
 const ProblemCard = React.memo(function ProblemCard({
     item,
@@ -55,6 +53,25 @@ const ProblemCard = React.memo(function ProblemCard({
     // Only apply dimming on desktop (when something is hovered)
     const shouldDim = isSomethingHovered && !isThisHovered && !isMobile;
 
+    const handleMouseEnter = useCallback(() => {
+        if (!isMobile) setHovered(true);
+    }, [isMobile]);
+
+    const handleMouseLeave = useCallback(() => {
+        if (!isMobile) setHovered(false);
+    }, [isMobile]);
+
+    const handleClick = useCallback(() => {
+        if (isMobile) onToggle(i);
+    }, [isMobile, onToggle, i]);
+
+    const comparisonStyles = useMemo(() => ({ 
+        maxHeight: isOpen ? '200px' : '0px', 
+        opacity: isOpen ? 1 : 0, 
+        transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+        visibility: isOpen ? 'visible' : (isMobile ? 'hidden' : 'hidden') as any
+    }), [isOpen, isMobile]);
+
     return (
         <div
             className={`relative h-full flex flex-col p-8 bg-white rounded-3xl border transition-all duration-700 group cursor-pointer overflow-hidden ${
@@ -64,9 +81,9 @@ const ProblemCard = React.memo(function ProblemCard({
                         ? 'border-[#045C4E]/40 shadow-[0_10px_30px_-10px_rgba(4,92,78,0.1)] z-10'
                         : 'border-gray-200/60 shadow-sm'
             } ${shouldDim ? 'opacity-70 grayscale-[0.1] scale-[0.98]' : 'opacity-100 grayscale-0 scale-100'}`}
-            onMouseEnter={() => { if (!isMobile) setHovered(true); }}
-            onMouseLeave={() => { if (!isMobile) setHovered(false); }}
-            onClick={() => { if (isMobile) onToggle(i); }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
         >
             {/* Animated border glow on active */}
             {isThisActive ? (
@@ -108,12 +125,7 @@ const ProblemCard = React.memo(function ProblemCard({
             {/* Hours comparison — slides up when open */}
             <div
                 className="grid grid-cols-2 gap-4 transition-all duration-700 ease-in-out"
-                style={{ 
-                    maxHeight: isOpen ? '200px' : '0px', 
-                    opacity: isOpen ? 1 : 0, 
-                    transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
-                    visibility: isOpen ? 'visible' : 'hidden'
-                }}
+                style={comparisonStyles}
             >
                 <div className="p-4 bg-red-50 rounded-2xl border border-red-100">
                     <div className="text-sm font-black text-red-500 mb-1">{emp.hoursWasted}</div>
@@ -143,7 +155,7 @@ export default function ProblemSection() {
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
-        window.addEventListener('resize', checkMobile);
+        window.addEventListener('resize', checkMobile, { passive: true });
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
@@ -171,9 +183,11 @@ export default function ProblemSection() {
         }
     }, [timeInView]);
 
-    const handleToggle = (i: number) => {
+    const handleToggle = useCallback((i: number) => {
         setActiveIndex(prev => (prev === i ? null : i));
-    };
+    }, []);
+
+    const handleInView = useCallback(() => setTimeInView(true), []);
 
     return (
         <section className="py-24 md:py-32 bg-white text-[#0A2E22] relative overflow-hidden">
@@ -203,12 +217,12 @@ export default function ProblemSection() {
                 </ScrollReveal>
 
                 <div 
-                    className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-24"
+                    className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-24 px-20 -mx-20 py-20 -my-20"
                     style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
                 >
                     {problem_section.problems.map((item: any, i: number) => (
                         <ScrollReveal
-                            key={i}
+                            key={item.title}
                             variant="fade-up"
                             delay={i * 0.1}
                             className="flex"
@@ -237,7 +251,7 @@ export default function ProblemSection() {
                     variant="fade-up" 
                     delay={0.8} 
                     className="max-w-5xl mx-auto"
-                    onInView={() => setTimeInView(true)}
+                    onInView={handleInView}
                 >
                     <div className="text-center mb-8">
                         <h3 className="text-xl font-bold text-[#0A2E22]/60 uppercase tracking-widest">
@@ -295,3 +309,4 @@ export default function ProblemSection() {
         </section>
     );
 }
+

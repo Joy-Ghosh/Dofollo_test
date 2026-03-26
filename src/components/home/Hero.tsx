@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -12,6 +12,53 @@ import {
 } from "lucide-react";
 import homeData from "../../data/pages/home.json";
 
+// Hoisted Styles to module level to avoid re-creation on render
+const HeroStyles = memo(() => (
+  <style>{`
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-problem {
+      animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-solution {
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+    @keyframes float1 {
+      0% { transform: translateY(0px); }
+      25% { transform: translateY(-3px); }
+      50% { transform: translateY(-6px); }
+      75% { transform: translateY(-3px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float1 {
+      animation: float1 3.5s ease-in-out infinite;
+    }
+    @keyframes float2 {
+      0% { transform: translateY(0px); }
+      25% { transform: translateY(-2.5px); }
+      50% { transform: translateY(-5px); }
+      75% { transform: translateY(-2.5px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float2 {
+      animation: float2 4s ease-in-out infinite;
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-entry1 {
+      animation: fadeInSlide 0.8s ease-out 0.5s both;
+    }
+    .animate-entry2 {
+      animation: fadeInSlide 0.8s ease-out 1s both;
+    }
+  `}</style>
+));
+
 // Animated scan step sequence
 function useScanLoop() {
   const [step, setStep] = useState(0);
@@ -23,29 +70,31 @@ function useScanLoop() {
   return step;
 }
 
+// Hoisted static data
+const scanSteps = [
+  { label: "Crawling website...", icon: "🌐" },
+  { label: "Analyzing structure...", icon: "📄" },
+  { label: "Issues detected", icon: "⚠️" },
+  { label: "Links suggested", icon: "🔗" },
+  { label: "SEO score increasing", icon: "📈" },
+];
+
 export default function Hero() {
   const { hero } = homeData;
   const scanStep = useScanLoop();
 
-  const scanSteps = [
-    { label: "Crawling website...", icon: "🌐" },
-    { label: "Analyzing structure...", icon: "📄" },
-    { label: "Issues detected", icon: "⚠️" },
-    { label: "Links suggested", icon: "🔗" },
-    { label: "SEO score increasing", icon: "📈" },
-  ];
-
   return (
     <div className="relative w-full bg-[#0A2E22] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      <HeroStyles />
       {/* Rich Background glow layers matching Tools page */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Central Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-[#E1F28F]/10 rounded-full blur-[130px]" />
-        
+
         {/* Secondary corner glows */}
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#E1F28F]/5 rounded-full blur-[120px]" />
-        
+
         {/* Grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
 
@@ -62,50 +111,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Calm & Clear Typography */}
           <div className="lg:col-span-8 flex flex-col items-start text-left">
-            <style>{`
-              @keyframes slideUpFade {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-              }
-              .animate-problem {
-                animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-              }
-              .animate-solution {
-                opacity: 0;
-                animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-              }
-              @keyframes float1 {
-                0% { transform: translateY(0px); }
-                25% { transform: translateY(-3px); }
-                50% { transform: translateY(-6px); }
-                75% { transform: translateY(-3px); }
-                100% { transform: translateY(0px); }
-              }
-              .animate-float1 {
-                animation: float1 3.5s ease-in-out infinite;
-              }
-              @keyframes float2 {
-                0% { transform: translateY(0px); }
-                25% { transform: translateY(-2.5px); }
-                50% { transform: translateY(-5px); }
-                75% { transform: translateY(-2.5px); }
-                100% { transform: translateY(0px); }
-              }
-              .animate-float2 {
-                animation: float2 4s ease-in-out infinite;
-              }
-              @keyframes fadeInSlide {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-              }
-              .animate-entry1 {
-                animation: fadeInSlide 0.8s ease-out 0.5s both;
-              }
-              .animate-entry2 {
-                animation: fadeInSlide 0.8s ease-out 1s both;
-              }
-            `}</style>
-
             {/* Category Badge */}
             <div className="mb-5 w-fit inline-flex items-center gap-4 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
               {/* Subtle AI pulse indicator */}
@@ -114,29 +119,27 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 md:h-3 md:w-3 bg-[#E1F28F]"></span>
               </span>
               <span className="text-sm font-bold tracking-wider text-white/80 uppercase">
-                AI WEBSITE STRUCTURE ENGINE
+                {hero.badge}
               </span>
             </div>
 
             {/* H1 — Shorter, Stronger Headline */}
             <h1 className="mb-8 max-w-[680px] text-5xl sm:text-6xl md:text-[80px] lg:text-[88px] leading-[1.05] tracking-tight font-extrabold drop-shadow-xl">
-              <span className="block text-white animate-problem">
-                Stop <span className="font-black">Guessing</span>
+              <span className="block text-white animate-problem font-semibold">
+                {hero.title_first}
                 <br />
-                Internal Links.
+                {hero.title_second}
               </span>
               <div className="block mt-2 sm:mt-4 text-[#E1F28F] animate-solution relative w-fit">
-                <div className="absolute inset-0 bg-[#e1f28f2b]/10 blur-md rounded-full"></div>
-                <span className="relative z-10 px-2 py-1">
-                  Let AI Fix Them.
-                </span>
+                {/* <div className="absolute inset-0 bg-[#e1f28f2b]/10 blur-md rounded-full"></div> */}
+                <span className="relative z-10 px-2 py-1">{hero.title_highlight}</span>
               </div>
             </h1>
 
             {/* Clarity Subheadline */}
             <p className="mb-7 text-lg sm:text-xl text-white/80 leading-relaxed max-w-[520px]">
-              Finds weak links, fixes them automatically, and turns your site
-              into a connected SEO system.
+              {hero.description_first} <br />
+              {hero.description_second}
             </p>
 
             {/* Actions */}
@@ -168,8 +171,7 @@ export default function Hero() {
               {/* Micro Emotional Hook / Trust under CTA */}
               <div className="mt-5 flex flex-wrap items-center gap-3 text-sm font-medium text-white/60">
                 <span className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-[#E1F28F]" /> Fix SEO issues in
-                  minutes.
+                  <Check className="w-4 h-4 text-[#E1F28F]" /> {hero.micro_hook}
                 </span>
               </div>
             </div>
@@ -304,11 +306,11 @@ export default function Hero() {
                           28 new context links placed
                         </div>
                       </div>
-                      {scanStep >= 3 && (
+                      {scanStep >= 3 ? (
                         <div className="px-2 py-1 bg-[#E1F28F] text-[#0A2E22] text-[10px] font-bold rounded">
                           Fixed
                         </div>
-                      )}
+                      ) : null}
                     </div>
 
                     <div
@@ -327,7 +329,7 @@ export default function Hero() {
                           Rankings improving...
                         </div>
                       </div>
-                      {scanStep >= 4 && (
+                      {scanStep >= 4 ? (
                         <div className="flex flex-col items-end">
                           <span className="text-xs font-bold text-emerald-400">
                             +65%
@@ -336,7 +338,7 @@ export default function Hero() {
                             Coverage
                           </span>
                         </div>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -356,7 +358,7 @@ export default function Hero() {
             <div className="absolute bottom-12 -left-28 w-48 h-24 bg-gradient-to-b from-white/10 via-white/8 to-white/6 backdrop-blur-md rounded-lg border-t border-t-white/15 border border-white/15 shadow-[0_8px_24px_0_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] opacity-90 animate-float2 animate-entry2 hover:scale-105 hover:bg-white/12 transition-all duration-300 z-20 rotate-[2deg]">
               <div className="p-3 text-xs">
                 <div className="font-bold text-emerald-400 mb-1">SEO Impact</div>
-                <div className="text-white/80">+34% Internal Link Coverage<br/>+12 pages improved</div>
+                <div className="text-white/80">+34% Internal Link Coverage<br />+12 pages improved</div>
               </div>
             </div>
           </div>
@@ -365,3 +367,4 @@ export default function Hero() {
     </div>
   );
 }
+

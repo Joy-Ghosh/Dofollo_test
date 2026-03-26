@@ -1,13 +1,15 @@
 {
     "hero": {
-        "badge": "AI Internal Linking Engine",
-        "title_first": "AI That Fixes",
-        "title_highlight": "Your Website’s",
-        "title_last": "Internal Linking",
-        "description": "Dofollo scans your website, detects SEO issues, finds internal link opportunities, and helps you fix them automatically.",
-        "primary_cta": "Start Fixing My Site",
+        "badge": "AI WEBSITE STRUCTURE ENGINE",
+        "title_first": "Stop Guessing",
+        "title_second": "Internal Links.",
+        "title_highlight": "Let AI Fix Them.",
+        "description_first": "Find and fix weak links automatically.",
+        "description_second": "Turn your website into a connected SEO system.",
+        "primary_cta": "Fix My SEO Now",
         "secondary_cta": "Watch Demo",
-        "trust_text": "Trusted by 2,000+ SEO professionals & agencies",
+        "micro_hook": "Fix SEO issues in minutes.",
+        "trust_text": "Trusted by 2,000+ SEO professionals",
         "trust_count": "2k+"
     },
     "ai_website_scan": {
