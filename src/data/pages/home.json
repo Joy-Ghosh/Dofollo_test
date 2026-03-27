@@ -23,60 +23,66 @@
         "description": "Dofollo analyzes your content structure and suggests perfectly matched contextual internal links to strengthen SEO authority across your entire site."
     },
     "seo_opportunities": {
-        "title_first": "Discover Pages That",
-        "title_highlight": "Could Rank Higher",
-        "description": "Dofollo finds pages already close to page one — and shows you exactly how many internal links they need to break through.",
+        "badge": "Growth Audit",
+        "title_first": "You Have Pages That",
+        "title_highlight": "Should Be Ranking Higher",
+        "description": "Dofollo finds pages already close to page one — and shows exactly what they need to rank higher.",
+        "preview_label": "Live opportunity preview",
+        "table_micro_text": "Pages just a few links away from ranking higher",
+        "columns": {
+            "page": "Page Name",
+            "position": "Current Rank",
+            "links": "Links to Add",
+            "traffic": "Potential Traffic"
+        },
+        "best_opportunity_label": "Best opportunity",
         "opportunities": [
             {
+                "id": "opp-1",
                 "page": "Technical SEO Basics",
                 "path": "/blog/technical-seo",
-                "position": 12,
-                "links": 4,
+                "position": "12",
+                "links": "4",
                 "traffic": "+38%",
-                "difficulty": "Easy",
-                "diffColor": "text-emerald-600 bg-emerald-50 border border-emerald-100"
+                "is_best": false
             },
             {
+                "id": "opp-2",
                 "page": "Site Architecture Guide",
                 "path": "/blog/site-architecture",
-                "position": 19,
-                "links": 6,
+                "position": "19",
+                "links": "6",
                 "traffic": "+52%",
-                "difficulty": "Medium",
-                "diffColor": "text-amber-600 bg-amber-50 border border-amber-100"
+                "is_best": false
             },
             {
-                "page": "Crawl Budget Tips",
-                "path": "/blog/crawl-budget",
-                "position": 8,
-                "links": 2,
-                "traffic": "+21%",
-                "difficulty": "Easy",
-                "diffColor": "text-emerald-600 bg-emerald-50 border border-emerald-100"
-            },
-            {
+                "id": "opp-3",
                 "page": "XML Sitemaps 101",
                 "path": "/blog/xml-sitemaps",
-                "position": 24,
-                "links": 8,
+                "position": "11",
+                "links": "3",
                 "traffic": "+67%",
-                "difficulty": "High Impact",
-                "diffColor": "text-[#045C4E] bg-[#E1F28F]/40 border border-[#045C4E]/20"
+                "is_best": true
+            },
+            {
+                "id": "opp-4",
+                "page": "Crawl Budget Tips",
+                "path": "/blog/crawl-budget",
+                "position": "8",
+                "links": "2",
+                "traffic": "+21%",
+                "is_best": false
             }
         ],
-        "stats": {
-            "stat1": {
-                "value": "+42%",
-                "desc": "Average traffic increase for pages optimized with Dofollo's internal linking."
-            },
-            "stat2": {
-                "value": "3–8 wks",
-                "desc": "Average time to see measurable ranking improvements after implementing Dofollo's suggestions."
-            },
-            "stat3": {
-                "title": "Ready to unlock your hidden pages?",
-                "cta": "Scan My Website"
-            }
+        "proof_block": {
+            "stat_main": "+42% traffic increase",
+            "stat_speed": "3\u20138 weeks to see results",
+            "description": "Most pages need just a few internal links to break into top rankings."
+        },
+        "cta_block": {
+            "emotional_line": "You might already be one step away from higher rankings.",
+            "cta": "Find My Ranking Opportunities \u2192",
+            "friction_text": "Takes less than 60 seconds"
         }
     },
     "ai_fix_engine": {
@@ -97,59 +103,24 @@
     },
     "problem_section": {
         "micro_hook": "If your traffic isn't growing \u2014 this is why",
-        "heading_first": "You Don't Have a Content Problem.",
-        "heading_highlight": "You Have a Structure Problem.",
-        "subheading": "You\u2019re creating content. You\u2019re targeting keywords. But your pages aren\u2019t connected the way Google expects \u2014 so your rankings stay stuck.",
-        "problems": [
-            {
-                "icon": "AlertCircle",
-                "title": "Your Best Pages Aren\u2019t Helping Your Important Ones",
-                "description": "Your high-authority pages aren\u2019t passing value where it matters \u2014 so your money pages stay invisible.",
-                "visual": "arrows",
-                "primary": true
-            },
-            {
-                "icon": "Clock",
-                "title": "You\u2019re Spending Hours Doing What Should Take Minutes",
-                "description": "Manually finding link opportunities across hundreds of pages is slow, repetitive, and expensive.",
-                "visual": "timer",
-                "primary": false
-            },
-            {
-                "icon": "Layout",
-                "title": "Google Can\u2019t Properly Discover Your Pages",
-                "description": "Orphan pages and weak linking mean your content gets ignored \u2014 no matter how good it is.",
-                "visual": "bot",
-                "primary": false
-            },
-            {
-                "icon": "TrendingDown",
-                "title": "Your Competitors Aren\u2019t Better \u2014 Just Better Structured",
-                "description": "They\u2019re not smarter. Their pages are just connected better \u2014 and Google rewards that.",
-                "visual": "chart",
-                "primary": false
-            }
+        "section_label": "Why your SEO is stuck",
+        "heading_first": "Most websites don't fail because of content \u2014",
+        "heading_highlight": "they fail because their structure is invisible.",
+        "bullets_label": "Your SEO is stuck because:",
+        "bullets": [
+            { "main": "Pages don't pass authority", "consequence": "rankings stay low" },
+            { "main": "Google can't read your structure", "consequence": "pages get ignored" },
+            { "main": "Important pages stay buried", "consequence": "traffic never reaches them" }
         ],
-        "realization_line": "Most websites don't fail because of bad content \u2014 they fail because their structure is invisible.",
-        "comparison": {
-            "title": "What This Looks Like Without vs With Dofollo",
-            "before": "Without Dofollo",
-            "after": "With Dofollo",
-            "items": [
-                {
-                    "before": "Broken links",
-                    "after": "Connected structure"
-                },
-                {
-                    "before": "Orphan pages",
-                    "after": "Linked ecosystem"
-                },
-                {
-                    "before": "Manual work",
-                    "after": "Automated fixes"
-                }
-            ]
-        }
+        "comparison_hook": "Stop wasting hours on manual SEO.",
+        "comparison_connector": "Fix your structure \u2192 reduce hours by 95%",
+        "bar_before_label": "Manual SEO effort",
+        "bar_before_value": 14.5,
+        "bar_before_unit": "hours/week",
+        "bar_after_label": "With Dofollo",
+        "bar_after_value": 51,
+        "bar_after_unit": "minutes/week",
+        "bar_after_sublabel": "Fully automated structure optimization"
     },
     "workflow_section": {
         "badge": "How It Works",
@@ -195,46 +166,59 @@
     },
     "visualizer_section": {
         "badge": "Link Graph Visualizer",
-        "title": "See How Authority Flows",
-        "description": "Understand which pages pass link equity, which pages receive it, and which ones are completely isolated from your link graph.",
+        "title": "See Where Your SEO Authority Is Lost",
+        "description": "Some pages get all the authority. Others get none. Dofollo shows exactly where your structure breaks.",
         "center_label": "Homepage",
         "center_sublabel": "Central Authority Hub",
-        "inbound_title": "Incoming Links",
-        "outbound_title": "Outgoing Links",
+        "inbound_title": "Pages linking here",
+        "outbound_title": "Pages receiving authority",
+        "insight_line": "Most websites lose rankings because authority isn't distributed properly.",
+        "cta_text": "Fix your link structure automatically \u2192",
         "inbound_nodes": [
             {
                 "id": "in-1",
                 "label": "Blog: Internal Linking Tips",
-                "type": "blog"
+                "type": "blog",
+                "status": "strong"
             },
             {
                 "id": "in-2",
                 "label": "Guide: SEO Audit Checklist",
-                "type": "support"
+                "type": "support",
+                "status": "weak"
             },
             {
                 "id": "in-3",
                 "label": "Category: Link Building",
-                "type": "category"
+                "type": "category",
+                "status": "strong"
             }
         ],
         "outbound_nodes": [
             {
                 "id": "out-1",
                 "label": "Service: Site Audit",
-                "type": "service"
+                "type": "service",
+                "status": "broken"
             },
             {
                 "id": "out-2",
                 "label": "Landing: Free Trial",
-                "type": "landing"
+                "type": "landing",
+                "status": "strong"
             },
             {
                 "id": "out-3",
                 "label": "Pricing: Agency Plan",
-                "type": "product"
+                "type": "product",
+                "status": "weak"
             }
-        ]
+        ],
+        "annotations": {
+            "weak": "Weak authority",
+            "strong": "Strong authority flow",
+            "broken": "Missing connection"
+        }
     },
     "competitor_analysis": {
         "badge": "Competitor Intelligence",
@@ -504,34 +488,36 @@
     },
     "outcome_section": {
         "badge": "What You Get",
-        "heading_first": "Imagine your website",
-        "heading_highlight": "working smarter",
-        "heading_post": "not harder.",
-        "description": "Before you see the product — here's the transformation Dofollo delivers. No guesswork. No bloated audits. Just clear results.",
+        "heading": "See What Happens When Your Structure Is Fixed",
+        "description": "More traffic. Faster insights. Clear actions — without manual SEO work.",
+        "connector": "No reports. No guesswork. Just results.",
         "outcomes": [
             {
                 "icon": "TrendingUp",
                 "metric": "+42%",
-                "metricLabel": "Avg. traffic increase",
+                "metric_label": "Traffic Increase",
                 "before": "Pages stuck on page 2–3",
-                "after": "Pages climbing to top 5",
-                "color": "from-[#045C4E] to-[#0A2E22]"
+                "after": "Pages moving into top results",
+                "color": "from-[#045C4E] to-[#0A2E22]",
+                "dominant": true
             },
             {
                 "icon": "Clock",
                 "metric": "< 60s",
-                "metricLabel": "Full site scan time",
-                "before": "Days of manual auditing",
-                "after": "Instant structural intelligence",
-                "color": "from-[#0A2E22] to-[#0d3b2c]"
+                "metric_label": "Full Site Analysis in Seconds",
+                "before": "Hours of manual auditing",
+                "after": "Instant structural insights",
+                "color": "from-[#0A2E22] to-[#0d3b2c]",
+                "dominant": false
             },
             {
                 "icon": "Target",
                 "metric": "3–8 wks",
-                "metricLabel": "To see ranking uplift",
+                "metric_label": "Rankings Improve in Weeks",
                 "before": "Guessing what to fix",
-                "after": "AI-prioritized action plan",
-                "color": "from-[#0d3b2c] to-[#045C4E]"
+                "after": "AI-driven action plan",
+                "color": "from-[#0d3b2c] to-[#045C4E]",
+                "dominant": false
             }
         ],
         "social_proof": {
@@ -551,7 +537,7 @@
                     "label": "User rating"
                 }
             ],
-            "cta": "See My Results"
+            "cta": "View Real Results →"
         }
     },
     "system_overview": {
@@ -559,37 +545,39 @@
         "heading_first": "One system.",
         "heading_highlight": "Total structural clarity.",
         "description": "You don't need a scanner <em>and</em> a dashboard <em>and</em> a fixer. Dofollo is the complete loop — from crawl to actionable insight to fix.",
+        "connector": "From scan to fix — in under a minute.",
+        "live_preview_label": "Live preview",
         "flow_steps": [
             {
                 "id": 0,
                 "icon": "Globe",
                 "number": "01",
-                "title": "Enter URL",
-                "desc": "Paste your domain — no setup, no code, no API keys required.",
+                "title": "Enter your website",
+                "desc": "No setup. No code. Just paste your domain.",
                 "detail": "Supports HTTP, HTTPS, subdomains & subdirectories"
             },
             {
                 "id": 1,
                 "icon": "Radar",
                 "number": "02",
-                "title": "AI Scans Every Page",
-                "desc": "Our crawler maps your entire site — 1,000+ pages in under 60 seconds.",
+                "title": "We scan your entire site",
+                "desc": "Find every page, link, and structure issue in seconds.",
                 "detail": "Average scan time: under 60 seconds"
             },
             {
                 "id": 2,
                 "icon": "AlertTriangle",
                 "number": "03",
-                "title": "Issues Detected",
-                "desc": "Orphan pages, broken links, anchor text gaps, link equity leaks found.",
+                "title": "We find what's holding you back",
+                "desc": "Broken links, missing connections, weak structure.",
                 "detail": "15+ issue types detected automatically"
             },
             {
                 "id": 3,
                 "icon": "BarChart3",
                 "number": "04",
-                "title": "Insights Dashboard",
-                "desc": "Prioritized fixes ranked by SEO impact — ready to act in 5 minutes.",
+                "title": "You get clear actions to fix it",
+                "desc": "Prioritized steps to improve rankings — instantly.",
                 "detail": "Ready to act in under 5 minutes"
             }
         ],

@@ -641,14 +641,14 @@ export default function SystemOverview() {
 
   return (
     <section ref={sectionRef} className="py-24 md:py-32 bg-white text-[#0A2E22] relative overflow-hidden">
-      {/* Glows */}
-      <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-[#E1F28F]/20 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#045C4E]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#0A2E22]/8 to-transparent pointer-events-none" />
+      {/* Glows — subdued */}
+      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-[#E1F28F]/12 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#045C4E]/4 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#0A2E22]/6 to-transparent pointer-events-none" />
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
-        <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-20">
+        <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A2E22]/5 border border-[#0A2E22]/10 text-[#045C4E] font-bold text-xs uppercase tracking-wider mb-6">
             <Sparkles className="w-3.5 h-3.5" /> {data.badge}
           </div>
@@ -656,6 +656,13 @@ export default function SystemOverview() {
             {data.heading_first} <span className="text-[#045C4E]">{data.heading_highlight}</span>
           </h2>
           <p className="text-[#0A2E22]/60 text-lg leading-relaxed max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: data.description }}>
+          </p>
+        </ScrollReveal>
+
+        {/* Connector — removes perceived complexity */}
+        <ScrollReveal variant="fade-up" delay={0.04} className="text-center mb-14">
+          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#045C4E]/60">
+            {data.connector}
           </p>
         </ScrollReveal>
 
@@ -757,11 +764,14 @@ export default function SystemOverview() {
                 <ScrollReveal key={step.id} variant="fade-up" delay={step.id * 0.06}>
                   <motion.div
                     onClick={() => handleClick(step.id)}
-                    className="flex items-start gap-5 p-5 rounded-2xl border cursor-pointer hover:bg-[#0A2E22]/[0.02] transition-colors"
+                    className={`flex items-start gap-5 p-5 rounded-2xl border cursor-pointer transition-colors ${
+                      isActive
+                        ? 'border-l-4 border-l-[#045C4E] border-[#045C4E]/15 pl-4'
+                        : 'border-transparent hover:bg-[#0A2E22]/[0.02]'
+                    }`}
                     animate={{
-                      backgroundColor: isActive ? 'rgba(4,92,78,0.055)' : 'transparent',
-                      borderColor: isActive ? 'rgba(4,92,78,0.22)' : 'transparent',
-                      boxShadow: isActive ? '0 4px 20px rgba(4,92,78,0.08)' : 'none',
+                      backgroundColor: isActive ? 'rgba(4,92,78,0.06)' : 'transparent',
+                      boxShadow: isActive ? '0 6px 24px rgba(4,92,78,0.1)' : 'none',
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -815,6 +825,13 @@ export default function SystemOverview() {
           {/* Right: Animated panels */}
           <ScrollReveal variant="slide-left" delay={0.08}>
             <div className="sticky top-8">
+              {/* Live preview label */}
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#0A2E22]/35">
+                  {data.live_preview_label}
+                </span>
+              </div>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
@@ -822,7 +839,7 @@ export default function SystemOverview() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
                 >
                   {activeStep === 0 && <URLEntryPanel />}
                   {activeStep === 1 && <ScanningPanel progress={stepProgress} />}

@@ -1,111 +1,82 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { TrendingUp, Clock, Target, ArrowUpRight, Sparkles } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
-
 import homeData from '../../data/pages/home.json';
 
-const iconMap: Record<string, any> = { TrendingUp, Clock, Target };
-
-function getOutcomes(data: any) {
-  if (!data?.outcomes) return [];
-  return data.outcomes.map((item: any, i: number) => ({
-    ...item,
-    icon: iconMap[item.icon] || TrendingUp,
-    accentColor: '#E1F28F',
-    delay: i * 0.1,
-  }));
-}
-
-function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const [value, setValue] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !started.current) {
-          started.current = true;
-          let start = 0;
-          const step = target / 60;
-          const interval = setInterval(() => {
-            start += step;
-            if (start >= target) {
-              setValue(target);
-              clearInterval(interval);
-            } else {
-              setValue(Math.floor(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target]);
-
-  return <span ref={ref}>{value}{suffix}</span>;
-}
+const iconMap: Record<string, React.ElementType> = { TrendingUp, Clock, Target };
 
 export default function OutcomeSection() {
   const data = (homeData as any).outcome_section || {};
-  const outcomes = getOutcomes(data);
+  const outcomes: any[] = data.outcomes || [];
+  const proof = data.social_proof || {};
 
   return (
     <section className="py-24 md:py-32 bg-[#0A2E22] text-white relative overflow-hidden">
-      {/* Glow orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#045C4E]/25 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E1F28F]/6 rounded-full blur-[100px] pointer-events-none" />
+      {/* Ambient glow — subdued */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#045C4E]/20 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-[#E1F28F]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto relative z-10">
-        {/* Header */}
-        <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16">
+      <div className="container mx-auto px-6 relative z-10">
+
+        {/* ── HEADER ── */}
+        <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#E1F28F]/10 border border-[#E1F28F]/20 text-[#E1F28F] font-bold text-xs uppercase tracking-wider mb-6">
             <Sparkles className="w-3.5 h-3.5" />
-            {data.badge || 'What You Get'}
+            {data.badge}
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
-            {data.heading_first || 'Imagine your website'}{' '}
-            <span className="text-[#E1F28F]">{data.heading_highlight || 'working smarter'}</span>
-            <br />{data.heading_post || 'not harder.'}
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+            {data.heading}
           </h2>
-          <p className="text-white/60 text-lg leading-relaxed max-w-xl mx-auto">
-            {data.description || ''}
+
+          <p className="text-white/55 text-lg leading-relaxed max-w-xl mx-auto">
+            {data.description}
           </p>
         </ScrollReveal>
 
-        {/* Outcome Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-          {outcomes.map((item, i) => {
-            const Icon = item.icon;
+        {/* ── CONNECTOR LINE ── */}
+        <ScrollReveal variant="fade-up" delay={0.05} className="text-center mb-12">
+          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#E1F28F]/60">
+            {data.connector}
+          </p>
+        </ScrollReveal>
+
+        {/* ── OUTCOME CARDS ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          {outcomes.map((item: any, i: number) => {
+            const Icon = iconMap[item.icon] || TrendingUp;
+            const isDominant = item.dominant === true;
+
             return (
-              <ScrollReveal key={i} variant="fade-up" delay={item.delay}>
-                <div className={`relative rounded-2xl p-7 bg-gradient-to-br ${item.color} border border-white/10 overflow-hidden group hover:border-[#E1F28F]/30 transition-all duration-500`}>
-                  {/* Glow on hover */}
+              <ScrollReveal key={i} variant="fade-up" delay={i * 0.1}>
+                <div
+                  className={`relative rounded-2xl bg-gradient-to-br ${item.color} border overflow-hidden group transition-all duration-500 hover:border-[#E1F28F]/25 ${
+                    isDominant
+                      ? 'border-[#E1F28F]/20 p-8'
+                      : 'border-white/8 p-7'
+                  }`}
+                >
+                  {/* Subtle hover lift */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#E1F28F]/3 rounded-2xl" />
 
-                  {/* Icon */}
-                  <div className="w-11 h-11 rounded-xl bg-[#E1F28F]/10 flex items-center justify-center mb-5">
-                    <Icon className="w-5 h-5 text-[#E1F28F]" />
-                  </div>
-
-                  {/* Metric */}
-                  <div className="text-4xl font-extrabold text-[#E1F28F] mb-1 tabular-nums">
+                  {/* Metric — the anchor */}
+                  <div className={`font-extrabold text-[#E1F28F] tabular-nums mb-1 ${isDominant ? 'text-5xl' : 'text-4xl'}`}>
                     {item.metric}
                   </div>
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-white/40 mb-5">
-                    {item.metricLabel}
+
+                  {/* Label below metric */}
+                  <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-6">
+                    {item.metric_label}
                   </div>
 
-                  {/* Before → After */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2.5 text-sm text-white/40">
-                      <span className="shrink-0 w-4 h-4 rounded-full bg-red-500/20 flex items-center justify-center text-[9px] text-red-400 font-bold">✕</span>
+                  {/* Before → After — minimal */}
+                  <div className="space-y-2.5 border-t border-white/8 pt-5">
+                    <div className="flex items-center gap-2.5 text-sm text-white/35">
+                      <span className="text-[11px] text-red-400/70 font-bold">✕</span>
                       {item.before}
                     </div>
-                    <div className="flex items-center gap-2.5 text-sm text-white/80 font-medium">
-                      <span className="shrink-0 w-4 h-4 rounded-full bg-[#E1F28F]/20 flex items-center justify-center text-[9px] text-[#E1F28F] font-bold">✓</span>
+                    <div className="flex items-center gap-2.5 text-sm text-white/75 font-medium">
+                      <span className="text-[11px] text-[#E1F28F] font-bold">✓</span>
                       {item.after}
                     </div>
                   </div>
@@ -115,45 +86,52 @@ export default function OutcomeSection() {
           })}
         </div>
 
-        {/* Social proof strip */}
+        {/* ── TRUST BAR — lighter, less competing ── */}
         <ScrollReveal variant="fade-up" delay={0.3}>
-          <div className="relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#E1F28F]/5 via-transparent to-transparent pointer-events-none" />
+          <div className="relative rounded-xl border border-white/8 bg-white/[0.02] px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-5 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#E1F28F]/4 via-transparent to-transparent pointer-events-none" />
 
-            <div className="flex items-center gap-4 relative z-10">
-              {/* Avatars */}
-              <div className="flex -space-x-3">
+            {/* Avatars + text */}
+            <div className="flex items-center gap-3.5 relative z-10">
+              <div className="flex -space-x-2.5">
                 {['#4A9D8F', '#6EC6B8', '#2D7A6E', '#88D9CD'].map((bg, i) => (
-                  <div key={i} className="w-9 h-9 rounded-full border-2 border-[#0A2E22] flex items-center justify-center text-xs font-bold text-white" style={{ background: bg }}>
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-[#0A2E22] flex items-center justify-center text-[11px] font-bold text-white"
+                    style={{ background: bg }}
+                  >
                     {['S', 'M', 'J', 'A'][i]}
                   </div>
                 ))}
               </div>
               <div>
-                <div className="text-sm font-bold text-white">{data.social_proof?.title}</div>
-                <div className="text-xs text-white/40">{data.social_proof?.subtitle}</div>
+                <div className="text-sm font-semibold text-white/80">{proof.title}</div>
+                <div className="text-[11px] text-white/35">{proof.subtitle}</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-8 relative z-10">
-              {(data.social_proof?.stats || []).map((stat: any, i: number) => (
+            {/* Stats */}
+            <div className="flex items-center gap-7 relative z-10">
+              {(proof.stats || []).map((stat: any, i: number) => (
                 <div key={i} className="text-center">
-                  <div className="text-xl font-extrabold text-[#E1F28F]">{stat.value}</div>
-                  <div className="text-[11px] text-white/40 mt-0.5">{stat.label}</div>
+                  <div className="text-lg font-extrabold text-[#E1F28F]">{stat.value}</div>
+                  <div className="text-[10px] text-white/35 mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>
 
+            {/* CTA */}
             <a
               href="https://dash.dofollo.ai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#E1F28F] text-[#0A2E22] rounded-xl font-bold text-sm hover:bg-white transition-colors relative z-10"
+              className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-[#E1F28F]/10 border border-[#E1F28F]/25 text-[#E1F28F] rounded-lg font-semibold text-sm hover:bg-[#E1F28F]/20 transition-colors relative z-10"
             >
-              {data.social_proof?.cta || 'See My Results'} <ArrowUpRight className="w-4 h-4" />
+              {proof.cta}
             </a>
           </div>
         </ScrollReveal>
+
       </div>
     </section>
   );

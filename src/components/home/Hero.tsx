@@ -130,8 +130,7 @@ export default function Hero() {
                 <br />
                 {hero.title_second}
               </span>
-              <div className="block mt-2 sm:mt-4 text-[#E1F28F] animate-solution relative w-fit">
-                {/* <div className="absolute inset-0 bg-[#e1f28f2b]/10 blur-md rounded-full"></div> */}
+              <div className="block mt-2 sm:mt-4 text-[#E1F28F] animate-solution relative w-fit whitespace-nowrap">
                 <span className="relative z-10 px-2 py-1">{hero.title_highlight}</span>
               </div>
             </h1>
