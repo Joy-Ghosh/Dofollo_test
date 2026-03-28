@@ -754,7 +754,7 @@ export default function SystemOverview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* Left: Step list */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             {flowSteps.map((step) => {
               const Icon = step.icon;
               const isActive = step.id === activeStep;
@@ -764,16 +764,15 @@ export default function SystemOverview() {
                 <ScrollReveal key={step.id} variant="fade-up" delay={step.id * 0.06}>
                   <motion.div
                     onClick={() => handleClick(step.id)}
-                    className={`flex items-start gap-5 p-5 rounded-2xl border cursor-pointer transition-colors ${
+                    className={`flex items-start gap-5 p-5 rounded-2xl border cursor-pointer transition-all h-[140px] relative ${
                       isActive
                         ? 'border-l-4 border-l-[#045C4E] border-[#045C4E]/15 pl-4'
                         : 'border-transparent hover:bg-[#0A2E22]/[0.02]'
                     }`}
                     animate={{
                       backgroundColor: isActive ? 'rgba(4,92,78,0.06)' : 'transparent',
-                      boxShadow: isActive ? '0 6px 24px rgba(4,92,78,0.1)' : 'none',
+                      boxShadow: isActive ? '0 8px 30px rgba(4,92,78,0.08)' : 'none',
                     }}
-                    transition={{ duration: 0.3 }}
                   >
                     {/* Icon */}
                     <motion.div
@@ -795,19 +794,18 @@ export default function SystemOverview() {
                       <h3 className={`text-base font-bold mb-1 transition-colors ${isActive ? 'text-[#0A2E22]' : 'text-[#0A2E22]/38'}`}>
                         {step.title}
                       </h3>
-                      <p className={`text-sm leading-relaxed transition-colors ${isActive ? 'text-[#0A2E22]/68' : 'text-[#0A2E22]/22'}`}>
+                      <p className={`text-sm leading-relaxed transition-colors mb-2 ${isActive ? 'text-[#0A2E22]/68' : 'text-[#0A2E22]/22'}`}>
                         {step.desc}
                       </p>
 
-                      {/* Detail badge — expands on active */}
+                      {/* Detail badge — simple fade, no height expansion */}
                       <AnimatePresence>
                         {isActive && (
                           <motion.div
-                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                            animate={{ opacity: 1, height: 'auto', marginTop: '10px' }}
-                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                            transition={{ duration: 0.28, ease: 'easeInOut' }}
-                            className="overflow-hidden"
+                            initial={{ opacity: 0, y: 4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 4 }}
+                            transition={{ duration: 0.2 }}
                           >
                             <div className="inline-flex items-center gap-1.5 text-[11px] text-[#045C4E] font-mono bg-[#045C4E]/6 px-3 py-1.5 rounded-lg border border-[#045C4E]/14">
                               <CheckCircle className="w-3 h-3 shrink-0" /> {step.detail}
@@ -824,7 +822,7 @@ export default function SystemOverview() {
 
           {/* Right: Animated panels */}
           <ScrollReveal variant="slide-left" delay={0.08}>
-            <div className="sticky top-8">
+            <div className="sticky top-8 min-h-[500px]">
               {/* Live preview label */}
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -840,6 +838,7 @@ export default function SystemOverview() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.25, ease: 'easeOut' }}
+                  className="min-h-[480px]"
                 >
                   {activeStep === 0 && <URLEntryPanel />}
                   {activeStep === 1 && <ScanningPanel progress={stepProgress} />}

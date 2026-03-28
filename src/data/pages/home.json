@@ -86,9 +86,44 @@
         }
     },
     "ai_fix_engine": {
-        "title_first": "Not Just Insights —",
-        "title_highlight": "Fix Issues Faster",
-        "description": "Dofollo doesn't just tell you what's broken. It gives you one-click AI fixes for broken links, orphan pages, anchor text problems, and more."
+        "title_first": "Fix SEO Issues Automatically \u2014",
+        "title_highlight": "Not Manually",
+        "description": "Stop fixing SEO issues manually. Dofollo does it for you \u2014 instantly.",
+        "ui_label": "Fix multiple issues in seconds",
+        "ui_micro_text": "No manual fixes. No technical work.",
+        "cta_trigger": "Fix dozens of issues in one click",
+        "cta_text": "Fix All Issues Now \u2192",
+        "issues": [
+            {
+                "type": "Broken Link",
+                "page": "/blog/technical-seo-guide",
+                "detail": "Broken link found \u2192 fixed automatically",
+                "severity": "high",
+                "fix": "Fix Now"
+            },
+            {
+                "type": "Link Structure",
+                "page": "/services/site-audit",
+                "detail": "Page has no internal links \u2192 added automatically",
+                "severity": "high",
+                "fix": "Fix Now",
+                "highlight": true
+            },
+            {
+                "type": "Anchor Text",
+                "page": "/blog/seo-tips",
+                "detail": "Repetitive anchors found \u2192 variety added automatically",
+                "severity": "medium",
+                "fix": "Fix Now"
+            },
+            {
+                "type": "Orphan Page",
+                "page": "/products/new-feature",
+                "detail": "Disconnected page found \u2192 connected instantly",
+                "severity": "medium",
+                "fix": "Fix Now"
+            }
+        ]
     },
     "dashboard_preview": {
         "badge": "Dashboard Preview",

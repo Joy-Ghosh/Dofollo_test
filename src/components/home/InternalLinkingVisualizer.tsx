@@ -110,7 +110,7 @@ const InternalLinkingVisualizer = () => {
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 hidden lg:block" width={dimensions.width} height={dimensions.height}>
                         <defs>
                             <filter id="glow_node" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feGaussianBlur stdDeviation="1.5" result="blur" />
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
@@ -197,14 +197,14 @@ const InternalLinkingVisualizer = () => {
 
                         <div
                             id={`node-${data.center.id}`}
-                            className="relative w-72 lg:w-96 aspect-square rounded-full flex flex-col items-center justify-center text-center p-12 bg-[#045C4E]/20 border-2 border-[#E1F28F]/40 shadow-[0_0_80px_rgba(225,242,143,0.12)] transition-transform duration-700 hover:scale-[1.03]"
+                            className="relative w-72 lg:w-96 aspect-square rounded-full flex flex-col items-center justify-center text-center p-12 bg-[#045C4E]/20 border-2 border-[#E1F28F]/30 shadow-[0_0_60px_rgba(225,242,143,0.08)] transition-transform duration-700 hover:scale-[1.03]"
                             style={{ filter: 'url(#glow_node)' }}
                         >
                             {/* Static Pulse */}
                             <div className="absolute inset-0 rounded-full border border-[#E1F28F]/15"></div>
                             <div className="absolute -inset-4 rounded-full border border-[#E1F28F]/5 animate-pulse"></div>
 
-                            <div className="mb-6 p-5 bg-[#E1F28F] rounded-2xl text-[#0A2E22] shadow-[0_0_40px_rgba(225,242,143,0.4)]">
+                            <div className="mb-6 p-5 bg-[#E1F28F] rounded-2xl text-[#0A2E22] shadow-[0_0_30px_rgba(225,242,143,0.3)]">
                                 {getIcon(data.center.type)}
                             </div>
                             <h3 className="text-2xl lg:text-3xl font-black text-white mb-2 leading-none">{data.center.label}</h3>
